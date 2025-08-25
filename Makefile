@@ -1,4 +1,4 @@
-all: macro copy-final
+all: macro copy-macro
 
 PDK_ROOT ?= ~/.ciel
 PDK ?= ihp-sg13g2
@@ -6,6 +6,10 @@ PDK ?= ihp-sg13g2
 RUN_TAG = $(shell ls librelane/runs/ -1 | tail -n 1)
 
 # Macro - LibreLane
+
+macro-nonoverlap:
+	cd librelane; librelane config_non_overlap.yaml --pdk $(PDK)
+.PHONY: macro-nonoverlap
 
 macro:
 	cd librelane; librelane config.yaml --pdk $(PDK)
