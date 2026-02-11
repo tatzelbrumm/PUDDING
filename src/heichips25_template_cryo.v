@@ -21,4 +21,12 @@ module heichips25_template (
     inout  wire       i_out
 );
 
+  // Minimum: define outputs
+  // assign uo_out  = 8'h00;
+  // assign uio_out = 8'h00;
+  // assign uio_oe  = 8'h00;
+
+  // Optional: consume inputs so lint doesn’t whine
+  // wire _unused = ^{ui_in, uio_in, ena, clk, rst_n, i_in, i_out};
+
 endmodule
