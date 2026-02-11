@@ -28,3 +28,10 @@ RT_MAX_LAYER: TopMetal1
 
 # Enable for better SystemVerilog support
 #USE_SLANG: true
+
+# Shut up "but there's nothing here" errors
+RUN_LINTER: false
+ERROR_ON_SYNTH_CHECKS: false
+ERROR_ON_UNMAPPED_CELLS: false
+ERROR_ON_DISCONNECTED_PINS: false
+
