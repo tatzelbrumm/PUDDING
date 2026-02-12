@@ -75,12 +75,12 @@ PINS 45 ;
         + PLACED ( 200 179340 ) N ;
     - i_in + NET i_in + DIRECTION INOUT + USE SIGNAL
       + PORT
-        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
-        + PLACED ( 499800 49980 ) N ;
+        + LAYER Metal3 ( -200 -350 ) ( 200 350 )
+        + PLACED ( 499800 108280 ) N ;
     - i_out + NET i_out + DIRECTION INOUT + USE SIGNAL
       + PORT
-        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
-        + PLACED ( 499800 149940 ) N ;
+        + LAYER Metal3 ( -200 -350 ) ( 200 350 )
+        + PLACED ( 499800 100095 ) N ;
     - rst_n + NET rst_n + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER Metal3 ( -200 -200 ) ( 200 200 )
