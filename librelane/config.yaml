@@ -4,6 +4,7 @@ DESIGN_NAME: heichips25_pudding
 VERILOG_FILES: 
 - dir::../src/heichips25_pudding.sv
 - dir::../src/dac128module.v
+- dir::../src/analog_wires.v
 
 CLOCK_PORT: clk
 CLOCK_PERIOD: 10 # 10ns = 100MHz
@@ -44,7 +45,8 @@ USE_SLANG: true
 
 # reserve space for the DAC
 FP_OBSTRUCTIONS: 
-- [358, 85, 500, 115.33]
+- [258, 85, 400, 115.33]
+- [400, 4, 497, 196]
 
 MACROS:
   dac128module:
@@ -56,7 +58,16 @@ MACROS:
 #     - dir::../src/dac128module.sv
     instances:
       dac:
-        location: [360, 87]
+        location: [260, 87]
+        orientation: N
+  analog_wires:
+    gds:
+      - dir::../gds/analog_wires.gds
+    lef:
+      - dir::../gds/analog_wires.lef
+    instances:
+      wires:
+        location: [400, 4]
         orientation: N
 
 # Connect macro power pins to the PDN

@@ -15,8 +15,8 @@ module heichips25_pudding(
     input  wire       ena,      // always 1 when the design is powered, so you can ignore it
     input  wire       clk,      // clock
     input  wire       rst_n,    // reset_n - low to reset
-    inout  wire       i_in,	// input (reference) current
-    inout  wire       i_out,	// output (DAC) current
+    inout  wire       i_in,     // input (reference) current
+    inout  wire       i_out,    // output (DAC) current
     inout VPWR,
     inout VGND
 );
@@ -24,9 +24,10 @@ module heichips25_pudding(
 //(* keep = "yes" *) wire VPWR;
 //(* keep = "yes" *) wire VGND;
    
-    // List all unused inputs to prevent warnings
     wire[1:0] iref;
     wire[1:0] bias;
+    wire dacout;
+    // List all unused inputs to prevent warnings
     wire _unused = &{ena, uio_in[7:0], ui_in[7:5], bias};
 
     logic[3:0] stateen, stateenp, stateenn;
@@ -36,7 +37,6 @@ module heichips25_pudding(
     logic[127:0] daisychain;
     logic[127:0] state;
 
-    assign iref     = {2{i_in}};
     assign datum    = ui_in[0];
     assign shift    = ui_in[1];
     assign transfer = ui_in[2];
@@ -80,7 +80,7 @@ assign uio_oe  = 8'hFF;
 
 
 (* keep_hierarchy = "yes", keep = "yes" *) dac128module dac (
-    .IOUT(i_out),
+    .IOUT(dacout),
     .VcascP(iref),
     .VbiasP(bias),
     .ON(state[127:0]),
@@ -91,6 +91,12 @@ assign uio_oe  = 8'hFF;
     .VSS(VGND)
     );
 
+(* keep_hierarchy = "yes", keep = "yes" *) analog_wires wires (
+    .Iout(dacout),
+    .VcascP(iref),
+    .i_out(i_out),
+    .i_in(i_in)
+    );
 endmodule
 
 module digital4(
