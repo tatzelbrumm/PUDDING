@@ -45,7 +45,7 @@ USE_SLANG: true
 
 # reserve space for the DAC
 FP_OBSTRUCTIONS: 
-- [258, 85, 400, 115.33]
+- [264.2, 85, 400, 115.33]
 - [400, 4, 497, 196]
 
 MACROS:
