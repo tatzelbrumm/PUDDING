@@ -58,7 +58,7 @@ MACROS:
 #     - dir::../src/dac128module.sv
     instances:
       dac:
-        location: [260, 87]
+        location: [266.2, 87]
         orientation: N
   analog_wires:
     gds:

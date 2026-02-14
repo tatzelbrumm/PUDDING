@@ -44,8 +44,8 @@ MACRO analog_wires
         RECT 0.000 0.000 97.000 188.000 ;
       LAYER Metal1 ;
         RECT 1.400 0.000 97.000 188.000 ;
-      LAYER Metal2 ;
-        RECT 0.000 0.000 97.000 188.000 ;
+#      LAYER Metal2 ;
+#        RECT 0.000 0.000 97.000 188.000 ;
       LAYER Metal3 ;
         RECT 1.700 0.000 95.300 188.000 ;
   END
