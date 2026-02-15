@@ -1,0 +1,52 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO analog_wires
+  CLASS BLOCK ;
+  FOREIGN analog_wires ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 99.600 BY 188.000 ;
+  PIN i_in
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 103.930 99.600 104.630 ;
+    END
+  END i_in
+  PIN i_out
+    PORT
+      LAYER Metal3 ;
+        RECT 1.655 95.745 99.600 96.445 ;
+    END
+  END i_out
+  PIN VcascP[1]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 103.930 0.400 104.630 ;
+    END
+  END VcascP[1]
+  PIN VcascP[0]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 87.560 3.000 88.260 ;
+    END
+  END VcascP[0]
+  PIN Iout
+    PORT
+      LAYER Metal1 ;
+        RECT 0.000 95.745 1.045 96.445 ;
+    END
+  END Iout
+  OBS
+      LAYER Metal1 ;
+        RECT 1.045 96.625 3.000 104.630 ;
+        RECT 1.225 95.565 3.000 96.625 ;
+        RECT 1.045 87.560 3.000 95.565 ;
+      LAYER Metal2 ;
+        RECT 1.000 87.560 3.000 104.630 ;
+      LAYER Metal3 ;
+        RECT 1.000 95.745 1.445 96.445 ;
+  END
+END analog_wires
+END LIBRARY
+
