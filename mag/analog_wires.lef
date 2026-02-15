@@ -10,13 +10,13 @@ MACRO analog_wires
   PIN i_in
     PORT
       LAYER Metal3 ;
-        RECT 0.000 103.930 99.600 104.630 ;
+        RECT 99.200 103.930 99.600 104.630 ;
     END
   END i_in
   PIN i_out
     PORT
       LAYER Metal3 ;
-        RECT 1.655 95.745 99.600 96.445 ;
+        RECT 99.200 95.745 99.600 96.445 ;
     END
   END i_out
   PIN VcascP[1]
@@ -28,24 +28,27 @@ MACRO analog_wires
   PIN VcascP[0]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 87.560 3.000 88.260 ;
+        RECT 0.000 87.560 0.400 88.260 ;
     END
   END VcascP[0]
   PIN Iout
     PORT
       LAYER Metal1 ;
-        RECT 0.000 95.745 1.045 96.445 ;
+        RECT 0.000 95.745 0.400 96.445 ;
     END
   END Iout
   OBS
       LAYER Metal1 ;
-        RECT 1.045 96.625 3.000 104.630 ;
-        RECT 1.225 95.565 3.000 96.625 ;
-        RECT 1.045 87.560 3.000 95.565 ;
+        RECT 2.300 103.930 3.000 104.630 ;
+        RECT 0.400 95.745 1.700 96.445 ;
+        RECT 2.300 87.560 3.000 88.260 ;
       LAYER Metal2 ;
-        RECT 1.000 87.560 3.000 104.630 ;
+        RECT 1.000 95.745 1.700 96.445 ;
+        RECT 2.300 87.560 3.000 104.630 ;
       LAYER Metal3 ;
-        RECT 1.000 95.745 1.445 96.445 ;
+        RECT 0.400 103.930 99.200 104.630 ;
+        RECT 1.000 95.745 99.200 96.445 ;
+        RECT 0.400 87.560 3.000 88.260 ;
   END
 END analog_wires
 END LIBRARY
