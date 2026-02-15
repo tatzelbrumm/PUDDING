@@ -8,7 +8,7 @@ MACRO analog_wires
   CLASS BLOCK ;
   FOREIGN analog_wires ;
   ORIGIN 0.000 0.000 ;
-  SIZE 94.000 BY 188.000 ;
+  SIZE 99.600 BY 188.000 ;
   PIN Iout
     PORT
       LAYER Metal1 ;
@@ -30,28 +30,28 @@ MACRO analog_wires
   PIN i_in
     PORT
       LAYER Metal3 ;
-        RECT 96.600 103.90 97.000 104.630 ;
+        RECT 99.200 103.90 99.600 104.630 ;
     END
   END i_in
   PIN i_out
     PORT
       LAYER Metal3 ;
-        RECT 96.600 95.745 97.000 96.445 ;
+        RECT 99.200 95.745 99.600 96.445 ;
     END
   END i_out
   OBS
       LAYER GatPoly ;
-        RECT 0.000 0.000 97.000 188.000 ;
+        RECT 0.000 0.000 99.600 188.000 ;
       LAYER Metal1 ;
-        RECT 1.400 0.000 97.000 188.000 ;
+        RECT 1.400 0.000 99.600 188.000 ;
       LAYER Metal2 ;
-        RECT 0.000 0.000 97.000 188.000 ;
+        RECT 0.000 0.000 99.600 188.000 ;
       LAYER Metal3 ;
-        RECT 1.700 0.000 95.300 188.000 ;
+        RECT 1.700 0.000 97.300 188.000 ;
       LAYER Metal4 ;
-        RECT 1.700 0.000 95.300 188.000 ;
+        RECT 0.000 0.000 99.600 188.000 ;
       LAYER Metal5 ;
-        RECT 1.700 0.000 95.300 188.000 ;
+        RECT 0.000 0.000 99.600 188.000 ;
   END
 END analog_wires
 END LIBRARY
