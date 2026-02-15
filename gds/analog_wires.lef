@@ -11,7 +11,7 @@ MACRO analog_wires
   SIZE 99.600 BY 188.000 ;
   PIN Iout
     PORT
-      LAYER Metal1 ;
+      LAYER Metal3 ;
         RECT 0.000 95.745 0.400 96.445 ;
     END
   END Iout
