@@ -1,0 +1,41 @@
+magic
+tech ihp-sg13g2
+magscale 1 2
+timestamp 1771122832
+<< metal1 >>
+rect 0 19149 340 19289
+<< metal2 >>
+rect 460 17512 600 20926
+<< metal3 >>
+rect 0 20786 19920 20926
+rect 200 19149 19920 19289
+rect 0 17512 600 17652
+use via_stack$1  via_stack$1_0
+timestamp 1771122832
+transform 1 0 270 0 1 19219
+box -70 -70 70 70
+use via_stack  via_stack_0
+timestamp 1771122832
+transform 1 0 530 0 1 20856
+box -70 -70 70 70
+use via_stack  via_stack_1
+timestamp 1771122832
+transform 1 0 530 0 1 17582
+box -70 -70 70 70
+<< labels >>
+flabel metal3 s 19840 20786 19920 20926 0 FreeSans 800 0 0 0 i_in
+port 2 nsew
+flabel metal3 s 19840 19149 19920 19289 0 FreeSans 800 0 0 0 i_out
+port 3 nsew
+flabel metal3 s 19880 20856 19880 20856 0 FreeSans 800 0 0 0 i_in
+flabel metal3 s 19880 19219 19880 19219 0 FreeSans 800 0 0 0 i_out
+flabel metal3 s 0 20786 80 20926 0 FreeSans 800 0 0 0 VcascP[1]
+port 4 nsew
+flabel metal3 s 0 17512 80 17652 0 FreeSans 800 0 0 0 VcascP[0]
+port 5 nsew
+flabel metal1 s 0 19149 80 19289 0 FreeSans 800 0 0 0 Iout
+port 6 nsew
+<< properties >>
+string FIXED_BBOX 0 0 19920 37600
+string path 0.000 87.910 3.000 87.910 
+<< end >>
