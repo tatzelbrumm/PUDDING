@@ -1,9 +1,9 @@
-# Logfile created on 2026-02-15 02:52:45 +0100 by logger.rb/v1.6.0
-2026-02-15 02:52:45 +0100: Memory Usage (420940K) : Starting running IHP-SG13G2 Klayout DRC maximum runset on /home/cmaier/EDA/PUDDING/gds/pmos_buffer_cap.gds
-2026-02-15 02:52:45 +0100: Memory Usage (420940K) : Ruby Version for klayout: 3.3.10
-2026-02-15 02:52:45 +0100: Memory Usage (421808K) : Loading database to memory is complete.
-2026-02-15 02:52:45 +0100: Memory Usage (421808K) : IHP-SG13G2 Klayout DRC maximum runset output at: /home/cmaier/EDA/PUDDING/gds/drc_run_pmos_buffer_cap/pmos_buffer_cap_pmos_buffer_cap_sg13g2_maximal.lyrdb
-2026-02-15 02:52:45 +0100: Memory Usage (421808K) : Evaluate switches.
-2026-02-15 02:52:45 +0100: Memory Usage (421808K) : Klayout will use  thread(s)
-2026-02-15 02:52:45 +0100: Memory Usage (421808K) : deep mode is enabled for sg13g2_maximal runset.
-2026-02-15 02:52:47 +0100: Memory Usage (449068K) : KLayout DRC run for maximum ruleSet completed in 2.33 seconds
+# Logfile created on 2026-02-15 22:42:05 +0100 by logger.rb/v1.6.0
+2026-02-15 22:42:05 +0100: Memory Usage (421464K) : Starting running IHP-SG13G2 Klayout DRC maximum runset on /home/cmaier/EDA/PUDDING/gds/pmos_buffer_cap.gds
+2026-02-15 22:42:05 +0100: Memory Usage (421464K) : Ruby Version for klayout: 3.3.10
+2026-02-15 22:42:05 +0100: Memory Usage (422396K) : Loading database to memory is complete.
+2026-02-15 22:42:05 +0100: Memory Usage (422396K) : IHP-SG13G2 Klayout DRC maximum runset output at: /home/cmaier/EDA/PUDDING/gds/drc_run_pmos_buffer_cap/pmos_buffer_cap_pmos_buffer_cap_sg13g2_maximal.lyrdb
+2026-02-15 22:42:05 +0100: Memory Usage (422396K) : Evaluate switches.
+2026-02-15 22:42:05 +0100: Memory Usage (422396K) : Klayout will use  thread(s)
+2026-02-15 22:42:05 +0100: Memory Usage (422396K) : deep mode is enabled for sg13g2_maximal runset.
+2026-02-15 22:42:08 +0100: Memory Usage (446820K) : KLayout DRC run for maximum ruleSet completed in 2.87 seconds

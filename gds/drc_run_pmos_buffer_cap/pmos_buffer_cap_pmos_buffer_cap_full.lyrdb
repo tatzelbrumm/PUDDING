@@ -3215,30 +3215,7 @@
    <references>
    </references>
   </cell>
- <cell>
-   <name>pmosHV</name>
-   <variant />
-   <layout-name>pmosHV</layout-name>
-   <references>
-    <ref>
-     <parent>pmos_buffer_cap</parent>
-     <trans>r0 *1 0,0</trans>
-    </ref>
-   </references>
-  </cell>
  </cells>
  <items>
- <item>
-   <tags />
-   <category>'LU.a'</category>
-   <cell>pmosHV</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment />
-   <image />
-   <values>
-    <value>polygon: (0,0;0,32;32.68,32;32.68,0)</value>
-   </values>
-  </item>
  </items>
 </report-database>
