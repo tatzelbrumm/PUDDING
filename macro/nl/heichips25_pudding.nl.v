@@ -6719,7 +6719,7 @@ module heichips25_pudding (clk,
     .X(net21));
  sg13g2_buf_1 _2847_ (.A(\daisychain[127] ),
     .X(net22));
- dac128module dac (.IOUT(dacout),
+ dac128module dac (.Iout(dacout),
     .EN({\digitalen.g[3].u.OUTP ,
     \digitalen.g[2].u.OUTP ,
     \digitalen.g[1].u.OUTP ,

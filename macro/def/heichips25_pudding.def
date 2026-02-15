@@ -21356,9 +21356,12 @@ NETS 1823 ;
       NEW Metal3 ( 238560 118860 ) ( 246240 * )
       NEW Metal2 ( 250560 129780 ) ( * 130620 )
       NEW Metal3 ( 241920 129780 ) ( 250560 * )
-      NEW Metal2 ( 249600 138180 ) ( 250560 * )
-      NEW Metal2 ( 249600 129780 ) ( * 138180 )
-      NEW Metal3 ( 250560 138180 ) ( 266880 * )
+      NEW Metal4 ( 251520 129780 ) ( * 138180 )
+      NEW Metal3 ( 250560 129780 ) ( 251520 * )
+      NEW Metal2 ( 250560 138235 ) ( * 138600 )
+      NEW Metal3 ( 250560 138180 ) ( * 138600 )
+      NEW Metal3 ( 250560 138180 ) ( 251520 * )
+      NEW Metal3 ( 251520 138180 ) ( 266880 * )
       NEW Metal1 ( 266880 138180 ) Via1_XY
       NEW Metal2 ( 266880 138180 ) Via2_YX
       NEW Metal2 ( 275040 138180 ) Via2_YX
@@ -21389,9 +21392,10 @@ NETS 1823 ;
       NEW Metal1 ( 250560 130620 ) Via1_XY
       NEW Metal2 ( 250560 129780 ) Via2_YX
       NEW Metal2 ( 241920 129780 ) Via2_YX
-      NEW Metal1 ( 250560 138180 ) Via1_XY
-      NEW Metal2 ( 249600 129780 ) Via2_YX
-      NEW Metal2 ( 250560 138180 ) Via2_YX
+      NEW Metal3 ( 251520 138180 ) Via3_XY
+      NEW Metal3 ( 251520 129780 ) Via3_XY
+      NEW Metal1 ( 250560 138235 ) Via1_XY
+      NEW Metal2 ( 250560 138600 ) Via2_YX
       NEW Metal2 ( 266880 138180 ) RECT ( -100 -570 100 0 ) 
       NEW Metal2 ( 210720 126420 ) RECT ( -100 -570 100 0 ) 
       NEW Metal3 ( 214560 126420 ) RECT ( -575 -100 0 100 ) 
@@ -21402,8 +21406,7 @@ NETS 1823 ;
       NEW Metal2 ( 246240 118860 ) RECT ( -100 -570 100 0 ) 
       NEW Metal2 ( 238560 118860 ) RECT ( -100 -570 100 0 ) 
       NEW Metal2 ( 241920 129780 ) RECT ( -100 -570 100 0 ) 
-      NEW Metal3 ( 249600 129780 ) RECT ( -575 -100 0 100 ) 
-      NEW Metal2 ( 250560 138180 ) RECT ( -100 -570 100 0 )  ;
+      NEW Metal2 ( 250560 138600 ) RECT ( -100 0 100 210 )  ;
     - clknet_leaf_4_clk ( clkload11 A ) ( _2537_ CLK ) ( _2410_ CLK ) ( _2409_ CLK ) ( _2411_ CLK ) ( _2538_ CLK ) ( _2550_ CLK )
       ( _2422_ CLK ) ( _2421_ CLK ) ( _2549_ CLK ) ( _2412_ CLK ) ( _2540_ CLK ) ( _2406_ CLK ) ( _2534_ CLK ) ( clkbuf_leaf_4_clk X ) + USE CLOCK
       + ROUTED Metal2 ( 266565 179340 ) ( 267360 * )
@@ -21893,7 +21896,7 @@ NETS 1823 ;
       NEW Metal2 ( 257760 103740 ) RECT ( -100 -570 100 0 ) 
       NEW Metal2 ( 254400 103740 ) RECT ( -100 -570 100 0 ) 
       NEW Metal2 ( 264960 118860 ) RECT ( -100 -570 100 0 )  ;
-    - dacout ( wires Iout ) ( dac IOUT ) + USE SIGNAL ;
+    - dacout ( wires Iout ) ( dac Iout ) + USE SIGNAL ;
     - daisychain\[0\] ( _2312_ Q ) ( _1423_ A2 ) ( _1419_ A1 ) ( _1414_ A1 ) + USE SIGNAL
       + ROUTED Metal2 ( 116160 93240 ) ( * 97440 )
       NEW Metal2 ( 115200 97440 ) ( 116160 * )
@@ -32417,15 +32420,19 @@ NETS 1823 ;
       NEW Metal3 ( 198720 133140 ) ( 200640 * )
       NEW Metal2 ( 231840 101640 ) ( * 103740 )
       NEW Metal3 ( 206400 101640 ) ( 231840 * )
-      NEW Metal4 ( 224160 101640 ) ( * 115500 )
-      NEW Metal2 ( 224640 115500 ) ( * 123060 )
-      NEW Metal2 ( 224160 115500 ) ( 224640 * )
-      NEW Metal2 ( 231840 130830 ) ( * 132300 )
-      NEW Metal3 ( 224640 132300 ) ( 231840 * )
-      NEW Metal2 ( 224640 123060 ) ( * 132300 )
+      NEW Metal2 ( 224160 115080 ) ( * 115500 )
+      NEW Metal4 ( 224160 101640 ) ( * 115080 )
+      NEW Metal2 ( 224640 121800 ) ( * 123060 )
+      NEW Metal3 ( 224160 121800 ) ( 224640 * )
+      NEW Metal4 ( 224160 115080 ) ( * 121800 )
+      NEW Metal2 ( 231840 130830 ) ( * 131040 )
+      NEW Metal3 ( 226080 131040 ) ( 231840 * )
+      NEW Metal3 ( 226080 130620 ) ( * 131040 )
+      NEW Metal3 ( 224640 130620 ) ( 226080 * )
+      NEW Metal2 ( 224640 123060 ) ( * 130620 )
       NEW Metal2 ( 222720 140700 ) ( * 141540 )
       NEW Metal3 ( 222720 140700 ) ( 224640 * )
-      NEW Metal2 ( 224640 132300 ) ( * 140700 )
+      NEW Metal2 ( 224640 130620 ) ( * 140700 )
       NEW Metal3 ( 199200 130620 ) ( 224640 * )
       NEW Metal2 ( 206400 100380 ) ( * 101640 )
       NEW Metal1 ( 206400 100380 ) Via1_YY
@@ -32440,23 +32447,24 @@ NETS 1823 ;
       NEW Metal2 ( 231840 101640 ) Via2_YX
       NEW Metal2 ( 206400 101640 ) Via2_YX
       NEW Metal1 ( 224160 115500 ) Via1_YY
-      NEW Metal2 ( 224160 115500 ) Via2_YX
-      NEW Metal3 ( 224160 115500 ) Via3_XY
+      NEW Metal2 ( 224160 115080 ) Via2_YX
+      NEW Metal3 ( 224160 115080 ) Via3_XY
       NEW Metal3 ( 224160 101640 ) Via3_XY
       NEW Metal1 ( 224640 123060 ) Via1_YY
+      NEW Metal2 ( 224640 121800 ) Via2_YX
+      NEW Metal3 ( 224160 121800 ) Via3_XY
       NEW Metal1 ( 231840 130830 ) Via1_YY
-      NEW Metal2 ( 231840 132300 ) Via2_YX
-      NEW Metal2 ( 224640 132300 ) Via2_YX
+      NEW Metal2 ( 231840 131040 ) Via2_YX
       NEW Metal2 ( 224640 130620 ) Via2_YX
       NEW Metal1 ( 222720 141540 ) Via1_YY
       NEW Metal2 ( 222720 140700 ) Via2_YX
       NEW Metal2 ( 224640 140700 ) Via2_YX
       NEW Metal2 ( 199200 130620 ) RECT ( -100 -570 100 0 ) 
       NEW Metal2 ( 195360 133140 ) RECT ( -100 -570 100 0 ) 
-      NEW Metal2 ( 224160 115500 ) RECT ( -100 -570 100 0 ) 
-      NEW Metal3 ( 224160 115500 ) RECT ( -570 -100 0 100 ) 
+      NEW Metal2 ( 224160 115080 ) RECT ( -100 -155 100 0 ) 
+      NEW Metal3 ( 224160 115080 ) RECT ( -570 -100 0 100 ) 
       NEW Metal3 ( 224160 101640 ) RECT ( -570 -100 0 100 ) 
-      NEW Metal2 ( 224640 130620 ) RECT ( -100 -570 100 0 )  ;
+      NEW Metal2 ( 231840 131040 ) RECT ( -100 0 100 365 )  ;
     - net54 ( _1923_ B1 ) ( _1918_ B1 ) ( _1913_ B1 ) ( _1908_ B1 ) ( _1903_ B1 ) ( _1893_ B1 ) ( _1863_ B1 )
       ( _1858_ B1 ) ( fanout54 X ) + USE SIGNAL
       + ROUTED Metal2 ( 284640 179340 ) ( 285120 * )
@@ -37650,8 +37658,8 @@ NETS 1823 ;
       + ROUTED Metal2 ( 369120 178920 ) ( * 179340 )
       NEW Metal3 ( 369120 178920 ) ( 379680 * )
       NEW Metal3 ( 369120 178920 ) ( * 179340 )
-      NEW Metal2 ( 382375 112980 0 ) ( * 115200 )
       NEW Metal2 ( 379680 165600 ) ( * 182280 )
+      NEW Metal2 ( 382375 112980 0 ) ( * 115200 )
       NEW Metal2 ( 379680 118860 ) ( 380640 * )
       NEW Metal2 ( 379680 118860 ) ( * 125580 )
       NEW Metal2 ( 378720 125580 ) ( 379680 * )

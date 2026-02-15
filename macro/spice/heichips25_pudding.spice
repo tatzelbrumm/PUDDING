@@ -77,7 +77,7 @@
 .ends
 
 * Black-box entry subcircuit for dac128module abstract view
-.subckt dac128module VbiasP[1] IOUT VbiasP[0] ON[64] ONB[64] ON[65] ONB[65] ON[66]
+.subckt dac128module VbiasP[1] Iout VbiasP[0] ON[64] ONB[64] ON[65] ONB[65] ON[66]
 + ONB[66] ON[67] ONB[67] ON[68] ONB[68] ON[69] ONB[69] ON[70] ONB[70] ON[71] ONB[71]
 + ON[72] ONB[72] EN[2] ENB[2] ON[73] ONB[73] ON[74] ONB[74] ON[75] ONB[75] ON[76]
 + ONB[76] ON[77] ONB[77] ON[78] ONB[78] ON[79] ONB[79] ON[80] ONB[80] ON[81] ONB[81]
@@ -3131,7 +3131,7 @@ XFILLER_14_587 VPWR VGND sg13g2_fill_2
 XFILLER_5_252 VPWR VGND sg13g2_decap_8
 X_1331_ VPWR _0107_ state\[81\] VGND sg13g2_inv_1
 X_1400_ VPWR _0031_ state\[12\] VGND sg13g2_inv_1
-Xwires dac/IOUT dac/VcascP[1] dac/VcascP[0] i_in i_out analog_wires
+Xwires dac/Iout dac/VcascP[1] dac/VcascP[0] i_in i_out analog_wires
 X_2479__428 VPWR VGND net427 sg13g2_tiehi
 X_2380_ net446 VGND VPWR _0196_ daisychain\[68\] clknet_leaf_7_clk sg13g2_dfrbpq_1
 XFILLER_36_101 VPWR VGND sg13g2_decap_8
@@ -3969,7 +3969,7 @@ XFILLER_23_131 VPWR VGND sg13g2_decap_8
 XFILLER_36_492 VPWR VGND sg13g2_decap_8
 XFILLER_11_75 VPWR VGND sg13g2_decap_8
 XFILLER_2_4 VPWR VGND sg13g2_fill_1
-Xdac dac/VbiasP[1] dac/IOUT dac/VbiasP[0] state\[64\] _0088_ state\[65\] _0089_ state\[66\]
+Xdac dac/VbiasP[1] dac/Iout dac/VbiasP[0] state\[64\] _0088_ state\[65\] _0089_ state\[66\]
 + _0090_ state\[67\] _0091_ state\[68\] _0092_ state\[69\] _0093_ state\[70\] _0095_
 + state\[71\] _0096_ state\[72\] _0097_ digitalen.g\[2\].u.OUTP digitalen.g\[2\].u.OUTN
 + state\[73\] _0098_ state\[74\] _0099_ state\[75\] _0100_ state\[76\] _0101_ state\[77\]

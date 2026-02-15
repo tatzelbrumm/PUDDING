@@ -9851,7 +9851,7 @@ module heichips25_pudding (VGND,
     .X(net22),
     .VDD(VPWR),
     .VSS(VGND));
- dac128module dac (.IOUT(dacout),
+ dac128module dac (.Iout(dacout),
     .VSS(VGND),
     .VDD(VPWR),
     .EN({\digitalen.g[3].u.OUTP ,
