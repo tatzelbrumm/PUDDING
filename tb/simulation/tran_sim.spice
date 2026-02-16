@@ -1,0 +1,880 @@
+** sch_path: /home/cmaier/EDA/PUDDING/tb/tran_sim.sch
+**.subckt tran_sim
+Xdut net2 V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0]
++ V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0]
++ V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0]
++ V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0]
++ V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0]
++ V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0] V_on[0]
++ V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1]
++ V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1]
++ V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1]
++ V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1]
++ V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1]
++ V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[1] V_on[2] V_on[2]
++ V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2]
++ V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2]
++ V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2] V_on[2]
++ V_on[2] V_on[2] V_on[2] net3 V_iref V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0]
++ V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0]
++ V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0]
++ V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0]
++ V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0]
++ V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0]
++ V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0]
++ V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[0] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1]
++ V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1]
++ V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1]
++ V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1]
++ V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1]
++ V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1]
++ V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1]
++ V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[1] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2]
++ V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2]
++ V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2]
++ V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2]
++ V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] V_on_N[2] DAC_TOP
+V1 net1 GND 1.5
+.save i(v1)
+Vout V_out GND 0.4
+.save i(vout)
+Iref V_iref GND 100n
+VON3 net6 GND dc 0 ac 0 PULSE(0 1.5 0 100p 100p 5000n 10u)
+.save i(von3)
+VON1 net5 GND dc 0 ac 0 PULSE(0 1.5 0 100p 100p 10u 20u)
+.save i(von1)
+VON2 net4 GND dc 0 ac 0 PULSE(0 1.5 0 100p 100p 20u 30u)
+.save i(von2)
+R1 net2 net1 10 m=1
+R2 V_out net3 10 m=1
+R3 net6 V_on[0] 10 m=1
+R4 net5 V_on[1] 10 m=1
+R5 net4 V_on[2] 10 m=1
+C2 GND V_on[0] 500f m=1
+C3 GND V_on[1] 500f m=1
+C4 GND V_on[2] 500f m=1
+C5 GND net2 500f m=1
+VON4 net9 GND dc 0 ac 0 PULSE(1.5 0 1n 100p 100p 4998n 10u)
+.save i(von4)
+VON5 net8 GND dc 0 ac 0 PULSE(1.5 0 1n 100p 100p 9.998u 20u)
+.save i(von5)
+VON6 net7 GND dc 0 ac 0 PULSE(1.5 0 1n 10p 100p 100p 19.998u 30u)
+.save i(von6)
+R6 net9 V_on_N[0] 10 m=1
+R7 net8 V_on_N[1] 10 m=1
+R8 net7 V_on_N[2] 10 m=1
+C1 GND V_on_N[0] 500f m=1
+C6 GND V_on_N[1] 500f m=1
+C7 GND V_on_N[2] 500f m=1
+**** begin user architecture code
+
+
+.include tran_sim.save
+.param temp=27
+.options savecurrents
+.control
+save all
+tran 1n 100u
+write tran_sim.raw
+.endc
+
+
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerHBT.lib hbt_typ
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  ../schematic/DAC_TOP.sym # of pins=5
+** sym_path: /home/cmaier/EDA/PUDDING/schematic/DAC_TOP.sym
+** sch_path: /home/cmaier/EDA/PUDDING/schematic/DAC_TOP.sch
+.subckt DAC_TOP VDD ON[255] ON[254] ON[253] ON[252] ON[251] ON[250] ON[249] ON[248] ON[247] ON[246] ON[245] ON[244] ON[243]
++ ON[242] ON[241] ON[240] ON[239] ON[238] ON[237] ON[236] ON[235] ON[234] ON[233] ON[232] ON[231] ON[230] ON[229] ON[228] ON[227] ON[226]
++ ON[225] ON[224] ON[223] ON[222] ON[221] ON[220] ON[219] ON[218] ON[217] ON[216] ON[215] ON[214] ON[213] ON[212] ON[211] ON[210] ON[209]
++ ON[208] ON[207] ON[206] ON[205] ON[204] ON[203] ON[202] ON[201] ON[200] ON[199] ON[198] ON[197] ON[196] ON[195] ON[194] ON[193] ON[192]
++ ON[191] ON[190] ON[189] ON[188] ON[187] ON[186] ON[185] ON[184] ON[183] ON[182] ON[181] ON[180] ON[179] ON[178] ON[177] ON[176] ON[175]
++ ON[174] ON[173] ON[172] ON[171] ON[170] ON[169] ON[168] ON[167] ON[166] ON[165] ON[164] ON[163] ON[162] ON[161] ON[160] ON[159] ON[158]
++ ON[157] ON[156] ON[155] ON[154] ON[153] ON[152] ON[151] ON[150] ON[149] ON[148] ON[147] ON[146] ON[145] ON[144] ON[143] ON[142] ON[141]
++ ON[140] ON[139] ON[138] ON[137] ON[136] ON[135] ON[134] ON[133] ON[132] ON[131] ON[130] ON[129] ON[128] ON[127] ON[126] ON[125] ON[124]
++ ON[123] ON[122] ON[121] ON[120] ON[119] ON[118] ON[117] ON[116] ON[115] ON[114] ON[113] ON[112] ON[111] ON[110] ON[109] ON[108] ON[107]
++ ON[106] ON[105] ON[104] ON[103] ON[102] ON[101] ON[100] ON[99] ON[98] ON[97] ON[96] ON[95] ON[94] ON[93] ON[92] ON[91] ON[90] ON[89]
++ ON[88] ON[87] ON[86] ON[85] ON[84] ON[83] ON[82] ON[81] ON[80] ON[79] ON[78] ON[77] ON[76] ON[75] ON[74] ON[73] ON[72] ON[71] ON[70]
++ ON[69] ON[68] ON[67] ON[66] ON[65] ON[64] ON[63] ON[62] ON[61] ON[60] ON[59] ON[58] ON[57] ON[56] ON[55] ON[54] ON[53] ON[52] ON[51]
++ ON[50] ON[49] ON[48] ON[47] ON[46] ON[45] ON[44] ON[43] ON[42] ON[41] ON[40] ON[39] ON[38] ON[37] ON[36] ON[35] ON[34] ON[33] ON[32]
++ ON[31] ON[30] ON[29] ON[28] ON[27] ON[26] ON[25] ON[24] ON[23] ON[22] ON[21] ON[20] ON[19] ON[18] ON[17] ON[16] ON[15] ON[14] ON[13]
++ ON[12] ON[11] ON[10] ON[9] ON[8] ON[7] ON[6] ON[5] ON[4] ON[3] ON[2] ON[1] ON[0] Iout Iref ON_N[255] ON_N[254] ON_N[253] ON_N[252]
++ ON_N[251] ON_N[250] ON_N[249] ON_N[248] ON_N[247] ON_N[246] ON_N[245] ON_N[244] ON_N[243] ON_N[242] ON_N[241] ON_N[240] ON_N[239] ON_N[238]
++ ON_N[237] ON_N[236] ON_N[235] ON_N[234] ON_N[233] ON_N[232] ON_N[231] ON_N[230] ON_N[229] ON_N[228] ON_N[227] ON_N[226] ON_N[225] ON_N[224]
++ ON_N[223] ON_N[222] ON_N[221] ON_N[220] ON_N[219] ON_N[218] ON_N[217] ON_N[216] ON_N[215] ON_N[214] ON_N[213] ON_N[212] ON_N[211] ON_N[210]
++ ON_N[209] ON_N[208] ON_N[207] ON_N[206] ON_N[205] ON_N[204] ON_N[203] ON_N[202] ON_N[201] ON_N[200] ON_N[199] ON_N[198] ON_N[197] ON_N[196]
++ ON_N[195] ON_N[194] ON_N[193] ON_N[192] ON_N[191] ON_N[190] ON_N[189] ON_N[188] ON_N[187] ON_N[186] ON_N[185] ON_N[184] ON_N[183] ON_N[182]
++ ON_N[181] ON_N[180] ON_N[179] ON_N[178] ON_N[177] ON_N[176] ON_N[175] ON_N[174] ON_N[173] ON_N[172] ON_N[171] ON_N[170] ON_N[169] ON_N[168]
++ ON_N[167] ON_N[166] ON_N[165] ON_N[164] ON_N[163] ON_N[162] ON_N[161] ON_N[160] ON_N[159] ON_N[158] ON_N[157] ON_N[156] ON_N[155] ON_N[154]
++ ON_N[153] ON_N[152] ON_N[151] ON_N[150] ON_N[149] ON_N[148] ON_N[147] ON_N[146] ON_N[145] ON_N[144] ON_N[143] ON_N[142] ON_N[141] ON_N[140]
++ ON_N[139] ON_N[138] ON_N[137] ON_N[136] ON_N[135] ON_N[134] ON_N[133] ON_N[132] ON_N[131] ON_N[130] ON_N[129] ON_N[128] ON_N[127] ON_N[126]
++ ON_N[125] ON_N[124] ON_N[123] ON_N[122] ON_N[121] ON_N[120] ON_N[119] ON_N[118] ON_N[117] ON_N[116] ON_N[115] ON_N[114] ON_N[113] ON_N[112]
++ ON_N[111] ON_N[110] ON_N[109] ON_N[108] ON_N[107] ON_N[106] ON_N[105] ON_N[104] ON_N[103] ON_N[102] ON_N[101] ON_N[100] ON_N[99] ON_N[98]
++ ON_N[97] ON_N[96] ON_N[95] ON_N[94] ON_N[93] ON_N[92] ON_N[91] ON_N[90] ON_N[89] ON_N[88] ON_N[87] ON_N[86] ON_N[85] ON_N[84] ON_N[83]
++ ON_N[82] ON_N[81] ON_N[80] ON_N[79] ON_N[78] ON_N[77] ON_N[76] ON_N[75] ON_N[74] ON_N[73] ON_N[72] ON_N[71] ON_N[70] ON_N[69] ON_N[68]
++ ON_N[67] ON_N[66] ON_N[65] ON_N[64] ON_N[63] ON_N[62] ON_N[61] ON_N[60] ON_N[59] ON_N[58] ON_N[57] ON_N[56] ON_N[55] ON_N[54] ON_N[53]
++ ON_N[52] ON_N[51] ON_N[50] ON_N[49] ON_N[48] ON_N[47] ON_N[46] ON_N[45] ON_N[44] ON_N[43] ON_N[42] ON_N[41] ON_N[40] ON_N[39] ON_N[38]
++ ON_N[37] ON_N[36] ON_N[35] ON_N[34] ON_N[33] ON_N[32] ON_N[31] ON_N[30] ON_N[29] ON_N[28] ON_N[27] ON_N[26] ON_N[25] ON_N[24] ON_N[23]
++ ON_N[22] ON_N[21] ON_N[20] ON_N[19] ON_N[18] ON_N[17] ON_N[16] ON_N[15] ON_N[14] ON_N[13] ON_N[12] ON_N[11] ON_N[10] ON_N[9] ON_N[8]
++ ON_N[7] ON_N[6] ON_N[5] ON_N[4] ON_N[3] ON_N[2] ON_N[1] ON_N[0]
+*.ipin VDD
+*.opin Iout
+*.ipin
+*+ ON[255],ON[254],ON[253],ON[252],ON[251],ON[250],ON[249],ON[248],ON[247],ON[246],ON[245],ON[244],ON[243],ON[242],ON[241],ON[240],ON[239],ON[238],ON[237],ON[236],ON[235],ON[234],ON[233],ON[232],ON[231],ON[230],ON[229],ON[228],ON[227],ON[226],ON[225],ON[224],ON[223],ON[222],ON[221],ON[220],ON[219],ON[218],ON[217],ON[216],ON[215],ON[214],ON[213],ON[212],ON[211],ON[210],ON[209],ON[208],ON[207],ON[206],ON[205],ON[204],ON[203],ON[202],ON[201],ON[200],ON[199],ON[198],ON[197],ON[196],ON[195],ON[194],ON[193],ON[192],ON[191],ON[190],ON[189],ON[188],ON[187],ON[186],ON[185],ON[184],ON[183],ON[182],ON[181],ON[180],ON[179],ON[178],ON[177],ON[176],ON[175],ON[174],ON[173],ON[172],ON[171],ON[170],ON[169],ON[168],ON[167],ON[166],ON[165],ON[164],ON[163],ON[162],ON[161],ON[160],ON[159],ON[158],ON[157],ON[156],ON[155],ON[154],ON[153],ON[152],ON[151],ON[150],ON[149],ON[148],ON[147],ON[146],ON[145],ON[144],ON[143],ON[142],ON[141],ON[140],ON[139],ON[138],ON[137],ON[136],ON[135],ON[134],ON[133],ON[132],ON[131],ON[130],ON[129],ON[128],ON[127],ON[126],ON[125],ON[124],ON[123],ON[122],ON[121],ON[120],ON[119],ON[118],ON[117],ON[116],ON[115],ON[114],ON[113],ON[112],ON[111],ON[110],ON[109],ON[108],ON[107],ON[106],ON[105],ON[104],ON[103],ON[102],ON[101],ON[100],ON[99],ON[98],ON[97],ON[96],ON[95],ON[94],ON[93],ON[92],ON[91],ON[90],ON[89],ON[88],ON[87],ON[86],ON[85],ON[84],ON[83],ON[82],ON[81],ON[80],ON[79],ON[78],ON[77],ON[76],ON[75],ON[74],ON[73],ON[72],ON[71],ON[70],ON[69],ON[68],ON[67],ON[66],ON[65],ON[64],ON[63],ON[62],ON[61],ON[60],ON[59],ON[58],ON[57],ON[56],ON[55],ON[54],ON[53],ON[52],ON[51],ON[50],ON[49],ON[48],ON[47],ON[46],ON[45],ON[44],ON[43],ON[42],ON[41],ON[40],ON[39],ON[38],ON[37],ON[36],ON[35],ON[34],ON[33],ON[32],ON[31],ON[30],ON[29],ON[28],ON[27],ON[26],ON[25],ON[24],ON[23],ON[22],ON[21],ON[20],ON[19],ON[18],ON[17],ON[16],ON[15],ON[14],ON[13],ON[12],ON[11],ON[10],ON[9],ON[8],ON[7],ON[6],ON[5],ON[4],ON[3],ON[2],ON[1],ON[0]
+*.ipin Iref
+*.ipin
+*+ ON_N[255],ON_N[254],ON_N[253],ON_N[252],ON_N[251],ON_N[250],ON_N[249],ON_N[248],ON_N[247],ON_N[246],ON_N[245],ON_N[244],ON_N[243],ON_N[242],ON_N[241],ON_N[240],ON_N[239],ON_N[238],ON_N[237],ON_N[236],ON_N[235],ON_N[234],ON_N[233],ON_N[232],ON_N[231],ON_N[230],ON_N[229],ON_N[228],ON_N[227],ON_N[226],ON_N[225],ON_N[224],ON_N[223],ON_N[222],ON_N[221],ON_N[220],ON_N[219],ON_N[218],ON_N[217],ON_N[216],ON_N[215],ON_N[214],ON_N[213],ON_N[212],ON_N[211],ON_N[210],ON_N[209],ON_N[208],ON_N[207],ON_N[206],ON_N[205],ON_N[204],ON_N[203],ON_N[202],ON_N[201],ON_N[200],ON_N[199],ON_N[198],ON_N[197],ON_N[196],ON_N[195],ON_N[194],ON_N[193],ON_N[192],ON_N[191],ON_N[190],ON_N[189],ON_N[188],ON_N[187],ON_N[186],ON_N[185],ON_N[184],ON_N[183],ON_N[182],ON_N[181],ON_N[180],ON_N[179],ON_N[178],ON_N[177],ON_N[176],ON_N[175],ON_N[174],ON_N[173],ON_N[172],ON_N[171],ON_N[170],ON_N[169],ON_N[168],ON_N[167],ON_N[166],ON_N[165],ON_N[164],ON_N[163],ON_N[162],ON_N[161],ON_N[160],ON_N[159],ON_N[158],ON_N[157],ON_N[156],ON_N[155],ON_N[154],ON_N[153],ON_N[152],ON_N[151],ON_N[150],ON_N[149],ON_N[148],ON_N[147],ON_N[146],ON_N[145],ON_N[144],ON_N[143],ON_N[142],ON_N[141],ON_N[140],ON_N[139],ON_N[138],ON_N[137],ON_N[136],ON_N[135],ON_N[134],ON_N[133],ON_N[132],ON_N[131],ON_N[130],ON_N[129],ON_N[128],ON_N[127],ON_N[126],ON_N[125],ON_N[124],ON_N[123],ON_N[122],ON_N[121],ON_N[120],ON_N[119],ON_N[118],ON_N[117],ON_N[116],ON_N[115],ON_N[114],ON_N[113],ON_N[112],ON_N[111],ON_N[110],ON_N[109],ON_N[108],ON_N[107],ON_N[106],ON_N[105],ON_N[104],ON_N[103],ON_N[102],ON_N[101],ON_N[100],ON_N[99],ON_N[98],ON_N[97],ON_N[96],ON_N[95],ON_N[94],ON_N[93],ON_N[92],ON_N[91],ON_N[90],ON_N[89],ON_N[88],ON_N[87],ON_N[86],ON_N[85],ON_N[84],ON_N[83],ON_N[82],ON_N[81],ON_N[80],ON_N[79],ON_N[78],ON_N[77],ON_N[76],ON_N[75],ON_N[74],ON_N[73],ON_N[72],ON_N[71],ON_N[70],ON_N[69],ON_N[68],ON_N[67],ON_N[66],ON_N[65],ON_N[64],ON_N[63],ON_N[62],ON_N[61],ON_N[60],ON_N[59],ON_N[58],ON_N[57],ON_N[56],ON_N[55],ON_N[54],ON_N[53],ON_N[52],ON_N[51],ON_N[50],ON_N[49],ON_N[48],ON_N[47],ON_N[46],ON_N[45],ON_N[44],ON_N[43],ON_N[42],ON_N[41],ON_N[40],ON_N[39],ON_N[38],ON_N[37],ON_N[36],ON_N[35],ON_N[34],ON_N[33],ON_N[32],ON_N[31],ON_N[30],ON_N[29],ON_N[28],ON_N[27],ON_N[26],ON_N[25],ON_N[24],ON_N[23],ON_N[22],ON_N[21],ON_N[20],ON_N[19],ON_N[18],ON_N[17],ON_N[16],ON_N[15],ON_N[14],ON_N[13],ON_N[12],ON_N[11],ON_N[10],ON_N[9],ON_N[8],ON_N[7],ON_N[6],ON_N[5],ON_N[4],ON_N[3],ON_N[2],ON_N[1],ON_N[0]
+xmirror VDD Iout Vbias CASCODE_SW[255] CASCODE_SW[254] CASCODE_SW[253] CASCODE_SW[252] CASCODE_SW[251] CASCODE_SW[250]
++ CASCODE_SW[249] CASCODE_SW[248] CASCODE_SW[247] CASCODE_SW[246] CASCODE_SW[245] CASCODE_SW[244] CASCODE_SW[243] CASCODE_SW[242] CASCODE_SW[241]
++ CASCODE_SW[240] CASCODE_SW[239] CASCODE_SW[238] CASCODE_SW[237] CASCODE_SW[236] CASCODE_SW[235] CASCODE_SW[234] CASCODE_SW[233] CASCODE_SW[232]
++ CASCODE_SW[231] CASCODE_SW[230] CASCODE_SW[229] CASCODE_SW[228] CASCODE_SW[227] CASCODE_SW[226] CASCODE_SW[225] CASCODE_SW[224] CASCODE_SW[223]
++ CASCODE_SW[222] CASCODE_SW[221] CASCODE_SW[220] CASCODE_SW[219] CASCODE_SW[218] CASCODE_SW[217] CASCODE_SW[216] CASCODE_SW[215] CASCODE_SW[214]
++ CASCODE_SW[213] CASCODE_SW[212] CASCODE_SW[211] CASCODE_SW[210] CASCODE_SW[209] CASCODE_SW[208] CASCODE_SW[207] CASCODE_SW[206] CASCODE_SW[205]
++ CASCODE_SW[204] CASCODE_SW[203] CASCODE_SW[202] CASCODE_SW[201] CASCODE_SW[200] CASCODE_SW[199] CASCODE_SW[198] CASCODE_SW[197] CASCODE_SW[196]
++ CASCODE_SW[195] CASCODE_SW[194] CASCODE_SW[193] CASCODE_SW[192] CASCODE_SW[191] CASCODE_SW[190] CASCODE_SW[189] CASCODE_SW[188] CASCODE_SW[187]
++ CASCODE_SW[186] CASCODE_SW[185] CASCODE_SW[184] CASCODE_SW[183] CASCODE_SW[182] CASCODE_SW[181] CASCODE_SW[180] CASCODE_SW[179] CASCODE_SW[178]
++ CASCODE_SW[177] CASCODE_SW[176] CASCODE_SW[175] CASCODE_SW[174] CASCODE_SW[173] CASCODE_SW[172] CASCODE_SW[171] CASCODE_SW[170] CASCODE_SW[169]
++ CASCODE_SW[168] CASCODE_SW[167] CASCODE_SW[166] CASCODE_SW[165] CASCODE_SW[164] CASCODE_SW[163] CASCODE_SW[162] CASCODE_SW[161] CASCODE_SW[160]
++ CASCODE_SW[159] CASCODE_SW[158] CASCODE_SW[157] CASCODE_SW[156] CASCODE_SW[155] CASCODE_SW[154] CASCODE_SW[153] CASCODE_SW[152] CASCODE_SW[151]
++ CASCODE_SW[150] CASCODE_SW[149] CASCODE_SW[148] CASCODE_SW[147] CASCODE_SW[146] CASCODE_SW[145] CASCODE_SW[144] CASCODE_SW[143] CASCODE_SW[142]
++ CASCODE_SW[141] CASCODE_SW[140] CASCODE_SW[139] CASCODE_SW[138] CASCODE_SW[137] CASCODE_SW[136] CASCODE_SW[135] CASCODE_SW[134] CASCODE_SW[133]
++ CASCODE_SW[132] CASCODE_SW[131] CASCODE_SW[130] CASCODE_SW[129] CASCODE_SW[128] CASCODE_SW[127] CASCODE_SW[126] CASCODE_SW[125] CASCODE_SW[124]
++ CASCODE_SW[123] CASCODE_SW[122] CASCODE_SW[121] CASCODE_SW[120] CASCODE_SW[119] CASCODE_SW[118] CASCODE_SW[117] CASCODE_SW[116] CASCODE_SW[115]
++ CASCODE_SW[114] CASCODE_SW[113] CASCODE_SW[112] CASCODE_SW[111] CASCODE_SW[110] CASCODE_SW[109] CASCODE_SW[108] CASCODE_SW[107] CASCODE_SW[106]
++ CASCODE_SW[105] CASCODE_SW[104] CASCODE_SW[103] CASCODE_SW[102] CASCODE_SW[101] CASCODE_SW[100] CASCODE_SW[99] CASCODE_SW[98] CASCODE_SW[97]
++ CASCODE_SW[96] CASCODE_SW[95] CASCODE_SW[94] CASCODE_SW[93] CASCODE_SW[92] CASCODE_SW[91] CASCODE_SW[90] CASCODE_SW[89] CASCODE_SW[88]
++ CASCODE_SW[87] CASCODE_SW[86] CASCODE_SW[85] CASCODE_SW[84] CASCODE_SW[83] CASCODE_SW[82] CASCODE_SW[81] CASCODE_SW[80] CASCODE_SW[79]
++ CASCODE_SW[78] CASCODE_SW[77] CASCODE_SW[76] CASCODE_SW[75] CASCODE_SW[74] CASCODE_SW[73] CASCODE_SW[72] CASCODE_SW[71] CASCODE_SW[70]
++ CASCODE_SW[69] CASCODE_SW[68] CASCODE_SW[67] CASCODE_SW[66] CASCODE_SW[65] CASCODE_SW[64] CASCODE_SW[63] CASCODE_SW[62] CASCODE_SW[61]
++ CASCODE_SW[60] CASCODE_SW[59] CASCODE_SW[58] CASCODE_SW[57] CASCODE_SW[56] CASCODE_SW[55] CASCODE_SW[54] CASCODE_SW[53] CASCODE_SW[52]
++ CASCODE_SW[51] CASCODE_SW[50] CASCODE_SW[49] CASCODE_SW[48] CASCODE_SW[47] CASCODE_SW[46] CASCODE_SW[45] CASCODE_SW[44] CASCODE_SW[43]
++ CASCODE_SW[42] CASCODE_SW[41] CASCODE_SW[40] CASCODE_SW[39] CASCODE_SW[38] CASCODE_SW[37] CASCODE_SW[36] CASCODE_SW[35] CASCODE_SW[34]
++ CASCODE_SW[33] CASCODE_SW[32] CASCODE_SW[31] CASCODE_SW[30] CASCODE_SW[29] CASCODE_SW[28] CASCODE_SW[27] CASCODE_SW[26] CASCODE_SW[25]
++ CASCODE_SW[24] CASCODE_SW[23] CASCODE_SW[22] CASCODE_SW[21] CASCODE_SW[20] CASCODE_SW[19] CASCODE_SW[18] CASCODE_SW[17] CASCODE_SW[16]
++ CASCODE_SW[15] CASCODE_SW[14] CASCODE_SW[13] CASCODE_SW[12] CASCODE_SW[11] CASCODE_SW[10] CASCODE_SW[9] CASCODE_SW[8] CASCODE_SW[7]
++ CASCODE_SW[6] CASCODE_SW[5] CASCODE_SW[4] CASCODE_SW[3] CASCODE_SW[2] CASCODE_SW[1] CASCODE_SW[0] Pmirrors_top
+XM2 Vbias Vbias VDD VDD sg13_lv_pmos w=0.2u l=1.5u ng=1 m=1
+XM3 Iref Iref Vbias VDD sg13_lv_pmos w=0.2u l=1.5u ng=1 m=1
+xSW_TOP Iref CASCODE_SW[255] CASCODE_SW[254] CASCODE_SW[253] CASCODE_SW[252] CASCODE_SW[251] CASCODE_SW[250] CASCODE_SW[249]
++ CASCODE_SW[248] CASCODE_SW[247] CASCODE_SW[246] CASCODE_SW[245] CASCODE_SW[244] CASCODE_SW[243] CASCODE_SW[242] CASCODE_SW[241] CASCODE_SW[240]
++ CASCODE_SW[239] CASCODE_SW[238] CASCODE_SW[237] CASCODE_SW[236] CASCODE_SW[235] CASCODE_SW[234] CASCODE_SW[233] CASCODE_SW[232] CASCODE_SW[231]
++ CASCODE_SW[230] CASCODE_SW[229] CASCODE_SW[228] CASCODE_SW[227] CASCODE_SW[226] CASCODE_SW[225] CASCODE_SW[224] CASCODE_SW[223] CASCODE_SW[222]
++ CASCODE_SW[221] CASCODE_SW[220] CASCODE_SW[219] CASCODE_SW[218] CASCODE_SW[217] CASCODE_SW[216] CASCODE_SW[215] CASCODE_SW[214] CASCODE_SW[213]
++ CASCODE_SW[212] CASCODE_SW[211] CASCODE_SW[210] CASCODE_SW[209] CASCODE_SW[208] CASCODE_SW[207] CASCODE_SW[206] CASCODE_SW[205] CASCODE_SW[204]
++ CASCODE_SW[203] CASCODE_SW[202] CASCODE_SW[201] CASCODE_SW[200] CASCODE_SW[199] CASCODE_SW[198] CASCODE_SW[197] CASCODE_SW[196] CASCODE_SW[195]
++ CASCODE_SW[194] CASCODE_SW[193] CASCODE_SW[192] CASCODE_SW[191] CASCODE_SW[190] CASCODE_SW[189] CASCODE_SW[188] CASCODE_SW[187] CASCODE_SW[186]
++ CASCODE_SW[185] CASCODE_SW[184] CASCODE_SW[183] CASCODE_SW[182] CASCODE_SW[181] CASCODE_SW[180] CASCODE_SW[179] CASCODE_SW[178] CASCODE_SW[177]
++ CASCODE_SW[176] CASCODE_SW[175] CASCODE_SW[174] CASCODE_SW[173] CASCODE_SW[172] CASCODE_SW[171] CASCODE_SW[170] CASCODE_SW[169] CASCODE_SW[168]
++ CASCODE_SW[167] CASCODE_SW[166] CASCODE_SW[165] CASCODE_SW[164] CASCODE_SW[163] CASCODE_SW[162] CASCODE_SW[161] CASCODE_SW[160] CASCODE_SW[159]
++ CASCODE_SW[158] CASCODE_SW[157] CASCODE_SW[156] CASCODE_SW[155] CASCODE_SW[154] CASCODE_SW[153] CASCODE_SW[152] CASCODE_SW[151] CASCODE_SW[150]
++ CASCODE_SW[149] CASCODE_SW[148] CASCODE_SW[147] CASCODE_SW[146] CASCODE_SW[145] CASCODE_SW[144] CASCODE_SW[143] CASCODE_SW[142] CASCODE_SW[141]
++ CASCODE_SW[140] CASCODE_SW[139] CASCODE_SW[138] CASCODE_SW[137] CASCODE_SW[136] CASCODE_SW[135] CASCODE_SW[134] CASCODE_SW[133] CASCODE_SW[132]
++ CASCODE_SW[131] CASCODE_SW[130] CASCODE_SW[129] CASCODE_SW[128] CASCODE_SW[127] CASCODE_SW[126] CASCODE_SW[125] CASCODE_SW[124] CASCODE_SW[123]
++ CASCODE_SW[122] CASCODE_SW[121] CASCODE_SW[120] CASCODE_SW[119] CASCODE_SW[118] CASCODE_SW[117] CASCODE_SW[116] CASCODE_SW[115] CASCODE_SW[114]
++ CASCODE_SW[113] CASCODE_SW[112] CASCODE_SW[111] CASCODE_SW[110] CASCODE_SW[109] CASCODE_SW[108] CASCODE_SW[107] CASCODE_SW[106] CASCODE_SW[105]
++ CASCODE_SW[104] CASCODE_SW[103] CASCODE_SW[102] CASCODE_SW[101] CASCODE_SW[100] CASCODE_SW[99] CASCODE_SW[98] CASCODE_SW[97] CASCODE_SW[96]
++ CASCODE_SW[95] CASCODE_SW[94] CASCODE_SW[93] CASCODE_SW[92] CASCODE_SW[91] CASCODE_SW[90] CASCODE_SW[89] CASCODE_SW[88] CASCODE_SW[87]
++ CASCODE_SW[86] CASCODE_SW[85] CASCODE_SW[84] CASCODE_SW[83] CASCODE_SW[82] CASCODE_SW[81] CASCODE_SW[80] CASCODE_SW[79] CASCODE_SW[78]
++ CASCODE_SW[77] CASCODE_SW[76] CASCODE_SW[75] CASCODE_SW[74] CASCODE_SW[73] CASCODE_SW[72] CASCODE_SW[71] CASCODE_SW[70] CASCODE_SW[69]
++ CASCODE_SW[68] CASCODE_SW[67] CASCODE_SW[66] CASCODE_SW[65] CASCODE_SW[64] CASCODE_SW[63] CASCODE_SW[62] CASCODE_SW[61] CASCODE_SW[60]
++ CASCODE_SW[59] CASCODE_SW[58] CASCODE_SW[57] CASCODE_SW[56] CASCODE_SW[55] CASCODE_SW[54] CASCODE_SW[53] CASCODE_SW[52] CASCODE_SW[51]
++ CASCODE_SW[50] CASCODE_SW[49] CASCODE_SW[48] CASCODE_SW[47] CASCODE_SW[46] CASCODE_SW[45] CASCODE_SW[44] CASCODE_SW[43] CASCODE_SW[42]
++ CASCODE_SW[41] CASCODE_SW[40] CASCODE_SW[39] CASCODE_SW[38] CASCODE_SW[37] CASCODE_SW[36] CASCODE_SW[35] CASCODE_SW[34] CASCODE_SW[33]
++ CASCODE_SW[32] CASCODE_SW[31] CASCODE_SW[30] CASCODE_SW[29] CASCODE_SW[28] CASCODE_SW[27] CASCODE_SW[26] CASCODE_SW[25] CASCODE_SW[24]
++ CASCODE_SW[23] CASCODE_SW[22] CASCODE_SW[21] CASCODE_SW[20] CASCODE_SW[19] CASCODE_SW[18] CASCODE_SW[17] CASCODE_SW[16] CASCODE_SW[15]
++ CASCODE_SW[14] CASCODE_SW[13] CASCODE_SW[12] CASCODE_SW[11] CASCODE_SW[10] CASCODE_SW[9] CASCODE_SW[8] CASCODE_SW[7] CASCODE_SW[6] CASCODE_SW[5]
++ CASCODE_SW[4] CASCODE_SW[3] CASCODE_SW[2] CASCODE_SW[1] CASCODE_SW[0] VDD ON[255] ON[254] ON[253] ON[252] ON[251] ON[250] ON[249] ON[248]
++ ON[247] ON[246] ON[245] ON[244] ON[243] ON[242] ON[241] ON[240] ON[239] ON[238] ON[237] ON[236] ON[235] ON[234] ON[233] ON[232] ON[231]
++ ON[230] ON[229] ON[228] ON[227] ON[226] ON[225] ON[224] ON[223] ON[222] ON[221] ON[220] ON[219] ON[218] ON[217] ON[216] ON[215] ON[214]
++ ON[213] ON[212] ON[211] ON[210] ON[209] ON[208] ON[207] ON[206] ON[205] ON[204] ON[203] ON[202] ON[201] ON[200] ON[199] ON[198] ON[197]
++ ON[196] ON[195] ON[194] ON[193] ON[192] ON[191] ON[190] ON[189] ON[188] ON[187] ON[186] ON[185] ON[184] ON[183] ON[182] ON[181] ON[180]
++ ON[179] ON[178] ON[177] ON[176] ON[175] ON[174] ON[173] ON[172] ON[171] ON[170] ON[169] ON[168] ON[167] ON[166] ON[165] ON[164] ON[163]
++ ON[162] ON[161] ON[160] ON[159] ON[158] ON[157] ON[156] ON[155] ON[154] ON[153] ON[152] ON[151] ON[150] ON[149] ON[148] ON[147] ON[146]
++ ON[145] ON[144] ON[143] ON[142] ON[141] ON[140] ON[139] ON[138] ON[137] ON[136] ON[135] ON[134] ON[133] ON[132] ON[131] ON[130] ON[129]
++ ON[128] ON[127] ON[126] ON[125] ON[124] ON[123] ON[122] ON[121] ON[120] ON[119] ON[118] ON[117] ON[116] ON[115] ON[114] ON[113] ON[112]
++ ON[111] ON[110] ON[109] ON[108] ON[107] ON[106] ON[105] ON[104] ON[103] ON[102] ON[101] ON[100] ON[99] ON[98] ON[97] ON[96] ON[95] ON[94]
++ ON[93] ON[92] ON[91] ON[90] ON[89] ON[88] ON[87] ON[86] ON[85] ON[84] ON[83] ON[82] ON[81] ON[80] ON[79] ON[78] ON[77] ON[76] ON[75]
++ ON[74] ON[73] ON[72] ON[71] ON[70] ON[69] ON[68] ON[67] ON[66] ON[65] ON[64] ON[63] ON[62] ON[61] ON[60] ON[59] ON[58] ON[57] ON[56]
++ ON[55] ON[54] ON[53] ON[52] ON[51] ON[50] ON[49] ON[48] ON[47] ON[46] ON[45] ON[44] ON[43] ON[42] ON[41] ON[40] ON[39] ON[38] ON[37]
++ ON[36] ON[35] ON[34] ON[33] ON[32] ON[31] ON[30] ON[29] ON[28] ON[27] ON[26] ON[25] ON[24] ON[23] ON[22] ON[21] ON[20] ON[19] ON[18]
++ ON[17] ON[16] ON[15] ON[14] ON[13] ON[12] ON[11] ON[10] ON[9] ON[8] ON[7] ON[6] ON[5] ON[4] ON[3] ON[2] ON[1] ON[0] ON_N[255] ON_N[254]
++ ON_N[253] ON_N[252] ON_N[251] ON_N[250] ON_N[249] ON_N[248] ON_N[247] ON_N[246] ON_N[245] ON_N[244] ON_N[243] ON_N[242] ON_N[241] ON_N[240]
++ ON_N[239] ON_N[238] ON_N[237] ON_N[236] ON_N[235] ON_N[234] ON_N[233] ON_N[232] ON_N[231] ON_N[230] ON_N[229] ON_N[228] ON_N[227] ON_N[226]
++ ON_N[225] ON_N[224] ON_N[223] ON_N[222] ON_N[221] ON_N[220] ON_N[219] ON_N[218] ON_N[217] ON_N[216] ON_N[215] ON_N[214] ON_N[213] ON_N[212]
++ ON_N[211] ON_N[210] ON_N[209] ON_N[208] ON_N[207] ON_N[206] ON_N[205] ON_N[204] ON_N[203] ON_N[202] ON_N[201] ON_N[200] ON_N[199] ON_N[198]
++ ON_N[197] ON_N[196] ON_N[195] ON_N[194] ON_N[193] ON_N[192] ON_N[191] ON_N[190] ON_N[189] ON_N[188] ON_N[187] ON_N[186] ON_N[185] ON_N[184]
++ ON_N[183] ON_N[182] ON_N[181] ON_N[180] ON_N[179] ON_N[178] ON_N[177] ON_N[176] ON_N[175] ON_N[174] ON_N[173] ON_N[172] ON_N[171] ON_N[170]
++ ON_N[169] ON_N[168] ON_N[167] ON_N[166] ON_N[165] ON_N[164] ON_N[163] ON_N[162] ON_N[161] ON_N[160] ON_N[159] ON_N[158] ON_N[157] ON_N[156]
++ ON_N[155] ON_N[154] ON_N[153] ON_N[152] ON_N[151] ON_N[150] ON_N[149] ON_N[148] ON_N[147] ON_N[146] ON_N[145] ON_N[144] ON_N[143] ON_N[142]
++ ON_N[141] ON_N[140] ON_N[139] ON_N[138] ON_N[137] ON_N[136] ON_N[135] ON_N[134] ON_N[133] ON_N[132] ON_N[131] ON_N[130] ON_N[129] ON_N[128]
++ ON_N[127] ON_N[126] ON_N[125] ON_N[124] ON_N[123] ON_N[122] ON_N[121] ON_N[120] ON_N[119] ON_N[118] ON_N[117] ON_N[116] ON_N[115] ON_N[114]
++ ON_N[113] ON_N[112] ON_N[111] ON_N[110] ON_N[109] ON_N[108] ON_N[107] ON_N[106] ON_N[105] ON_N[104] ON_N[103] ON_N[102] ON_N[101] ON_N[100]
++ ON_N[99] ON_N[98] ON_N[97] ON_N[96] ON_N[95] ON_N[94] ON_N[93] ON_N[92] ON_N[91] ON_N[90] ON_N[89] ON_N[88] ON_N[87] ON_N[86] ON_N[85]
++ ON_N[84] ON_N[83] ON_N[82] ON_N[81] ON_N[80] ON_N[79] ON_N[78] ON_N[77] ON_N[76] ON_N[75] ON_N[74] ON_N[73] ON_N[72] ON_N[71] ON_N[70]
++ ON_N[69] ON_N[68] ON_N[67] ON_N[66] ON_N[65] ON_N[64] ON_N[63] ON_N[62] ON_N[61] ON_N[60] ON_N[59] ON_N[58] ON_N[57] ON_N[56] ON_N[55]
++ ON_N[54] ON_N[53] ON_N[52] ON_N[51] ON_N[50] ON_N[49] ON_N[48] ON_N[47] ON_N[46] ON_N[45] ON_N[44] ON_N[43] ON_N[42] ON_N[41] ON_N[40]
++ ON_N[39] ON_N[38] ON_N[37] ON_N[36] ON_N[35] ON_N[34] ON_N[33] ON_N[32] ON_N[31] ON_N[30] ON_N[29] ON_N[28] ON_N[27] ON_N[26] ON_N[25]
++ ON_N[24] ON_N[23] ON_N[22] ON_N[21] ON_N[20] ON_N[19] ON_N[18] ON_N[17] ON_N[16] ON_N[15] ON_N[14] ON_N[13] ON_N[12] ON_N[11] ON_N[10]
++ ON_N[9] ON_N[8] ON_N[7] ON_N[6] ON_N[5] ON_N[4] ON_N[3] ON_N[2] ON_N[1] ON_N[0] DAC_SW_TOP
+.ends
+
+
+* expanding   symbol:  ../schematic/Pmirrors_top.sym # of pins=4
+** sym_path: /home/cmaier/EDA/PUDDING/schematic/Pmirrors_top.sym
+** sch_path: /home/cmaier/EDA/PUDDING/schematic/Pmirrors_top.sch
+.subckt Pmirrors_top VDD Iout Vbiasp VcascodeP[255] VcascodeP[254] VcascodeP[253] VcascodeP[252] VcascodeP[251] VcascodeP[250]
++ VcascodeP[249] VcascodeP[248] VcascodeP[247] VcascodeP[246] VcascodeP[245] VcascodeP[244] VcascodeP[243] VcascodeP[242] VcascodeP[241]
++ VcascodeP[240] VcascodeP[239] VcascodeP[238] VcascodeP[237] VcascodeP[236] VcascodeP[235] VcascodeP[234] VcascodeP[233] VcascodeP[232]
++ VcascodeP[231] VcascodeP[230] VcascodeP[229] VcascodeP[228] VcascodeP[227] VcascodeP[226] VcascodeP[225] VcascodeP[224] VcascodeP[223]
++ VcascodeP[222] VcascodeP[221] VcascodeP[220] VcascodeP[219] VcascodeP[218] VcascodeP[217] VcascodeP[216] VcascodeP[215] VcascodeP[214]
++ VcascodeP[213] VcascodeP[212] VcascodeP[211] VcascodeP[210] VcascodeP[209] VcascodeP[208] VcascodeP[207] VcascodeP[206] VcascodeP[205]
++ VcascodeP[204] VcascodeP[203] VcascodeP[202] VcascodeP[201] VcascodeP[200] VcascodeP[199] VcascodeP[198] VcascodeP[197] VcascodeP[196]
++ VcascodeP[195] VcascodeP[194] VcascodeP[193] VcascodeP[192] VcascodeP[191] VcascodeP[190] VcascodeP[189] VcascodeP[188] VcascodeP[187]
++ VcascodeP[186] VcascodeP[185] VcascodeP[184] VcascodeP[183] VcascodeP[182] VcascodeP[181] VcascodeP[180] VcascodeP[179] VcascodeP[178]
++ VcascodeP[177] VcascodeP[176] VcascodeP[175] VcascodeP[174] VcascodeP[173] VcascodeP[172] VcascodeP[171] VcascodeP[170] VcascodeP[169]
++ VcascodeP[168] VcascodeP[167] VcascodeP[166] VcascodeP[165] VcascodeP[164] VcascodeP[163] VcascodeP[162] VcascodeP[161] VcascodeP[160]
++ VcascodeP[159] VcascodeP[158] VcascodeP[157] VcascodeP[156] VcascodeP[155] VcascodeP[154] VcascodeP[153] VcascodeP[152] VcascodeP[151]
++ VcascodeP[150] VcascodeP[149] VcascodeP[148] VcascodeP[147] VcascodeP[146] VcascodeP[145] VcascodeP[144] VcascodeP[143] VcascodeP[142]
++ VcascodeP[141] VcascodeP[140] VcascodeP[139] VcascodeP[138] VcascodeP[137] VcascodeP[136] VcascodeP[135] VcascodeP[134] VcascodeP[133]
++ VcascodeP[132] VcascodeP[131] VcascodeP[130] VcascodeP[129] VcascodeP[128] VcascodeP[127] VcascodeP[126] VcascodeP[125] VcascodeP[124]
++ VcascodeP[123] VcascodeP[122] VcascodeP[121] VcascodeP[120] VcascodeP[119] VcascodeP[118] VcascodeP[117] VcascodeP[116] VcascodeP[115]
++ VcascodeP[114] VcascodeP[113] VcascodeP[112] VcascodeP[111] VcascodeP[110] VcascodeP[109] VcascodeP[108] VcascodeP[107] VcascodeP[106]
++ VcascodeP[105] VcascodeP[104] VcascodeP[103] VcascodeP[102] VcascodeP[101] VcascodeP[100] VcascodeP[99] VcascodeP[98] VcascodeP[97]
++ VcascodeP[96] VcascodeP[95] VcascodeP[94] VcascodeP[93] VcascodeP[92] VcascodeP[91] VcascodeP[90] VcascodeP[89] VcascodeP[88] VcascodeP[87]
++ VcascodeP[86] VcascodeP[85] VcascodeP[84] VcascodeP[83] VcascodeP[82] VcascodeP[81] VcascodeP[80] VcascodeP[79] VcascodeP[78] VcascodeP[77]
++ VcascodeP[76] VcascodeP[75] VcascodeP[74] VcascodeP[73] VcascodeP[72] VcascodeP[71] VcascodeP[70] VcascodeP[69] VcascodeP[68] VcascodeP[67]
++ VcascodeP[66] VcascodeP[65] VcascodeP[64] VcascodeP[63] VcascodeP[62] VcascodeP[61] VcascodeP[60] VcascodeP[59] VcascodeP[58] VcascodeP[57]
++ VcascodeP[56] VcascodeP[55] VcascodeP[54] VcascodeP[53] VcascodeP[52] VcascodeP[51] VcascodeP[50] VcascodeP[49] VcascodeP[48] VcascodeP[47]
++ VcascodeP[46] VcascodeP[45] VcascodeP[44] VcascodeP[43] VcascodeP[42] VcascodeP[41] VcascodeP[40] VcascodeP[39] VcascodeP[38] VcascodeP[37]
++ VcascodeP[36] VcascodeP[35] VcascodeP[34] VcascodeP[33] VcascodeP[32] VcascodeP[31] VcascodeP[30] VcascodeP[29] VcascodeP[28] VcascodeP[27]
++ VcascodeP[26] VcascodeP[25] VcascodeP[24] VcascodeP[23] VcascodeP[22] VcascodeP[21] VcascodeP[20] VcascodeP[19] VcascodeP[18] VcascodeP[17]
++ VcascodeP[16] VcascodeP[15] VcascodeP[14] VcascodeP[13] VcascodeP[12] VcascodeP[11] VcascodeP[10] VcascodeP[9] VcascodeP[8] VcascodeP[7]
++ VcascodeP[6] VcascodeP[5] VcascodeP[4] VcascodeP[3] VcascodeP[2] VcascodeP[1] VcascodeP[0]
+*.ipin Vbiasp
+*.ipin VDD
+*.ipin
+*+ VcascodeP[255],VcascodeP[254],VcascodeP[253],VcascodeP[252],VcascodeP[251],VcascodeP[250],VcascodeP[249],VcascodeP[248],VcascodeP[247],VcascodeP[246],VcascodeP[245],VcascodeP[244],VcascodeP[243],VcascodeP[242],VcascodeP[241],VcascodeP[240],VcascodeP[239],VcascodeP[238],VcascodeP[237],VcascodeP[236],VcascodeP[235],VcascodeP[234],VcascodeP[233],VcascodeP[232],VcascodeP[231],VcascodeP[230],VcascodeP[229],VcascodeP[228],VcascodeP[227],VcascodeP[226],VcascodeP[225],VcascodeP[224],VcascodeP[223],VcascodeP[222],VcascodeP[221],VcascodeP[220],VcascodeP[219],VcascodeP[218],VcascodeP[217],VcascodeP[216],VcascodeP[215],VcascodeP[214],VcascodeP[213],VcascodeP[212],VcascodeP[211],VcascodeP[210],VcascodeP[209],VcascodeP[208],VcascodeP[207],VcascodeP[206],VcascodeP[205],VcascodeP[204],VcascodeP[203],VcascodeP[202],VcascodeP[201],VcascodeP[200],VcascodeP[199],VcascodeP[198],VcascodeP[197],VcascodeP[196],VcascodeP[195],VcascodeP[194],VcascodeP[193],VcascodeP[192],VcascodeP[191],VcascodeP[190],VcascodeP[189],VcascodeP[188],VcascodeP[187],VcascodeP[186],VcascodeP[185],VcascodeP[184],VcascodeP[183],VcascodeP[182],VcascodeP[181],VcascodeP[180],VcascodeP[179],VcascodeP[178],VcascodeP[177],VcascodeP[176],VcascodeP[175],VcascodeP[174],VcascodeP[173],VcascodeP[172],VcascodeP[171],VcascodeP[170],VcascodeP[169],VcascodeP[168],VcascodeP[167],VcascodeP[166],VcascodeP[165],VcascodeP[164],VcascodeP[163],VcascodeP[162],VcascodeP[161],VcascodeP[160],VcascodeP[159],VcascodeP[158],VcascodeP[157],VcascodeP[156],VcascodeP[155],VcascodeP[154],VcascodeP[153],VcascodeP[152],VcascodeP[151],VcascodeP[150],VcascodeP[149],VcascodeP[148],VcascodeP[147],VcascodeP[146],VcascodeP[145],VcascodeP[144],VcascodeP[143],VcascodeP[142],VcascodeP[141],VcascodeP[140],VcascodeP[139],VcascodeP[138],VcascodeP[137],VcascodeP[136],VcascodeP[135],VcascodeP[134],VcascodeP[133],VcascodeP[132],VcascodeP[131],VcascodeP[130],VcascodeP[129],VcascodeP[128],VcascodeP[127],VcascodeP[126],VcascodeP[125],VcascodeP[124],VcascodeP[123],VcascodeP[122],VcascodeP[121],VcascodeP[120],VcascodeP[119],VcascodeP[118],VcascodeP[117],VcascodeP[116],VcascodeP[115],VcascodeP[114],VcascodeP[113],VcascodeP[112],VcascodeP[111],VcascodeP[110],VcascodeP[109],VcascodeP[108],VcascodeP[107],VcascodeP[106],VcascodeP[105],VcascodeP[104],VcascodeP[103],VcascodeP[102],VcascodeP[101],VcascodeP[100],VcascodeP[99],VcascodeP[98],VcascodeP[97],VcascodeP[96],VcascodeP[95],VcascodeP[94],VcascodeP[93],VcascodeP[92],VcascodeP[91],VcascodeP[90],VcascodeP[89],VcascodeP[88],VcascodeP[87],VcascodeP[86],VcascodeP[85],VcascodeP[84],VcascodeP[83],VcascodeP[82],VcascodeP[81],VcascodeP[80],VcascodeP[79],VcascodeP[78],VcascodeP[77],VcascodeP[76],VcascodeP[75],VcascodeP[74],VcascodeP[73],VcascodeP[72],VcascodeP[71],VcascodeP[70],VcascodeP[69],VcascodeP[68],VcascodeP[67],VcascodeP[66],VcascodeP[65],VcascodeP[64],VcascodeP[63],VcascodeP[62],VcascodeP[61],VcascodeP[60],VcascodeP[59],VcascodeP[58],VcascodeP[57],VcascodeP[56],VcascodeP[55],VcascodeP[54],VcascodeP[53],VcascodeP[52],VcascodeP[51],VcascodeP[50],VcascodeP[49],VcascodeP[48],VcascodeP[47],VcascodeP[46],VcascodeP[45],VcascodeP[44],VcascodeP[43],VcascodeP[42],VcascodeP[41],VcascodeP[40],VcascodeP[39],VcascodeP[38],VcascodeP[37],VcascodeP[36],VcascodeP[35],VcascodeP[34],VcascodeP[33],VcascodeP[32],VcascodeP[31],VcascodeP[30],VcascodeP[29],VcascodeP[28],VcascodeP[27],VcascodeP[26],VcascodeP[25],VcascodeP[24],VcascodeP[23],VcascodeP[22],VcascodeP[21],VcascodeP[20],VcascodeP[19],VcascodeP[18],VcascodeP[17],VcascodeP[16],VcascodeP[15],VcascodeP[14],VcascodeP[13],VcascodeP[12],VcascodeP[11],VcascodeP[10],VcascodeP[9],VcascodeP[8],VcascodeP[7],VcascodeP[6],VcascodeP[5],VcascodeP[4],VcascodeP[3],VcascodeP[2],VcascodeP[1],VcascodeP[0]
+*.opin Iout
+XI_MIRROR[255] VDD Vbiasp VcascodeP[255] Iout Pmirror_StdCell
+XI_MIRROR[254] VDD Vbiasp VcascodeP[254] Iout Pmirror_StdCell
+XI_MIRROR[253] VDD Vbiasp VcascodeP[253] Iout Pmirror_StdCell
+XI_MIRROR[252] VDD Vbiasp VcascodeP[252] Iout Pmirror_StdCell
+XI_MIRROR[251] VDD Vbiasp VcascodeP[251] Iout Pmirror_StdCell
+XI_MIRROR[250] VDD Vbiasp VcascodeP[250] Iout Pmirror_StdCell
+XI_MIRROR[249] VDD Vbiasp VcascodeP[249] Iout Pmirror_StdCell
+XI_MIRROR[248] VDD Vbiasp VcascodeP[248] Iout Pmirror_StdCell
+XI_MIRROR[247] VDD Vbiasp VcascodeP[247] Iout Pmirror_StdCell
+XI_MIRROR[246] VDD Vbiasp VcascodeP[246] Iout Pmirror_StdCell
+XI_MIRROR[245] VDD Vbiasp VcascodeP[245] Iout Pmirror_StdCell
+XI_MIRROR[244] VDD Vbiasp VcascodeP[244] Iout Pmirror_StdCell
+XI_MIRROR[243] VDD Vbiasp VcascodeP[243] Iout Pmirror_StdCell
+XI_MIRROR[242] VDD Vbiasp VcascodeP[242] Iout Pmirror_StdCell
+XI_MIRROR[241] VDD Vbiasp VcascodeP[241] Iout Pmirror_StdCell
+XI_MIRROR[240] VDD Vbiasp VcascodeP[240] Iout Pmirror_StdCell
+XI_MIRROR[239] VDD Vbiasp VcascodeP[239] Iout Pmirror_StdCell
+XI_MIRROR[238] VDD Vbiasp VcascodeP[238] Iout Pmirror_StdCell
+XI_MIRROR[237] VDD Vbiasp VcascodeP[237] Iout Pmirror_StdCell
+XI_MIRROR[236] VDD Vbiasp VcascodeP[236] Iout Pmirror_StdCell
+XI_MIRROR[235] VDD Vbiasp VcascodeP[235] Iout Pmirror_StdCell
+XI_MIRROR[234] VDD Vbiasp VcascodeP[234] Iout Pmirror_StdCell
+XI_MIRROR[233] VDD Vbiasp VcascodeP[233] Iout Pmirror_StdCell
+XI_MIRROR[232] VDD Vbiasp VcascodeP[232] Iout Pmirror_StdCell
+XI_MIRROR[231] VDD Vbiasp VcascodeP[231] Iout Pmirror_StdCell
+XI_MIRROR[230] VDD Vbiasp VcascodeP[230] Iout Pmirror_StdCell
+XI_MIRROR[229] VDD Vbiasp VcascodeP[229] Iout Pmirror_StdCell
+XI_MIRROR[228] VDD Vbiasp VcascodeP[228] Iout Pmirror_StdCell
+XI_MIRROR[227] VDD Vbiasp VcascodeP[227] Iout Pmirror_StdCell
+XI_MIRROR[226] VDD Vbiasp VcascodeP[226] Iout Pmirror_StdCell
+XI_MIRROR[225] VDD Vbiasp VcascodeP[225] Iout Pmirror_StdCell
+XI_MIRROR[224] VDD Vbiasp VcascodeP[224] Iout Pmirror_StdCell
+XI_MIRROR[223] VDD Vbiasp VcascodeP[223] Iout Pmirror_StdCell
+XI_MIRROR[222] VDD Vbiasp VcascodeP[222] Iout Pmirror_StdCell
+XI_MIRROR[221] VDD Vbiasp VcascodeP[221] Iout Pmirror_StdCell
+XI_MIRROR[220] VDD Vbiasp VcascodeP[220] Iout Pmirror_StdCell
+XI_MIRROR[219] VDD Vbiasp VcascodeP[219] Iout Pmirror_StdCell
+XI_MIRROR[218] VDD Vbiasp VcascodeP[218] Iout Pmirror_StdCell
+XI_MIRROR[217] VDD Vbiasp VcascodeP[217] Iout Pmirror_StdCell
+XI_MIRROR[216] VDD Vbiasp VcascodeP[216] Iout Pmirror_StdCell
+XI_MIRROR[215] VDD Vbiasp VcascodeP[215] Iout Pmirror_StdCell
+XI_MIRROR[214] VDD Vbiasp VcascodeP[214] Iout Pmirror_StdCell
+XI_MIRROR[213] VDD Vbiasp VcascodeP[213] Iout Pmirror_StdCell
+XI_MIRROR[212] VDD Vbiasp VcascodeP[212] Iout Pmirror_StdCell
+XI_MIRROR[211] VDD Vbiasp VcascodeP[211] Iout Pmirror_StdCell
+XI_MIRROR[210] VDD Vbiasp VcascodeP[210] Iout Pmirror_StdCell
+XI_MIRROR[209] VDD Vbiasp VcascodeP[209] Iout Pmirror_StdCell
+XI_MIRROR[208] VDD Vbiasp VcascodeP[208] Iout Pmirror_StdCell
+XI_MIRROR[207] VDD Vbiasp VcascodeP[207] Iout Pmirror_StdCell
+XI_MIRROR[206] VDD Vbiasp VcascodeP[206] Iout Pmirror_StdCell
+XI_MIRROR[205] VDD Vbiasp VcascodeP[205] Iout Pmirror_StdCell
+XI_MIRROR[204] VDD Vbiasp VcascodeP[204] Iout Pmirror_StdCell
+XI_MIRROR[203] VDD Vbiasp VcascodeP[203] Iout Pmirror_StdCell
+XI_MIRROR[202] VDD Vbiasp VcascodeP[202] Iout Pmirror_StdCell
+XI_MIRROR[201] VDD Vbiasp VcascodeP[201] Iout Pmirror_StdCell
+XI_MIRROR[200] VDD Vbiasp VcascodeP[200] Iout Pmirror_StdCell
+XI_MIRROR[199] VDD Vbiasp VcascodeP[199] Iout Pmirror_StdCell
+XI_MIRROR[198] VDD Vbiasp VcascodeP[198] Iout Pmirror_StdCell
+XI_MIRROR[197] VDD Vbiasp VcascodeP[197] Iout Pmirror_StdCell
+XI_MIRROR[196] VDD Vbiasp VcascodeP[196] Iout Pmirror_StdCell
+XI_MIRROR[195] VDD Vbiasp VcascodeP[195] Iout Pmirror_StdCell
+XI_MIRROR[194] VDD Vbiasp VcascodeP[194] Iout Pmirror_StdCell
+XI_MIRROR[193] VDD Vbiasp VcascodeP[193] Iout Pmirror_StdCell
+XI_MIRROR[192] VDD Vbiasp VcascodeP[192] Iout Pmirror_StdCell
+XI_MIRROR[191] VDD Vbiasp VcascodeP[191] Iout Pmirror_StdCell
+XI_MIRROR[190] VDD Vbiasp VcascodeP[190] Iout Pmirror_StdCell
+XI_MIRROR[189] VDD Vbiasp VcascodeP[189] Iout Pmirror_StdCell
+XI_MIRROR[188] VDD Vbiasp VcascodeP[188] Iout Pmirror_StdCell
+XI_MIRROR[187] VDD Vbiasp VcascodeP[187] Iout Pmirror_StdCell
+XI_MIRROR[186] VDD Vbiasp VcascodeP[186] Iout Pmirror_StdCell
+XI_MIRROR[185] VDD Vbiasp VcascodeP[185] Iout Pmirror_StdCell
+XI_MIRROR[184] VDD Vbiasp VcascodeP[184] Iout Pmirror_StdCell
+XI_MIRROR[183] VDD Vbiasp VcascodeP[183] Iout Pmirror_StdCell
+XI_MIRROR[182] VDD Vbiasp VcascodeP[182] Iout Pmirror_StdCell
+XI_MIRROR[181] VDD Vbiasp VcascodeP[181] Iout Pmirror_StdCell
+XI_MIRROR[180] VDD Vbiasp VcascodeP[180] Iout Pmirror_StdCell
+XI_MIRROR[179] VDD Vbiasp VcascodeP[179] Iout Pmirror_StdCell
+XI_MIRROR[178] VDD Vbiasp VcascodeP[178] Iout Pmirror_StdCell
+XI_MIRROR[177] VDD Vbiasp VcascodeP[177] Iout Pmirror_StdCell
+XI_MIRROR[176] VDD Vbiasp VcascodeP[176] Iout Pmirror_StdCell
+XI_MIRROR[175] VDD Vbiasp VcascodeP[175] Iout Pmirror_StdCell
+XI_MIRROR[174] VDD Vbiasp VcascodeP[174] Iout Pmirror_StdCell
+XI_MIRROR[173] VDD Vbiasp VcascodeP[173] Iout Pmirror_StdCell
+XI_MIRROR[172] VDD Vbiasp VcascodeP[172] Iout Pmirror_StdCell
+XI_MIRROR[171] VDD Vbiasp VcascodeP[171] Iout Pmirror_StdCell
+XI_MIRROR[170] VDD Vbiasp VcascodeP[170] Iout Pmirror_StdCell
+XI_MIRROR[169] VDD Vbiasp VcascodeP[169] Iout Pmirror_StdCell
+XI_MIRROR[168] VDD Vbiasp VcascodeP[168] Iout Pmirror_StdCell
+XI_MIRROR[167] VDD Vbiasp VcascodeP[167] Iout Pmirror_StdCell
+XI_MIRROR[166] VDD Vbiasp VcascodeP[166] Iout Pmirror_StdCell
+XI_MIRROR[165] VDD Vbiasp VcascodeP[165] Iout Pmirror_StdCell
+XI_MIRROR[164] VDD Vbiasp VcascodeP[164] Iout Pmirror_StdCell
+XI_MIRROR[163] VDD Vbiasp VcascodeP[163] Iout Pmirror_StdCell
+XI_MIRROR[162] VDD Vbiasp VcascodeP[162] Iout Pmirror_StdCell
+XI_MIRROR[161] VDD Vbiasp VcascodeP[161] Iout Pmirror_StdCell
+XI_MIRROR[160] VDD Vbiasp VcascodeP[160] Iout Pmirror_StdCell
+XI_MIRROR[159] VDD Vbiasp VcascodeP[159] Iout Pmirror_StdCell
+XI_MIRROR[158] VDD Vbiasp VcascodeP[158] Iout Pmirror_StdCell
+XI_MIRROR[157] VDD Vbiasp VcascodeP[157] Iout Pmirror_StdCell
+XI_MIRROR[156] VDD Vbiasp VcascodeP[156] Iout Pmirror_StdCell
+XI_MIRROR[155] VDD Vbiasp VcascodeP[155] Iout Pmirror_StdCell
+XI_MIRROR[154] VDD Vbiasp VcascodeP[154] Iout Pmirror_StdCell
+XI_MIRROR[153] VDD Vbiasp VcascodeP[153] Iout Pmirror_StdCell
+XI_MIRROR[152] VDD Vbiasp VcascodeP[152] Iout Pmirror_StdCell
+XI_MIRROR[151] VDD Vbiasp VcascodeP[151] Iout Pmirror_StdCell
+XI_MIRROR[150] VDD Vbiasp VcascodeP[150] Iout Pmirror_StdCell
+XI_MIRROR[149] VDD Vbiasp VcascodeP[149] Iout Pmirror_StdCell
+XI_MIRROR[148] VDD Vbiasp VcascodeP[148] Iout Pmirror_StdCell
+XI_MIRROR[147] VDD Vbiasp VcascodeP[147] Iout Pmirror_StdCell
+XI_MIRROR[146] VDD Vbiasp VcascodeP[146] Iout Pmirror_StdCell
+XI_MIRROR[145] VDD Vbiasp VcascodeP[145] Iout Pmirror_StdCell
+XI_MIRROR[144] VDD Vbiasp VcascodeP[144] Iout Pmirror_StdCell
+XI_MIRROR[143] VDD Vbiasp VcascodeP[143] Iout Pmirror_StdCell
+XI_MIRROR[142] VDD Vbiasp VcascodeP[142] Iout Pmirror_StdCell
+XI_MIRROR[141] VDD Vbiasp VcascodeP[141] Iout Pmirror_StdCell
+XI_MIRROR[140] VDD Vbiasp VcascodeP[140] Iout Pmirror_StdCell
+XI_MIRROR[139] VDD Vbiasp VcascodeP[139] Iout Pmirror_StdCell
+XI_MIRROR[138] VDD Vbiasp VcascodeP[138] Iout Pmirror_StdCell
+XI_MIRROR[137] VDD Vbiasp VcascodeP[137] Iout Pmirror_StdCell
+XI_MIRROR[136] VDD Vbiasp VcascodeP[136] Iout Pmirror_StdCell
+XI_MIRROR[135] VDD Vbiasp VcascodeP[135] Iout Pmirror_StdCell
+XI_MIRROR[134] VDD Vbiasp VcascodeP[134] Iout Pmirror_StdCell
+XI_MIRROR[133] VDD Vbiasp VcascodeP[133] Iout Pmirror_StdCell
+XI_MIRROR[132] VDD Vbiasp VcascodeP[132] Iout Pmirror_StdCell
+XI_MIRROR[131] VDD Vbiasp VcascodeP[131] Iout Pmirror_StdCell
+XI_MIRROR[130] VDD Vbiasp VcascodeP[130] Iout Pmirror_StdCell
+XI_MIRROR[129] VDD Vbiasp VcascodeP[129] Iout Pmirror_StdCell
+XI_MIRROR[128] VDD Vbiasp VcascodeP[128] Iout Pmirror_StdCell
+XI_MIRROR[127] VDD Vbiasp VcascodeP[127] Iout Pmirror_StdCell
+XI_MIRROR[126] VDD Vbiasp VcascodeP[126] Iout Pmirror_StdCell
+XI_MIRROR[125] VDD Vbiasp VcascodeP[125] Iout Pmirror_StdCell
+XI_MIRROR[124] VDD Vbiasp VcascodeP[124] Iout Pmirror_StdCell
+XI_MIRROR[123] VDD Vbiasp VcascodeP[123] Iout Pmirror_StdCell
+XI_MIRROR[122] VDD Vbiasp VcascodeP[122] Iout Pmirror_StdCell
+XI_MIRROR[121] VDD Vbiasp VcascodeP[121] Iout Pmirror_StdCell
+XI_MIRROR[120] VDD Vbiasp VcascodeP[120] Iout Pmirror_StdCell
+XI_MIRROR[119] VDD Vbiasp VcascodeP[119] Iout Pmirror_StdCell
+XI_MIRROR[118] VDD Vbiasp VcascodeP[118] Iout Pmirror_StdCell
+XI_MIRROR[117] VDD Vbiasp VcascodeP[117] Iout Pmirror_StdCell
+XI_MIRROR[116] VDD Vbiasp VcascodeP[116] Iout Pmirror_StdCell
+XI_MIRROR[115] VDD Vbiasp VcascodeP[115] Iout Pmirror_StdCell
+XI_MIRROR[114] VDD Vbiasp VcascodeP[114] Iout Pmirror_StdCell
+XI_MIRROR[113] VDD Vbiasp VcascodeP[113] Iout Pmirror_StdCell
+XI_MIRROR[112] VDD Vbiasp VcascodeP[112] Iout Pmirror_StdCell
+XI_MIRROR[111] VDD Vbiasp VcascodeP[111] Iout Pmirror_StdCell
+XI_MIRROR[110] VDD Vbiasp VcascodeP[110] Iout Pmirror_StdCell
+XI_MIRROR[109] VDD Vbiasp VcascodeP[109] Iout Pmirror_StdCell
+XI_MIRROR[108] VDD Vbiasp VcascodeP[108] Iout Pmirror_StdCell
+XI_MIRROR[107] VDD Vbiasp VcascodeP[107] Iout Pmirror_StdCell
+XI_MIRROR[106] VDD Vbiasp VcascodeP[106] Iout Pmirror_StdCell
+XI_MIRROR[105] VDD Vbiasp VcascodeP[105] Iout Pmirror_StdCell
+XI_MIRROR[104] VDD Vbiasp VcascodeP[104] Iout Pmirror_StdCell
+XI_MIRROR[103] VDD Vbiasp VcascodeP[103] Iout Pmirror_StdCell
+XI_MIRROR[102] VDD Vbiasp VcascodeP[102] Iout Pmirror_StdCell
+XI_MIRROR[101] VDD Vbiasp VcascodeP[101] Iout Pmirror_StdCell
+XI_MIRROR[100] VDD Vbiasp VcascodeP[100] Iout Pmirror_StdCell
+XI_MIRROR[99] VDD Vbiasp VcascodeP[99] Iout Pmirror_StdCell
+XI_MIRROR[98] VDD Vbiasp VcascodeP[98] Iout Pmirror_StdCell
+XI_MIRROR[97] VDD Vbiasp VcascodeP[97] Iout Pmirror_StdCell
+XI_MIRROR[96] VDD Vbiasp VcascodeP[96] Iout Pmirror_StdCell
+XI_MIRROR[95] VDD Vbiasp VcascodeP[95] Iout Pmirror_StdCell
+XI_MIRROR[94] VDD Vbiasp VcascodeP[94] Iout Pmirror_StdCell
+XI_MIRROR[93] VDD Vbiasp VcascodeP[93] Iout Pmirror_StdCell
+XI_MIRROR[92] VDD Vbiasp VcascodeP[92] Iout Pmirror_StdCell
+XI_MIRROR[91] VDD Vbiasp VcascodeP[91] Iout Pmirror_StdCell
+XI_MIRROR[90] VDD Vbiasp VcascodeP[90] Iout Pmirror_StdCell
+XI_MIRROR[89] VDD Vbiasp VcascodeP[89] Iout Pmirror_StdCell
+XI_MIRROR[88] VDD Vbiasp VcascodeP[88] Iout Pmirror_StdCell
+XI_MIRROR[87] VDD Vbiasp VcascodeP[87] Iout Pmirror_StdCell
+XI_MIRROR[86] VDD Vbiasp VcascodeP[86] Iout Pmirror_StdCell
+XI_MIRROR[85] VDD Vbiasp VcascodeP[85] Iout Pmirror_StdCell
+XI_MIRROR[84] VDD Vbiasp VcascodeP[84] Iout Pmirror_StdCell
+XI_MIRROR[83] VDD Vbiasp VcascodeP[83] Iout Pmirror_StdCell
+XI_MIRROR[82] VDD Vbiasp VcascodeP[82] Iout Pmirror_StdCell
+XI_MIRROR[81] VDD Vbiasp VcascodeP[81] Iout Pmirror_StdCell
+XI_MIRROR[80] VDD Vbiasp VcascodeP[80] Iout Pmirror_StdCell
+XI_MIRROR[79] VDD Vbiasp VcascodeP[79] Iout Pmirror_StdCell
+XI_MIRROR[78] VDD Vbiasp VcascodeP[78] Iout Pmirror_StdCell
+XI_MIRROR[77] VDD Vbiasp VcascodeP[77] Iout Pmirror_StdCell
+XI_MIRROR[76] VDD Vbiasp VcascodeP[76] Iout Pmirror_StdCell
+XI_MIRROR[75] VDD Vbiasp VcascodeP[75] Iout Pmirror_StdCell
+XI_MIRROR[74] VDD Vbiasp VcascodeP[74] Iout Pmirror_StdCell
+XI_MIRROR[73] VDD Vbiasp VcascodeP[73] Iout Pmirror_StdCell
+XI_MIRROR[72] VDD Vbiasp VcascodeP[72] Iout Pmirror_StdCell
+XI_MIRROR[71] VDD Vbiasp VcascodeP[71] Iout Pmirror_StdCell
+XI_MIRROR[70] VDD Vbiasp VcascodeP[70] Iout Pmirror_StdCell
+XI_MIRROR[69] VDD Vbiasp VcascodeP[69] Iout Pmirror_StdCell
+XI_MIRROR[68] VDD Vbiasp VcascodeP[68] Iout Pmirror_StdCell
+XI_MIRROR[67] VDD Vbiasp VcascodeP[67] Iout Pmirror_StdCell
+XI_MIRROR[66] VDD Vbiasp VcascodeP[66] Iout Pmirror_StdCell
+XI_MIRROR[65] VDD Vbiasp VcascodeP[65] Iout Pmirror_StdCell
+XI_MIRROR[64] VDD Vbiasp VcascodeP[64] Iout Pmirror_StdCell
+XI_MIRROR[63] VDD Vbiasp VcascodeP[63] Iout Pmirror_StdCell
+XI_MIRROR[62] VDD Vbiasp VcascodeP[62] Iout Pmirror_StdCell
+XI_MIRROR[61] VDD Vbiasp VcascodeP[61] Iout Pmirror_StdCell
+XI_MIRROR[60] VDD Vbiasp VcascodeP[60] Iout Pmirror_StdCell
+XI_MIRROR[59] VDD Vbiasp VcascodeP[59] Iout Pmirror_StdCell
+XI_MIRROR[58] VDD Vbiasp VcascodeP[58] Iout Pmirror_StdCell
+XI_MIRROR[57] VDD Vbiasp VcascodeP[57] Iout Pmirror_StdCell
+XI_MIRROR[56] VDD Vbiasp VcascodeP[56] Iout Pmirror_StdCell
+XI_MIRROR[55] VDD Vbiasp VcascodeP[55] Iout Pmirror_StdCell
+XI_MIRROR[54] VDD Vbiasp VcascodeP[54] Iout Pmirror_StdCell
+XI_MIRROR[53] VDD Vbiasp VcascodeP[53] Iout Pmirror_StdCell
+XI_MIRROR[52] VDD Vbiasp VcascodeP[52] Iout Pmirror_StdCell
+XI_MIRROR[51] VDD Vbiasp VcascodeP[51] Iout Pmirror_StdCell
+XI_MIRROR[50] VDD Vbiasp VcascodeP[50] Iout Pmirror_StdCell
+XI_MIRROR[49] VDD Vbiasp VcascodeP[49] Iout Pmirror_StdCell
+XI_MIRROR[48] VDD Vbiasp VcascodeP[48] Iout Pmirror_StdCell
+XI_MIRROR[47] VDD Vbiasp VcascodeP[47] Iout Pmirror_StdCell
+XI_MIRROR[46] VDD Vbiasp VcascodeP[46] Iout Pmirror_StdCell
+XI_MIRROR[45] VDD Vbiasp VcascodeP[45] Iout Pmirror_StdCell
+XI_MIRROR[44] VDD Vbiasp VcascodeP[44] Iout Pmirror_StdCell
+XI_MIRROR[43] VDD Vbiasp VcascodeP[43] Iout Pmirror_StdCell
+XI_MIRROR[42] VDD Vbiasp VcascodeP[42] Iout Pmirror_StdCell
+XI_MIRROR[41] VDD Vbiasp VcascodeP[41] Iout Pmirror_StdCell
+XI_MIRROR[40] VDD Vbiasp VcascodeP[40] Iout Pmirror_StdCell
+XI_MIRROR[39] VDD Vbiasp VcascodeP[39] Iout Pmirror_StdCell
+XI_MIRROR[38] VDD Vbiasp VcascodeP[38] Iout Pmirror_StdCell
+XI_MIRROR[37] VDD Vbiasp VcascodeP[37] Iout Pmirror_StdCell
+XI_MIRROR[36] VDD Vbiasp VcascodeP[36] Iout Pmirror_StdCell
+XI_MIRROR[35] VDD Vbiasp VcascodeP[35] Iout Pmirror_StdCell
+XI_MIRROR[34] VDD Vbiasp VcascodeP[34] Iout Pmirror_StdCell
+XI_MIRROR[33] VDD Vbiasp VcascodeP[33] Iout Pmirror_StdCell
+XI_MIRROR[32] VDD Vbiasp VcascodeP[32] Iout Pmirror_StdCell
+XI_MIRROR[31] VDD Vbiasp VcascodeP[31] Iout Pmirror_StdCell
+XI_MIRROR[30] VDD Vbiasp VcascodeP[30] Iout Pmirror_StdCell
+XI_MIRROR[29] VDD Vbiasp VcascodeP[29] Iout Pmirror_StdCell
+XI_MIRROR[28] VDD Vbiasp VcascodeP[28] Iout Pmirror_StdCell
+XI_MIRROR[27] VDD Vbiasp VcascodeP[27] Iout Pmirror_StdCell
+XI_MIRROR[26] VDD Vbiasp VcascodeP[26] Iout Pmirror_StdCell
+XI_MIRROR[25] VDD Vbiasp VcascodeP[25] Iout Pmirror_StdCell
+XI_MIRROR[24] VDD Vbiasp VcascodeP[24] Iout Pmirror_StdCell
+XI_MIRROR[23] VDD Vbiasp VcascodeP[23] Iout Pmirror_StdCell
+XI_MIRROR[22] VDD Vbiasp VcascodeP[22] Iout Pmirror_StdCell
+XI_MIRROR[21] VDD Vbiasp VcascodeP[21] Iout Pmirror_StdCell
+XI_MIRROR[20] VDD Vbiasp VcascodeP[20] Iout Pmirror_StdCell
+XI_MIRROR[19] VDD Vbiasp VcascodeP[19] Iout Pmirror_StdCell
+XI_MIRROR[18] VDD Vbiasp VcascodeP[18] Iout Pmirror_StdCell
+XI_MIRROR[17] VDD Vbiasp VcascodeP[17] Iout Pmirror_StdCell
+XI_MIRROR[16] VDD Vbiasp VcascodeP[16] Iout Pmirror_StdCell
+XI_MIRROR[15] VDD Vbiasp VcascodeP[15] Iout Pmirror_StdCell
+XI_MIRROR[14] VDD Vbiasp VcascodeP[14] Iout Pmirror_StdCell
+XI_MIRROR[13] VDD Vbiasp VcascodeP[13] Iout Pmirror_StdCell
+XI_MIRROR[12] VDD Vbiasp VcascodeP[12] Iout Pmirror_StdCell
+XI_MIRROR[11] VDD Vbiasp VcascodeP[11] Iout Pmirror_StdCell
+XI_MIRROR[10] VDD Vbiasp VcascodeP[10] Iout Pmirror_StdCell
+XI_MIRROR[9] VDD Vbiasp VcascodeP[9] Iout Pmirror_StdCell
+XI_MIRROR[8] VDD Vbiasp VcascodeP[8] Iout Pmirror_StdCell
+XI_MIRROR[7] VDD Vbiasp VcascodeP[7] Iout Pmirror_StdCell
+XI_MIRROR[6] VDD Vbiasp VcascodeP[6] Iout Pmirror_StdCell
+XI_MIRROR[5] VDD Vbiasp VcascodeP[5] Iout Pmirror_StdCell
+XI_MIRROR[4] VDD Vbiasp VcascodeP[4] Iout Pmirror_StdCell
+XI_MIRROR[3] VDD Vbiasp VcascodeP[3] Iout Pmirror_StdCell
+XI_MIRROR[2] VDD Vbiasp VcascodeP[2] Iout Pmirror_StdCell
+XI_MIRROR[1] VDD Vbiasp VcascodeP[1] Iout Pmirror_StdCell
+XI_MIRROR[0] VDD Vbiasp VcascodeP[0] Iout Pmirror_StdCell
+.ends
+
+
+* expanding   symbol:  ../schematic/DAC_SW_TOP.sym # of pins=5
+** sym_path: /home/cmaier/EDA/PUDDING/schematic/DAC_SW_TOP.sym
+** sch_path: /home/cmaier/EDA/PUDDING/schematic/DAC_SW_TOP.sch
+.subckt DAC_SW_TOP PCASCODE SW_OUT[255] SW_OUT[254] SW_OUT[253] SW_OUT[252] SW_OUT[251] SW_OUT[250] SW_OUT[249] SW_OUT[248]
++ SW_OUT[247] SW_OUT[246] SW_OUT[245] SW_OUT[244] SW_OUT[243] SW_OUT[242] SW_OUT[241] SW_OUT[240] SW_OUT[239] SW_OUT[238] SW_OUT[237]
++ SW_OUT[236] SW_OUT[235] SW_OUT[234] SW_OUT[233] SW_OUT[232] SW_OUT[231] SW_OUT[230] SW_OUT[229] SW_OUT[228] SW_OUT[227] SW_OUT[226]
++ SW_OUT[225] SW_OUT[224] SW_OUT[223] SW_OUT[222] SW_OUT[221] SW_OUT[220] SW_OUT[219] SW_OUT[218] SW_OUT[217] SW_OUT[216] SW_OUT[215]
++ SW_OUT[214] SW_OUT[213] SW_OUT[212] SW_OUT[211] SW_OUT[210] SW_OUT[209] SW_OUT[208] SW_OUT[207] SW_OUT[206] SW_OUT[205] SW_OUT[204]
++ SW_OUT[203] SW_OUT[202] SW_OUT[201] SW_OUT[200] SW_OUT[199] SW_OUT[198] SW_OUT[197] SW_OUT[196] SW_OUT[195] SW_OUT[194] SW_OUT[193]
++ SW_OUT[192] SW_OUT[191] SW_OUT[190] SW_OUT[189] SW_OUT[188] SW_OUT[187] SW_OUT[186] SW_OUT[185] SW_OUT[184] SW_OUT[183] SW_OUT[182]
++ SW_OUT[181] SW_OUT[180] SW_OUT[179] SW_OUT[178] SW_OUT[177] SW_OUT[176] SW_OUT[175] SW_OUT[174] SW_OUT[173] SW_OUT[172] SW_OUT[171]
++ SW_OUT[170] SW_OUT[169] SW_OUT[168] SW_OUT[167] SW_OUT[166] SW_OUT[165] SW_OUT[164] SW_OUT[163] SW_OUT[162] SW_OUT[161] SW_OUT[160]
++ SW_OUT[159] SW_OUT[158] SW_OUT[157] SW_OUT[156] SW_OUT[155] SW_OUT[154] SW_OUT[153] SW_OUT[152] SW_OUT[151] SW_OUT[150] SW_OUT[149]
++ SW_OUT[148] SW_OUT[147] SW_OUT[146] SW_OUT[145] SW_OUT[144] SW_OUT[143] SW_OUT[142] SW_OUT[141] SW_OUT[140] SW_OUT[139] SW_OUT[138]
++ SW_OUT[137] SW_OUT[136] SW_OUT[135] SW_OUT[134] SW_OUT[133] SW_OUT[132] SW_OUT[131] SW_OUT[130] SW_OUT[129] SW_OUT[128] SW_OUT[127]
++ SW_OUT[126] SW_OUT[125] SW_OUT[124] SW_OUT[123] SW_OUT[122] SW_OUT[121] SW_OUT[120] SW_OUT[119] SW_OUT[118] SW_OUT[117] SW_OUT[116]
++ SW_OUT[115] SW_OUT[114] SW_OUT[113] SW_OUT[112] SW_OUT[111] SW_OUT[110] SW_OUT[109] SW_OUT[108] SW_OUT[107] SW_OUT[106] SW_OUT[105]
++ SW_OUT[104] SW_OUT[103] SW_OUT[102] SW_OUT[101] SW_OUT[100] SW_OUT[99] SW_OUT[98] SW_OUT[97] SW_OUT[96] SW_OUT[95] SW_OUT[94] SW_OUT[93]
++ SW_OUT[92] SW_OUT[91] SW_OUT[90] SW_OUT[89] SW_OUT[88] SW_OUT[87] SW_OUT[86] SW_OUT[85] SW_OUT[84] SW_OUT[83] SW_OUT[82] SW_OUT[81]
++ SW_OUT[80] SW_OUT[79] SW_OUT[78] SW_OUT[77] SW_OUT[76] SW_OUT[75] SW_OUT[74] SW_OUT[73] SW_OUT[72] SW_OUT[71] SW_OUT[70] SW_OUT[69]
++ SW_OUT[68] SW_OUT[67] SW_OUT[66] SW_OUT[65] SW_OUT[64] SW_OUT[63] SW_OUT[62] SW_OUT[61] SW_OUT[60] SW_OUT[59] SW_OUT[58] SW_OUT[57]
++ SW_OUT[56] SW_OUT[55] SW_OUT[54] SW_OUT[53] SW_OUT[52] SW_OUT[51] SW_OUT[50] SW_OUT[49] SW_OUT[48] SW_OUT[47] SW_OUT[46] SW_OUT[45]
++ SW_OUT[44] SW_OUT[43] SW_OUT[42] SW_OUT[41] SW_OUT[40] SW_OUT[39] SW_OUT[38] SW_OUT[37] SW_OUT[36] SW_OUT[35] SW_OUT[34] SW_OUT[33]
++ SW_OUT[32] SW_OUT[31] SW_OUT[30] SW_OUT[29] SW_OUT[28] SW_OUT[27] SW_OUT[26] SW_OUT[25] SW_OUT[24] SW_OUT[23] SW_OUT[22] SW_OUT[21]
++ SW_OUT[20] SW_OUT[19] SW_OUT[18] SW_OUT[17] SW_OUT[16] SW_OUT[15] SW_OUT[14] SW_OUT[13] SW_OUT[12] SW_OUT[11] SW_OUT[10] SW_OUT[9] SW_OUT[8]
++ SW_OUT[7] SW_OUT[6] SW_OUT[5] SW_OUT[4] SW_OUT[3] SW_OUT[2] SW_OUT[1] SW_OUT[0] VDD IN[255] IN[254] IN[253] IN[252] IN[251] IN[250] IN[249]
++ IN[248] IN[247] IN[246] IN[245] IN[244] IN[243] IN[242] IN[241] IN[240] IN[239] IN[238] IN[237] IN[236] IN[235] IN[234] IN[233] IN[232]
++ IN[231] IN[230] IN[229] IN[228] IN[227] IN[226] IN[225] IN[224] IN[223] IN[222] IN[221] IN[220] IN[219] IN[218] IN[217] IN[216] IN[215]
++ IN[214] IN[213] IN[212] IN[211] IN[210] IN[209] IN[208] IN[207] IN[206] IN[205] IN[204] IN[203] IN[202] IN[201] IN[200] IN[199] IN[198]
++ IN[197] IN[196] IN[195] IN[194] IN[193] IN[192] IN[191] IN[190] IN[189] IN[188] IN[187] IN[186] IN[185] IN[184] IN[183] IN[182] IN[181]
++ IN[180] IN[179] IN[178] IN[177] IN[176] IN[175] IN[174] IN[173] IN[172] IN[171] IN[170] IN[169] IN[168] IN[167] IN[166] IN[165] IN[164]
++ IN[163] IN[162] IN[161] IN[160] IN[159] IN[158] IN[157] IN[156] IN[155] IN[154] IN[153] IN[152] IN[151] IN[150] IN[149] IN[148] IN[147]
++ IN[146] IN[145] IN[144] IN[143] IN[142] IN[141] IN[140] IN[139] IN[138] IN[137] IN[136] IN[135] IN[134] IN[133] IN[132] IN[131] IN[130]
++ IN[129] IN[128] IN[127] IN[126] IN[125] IN[124] IN[123] IN[122] IN[121] IN[120] IN[119] IN[118] IN[117] IN[116] IN[115] IN[114] IN[113]
++ IN[112] IN[111] IN[110] IN[109] IN[108] IN[107] IN[106] IN[105] IN[104] IN[103] IN[102] IN[101] IN[100] IN[99] IN[98] IN[97] IN[96]
++ IN[95] IN[94] IN[93] IN[92] IN[91] IN[90] IN[89] IN[88] IN[87] IN[86] IN[85] IN[84] IN[83] IN[82] IN[81] IN[80] IN[79] IN[78] IN[77]
++ IN[76] IN[75] IN[74] IN[73] IN[72] IN[71] IN[70] IN[69] IN[68] IN[67] IN[66] IN[65] IN[64] IN[63] IN[62] IN[61] IN[60] IN[59] IN[58]
++ IN[57] IN[56] IN[55] IN[54] IN[53] IN[52] IN[51] IN[50] IN[49] IN[48] IN[47] IN[46] IN[45] IN[44] IN[43] IN[42] IN[41] IN[40] IN[39]
++ IN[38] IN[37] IN[36] IN[35] IN[34] IN[33] IN[32] IN[31] IN[30] IN[29] IN[28] IN[27] IN[26] IN[25] IN[24] IN[23] IN[22] IN[21] IN[20]
++ IN[19] IN[18] IN[17] IN[16] IN[15] IN[14] IN[13] IN[12] IN[11] IN[10] IN[9] IN[8] IN[7] IN[6] IN[5] IN[4] IN[3] IN[2] IN[1] IN[0]
++ IN_N[255] IN_N[254] IN_N[253] IN_N[252] IN_N[251] IN_N[250] IN_N[249] IN_N[248] IN_N[247] IN_N[246] IN_N[245] IN_N[244] IN_N[243] IN_N[242]
++ IN_N[241] IN_N[240] IN_N[239] IN_N[238] IN_N[237] IN_N[236] IN_N[235] IN_N[234] IN_N[233] IN_N[232] IN_N[231] IN_N[230] IN_N[229] IN_N[228]
++ IN_N[227] IN_N[226] IN_N[225] IN_N[224] IN_N[223] IN_N[222] IN_N[221] IN_N[220] IN_N[219] IN_N[218] IN_N[217] IN_N[216] IN_N[215] IN_N[214]
++ IN_N[213] IN_N[212] IN_N[211] IN_N[210] IN_N[209] IN_N[208] IN_N[207] IN_N[206] IN_N[205] IN_N[204] IN_N[203] IN_N[202] IN_N[201] IN_N[200]
++ IN_N[199] IN_N[198] IN_N[197] IN_N[196] IN_N[195] IN_N[194] IN_N[193] IN_N[192] IN_N[191] IN_N[190] IN_N[189] IN_N[188] IN_N[187] IN_N[186]
++ IN_N[185] IN_N[184] IN_N[183] IN_N[182] IN_N[181] IN_N[180] IN_N[179] IN_N[178] IN_N[177] IN_N[176] IN_N[175] IN_N[174] IN_N[173] IN_N[172]
++ IN_N[171] IN_N[170] IN_N[169] IN_N[168] IN_N[167] IN_N[166] IN_N[165] IN_N[164] IN_N[163] IN_N[162] IN_N[161] IN_N[160] IN_N[159] IN_N[158]
++ IN_N[157] IN_N[156] IN_N[155] IN_N[154] IN_N[153] IN_N[152] IN_N[151] IN_N[150] IN_N[149] IN_N[148] IN_N[147] IN_N[146] IN_N[145] IN_N[144]
++ IN_N[143] IN_N[142] IN_N[141] IN_N[140] IN_N[139] IN_N[138] IN_N[137] IN_N[136] IN_N[135] IN_N[134] IN_N[133] IN_N[132] IN_N[131] IN_N[130]
++ IN_N[129] IN_N[128] IN_N[127] IN_N[126] IN_N[125] IN_N[124] IN_N[123] IN_N[122] IN_N[121] IN_N[120] IN_N[119] IN_N[118] IN_N[117] IN_N[116]
++ IN_N[115] IN_N[114] IN_N[113] IN_N[112] IN_N[111] IN_N[110] IN_N[109] IN_N[108] IN_N[107] IN_N[106] IN_N[105] IN_N[104] IN_N[103] IN_N[102]
++ IN_N[101] IN_N[100] IN_N[99] IN_N[98] IN_N[97] IN_N[96] IN_N[95] IN_N[94] IN_N[93] IN_N[92] IN_N[91] IN_N[90] IN_N[89] IN_N[88] IN_N[87]
++ IN_N[86] IN_N[85] IN_N[84] IN_N[83] IN_N[82] IN_N[81] IN_N[80] IN_N[79] IN_N[78] IN_N[77] IN_N[76] IN_N[75] IN_N[74] IN_N[73] IN_N[72]
++ IN_N[71] IN_N[70] IN_N[69] IN_N[68] IN_N[67] IN_N[66] IN_N[65] IN_N[64] IN_N[63] IN_N[62] IN_N[61] IN_N[60] IN_N[59] IN_N[58] IN_N[57]
++ IN_N[56] IN_N[55] IN_N[54] IN_N[53] IN_N[52] IN_N[51] IN_N[50] IN_N[49] IN_N[48] IN_N[47] IN_N[46] IN_N[45] IN_N[44] IN_N[43] IN_N[42]
++ IN_N[41] IN_N[40] IN_N[39] IN_N[38] IN_N[37] IN_N[36] IN_N[35] IN_N[34] IN_N[33] IN_N[32] IN_N[31] IN_N[30] IN_N[29] IN_N[28] IN_N[27]
++ IN_N[26] IN_N[25] IN_N[24] IN_N[23] IN_N[22] IN_N[21] IN_N[20] IN_N[19] IN_N[18] IN_N[17] IN_N[16] IN_N[15] IN_N[14] IN_N[13] IN_N[12]
++ IN_N[11] IN_N[10] IN_N[9] IN_N[8] IN_N[7] IN_N[6] IN_N[5] IN_N[4] IN_N[3] IN_N[2] IN_N[1] IN_N[0]
+*.opin
+*+ SW_OUT[255],SW_OUT[254],SW_OUT[253],SW_OUT[252],SW_OUT[251],SW_OUT[250],SW_OUT[249],SW_OUT[248],SW_OUT[247],SW_OUT[246],SW_OUT[245],SW_OUT[244],SW_OUT[243],SW_OUT[242],SW_OUT[241],SW_OUT[240],SW_OUT[239],SW_OUT[238],SW_OUT[237],SW_OUT[236],SW_OUT[235],SW_OUT[234],SW_OUT[233],SW_OUT[232],SW_OUT[231],SW_OUT[230],SW_OUT[229],SW_OUT[228],SW_OUT[227],SW_OUT[226],SW_OUT[225],SW_OUT[224],SW_OUT[223],SW_OUT[222],SW_OUT[221],SW_OUT[220],SW_OUT[219],SW_OUT[218],SW_OUT[217],SW_OUT[216],SW_OUT[215],SW_OUT[214],SW_OUT[213],SW_OUT[212],SW_OUT[211],SW_OUT[210],SW_OUT[209],SW_OUT[208],SW_OUT[207],SW_OUT[206],SW_OUT[205],SW_OUT[204],SW_OUT[203],SW_OUT[202],SW_OUT[201],SW_OUT[200],SW_OUT[199],SW_OUT[198],SW_OUT[197],SW_OUT[196],SW_OUT[195],SW_OUT[194],SW_OUT[193],SW_OUT[192],SW_OUT[191],SW_OUT[190],SW_OUT[189],SW_OUT[188],SW_OUT[187],SW_OUT[186],SW_OUT[185],SW_OUT[184],SW_OUT[183],SW_OUT[182],SW_OUT[181],SW_OUT[180],SW_OUT[179],SW_OUT[178],SW_OUT[177],SW_OUT[176],SW_OUT[175],SW_OUT[174],SW_OUT[173],SW_OUT[172],SW_OUT[171],SW_OUT[170],SW_OUT[169],SW_OUT[168],SW_OUT[167],SW_OUT[166],SW_OUT[165],SW_OUT[164],SW_OUT[163],SW_OUT[162],SW_OUT[161],SW_OUT[160],SW_OUT[159],SW_OUT[158],SW_OUT[157],SW_OUT[156],SW_OUT[155],SW_OUT[154],SW_OUT[153],SW_OUT[152],SW_OUT[151],SW_OUT[150],SW_OUT[149],SW_OUT[148],SW_OUT[147],SW_OUT[146],SW_OUT[145],SW_OUT[144],SW_OUT[143],SW_OUT[142],SW_OUT[141],SW_OUT[140],SW_OUT[139],SW_OUT[138],SW_OUT[137],SW_OUT[136],SW_OUT[135],SW_OUT[134],SW_OUT[133],SW_OUT[132],SW_OUT[131],SW_OUT[130],SW_OUT[129],SW_OUT[128],SW_OUT[127],SW_OUT[126],SW_OUT[125],SW_OUT[124],SW_OUT[123],SW_OUT[122],SW_OUT[121],SW_OUT[120],SW_OUT[119],SW_OUT[118],SW_OUT[117],SW_OUT[116],SW_OUT[115],SW_OUT[114],SW_OUT[113],SW_OUT[112],SW_OUT[111],SW_OUT[110],SW_OUT[109],SW_OUT[108],SW_OUT[107],SW_OUT[106],SW_OUT[105],SW_OUT[104],SW_OUT[103],SW_OUT[102],SW_OUT[101],SW_OUT[100],SW_OUT[99],SW_OUT[98],SW_OUT[97],SW_OUT[96],SW_OUT[95],SW_OUT[94],SW_OUT[93],SW_OUT[92],SW_OUT[91],SW_OUT[90],SW_OUT[89],SW_OUT[88],SW_OUT[87],SW_OUT[86],SW_OUT[85],SW_OUT[84],SW_OUT[83],SW_OUT[82],SW_OUT[81],SW_OUT[80],SW_OUT[79],SW_OUT[78],SW_OUT[77],SW_OUT[76],SW_OUT[75],SW_OUT[74],SW_OUT[73],SW_OUT[72],SW_OUT[71],SW_OUT[70],SW_OUT[69],SW_OUT[68],SW_OUT[67],SW_OUT[66],SW_OUT[65],SW_OUT[64],SW_OUT[63],SW_OUT[62],SW_OUT[61],SW_OUT[60],SW_OUT[59],SW_OUT[58],SW_OUT[57],SW_OUT[56],SW_OUT[55],SW_OUT[54],SW_OUT[53],SW_OUT[52],SW_OUT[51],SW_OUT[50],SW_OUT[49],SW_OUT[48],SW_OUT[47],SW_OUT[46],SW_OUT[45],SW_OUT[44],SW_OUT[43],SW_OUT[42],SW_OUT[41],SW_OUT[40],SW_OUT[39],SW_OUT[38],SW_OUT[37],SW_OUT[36],SW_OUT[35],SW_OUT[34],SW_OUT[33],SW_OUT[32],SW_OUT[31],SW_OUT[30],SW_OUT[29],SW_OUT[28],SW_OUT[27],SW_OUT[26],SW_OUT[25],SW_OUT[24],SW_OUT[23],SW_OUT[22],SW_OUT[21],SW_OUT[20],SW_OUT[19],SW_OUT[18],SW_OUT[17],SW_OUT[16],SW_OUT[15],SW_OUT[14],SW_OUT[13],SW_OUT[12],SW_OUT[11],SW_OUT[10],SW_OUT[9],SW_OUT[8],SW_OUT[7],SW_OUT[6],SW_OUT[5],SW_OUT[4],SW_OUT[3],SW_OUT[2],SW_OUT[1],SW_OUT[0]
+*.ipin
+*+ IN[255],IN[254],IN[253],IN[252],IN[251],IN[250],IN[249],IN[248],IN[247],IN[246],IN[245],IN[244],IN[243],IN[242],IN[241],IN[240],IN[239],IN[238],IN[237],IN[236],IN[235],IN[234],IN[233],IN[232],IN[231],IN[230],IN[229],IN[228],IN[227],IN[226],IN[225],IN[224],IN[223],IN[222],IN[221],IN[220],IN[219],IN[218],IN[217],IN[216],IN[215],IN[214],IN[213],IN[212],IN[211],IN[210],IN[209],IN[208],IN[207],IN[206],IN[205],IN[204],IN[203],IN[202],IN[201],IN[200],IN[199],IN[198],IN[197],IN[196],IN[195],IN[194],IN[193],IN[192],IN[191],IN[190],IN[189],IN[188],IN[187],IN[186],IN[185],IN[184],IN[183],IN[182],IN[181],IN[180],IN[179],IN[178],IN[177],IN[176],IN[175],IN[174],IN[173],IN[172],IN[171],IN[170],IN[169],IN[168],IN[167],IN[166],IN[165],IN[164],IN[163],IN[162],IN[161],IN[160],IN[159],IN[158],IN[157],IN[156],IN[155],IN[154],IN[153],IN[152],IN[151],IN[150],IN[149],IN[148],IN[147],IN[146],IN[145],IN[144],IN[143],IN[142],IN[141],IN[140],IN[139],IN[138],IN[137],IN[136],IN[135],IN[134],IN[133],IN[132],IN[131],IN[130],IN[129],IN[128],IN[127],IN[126],IN[125],IN[124],IN[123],IN[122],IN[121],IN[120],IN[119],IN[118],IN[117],IN[116],IN[115],IN[114],IN[113],IN[112],IN[111],IN[110],IN[109],IN[108],IN[107],IN[106],IN[105],IN[104],IN[103],IN[102],IN[101],IN[100],IN[99],IN[98],IN[97],IN[96],IN[95],IN[94],IN[93],IN[92],IN[91],IN[90],IN[89],IN[88],IN[87],IN[86],IN[85],IN[84],IN[83],IN[82],IN[81],IN[80],IN[79],IN[78],IN[77],IN[76],IN[75],IN[74],IN[73],IN[72],IN[71],IN[70],IN[69],IN[68],IN[67],IN[66],IN[65],IN[64],IN[63],IN[62],IN[61],IN[60],IN[59],IN[58],IN[57],IN[56],IN[55],IN[54],IN[53],IN[52],IN[51],IN[50],IN[49],IN[48],IN[47],IN[46],IN[45],IN[44],IN[43],IN[42],IN[41],IN[40],IN[39],IN[38],IN[37],IN[36],IN[35],IN[34],IN[33],IN[32],IN[31],IN[30],IN[29],IN[28],IN[27],IN[26],IN[25],IN[24],IN[23],IN[22],IN[21],IN[20],IN[19],IN[18],IN[17],IN[16],IN[15],IN[14],IN[13],IN[12],IN[11],IN[10],IN[9],IN[8],IN[7],IN[6],IN[5],IN[4],IN[3],IN[2],IN[1],IN[0]
+*.ipin PCASCODE
+*.ipin VDD
+*.ipin
+*+ IN_N[255],IN_N[254],IN_N[253],IN_N[252],IN_N[251],IN_N[250],IN_N[249],IN_N[248],IN_N[247],IN_N[246],IN_N[245],IN_N[244],IN_N[243],IN_N[242],IN_N[241],IN_N[240],IN_N[239],IN_N[238],IN_N[237],IN_N[236],IN_N[235],IN_N[234],IN_N[233],IN_N[232],IN_N[231],IN_N[230],IN_N[229],IN_N[228],IN_N[227],IN_N[226],IN_N[225],IN_N[224],IN_N[223],IN_N[222],IN_N[221],IN_N[220],IN_N[219],IN_N[218],IN_N[217],IN_N[216],IN_N[215],IN_N[214],IN_N[213],IN_N[212],IN_N[211],IN_N[210],IN_N[209],IN_N[208],IN_N[207],IN_N[206],IN_N[205],IN_N[204],IN_N[203],IN_N[202],IN_N[201],IN_N[200],IN_N[199],IN_N[198],IN_N[197],IN_N[196],IN_N[195],IN_N[194],IN_N[193],IN_N[192],IN_N[191],IN_N[190],IN_N[189],IN_N[188],IN_N[187],IN_N[186],IN_N[185],IN_N[184],IN_N[183],IN_N[182],IN_N[181],IN_N[180],IN_N[179],IN_N[178],IN_N[177],IN_N[176],IN_N[175],IN_N[174],IN_N[173],IN_N[172],IN_N[171],IN_N[170],IN_N[169],IN_N[168],IN_N[167],IN_N[166],IN_N[165],IN_N[164],IN_N[163],IN_N[162],IN_N[161],IN_N[160],IN_N[159],IN_N[158],IN_N[157],IN_N[156],IN_N[155],IN_N[154],IN_N[153],IN_N[152],IN_N[151],IN_N[150],IN_N[149],IN_N[148],IN_N[147],IN_N[146],IN_N[145],IN_N[144],IN_N[143],IN_N[142],IN_N[141],IN_N[140],IN_N[139],IN_N[138],IN_N[137],IN_N[136],IN_N[135],IN_N[134],IN_N[133],IN_N[132],IN_N[131],IN_N[130],IN_N[129],IN_N[128],IN_N[127],IN_N[126],IN_N[125],IN_N[124],IN_N[123],IN_N[122],IN_N[121],IN_N[120],IN_N[119],IN_N[118],IN_N[117],IN_N[116],IN_N[115],IN_N[114],IN_N[113],IN_N[112],IN_N[111],IN_N[110],IN_N[109],IN_N[108],IN_N[107],IN_N[106],IN_N[105],IN_N[104],IN_N[103],IN_N[102],IN_N[101],IN_N[100],IN_N[99],IN_N[98],IN_N[97],IN_N[96],IN_N[95],IN_N[94],IN_N[93],IN_N[92],IN_N[91],IN_N[90],IN_N[89],IN_N[88],IN_N[87],IN_N[86],IN_N[85],IN_N[84],IN_N[83],IN_N[82],IN_N[81],IN_N[80],IN_N[79],IN_N[78],IN_N[77],IN_N[76],IN_N[75],IN_N[74],IN_N[73],IN_N[72],IN_N[71],IN_N[70],IN_N[69],IN_N[68],IN_N[67],IN_N[66],IN_N[65],IN_N[64],IN_N[63],IN_N[62],IN_N[61],IN_N[60],IN_N[59],IN_N[58],IN_N[57],IN_N[56],IN_N[55],IN_N[54],IN_N[53],IN_N[52],IN_N[51],IN_N[50],IN_N[49],IN_N[48],IN_N[47],IN_N[46],IN_N[45],IN_N[44],IN_N[43],IN_N[42],IN_N[41],IN_N[40],IN_N[39],IN_N[38],IN_N[37],IN_N[36],IN_N[35],IN_N[34],IN_N[33],IN_N[32],IN_N[31],IN_N[30],IN_N[29],IN_N[28],IN_N[27],IN_N[26],IN_N[25],IN_N[24],IN_N[23],IN_N[22],IN_N[21],IN_N[20],IN_N[19],IN_N[18],IN_N[17],IN_N[16],IN_N[15],IN_N[14],IN_N[13],IN_N[12],IN_N[11],IN_N[10],IN_N[9],IN_N[8],IN_N[7],IN_N[6],IN_N[5],IN_N[4],IN_N[3],IN_N[2],IN_N[1],IN_N[0]
+XSW[255] VDD IN[255] SW_OUT[255] PCASCODE IN_N[255] DAC_SW
+XSW[254] VDD IN[254] SW_OUT[254] PCASCODE IN_N[254] DAC_SW
+XSW[253] VDD IN[253] SW_OUT[253] PCASCODE IN_N[253] DAC_SW
+XSW[252] VDD IN[252] SW_OUT[252] PCASCODE IN_N[252] DAC_SW
+XSW[251] VDD IN[251] SW_OUT[251] PCASCODE IN_N[251] DAC_SW
+XSW[250] VDD IN[250] SW_OUT[250] PCASCODE IN_N[250] DAC_SW
+XSW[249] VDD IN[249] SW_OUT[249] PCASCODE IN_N[249] DAC_SW
+XSW[248] VDD IN[248] SW_OUT[248] PCASCODE IN_N[248] DAC_SW
+XSW[247] VDD IN[247] SW_OUT[247] PCASCODE IN_N[247] DAC_SW
+XSW[246] VDD IN[246] SW_OUT[246] PCASCODE IN_N[246] DAC_SW
+XSW[245] VDD IN[245] SW_OUT[245] PCASCODE IN_N[245] DAC_SW
+XSW[244] VDD IN[244] SW_OUT[244] PCASCODE IN_N[244] DAC_SW
+XSW[243] VDD IN[243] SW_OUT[243] PCASCODE IN_N[243] DAC_SW
+XSW[242] VDD IN[242] SW_OUT[242] PCASCODE IN_N[242] DAC_SW
+XSW[241] VDD IN[241] SW_OUT[241] PCASCODE IN_N[241] DAC_SW
+XSW[240] VDD IN[240] SW_OUT[240] PCASCODE IN_N[240] DAC_SW
+XSW[239] VDD IN[239] SW_OUT[239] PCASCODE IN_N[239] DAC_SW
+XSW[238] VDD IN[238] SW_OUT[238] PCASCODE IN_N[238] DAC_SW
+XSW[237] VDD IN[237] SW_OUT[237] PCASCODE IN_N[237] DAC_SW
+XSW[236] VDD IN[236] SW_OUT[236] PCASCODE IN_N[236] DAC_SW
+XSW[235] VDD IN[235] SW_OUT[235] PCASCODE IN_N[235] DAC_SW
+XSW[234] VDD IN[234] SW_OUT[234] PCASCODE IN_N[234] DAC_SW
+XSW[233] VDD IN[233] SW_OUT[233] PCASCODE IN_N[233] DAC_SW
+XSW[232] VDD IN[232] SW_OUT[232] PCASCODE IN_N[232] DAC_SW
+XSW[231] VDD IN[231] SW_OUT[231] PCASCODE IN_N[231] DAC_SW
+XSW[230] VDD IN[230] SW_OUT[230] PCASCODE IN_N[230] DAC_SW
+XSW[229] VDD IN[229] SW_OUT[229] PCASCODE IN_N[229] DAC_SW
+XSW[228] VDD IN[228] SW_OUT[228] PCASCODE IN_N[228] DAC_SW
+XSW[227] VDD IN[227] SW_OUT[227] PCASCODE IN_N[227] DAC_SW
+XSW[226] VDD IN[226] SW_OUT[226] PCASCODE IN_N[226] DAC_SW
+XSW[225] VDD IN[225] SW_OUT[225] PCASCODE IN_N[225] DAC_SW
+XSW[224] VDD IN[224] SW_OUT[224] PCASCODE IN_N[224] DAC_SW
+XSW[223] VDD IN[223] SW_OUT[223] PCASCODE IN_N[223] DAC_SW
+XSW[222] VDD IN[222] SW_OUT[222] PCASCODE IN_N[222] DAC_SW
+XSW[221] VDD IN[221] SW_OUT[221] PCASCODE IN_N[221] DAC_SW
+XSW[220] VDD IN[220] SW_OUT[220] PCASCODE IN_N[220] DAC_SW
+XSW[219] VDD IN[219] SW_OUT[219] PCASCODE IN_N[219] DAC_SW
+XSW[218] VDD IN[218] SW_OUT[218] PCASCODE IN_N[218] DAC_SW
+XSW[217] VDD IN[217] SW_OUT[217] PCASCODE IN_N[217] DAC_SW
+XSW[216] VDD IN[216] SW_OUT[216] PCASCODE IN_N[216] DAC_SW
+XSW[215] VDD IN[215] SW_OUT[215] PCASCODE IN_N[215] DAC_SW
+XSW[214] VDD IN[214] SW_OUT[214] PCASCODE IN_N[214] DAC_SW
+XSW[213] VDD IN[213] SW_OUT[213] PCASCODE IN_N[213] DAC_SW
+XSW[212] VDD IN[212] SW_OUT[212] PCASCODE IN_N[212] DAC_SW
+XSW[211] VDD IN[211] SW_OUT[211] PCASCODE IN_N[211] DAC_SW
+XSW[210] VDD IN[210] SW_OUT[210] PCASCODE IN_N[210] DAC_SW
+XSW[209] VDD IN[209] SW_OUT[209] PCASCODE IN_N[209] DAC_SW
+XSW[208] VDD IN[208] SW_OUT[208] PCASCODE IN_N[208] DAC_SW
+XSW[207] VDD IN[207] SW_OUT[207] PCASCODE IN_N[207] DAC_SW
+XSW[206] VDD IN[206] SW_OUT[206] PCASCODE IN_N[206] DAC_SW
+XSW[205] VDD IN[205] SW_OUT[205] PCASCODE IN_N[205] DAC_SW
+XSW[204] VDD IN[204] SW_OUT[204] PCASCODE IN_N[204] DAC_SW
+XSW[203] VDD IN[203] SW_OUT[203] PCASCODE IN_N[203] DAC_SW
+XSW[202] VDD IN[202] SW_OUT[202] PCASCODE IN_N[202] DAC_SW
+XSW[201] VDD IN[201] SW_OUT[201] PCASCODE IN_N[201] DAC_SW
+XSW[200] VDD IN[200] SW_OUT[200] PCASCODE IN_N[200] DAC_SW
+XSW[199] VDD IN[199] SW_OUT[199] PCASCODE IN_N[199] DAC_SW
+XSW[198] VDD IN[198] SW_OUT[198] PCASCODE IN_N[198] DAC_SW
+XSW[197] VDD IN[197] SW_OUT[197] PCASCODE IN_N[197] DAC_SW
+XSW[196] VDD IN[196] SW_OUT[196] PCASCODE IN_N[196] DAC_SW
+XSW[195] VDD IN[195] SW_OUT[195] PCASCODE IN_N[195] DAC_SW
+XSW[194] VDD IN[194] SW_OUT[194] PCASCODE IN_N[194] DAC_SW
+XSW[193] VDD IN[193] SW_OUT[193] PCASCODE IN_N[193] DAC_SW
+XSW[192] VDD IN[192] SW_OUT[192] PCASCODE IN_N[192] DAC_SW
+XSW[191] VDD IN[191] SW_OUT[191] PCASCODE IN_N[191] DAC_SW
+XSW[190] VDD IN[190] SW_OUT[190] PCASCODE IN_N[190] DAC_SW
+XSW[189] VDD IN[189] SW_OUT[189] PCASCODE IN_N[189] DAC_SW
+XSW[188] VDD IN[188] SW_OUT[188] PCASCODE IN_N[188] DAC_SW
+XSW[187] VDD IN[187] SW_OUT[187] PCASCODE IN_N[187] DAC_SW
+XSW[186] VDD IN[186] SW_OUT[186] PCASCODE IN_N[186] DAC_SW
+XSW[185] VDD IN[185] SW_OUT[185] PCASCODE IN_N[185] DAC_SW
+XSW[184] VDD IN[184] SW_OUT[184] PCASCODE IN_N[184] DAC_SW
+XSW[183] VDD IN[183] SW_OUT[183] PCASCODE IN_N[183] DAC_SW
+XSW[182] VDD IN[182] SW_OUT[182] PCASCODE IN_N[182] DAC_SW
+XSW[181] VDD IN[181] SW_OUT[181] PCASCODE IN_N[181] DAC_SW
+XSW[180] VDD IN[180] SW_OUT[180] PCASCODE IN_N[180] DAC_SW
+XSW[179] VDD IN[179] SW_OUT[179] PCASCODE IN_N[179] DAC_SW
+XSW[178] VDD IN[178] SW_OUT[178] PCASCODE IN_N[178] DAC_SW
+XSW[177] VDD IN[177] SW_OUT[177] PCASCODE IN_N[177] DAC_SW
+XSW[176] VDD IN[176] SW_OUT[176] PCASCODE IN_N[176] DAC_SW
+XSW[175] VDD IN[175] SW_OUT[175] PCASCODE IN_N[175] DAC_SW
+XSW[174] VDD IN[174] SW_OUT[174] PCASCODE IN_N[174] DAC_SW
+XSW[173] VDD IN[173] SW_OUT[173] PCASCODE IN_N[173] DAC_SW
+XSW[172] VDD IN[172] SW_OUT[172] PCASCODE IN_N[172] DAC_SW
+XSW[171] VDD IN[171] SW_OUT[171] PCASCODE IN_N[171] DAC_SW
+XSW[170] VDD IN[170] SW_OUT[170] PCASCODE IN_N[170] DAC_SW
+XSW[169] VDD IN[169] SW_OUT[169] PCASCODE IN_N[169] DAC_SW
+XSW[168] VDD IN[168] SW_OUT[168] PCASCODE IN_N[168] DAC_SW
+XSW[167] VDD IN[167] SW_OUT[167] PCASCODE IN_N[167] DAC_SW
+XSW[166] VDD IN[166] SW_OUT[166] PCASCODE IN_N[166] DAC_SW
+XSW[165] VDD IN[165] SW_OUT[165] PCASCODE IN_N[165] DAC_SW
+XSW[164] VDD IN[164] SW_OUT[164] PCASCODE IN_N[164] DAC_SW
+XSW[163] VDD IN[163] SW_OUT[163] PCASCODE IN_N[163] DAC_SW
+XSW[162] VDD IN[162] SW_OUT[162] PCASCODE IN_N[162] DAC_SW
+XSW[161] VDD IN[161] SW_OUT[161] PCASCODE IN_N[161] DAC_SW
+XSW[160] VDD IN[160] SW_OUT[160] PCASCODE IN_N[160] DAC_SW
+XSW[159] VDD IN[159] SW_OUT[159] PCASCODE IN_N[159] DAC_SW
+XSW[158] VDD IN[158] SW_OUT[158] PCASCODE IN_N[158] DAC_SW
+XSW[157] VDD IN[157] SW_OUT[157] PCASCODE IN_N[157] DAC_SW
+XSW[156] VDD IN[156] SW_OUT[156] PCASCODE IN_N[156] DAC_SW
+XSW[155] VDD IN[155] SW_OUT[155] PCASCODE IN_N[155] DAC_SW
+XSW[154] VDD IN[154] SW_OUT[154] PCASCODE IN_N[154] DAC_SW
+XSW[153] VDD IN[153] SW_OUT[153] PCASCODE IN_N[153] DAC_SW
+XSW[152] VDD IN[152] SW_OUT[152] PCASCODE IN_N[152] DAC_SW
+XSW[151] VDD IN[151] SW_OUT[151] PCASCODE IN_N[151] DAC_SW
+XSW[150] VDD IN[150] SW_OUT[150] PCASCODE IN_N[150] DAC_SW
+XSW[149] VDD IN[149] SW_OUT[149] PCASCODE IN_N[149] DAC_SW
+XSW[148] VDD IN[148] SW_OUT[148] PCASCODE IN_N[148] DAC_SW
+XSW[147] VDD IN[147] SW_OUT[147] PCASCODE IN_N[147] DAC_SW
+XSW[146] VDD IN[146] SW_OUT[146] PCASCODE IN_N[146] DAC_SW
+XSW[145] VDD IN[145] SW_OUT[145] PCASCODE IN_N[145] DAC_SW
+XSW[144] VDD IN[144] SW_OUT[144] PCASCODE IN_N[144] DAC_SW
+XSW[143] VDD IN[143] SW_OUT[143] PCASCODE IN_N[143] DAC_SW
+XSW[142] VDD IN[142] SW_OUT[142] PCASCODE IN_N[142] DAC_SW
+XSW[141] VDD IN[141] SW_OUT[141] PCASCODE IN_N[141] DAC_SW
+XSW[140] VDD IN[140] SW_OUT[140] PCASCODE IN_N[140] DAC_SW
+XSW[139] VDD IN[139] SW_OUT[139] PCASCODE IN_N[139] DAC_SW
+XSW[138] VDD IN[138] SW_OUT[138] PCASCODE IN_N[138] DAC_SW
+XSW[137] VDD IN[137] SW_OUT[137] PCASCODE IN_N[137] DAC_SW
+XSW[136] VDD IN[136] SW_OUT[136] PCASCODE IN_N[136] DAC_SW
+XSW[135] VDD IN[135] SW_OUT[135] PCASCODE IN_N[135] DAC_SW
+XSW[134] VDD IN[134] SW_OUT[134] PCASCODE IN_N[134] DAC_SW
+XSW[133] VDD IN[133] SW_OUT[133] PCASCODE IN_N[133] DAC_SW
+XSW[132] VDD IN[132] SW_OUT[132] PCASCODE IN_N[132] DAC_SW
+XSW[131] VDD IN[131] SW_OUT[131] PCASCODE IN_N[131] DAC_SW
+XSW[130] VDD IN[130] SW_OUT[130] PCASCODE IN_N[130] DAC_SW
+XSW[129] VDD IN[129] SW_OUT[129] PCASCODE IN_N[129] DAC_SW
+XSW[128] VDD IN[128] SW_OUT[128] PCASCODE IN_N[128] DAC_SW
+XSW[127] VDD IN[127] SW_OUT[127] PCASCODE IN_N[127] DAC_SW
+XSW[126] VDD IN[126] SW_OUT[126] PCASCODE IN_N[126] DAC_SW
+XSW[125] VDD IN[125] SW_OUT[125] PCASCODE IN_N[125] DAC_SW
+XSW[124] VDD IN[124] SW_OUT[124] PCASCODE IN_N[124] DAC_SW
+XSW[123] VDD IN[123] SW_OUT[123] PCASCODE IN_N[123] DAC_SW
+XSW[122] VDD IN[122] SW_OUT[122] PCASCODE IN_N[122] DAC_SW
+XSW[121] VDD IN[121] SW_OUT[121] PCASCODE IN_N[121] DAC_SW
+XSW[120] VDD IN[120] SW_OUT[120] PCASCODE IN_N[120] DAC_SW
+XSW[119] VDD IN[119] SW_OUT[119] PCASCODE IN_N[119] DAC_SW
+XSW[118] VDD IN[118] SW_OUT[118] PCASCODE IN_N[118] DAC_SW
+XSW[117] VDD IN[117] SW_OUT[117] PCASCODE IN_N[117] DAC_SW
+XSW[116] VDD IN[116] SW_OUT[116] PCASCODE IN_N[116] DAC_SW
+XSW[115] VDD IN[115] SW_OUT[115] PCASCODE IN_N[115] DAC_SW
+XSW[114] VDD IN[114] SW_OUT[114] PCASCODE IN_N[114] DAC_SW
+XSW[113] VDD IN[113] SW_OUT[113] PCASCODE IN_N[113] DAC_SW
+XSW[112] VDD IN[112] SW_OUT[112] PCASCODE IN_N[112] DAC_SW
+XSW[111] VDD IN[111] SW_OUT[111] PCASCODE IN_N[111] DAC_SW
+XSW[110] VDD IN[110] SW_OUT[110] PCASCODE IN_N[110] DAC_SW
+XSW[109] VDD IN[109] SW_OUT[109] PCASCODE IN_N[109] DAC_SW
+XSW[108] VDD IN[108] SW_OUT[108] PCASCODE IN_N[108] DAC_SW
+XSW[107] VDD IN[107] SW_OUT[107] PCASCODE IN_N[107] DAC_SW
+XSW[106] VDD IN[106] SW_OUT[106] PCASCODE IN_N[106] DAC_SW
+XSW[105] VDD IN[105] SW_OUT[105] PCASCODE IN_N[105] DAC_SW
+XSW[104] VDD IN[104] SW_OUT[104] PCASCODE IN_N[104] DAC_SW
+XSW[103] VDD IN[103] SW_OUT[103] PCASCODE IN_N[103] DAC_SW
+XSW[102] VDD IN[102] SW_OUT[102] PCASCODE IN_N[102] DAC_SW
+XSW[101] VDD IN[101] SW_OUT[101] PCASCODE IN_N[101] DAC_SW
+XSW[100] VDD IN[100] SW_OUT[100] PCASCODE IN_N[100] DAC_SW
+XSW[99] VDD IN[99] SW_OUT[99] PCASCODE IN_N[99] DAC_SW
+XSW[98] VDD IN[98] SW_OUT[98] PCASCODE IN_N[98] DAC_SW
+XSW[97] VDD IN[97] SW_OUT[97] PCASCODE IN_N[97] DAC_SW
+XSW[96] VDD IN[96] SW_OUT[96] PCASCODE IN_N[96] DAC_SW
+XSW[95] VDD IN[95] SW_OUT[95] PCASCODE IN_N[95] DAC_SW
+XSW[94] VDD IN[94] SW_OUT[94] PCASCODE IN_N[94] DAC_SW
+XSW[93] VDD IN[93] SW_OUT[93] PCASCODE IN_N[93] DAC_SW
+XSW[92] VDD IN[92] SW_OUT[92] PCASCODE IN_N[92] DAC_SW
+XSW[91] VDD IN[91] SW_OUT[91] PCASCODE IN_N[91] DAC_SW
+XSW[90] VDD IN[90] SW_OUT[90] PCASCODE IN_N[90] DAC_SW
+XSW[89] VDD IN[89] SW_OUT[89] PCASCODE IN_N[89] DAC_SW
+XSW[88] VDD IN[88] SW_OUT[88] PCASCODE IN_N[88] DAC_SW
+XSW[87] VDD IN[87] SW_OUT[87] PCASCODE IN_N[87] DAC_SW
+XSW[86] VDD IN[86] SW_OUT[86] PCASCODE IN_N[86] DAC_SW
+XSW[85] VDD IN[85] SW_OUT[85] PCASCODE IN_N[85] DAC_SW
+XSW[84] VDD IN[84] SW_OUT[84] PCASCODE IN_N[84] DAC_SW
+XSW[83] VDD IN[83] SW_OUT[83] PCASCODE IN_N[83] DAC_SW
+XSW[82] VDD IN[82] SW_OUT[82] PCASCODE IN_N[82] DAC_SW
+XSW[81] VDD IN[81] SW_OUT[81] PCASCODE IN_N[81] DAC_SW
+XSW[80] VDD IN[80] SW_OUT[80] PCASCODE IN_N[80] DAC_SW
+XSW[79] VDD IN[79] SW_OUT[79] PCASCODE IN_N[79] DAC_SW
+XSW[78] VDD IN[78] SW_OUT[78] PCASCODE IN_N[78] DAC_SW
+XSW[77] VDD IN[77] SW_OUT[77] PCASCODE IN_N[77] DAC_SW
+XSW[76] VDD IN[76] SW_OUT[76] PCASCODE IN_N[76] DAC_SW
+XSW[75] VDD IN[75] SW_OUT[75] PCASCODE IN_N[75] DAC_SW
+XSW[74] VDD IN[74] SW_OUT[74] PCASCODE IN_N[74] DAC_SW
+XSW[73] VDD IN[73] SW_OUT[73] PCASCODE IN_N[73] DAC_SW
+XSW[72] VDD IN[72] SW_OUT[72] PCASCODE IN_N[72] DAC_SW
+XSW[71] VDD IN[71] SW_OUT[71] PCASCODE IN_N[71] DAC_SW
+XSW[70] VDD IN[70] SW_OUT[70] PCASCODE IN_N[70] DAC_SW
+XSW[69] VDD IN[69] SW_OUT[69] PCASCODE IN_N[69] DAC_SW
+XSW[68] VDD IN[68] SW_OUT[68] PCASCODE IN_N[68] DAC_SW
+XSW[67] VDD IN[67] SW_OUT[67] PCASCODE IN_N[67] DAC_SW
+XSW[66] VDD IN[66] SW_OUT[66] PCASCODE IN_N[66] DAC_SW
+XSW[65] VDD IN[65] SW_OUT[65] PCASCODE IN_N[65] DAC_SW
+XSW[64] VDD IN[64] SW_OUT[64] PCASCODE IN_N[64] DAC_SW
+XSW[63] VDD IN[63] SW_OUT[63] PCASCODE IN_N[63] DAC_SW
+XSW[62] VDD IN[62] SW_OUT[62] PCASCODE IN_N[62] DAC_SW
+XSW[61] VDD IN[61] SW_OUT[61] PCASCODE IN_N[61] DAC_SW
+XSW[60] VDD IN[60] SW_OUT[60] PCASCODE IN_N[60] DAC_SW
+XSW[59] VDD IN[59] SW_OUT[59] PCASCODE IN_N[59] DAC_SW
+XSW[58] VDD IN[58] SW_OUT[58] PCASCODE IN_N[58] DAC_SW
+XSW[57] VDD IN[57] SW_OUT[57] PCASCODE IN_N[57] DAC_SW
+XSW[56] VDD IN[56] SW_OUT[56] PCASCODE IN_N[56] DAC_SW
+XSW[55] VDD IN[55] SW_OUT[55] PCASCODE IN_N[55] DAC_SW
+XSW[54] VDD IN[54] SW_OUT[54] PCASCODE IN_N[54] DAC_SW
+XSW[53] VDD IN[53] SW_OUT[53] PCASCODE IN_N[53] DAC_SW
+XSW[52] VDD IN[52] SW_OUT[52] PCASCODE IN_N[52] DAC_SW
+XSW[51] VDD IN[51] SW_OUT[51] PCASCODE IN_N[51] DAC_SW
+XSW[50] VDD IN[50] SW_OUT[50] PCASCODE IN_N[50] DAC_SW
+XSW[49] VDD IN[49] SW_OUT[49] PCASCODE IN_N[49] DAC_SW
+XSW[48] VDD IN[48] SW_OUT[48] PCASCODE IN_N[48] DAC_SW
+XSW[47] VDD IN[47] SW_OUT[47] PCASCODE IN_N[47] DAC_SW
+XSW[46] VDD IN[46] SW_OUT[46] PCASCODE IN_N[46] DAC_SW
+XSW[45] VDD IN[45] SW_OUT[45] PCASCODE IN_N[45] DAC_SW
+XSW[44] VDD IN[44] SW_OUT[44] PCASCODE IN_N[44] DAC_SW
+XSW[43] VDD IN[43] SW_OUT[43] PCASCODE IN_N[43] DAC_SW
+XSW[42] VDD IN[42] SW_OUT[42] PCASCODE IN_N[42] DAC_SW
+XSW[41] VDD IN[41] SW_OUT[41] PCASCODE IN_N[41] DAC_SW
+XSW[40] VDD IN[40] SW_OUT[40] PCASCODE IN_N[40] DAC_SW
+XSW[39] VDD IN[39] SW_OUT[39] PCASCODE IN_N[39] DAC_SW
+XSW[38] VDD IN[38] SW_OUT[38] PCASCODE IN_N[38] DAC_SW
+XSW[37] VDD IN[37] SW_OUT[37] PCASCODE IN_N[37] DAC_SW
+XSW[36] VDD IN[36] SW_OUT[36] PCASCODE IN_N[36] DAC_SW
+XSW[35] VDD IN[35] SW_OUT[35] PCASCODE IN_N[35] DAC_SW
+XSW[34] VDD IN[34] SW_OUT[34] PCASCODE IN_N[34] DAC_SW
+XSW[33] VDD IN[33] SW_OUT[33] PCASCODE IN_N[33] DAC_SW
+XSW[32] VDD IN[32] SW_OUT[32] PCASCODE IN_N[32] DAC_SW
+XSW[31] VDD IN[31] SW_OUT[31] PCASCODE IN_N[31] DAC_SW
+XSW[30] VDD IN[30] SW_OUT[30] PCASCODE IN_N[30] DAC_SW
+XSW[29] VDD IN[29] SW_OUT[29] PCASCODE IN_N[29] DAC_SW
+XSW[28] VDD IN[28] SW_OUT[28] PCASCODE IN_N[28] DAC_SW
+XSW[27] VDD IN[27] SW_OUT[27] PCASCODE IN_N[27] DAC_SW
+XSW[26] VDD IN[26] SW_OUT[26] PCASCODE IN_N[26] DAC_SW
+XSW[25] VDD IN[25] SW_OUT[25] PCASCODE IN_N[25] DAC_SW
+XSW[24] VDD IN[24] SW_OUT[24] PCASCODE IN_N[24] DAC_SW
+XSW[23] VDD IN[23] SW_OUT[23] PCASCODE IN_N[23] DAC_SW
+XSW[22] VDD IN[22] SW_OUT[22] PCASCODE IN_N[22] DAC_SW
+XSW[21] VDD IN[21] SW_OUT[21] PCASCODE IN_N[21] DAC_SW
+XSW[20] VDD IN[20] SW_OUT[20] PCASCODE IN_N[20] DAC_SW
+XSW[19] VDD IN[19] SW_OUT[19] PCASCODE IN_N[19] DAC_SW
+XSW[18] VDD IN[18] SW_OUT[18] PCASCODE IN_N[18] DAC_SW
+XSW[17] VDD IN[17] SW_OUT[17] PCASCODE IN_N[17] DAC_SW
+XSW[16] VDD IN[16] SW_OUT[16] PCASCODE IN_N[16] DAC_SW
+XSW[15] VDD IN[15] SW_OUT[15] PCASCODE IN_N[15] DAC_SW
+XSW[14] VDD IN[14] SW_OUT[14] PCASCODE IN_N[14] DAC_SW
+XSW[13] VDD IN[13] SW_OUT[13] PCASCODE IN_N[13] DAC_SW
+XSW[12] VDD IN[12] SW_OUT[12] PCASCODE IN_N[12] DAC_SW
+XSW[11] VDD IN[11] SW_OUT[11] PCASCODE IN_N[11] DAC_SW
+XSW[10] VDD IN[10] SW_OUT[10] PCASCODE IN_N[10] DAC_SW
+XSW[9] VDD IN[9] SW_OUT[9] PCASCODE IN_N[9] DAC_SW
+XSW[8] VDD IN[8] SW_OUT[8] PCASCODE IN_N[8] DAC_SW
+XSW[7] VDD IN[7] SW_OUT[7] PCASCODE IN_N[7] DAC_SW
+XSW[6] VDD IN[6] SW_OUT[6] PCASCODE IN_N[6] DAC_SW
+XSW[5] VDD IN[5] SW_OUT[5] PCASCODE IN_N[5] DAC_SW
+XSW[4] VDD IN[4] SW_OUT[4] PCASCODE IN_N[4] DAC_SW
+XSW[3] VDD IN[3] SW_OUT[3] PCASCODE IN_N[3] DAC_SW
+XSW[2] VDD IN[2] SW_OUT[2] PCASCODE IN_N[2] DAC_SW
+XSW[1] VDD IN[1] SW_OUT[1] PCASCODE IN_N[1] DAC_SW
+XSW[0] VDD IN[0] SW_OUT[0] PCASCODE IN_N[0] DAC_SW
+.ends
+
+
+* expanding   symbol:  ../schematic/Pmirror_StdCell.sym # of pins=4
+** sym_path: /home/cmaier/EDA/PUDDING/schematic/Pmirror_StdCell.sym
+** sch_path: /home/cmaier/EDA/PUDDING/schematic/Pmirror_StdCell.sch
+.subckt Pmirror_StdCell VDD VbiasP VcascodeP Iout
+*.ipin VcascodeP
+*.ipin VbiasP
+*.opin Iout
+*.ipin VDD
+XM2 net1 VbiasP VDD VDD sg13_lv_pmos w=0.2u l=1.5u ng=1 m=1
+XM3 Iout VcascodeP net1 VDD sg13_lv_pmos w=0.2u l=1.5u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  ../schematic/DAC_SW.sym # of pins=5
+** sym_path: /home/cmaier/EDA/PUDDING/schematic/DAC_SW.sym
+** sch_path: /home/cmaier/EDA/PUDDING/schematic/DAC_SW.sch
+.subckt DAC_SW VDD ON Pcascode_sw Pcascode ON_N
+*.ipin ON
+*.ipin Pcascode
+*.opin Pcascode_sw
+*.ipin ON_N
+*.ipin VDD
+XM1 VDD ON Pcascode_sw VDD sg13_lv_pmos w=0.5u l=0.13u ng=1 m=1
+XM3 Pcascode ON_N Pcascode_sw VDD sg13_lv_pmos w=0.5u l=0.13u ng=1 m=1
+.ends
+
+.GLOBAL GND
+.end

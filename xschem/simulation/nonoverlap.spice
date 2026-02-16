@@ -1,0 +1,8 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/nonoverlap.sch
+.subckt nonoverlap VDD VSS INP INN OUTN OUTP
+*.PININFO VSS:B VDD:B INP:I INN:I OUTP:O OUTN:O
+M1 OUTN INP VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+M2 OUTP INN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+M3 OUTN OUTP VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
+M4 OUTP OUTN VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
+.ends

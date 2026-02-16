@@ -1,0 +1,8 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 01/09/2025 04:24
+
+.SUBCKT PCSOURCE2U VDD VbiasP VcascodeP Iout
+M$1 VDD VbiasP \$6 VDD sg13_lv_pmos L=5u W=1.45u AS=0.493p AD=0.20875p PS=3.58u
++ PD=1.75u
+M$2 \$6 VcascodeP Iout VDD sg13_lv_pmos L=0.6u W=1.2u AS=0.20875p AD=0.516p
++ PS=1.75u PD=3.26u
+.ENDS PCSOURCE2U

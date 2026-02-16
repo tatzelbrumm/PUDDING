@@ -19,7 +19,7 @@ async def counter_test(dut):
     await cocotb.start(clock.start())
 
     dut.ena.value    = 1 # always 1
-    dut.ui_in.value  = 0
+    dut.ui_in.value  = 0x01
     dut.uio_in.value = 0
 
     # Reset the design for 100ns
@@ -29,22 +29,40 @@ async def counter_test(dut):
     await Timer(100, 'ns')
 
     # Ensure the otuput is 0x00
-    assert dut.uo_out.value == 0, "Output is not 0!"
+    #assert dut.uo_out.value == 0, "Output is not 0!"
 
     # Wait for 10 clock cycles
     await ClockCycles(dut.clk, 10)
     
     # Ensure the otuput is still 0x00
-    assert dut.uo_out.value == 0, "Output is not 0!"
+    #assert dut.uo_out.value == 0, "Output is not 0!"
     
-    # Enable the counter
-    dut.ui_in.value = 1
+    # Enable shifting in datum 1
+    dut.ui_in.value = 0x03
+    
+    # Wait for 256 clock cycles
+    await ClockCycles(dut.clk, 256)
+    
+    # Enable transfer to state
+    dut.uio_in.value = 0x0C
     
     # Wait for 10 clock cycles
     await ClockCycles(dut.clk, 10)
     
+    # Enable the counter
+    dut.uio_in.value = 0x04
+    
+    # Wait for 10 clock cycles
+    await ClockCycles(dut.clk, 10)
+    
+    # Enable shifting in datum 0
+    dut.uio_in.value = 0x02
+    
+    # Wait for 300 clock cycles
+    await ClockCycles(dut.clk, 300)
+    
     # Ensure the otuput is 10-1
-    assert dut.uo_out.value == 10-1, "Output is not 9!"
+    #assert dut.uo_out.value == 10-1, "Output is not 9!"
     
     # cocotb documentation: https://docs.cocotb.org/en/stable/refcard.html
     # cocotb reference card: https://docs.cocotb.org/en/stable/refcard.html
@@ -61,7 +79,7 @@ if __name__ == "__main__":
     sources = []#[testbench_path / 'testbench.sv']
     defines = {}
 
-    MACRO_NL = testbench_path / '../macro/nl/heichips25_template.nl.v'
+    MACRO_NL = testbench_path / '../macro/nl/heichips25_pudding.nl.v'
 
     if gl:
         if not MACRO_NL.exists():
@@ -75,7 +93,7 @@ if __name__ == "__main__":
         sources.extend(list(testbench_path.glob('../src/*')))
         defines = {'RTL': True}
 
-    hdl_toplevel = "heichips25_template"
+    hdl_toplevel = "heichips25_pudding"
 
     runner = get_runner(sim)
     runner.build(

@@ -38,7 +38,7 @@
     devShells = nix-eda.forAllSystems (system: let
       pkgs = (self.legacyPackages.${system});
     in {
-      default = lib.callPackageWith pkgs (librelane.createOpenLaneShell {
+      default = lib.callPackageWith pkgs (pkgs.createLibreLaneShell {
         extra-packages = with pkgs; [
           # Simulation
           iverilog
@@ -47,6 +47,7 @@
           # Waveform viewing
           gtkwave
           surfer
+          gaw
           
           # FPGA protoyping
           #yosys # already in LibreLane
@@ -54,6 +55,13 @@
           icestorm
           trellis
           openfpgaloader
+          
+          # Analog
+          klayout
+          netgen
+          ngspice
+          magic
+          xschem
         ];
         
         extra-python-packages = with pkgs.python3.pkgs; (pkgs.lib.optionals pkgs.stdenv.isLinux [

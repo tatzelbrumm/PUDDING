@@ -1,0 +1,45 @@
+# Config wired to keep macro instances and provide SDC
+DESIGN_NAME: heichips25_pudding
+
+VERILOG_FILES:
+  - src/heichips25_pudding.keep.sv
+  - src/dac2u128out4in_stub.v
+
+CLOCK_PORT: clk
+CLOCK_PERIOD: 10
+
+TOP_MARGIN_MULT: 1
+BOTTOM_MARGIN_MULT: 1
+LEFT_MARGIN_MULT: 6
+RIGHT_MARGIN_MULT: 6
+
+FP_SIZING: absolute
+PL_TARGET_DENSITY_PCT: 80
+
+DIE_AREA: [0, 0, 500, 200]
+
+PNR_SDC_FILE: constraints/pudding_min.sdc
+SIGNOFF_SDC_FILE: constraints/pudding_min.sdc
+
+FP_DEF_TEMPLATE: def/heichips25_template_small.def
+
+PDN_MULTILAYER: false
+RT_MAX_LAYER: TopMetal1
+
+FP_OBSTRUCTIONS:
+  - [350, 30, 500, 80]
+  - [350, 120, 500, 170]
+
+MACROS:
+  dac2u128out4in:
+    lef:
+      - gds/dac2u128out4in.lef
+    gds:
+      - gds/dac2u128out4in.gds
+    instances:
+      dacL:
+        location: [360, 40]
+        orientation: N
+      dacH:
+        location: [360, 130]
+        orientation: N

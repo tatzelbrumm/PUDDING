@@ -1,0 +1,213 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/dac2u128out4in.sch
+.subckt dac2u128out4in Iout ON[63] ON[62] ON[61] ON[60] ON[59] ON[58] ON[57] ON[56] ON[55] ON[54] ON[53] ON[52] ON[51] ON[50]
++ ON[49] ON[48] ON[47] ON[46] ON[45] ON[44] ON[43] ON[42] ON[41] ON[40] ON[39] ON[38] ON[37] ON[36] ON[35] ON[34] ON[33] ON[32] ON[31]
++ ON[30] ON[29] ON[28] ON[27] ON[26] ON[25] ON[24] ON[23] ON[22] ON[21] ON[20] ON[19] ON[18] ON[17] ON[16] ON[15] ON[14] ON[13] ON[12]
++ ON[11] ON[10] ON[9] ON[8] ON[7] ON[6] ON[5] ON[4] ON[3] ON[2] ON[1] ON[0] ONB[63] ONB[62] ONB[61] ONB[60] ONB[59] ONB[58] ONB[57]
++ ONB[56] ONB[55] ONB[54] ONB[53] ONB[52] ONB[51] ONB[50] ONB[49] ONB[48] ONB[47] ONB[46] ONB[45] ONB[44] ONB[43] ONB[42] ONB[41] ONB[40]
++ ONB[39] ONB[38] ONB[37] ONB[36] ONB[35] ONB[34] ONB[33] ONB[32] ONB[31] ONB[30] ONB[29] ONB[28] ONB[27] ONB[26] ONB[25] ONB[24] ONB[23]
++ ONB[22] ONB[21] ONB[20] ONB[19] ONB[18] ONB[17] ONB[16] ONB[15] ONB[14] ONB[13] ONB[12] ONB[11] ONB[10] ONB[9] ONB[8] ONB[7] ONB[6]
++ ONB[5] ONB[4] ONB[3] ONB[2] ONB[1] ONB[0] VSS VDD Vpcbias[0] EN[1] EN[0] ENB[1] ENB[0] ON[127] ON[126] ON[125] ON[124] ON[123] ON[122]
++ ON[121] ON[120] ON[119] ON[118] ON[117] ON[116] ON[115] ON[114] ON[113] ON[112] ON[111] ON[110] ON[109] ON[108] ON[107] ON[106] ON[105]
++ ON[104] ON[103] ON[102] ON[101] ON[100] ON[99] ON[98] ON[97] ON[96] ON[95] ON[94] ON[93] ON[92] ON[91] ON[90] ON[89] ON[88] ON[87] ON[86]
++ ON[85] ON[84] ON[83] ON[82] ON[81] ON[80] ON[79] ON[78] ON[77] ON[76] ON[75] ON[74] ON[73] ON[72] ON[71] ON[70] ON[69] ON[68] ON[67]
++ ON[66] ON[65] ON[64] ONB[127] ONB[126] ONB[125] ONB[124] ONB[123] ONB[122] ONB[121] ONB[120] ONB[119] ONB[118] ONB[117] ONB[116]
++ ONB[115] ONB[114] ONB[113] ONB[112] ONB[111] ONB[110] ONB[109] ONB[108] ONB[107] ONB[106] ONB[105] ONB[104] ONB[103] ONB[102] ONB[101]
++ ONB[100] ONB[99] ONB[98] ONB[97] ONB[96] ONB[95] ONB[94] ONB[93] ONB[92] ONB[91] ONB[90] ONB[89] ONB[88] ONB[87] ONB[86] ONB[85] ONB[84]
++ ONB[83] ONB[82] ONB[81] ONB[80] ONB[79] ONB[78] ONB[77] ONB[76] ONB[75] ONB[74] ONB[73] ONB[72] ONB[71] ONB[70] ONB[69] ONB[68] ONB[67]
++ ONB[66] ONB[65] ONB[64] EN[3] EN[2] ENB[3] ENB[2] Vpcbias[1]
+*.PININFO Iout:O ON[63:0]:I ONB[63:0]:I VSS:B VDD:B Vpcbias[0]:B EN[1:0]:I ENB[1:0]:I ON[127:64]:I ONB[127:64]:I EN[3:2]:I
+*+ ENB[3:2]:I Vpcbias[1]:B
+Mcbias[0] Vpcbias[0] Vpcbias[0] Vpbias[0] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=2
+xref[1] VDD Vpbias[0] EN[1] ENB[1] Vpbias[0] Vpcbias[0] VSS unitsource2u
+xref[0] VDD Vpbias[0] EN[0] ENB[0] Vpbias[0] Vpcbias[0] VSS unitsource2u
+xsrc[63] VDD Vpbias[0] ON[63] ONB[63] Iout Vpcbias[0] VSS unitsource2u
+xsrc[62] VDD Vpbias[0] ON[62] ONB[62] Iout Vpcbias[0] VSS unitsource2u
+xsrc[61] VDD Vpbias[0] ON[61] ONB[61] Iout Vpcbias[0] VSS unitsource2u
+xsrc[60] VDD Vpbias[0] ON[60] ONB[60] Iout Vpcbias[0] VSS unitsource2u
+xsrc[59] VDD Vpbias[0] ON[59] ONB[59] Iout Vpcbias[0] VSS unitsource2u
+xsrc[58] VDD Vpbias[0] ON[58] ONB[58] Iout Vpcbias[0] VSS unitsource2u
+xsrc[57] VDD Vpbias[0] ON[57] ONB[57] Iout Vpcbias[0] VSS unitsource2u
+xsrc[56] VDD Vpbias[0] ON[56] ONB[56] Iout Vpcbias[0] VSS unitsource2u
+xsrc[55] VDD Vpbias[0] ON[55] ONB[55] Iout Vpcbias[0] VSS unitsource2u
+xsrc[54] VDD Vpbias[0] ON[54] ONB[54] Iout Vpcbias[0] VSS unitsource2u
+xsrc[53] VDD Vpbias[0] ON[53] ONB[53] Iout Vpcbias[0] VSS unitsource2u
+xsrc[52] VDD Vpbias[0] ON[52] ONB[52] Iout Vpcbias[0] VSS unitsource2u
+xsrc[51] VDD Vpbias[0] ON[51] ONB[51] Iout Vpcbias[0] VSS unitsource2u
+xsrc[50] VDD Vpbias[0] ON[50] ONB[50] Iout Vpcbias[0] VSS unitsource2u
+xsrc[49] VDD Vpbias[0] ON[49] ONB[49] Iout Vpcbias[0] VSS unitsource2u
+xsrc[48] VDD Vpbias[0] ON[48] ONB[48] Iout Vpcbias[0] VSS unitsource2u
+xsrc[47] VDD Vpbias[0] ON[47] ONB[47] Iout Vpcbias[0] VSS unitsource2u
+xsrc[46] VDD Vpbias[0] ON[46] ONB[46] Iout Vpcbias[0] VSS unitsource2u
+xsrc[45] VDD Vpbias[0] ON[45] ONB[45] Iout Vpcbias[0] VSS unitsource2u
+xsrc[44] VDD Vpbias[0] ON[44] ONB[44] Iout Vpcbias[0] VSS unitsource2u
+xsrc[43] VDD Vpbias[0] ON[43] ONB[43] Iout Vpcbias[0] VSS unitsource2u
+xsrc[42] VDD Vpbias[0] ON[42] ONB[42] Iout Vpcbias[0] VSS unitsource2u
+xsrc[41] VDD Vpbias[0] ON[41] ONB[41] Iout Vpcbias[0] VSS unitsource2u
+xsrc[40] VDD Vpbias[0] ON[40] ONB[40] Iout Vpcbias[0] VSS unitsource2u
+xsrc[39] VDD Vpbias[0] ON[39] ONB[39] Iout Vpcbias[0] VSS unitsource2u
+xsrc[38] VDD Vpbias[0] ON[38] ONB[38] Iout Vpcbias[0] VSS unitsource2u
+xsrc[37] VDD Vpbias[0] ON[37] ONB[37] Iout Vpcbias[0] VSS unitsource2u
+xsrc[36] VDD Vpbias[0] ON[36] ONB[36] Iout Vpcbias[0] VSS unitsource2u
+xsrc[35] VDD Vpbias[0] ON[35] ONB[35] Iout Vpcbias[0] VSS unitsource2u
+xsrc[34] VDD Vpbias[0] ON[34] ONB[34] Iout Vpcbias[0] VSS unitsource2u
+xsrc[33] VDD Vpbias[0] ON[33] ONB[33] Iout Vpcbias[0] VSS unitsource2u
+xsrc[32] VDD Vpbias[0] ON[32] ONB[32] Iout Vpcbias[0] VSS unitsource2u
+xsrc[31] VDD Vpbias[0] ON[31] ONB[31] Iout Vpcbias[0] VSS unitsource2u
+xsrc[30] VDD Vpbias[0] ON[30] ONB[30] Iout Vpcbias[0] VSS unitsource2u
+xsrc[29] VDD Vpbias[0] ON[29] ONB[29] Iout Vpcbias[0] VSS unitsource2u
+xsrc[28] VDD Vpbias[0] ON[28] ONB[28] Iout Vpcbias[0] VSS unitsource2u
+xsrc[27] VDD Vpbias[0] ON[27] ONB[27] Iout Vpcbias[0] VSS unitsource2u
+xsrc[26] VDD Vpbias[0] ON[26] ONB[26] Iout Vpcbias[0] VSS unitsource2u
+xsrc[25] VDD Vpbias[0] ON[25] ONB[25] Iout Vpcbias[0] VSS unitsource2u
+xsrc[24] VDD Vpbias[0] ON[24] ONB[24] Iout Vpcbias[0] VSS unitsource2u
+xsrc[23] VDD Vpbias[0] ON[23] ONB[23] Iout Vpcbias[0] VSS unitsource2u
+xsrc[22] VDD Vpbias[0] ON[22] ONB[22] Iout Vpcbias[0] VSS unitsource2u
+xsrc[21] VDD Vpbias[0] ON[21] ONB[21] Iout Vpcbias[0] VSS unitsource2u
+xsrc[20] VDD Vpbias[0] ON[20] ONB[20] Iout Vpcbias[0] VSS unitsource2u
+xsrc[19] VDD Vpbias[0] ON[19] ONB[19] Iout Vpcbias[0] VSS unitsource2u
+xsrc[18] VDD Vpbias[0] ON[18] ONB[18] Iout Vpcbias[0] VSS unitsource2u
+xsrc[17] VDD Vpbias[0] ON[17] ONB[17] Iout Vpcbias[0] VSS unitsource2u
+xsrc[16] VDD Vpbias[0] ON[16] ONB[16] Iout Vpcbias[0] VSS unitsource2u
+xsrc[15] VDD Vpbias[0] ON[15] ONB[15] Iout Vpcbias[0] VSS unitsource2u
+xsrc[14] VDD Vpbias[0] ON[14] ONB[14] Iout Vpcbias[0] VSS unitsource2u
+xsrc[13] VDD Vpbias[0] ON[13] ONB[13] Iout Vpcbias[0] VSS unitsource2u
+xsrc[12] VDD Vpbias[0] ON[12] ONB[12] Iout Vpcbias[0] VSS unitsource2u
+xsrc[11] VDD Vpbias[0] ON[11] ONB[11] Iout Vpcbias[0] VSS unitsource2u
+xsrc[10] VDD Vpbias[0] ON[10] ONB[10] Iout Vpcbias[0] VSS unitsource2u
+xsrc[9] VDD Vpbias[0] ON[9] ONB[9] Iout Vpcbias[0] VSS unitsource2u
+xsrc[8] VDD Vpbias[0] ON[8] ONB[8] Iout Vpcbias[0] VSS unitsource2u
+xsrc[7] VDD Vpbias[0] ON[7] ONB[7] Iout Vpcbias[0] VSS unitsource2u
+xsrc[6] VDD Vpbias[0] ON[6] ONB[6] Iout Vpcbias[0] VSS unitsource2u
+xsrc[5] VDD Vpbias[0] ON[5] ONB[5] Iout Vpcbias[0] VSS unitsource2u
+xsrc[4] VDD Vpbias[0] ON[4] ONB[4] Iout Vpcbias[0] VSS unitsource2u
+xsrc[3] VDD Vpbias[0] ON[3] ONB[3] Iout Vpcbias[0] VSS unitsource2u
+xsrc[2] VDD Vpbias[0] ON[2] ONB[2] Iout Vpcbias[0] VSS unitsource2u
+xsrc[1] VDD Vpbias[0] ON[1] ONB[1] Iout Vpcbias[0] VSS unitsource2u
+xsrc[0] VDD Vpbias[0] ON[0] ONB[0] Iout Vpcbias[0] VSS unitsource2u
+Mcbias[1] Vpcbias[1] Vpcbias[1] Vpbias[1] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=2
+xref1[3] VDD Vpbias[1] EN[3] ENB[3] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xref1[2] VDD Vpbias[1] EN[2] ENB[2] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xsrc1[127] VDD Vpbias[1] ON[127] ONB[127] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[126] VDD Vpbias[1] ON[126] ONB[126] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[125] VDD Vpbias[1] ON[125] ONB[125] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[124] VDD Vpbias[1] ON[124] ONB[124] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[123] VDD Vpbias[1] ON[123] ONB[123] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[122] VDD Vpbias[1] ON[122] ONB[122] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[121] VDD Vpbias[1] ON[121] ONB[121] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[120] VDD Vpbias[1] ON[120] ONB[120] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[119] VDD Vpbias[1] ON[119] ONB[119] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[118] VDD Vpbias[1] ON[118] ONB[118] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[117] VDD Vpbias[1] ON[117] ONB[117] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[116] VDD Vpbias[1] ON[116] ONB[116] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[115] VDD Vpbias[1] ON[115] ONB[115] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[114] VDD Vpbias[1] ON[114] ONB[114] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[113] VDD Vpbias[1] ON[113] ONB[113] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[112] VDD Vpbias[1] ON[112] ONB[112] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[111] VDD Vpbias[1] ON[111] ONB[111] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[110] VDD Vpbias[1] ON[110] ONB[110] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[109] VDD Vpbias[1] ON[109] ONB[109] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[108] VDD Vpbias[1] ON[108] ONB[108] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[107] VDD Vpbias[1] ON[107] ONB[107] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[106] VDD Vpbias[1] ON[106] ONB[106] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[105] VDD Vpbias[1] ON[105] ONB[105] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[104] VDD Vpbias[1] ON[104] ONB[104] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[103] VDD Vpbias[1] ON[103] ONB[103] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[102] VDD Vpbias[1] ON[102] ONB[102] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[101] VDD Vpbias[1] ON[101] ONB[101] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[100] VDD Vpbias[1] ON[100] ONB[100] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[99] VDD Vpbias[1] ON[99] ONB[99] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[98] VDD Vpbias[1] ON[98] ONB[98] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[97] VDD Vpbias[1] ON[97] ONB[97] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[96] VDD Vpbias[1] ON[96] ONB[96] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[95] VDD Vpbias[1] ON[95] ONB[95] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[94] VDD Vpbias[1] ON[94] ONB[94] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[93] VDD Vpbias[1] ON[93] ONB[93] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[92] VDD Vpbias[1] ON[92] ONB[92] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[91] VDD Vpbias[1] ON[91] ONB[91] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[90] VDD Vpbias[1] ON[90] ONB[90] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[89] VDD Vpbias[1] ON[89] ONB[89] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[88] VDD Vpbias[1] ON[88] ONB[88] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[87] VDD Vpbias[1] ON[87] ONB[87] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[86] VDD Vpbias[1] ON[86] ONB[86] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[85] VDD Vpbias[1] ON[85] ONB[85] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[84] VDD Vpbias[1] ON[84] ONB[84] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[83] VDD Vpbias[1] ON[83] ONB[83] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[82] VDD Vpbias[1] ON[82] ONB[82] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[81] VDD Vpbias[1] ON[81] ONB[81] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[80] VDD Vpbias[1] ON[80] ONB[80] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[79] VDD Vpbias[1] ON[79] ONB[79] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[78] VDD Vpbias[1] ON[78] ONB[78] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[77] VDD Vpbias[1] ON[77] ONB[77] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[76] VDD Vpbias[1] ON[76] ONB[76] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[75] VDD Vpbias[1] ON[75] ONB[75] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[74] VDD Vpbias[1] ON[74] ONB[74] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[73] VDD Vpbias[1] ON[73] ONB[73] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[72] VDD Vpbias[1] ON[72] ONB[72] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[71] VDD Vpbias[1] ON[71] ONB[71] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[70] VDD Vpbias[1] ON[70] ONB[70] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[69] VDD Vpbias[1] ON[69] ONB[69] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[68] VDD Vpbias[1] ON[68] ONB[68] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[67] VDD Vpbias[1] ON[67] ONB[67] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[66] VDD Vpbias[1] ON[66] ONB[66] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[65] VDD Vpbias[1] ON[65] ONB[65] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[64] VDD Vpbias[1] ON[64] ONB[64] Iout Vpcbias[1] VSS unitsource2u
+**** begin user architecture code
+
+* device parameters
+.param l      = 5u
+.param w      = 1.45u
+.param lc     = 0.6u
+.param wc     = 1.2u
+.param lb     = 0.15u
+.param wb     = 5.85u
+.param lplogic= 0.13u
+.param wplogic= 0.5u
+.param lnlogic= 0.13u
+.param wnlogic= 0.15u
+
+
+**** end user architecture code
+.ends
+
+* expanding   symbol:  unitsource2u.sym # of pins=7
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/unitsource2u.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/unitsource2u.sch
+.subckt unitsource2u VDD VbiasP ON ONB Iout VcascP VSS
+*.PININFO VSS:B VDD:B VbiasP:B VcascP:B ON:I ONB:I Iout:B
+xnonoverlap VDD VSS ON ONB on_n off_n nonoverlap
+xsw VDD off_n Vcasc on_n VcascP cascodeswitch_pmos
+xsrc VDD VbiasP Vcasc Iout pcsource2u
+.ends
+
+
+* expanding   symbol:  nonoverlap.sym # of pins=6
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/nonoverlap.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/nonoverlap.sch
+.subckt nonoverlap VDD VSS INP INN OUTN OUTP
+*.PININFO VSS:B VDD:B INP:I INN:I OUTP:O OUTN:O
+M1 OUTN INP VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+M2 OUTP INN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+M3 OUTN OUTP VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
+M4 OUTP OUTN VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  cascodeswitch_pmos.sym # of pins=5
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/cascodeswitch_pmos.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/cascodeswitch_pmos.sch
+.subckt cascodeswitch_pmos VDD off_n Vcasc on_n Vbpcasc
+*.PININFO off_n:I Vbpcasc:I Vcasc:O on_n:I VDD:I
+Mpullup Vcasc off_n VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+Mbias Vbpcasc on_n Vcasc VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  pcsource2u.sym # of pins=4
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/pcsource2u.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/pcsource2u.sch
+.subckt pcsource2u VDD VbiasP VcascodeP Iout
+*.PININFO VcascodeP:I VbiasP:I Iout:O VDD:I
+Msrc drain VbiasP VDD VDD sg13_lv_pmos w=1.45u l=5u ng=1 m=1
+Mcasc Iout VcascodeP drain VDD sg13_lv_pmos w=1.2u l=0.6u ng=1 m=1
+.ends
+

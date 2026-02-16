@@ -1,0 +1,6 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/pcsource.sch
+.subckt pcsource VDD VbiasP VcascodeP Iout
+*.PININFO VcascodeP:I VbiasP:I Iout:O VDD:I
+Msrc drain VbiasP VDD VDD sg13_lv_pmos w=0.55u l=2u ng=1 m=1
+Mcasc Iout VcascodeP drain VDD sg13_lv_pmos w=0.3u l=0.3u ng=1 m=1
+.ends

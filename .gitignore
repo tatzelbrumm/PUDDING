@@ -8,6 +8,8 @@ runs/
 *.elf
 *.bin
 *.hex
+*.osdi
+*.raw
 
 ice40hx8k.json
 ice40hx8k.asc
@@ -29,3 +31,7 @@ basys3.fasm
 basys3.frames
 basys3.bit
 basys3-yosys.log
+
+tb/*.py
+tb/*.va
+tb/*.vams

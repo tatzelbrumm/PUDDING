@@ -1,0 +1,10 @@
+ciel ls-remote
+ciel ls-remote --pdk-family ihp-sg13g2
+ciel enable --pdk-family ihp-sg13g2 cb7daaa8901016cf7c5d272dfa322c41f024931f
+KLAYOUT_PATH=/home/cmaier/.ciel/ihp-sg13g2/libs.tech/klayout klayout -e
+xschem --rcfile ~/.ciel/ihp-sg13g2/libs.tech/xschem/xschemrc
+export PDK_ROOT=~/.ciel/ && export PDK=ihp-sg13g2
+
+/.ciel/ihp-sg13g2/libs.tech/verilog-a$ source openvaf-compile-va.sh 
+
+

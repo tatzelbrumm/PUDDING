@@ -1,0 +1,28 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/cascodedrive.sch
+.subckt cascodedrive VSS VDD VcascP ON ONB Vcasc
+*.PININFO VSS:B VDD:B VcascP:B ON:I ONB:I Vcasc:O
+xnonoverlap VDD VSS ON ONB net2 net1 nonoverlap
+xsw VDD net1 Vcasc net2 VcascP cascodeswitch_pmos
+.ends
+
+* expanding   symbol:  nonoverlap.sym # of pins=6
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/nonoverlap.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/nonoverlap.sch
+.subckt nonoverlap VDD VSS INP INN OUTN OUTP
+*.PININFO VSS:B VDD:B INP:I INN:I OUTP:O OUTN:O
+M1 OUTN INP VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+M2 OUTP INN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+M3 OUTN OUTP VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
+M4 OUTP OUTN VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  cascodeswitch_pmos.sym # of pins=5
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/cascodeswitch_pmos.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/cascodeswitch_pmos.sch
+.subckt cascodeswitch_pmos VDD off_n Vcasc on_n Vbpcasc
+*.PININFO off_n:I Vbpcasc:I Vcasc:O on_n:I VDD:I
+Mpullup Vcasc off_n VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+Mbias Vbpcasc on_n Vcasc VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+.ends
+

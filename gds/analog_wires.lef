@@ -1,0 +1,81 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+
+
+MACRO analog_wires
+  CLASS BLOCK ;
+  FOREIGN analog_wires ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 99.600 BY 188.000 ;
+  PIN Iout
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 95.745 0.400 96.445 ;
+    END
+  END Iout
+  PIN VcascP[1]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 103.930 0.400 104.630 ;
+    END
+  END VcascP[1]
+  PIN VcascP[0]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 87.560 0.400 88.260 ;
+    END
+  END VcascP[0]
+  PIN VbiasP[1]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 97.045 0.400 97.745 ;
+    END
+  END VbiasP[1]
+  PIN VbiasP[0]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 94.445 0.400 95.145 ;
+    END
+  END VbiasP[0]
+  PIN VDDA[1]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 101.800 0.400 103.530 ;
+    END
+  END VDDA[1]
+  PIN VDDA[0]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 88.660 0.400 90.390 ;
+    END
+  END VDDA[0]
+  PIN i_in
+    PORT
+      LAYER Metal3 ;
+        RECT 99.200 103.90 99.600 104.630 ;
+    END
+  END i_in
+  PIN i_out
+    PORT
+      LAYER Metal3 ;
+        RECT 99.200 95.745 99.600 96.445 ;
+    END
+  END i_out
+  OBS
+      LAYER GatPoly ;
+        RECT 0.000 0.000 99.600 188.000 ;
+      LAYER Metal1 ;
+        RECT 1.400 0.000 99.600 188.000 ;
+      LAYER Metal2 ;
+        RECT 0.000 0.000 99.600 188.000 ;
+      LAYER Metal3 ;
+        RECT 1.700 0.000 97.300 188.000 ;
+      LAYER Metal4 ;
+        RECT 0.000 0.000 99.600 188.000 ;
+      LAYER Metal5 ;
+        RECT 0.000 0.000 99.600 188.000 ;
+  END
+END analog_wires
+END LIBRARY

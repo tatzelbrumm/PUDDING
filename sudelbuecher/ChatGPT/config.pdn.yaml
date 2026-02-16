@@ -1,0 +1,60 @@
+# PDN tuned config for dac2u128out4in macros
+DESIGN_NAME: heichips25_pudding
+
+VERILOG_FILES:
+  - src/heichips25_pudding.keep.sv
+  - src/dac2u128out4in_stub.v
+
+CLOCK_PORT: clk
+CLOCK_PERIOD: 10
+
+TOP_MARGIN_MULT: 1
+BOTTOM_MARGIN_MULT: 1
+LEFT_MARGIN_MULT: 6
+RIGHT_MARGIN_MULT: 6
+
+FP_SIZING: absolute
+PL_TARGET_DENSITY_PCT: 80
+
+DIE_AREA: [0, 0, 500, 200]
+
+PNR_SDC_FILE: constraints/pudding_min.sdc
+SIGNOFF_SDC_FILE: constraints/pudding_min.sdc
+
+FP_DEF_TEMPLATE: def/heichips25_template_small.def
+
+# Router/PDN limits
+PDN_MULTILAYER: false
+RT_MAX_LAYER: TopMetal1
+
+FP_OBSTRUCTIONS:
+  - [350, 30, 500, 80]
+  - [350, 120, 500, 170]
+
+# --- PDN macro handling ---
+# Macro grid can be disabled if the hard macro already contains its own rails/mesh in GDS.
+FP_PDN_ENABLE_MACROS_GRID: 0
+
+# Top-level net names used by your design (edit if your rails are named differently):
+POWER_NETS: [VDD]
+GND_NETS:   [VSS]
+
+# Explicit hooks: <inst> <top_vdd> <top_gnd> <macro_pin_vdd> <macro_pin_gnd>
+# If your LEF uses e.g. VDDA/VSSA, change the *last two* tokens accordingly.
+FP_PDN_MACRO_HOOKS:
+  - "dacL VDD VSS VDD VSS"
+  - "dacH VDD VSS VDD VSS"
+
+MACROS:
+  dac2u128out4in:
+    lef:
+      - gds/dac2u128out4in.lef
+    gds:
+      - gds/dac2u128out4in.gds
+    instances:
+      dacL:
+        location: [360, 40]
+        orientation: N
+      dacH:
+        location: [360, 130]
+        orientation: N

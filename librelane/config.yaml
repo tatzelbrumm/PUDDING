@@ -1,7 +1,11 @@
 # LibreLane configuration file
 
-DESIGN_NAME: heichips25_template
-VERILOG_FILES: dir::../src/heichips25_template.sv
+DESIGN_NAME: heichips25_pudding
+VERILOG_FILES: 
+- dir::../src/heichips25_pudding.sv
+- dir::../src/dac128module.v
+- dir::../src/analog_wires.v
+
 CLOCK_PORT: clk
 CLOCK_PERIOD: 10 # 10ns = 100MHz
 
@@ -13,18 +17,78 @@ RIGHT_MARGIN_MULT: 6
 
 # Absolute die size
 FP_SIZING: absolute
+PL_TARGET_DENSITY_PCT: 70
 
 # Small DEF template
 DIE_AREA: [0, 0, 500, 200]
-FP_DEF_TEMPLATE: dir::def/heichips25_template_small.def
+FP_DEF_TEMPLATE: dir::def/heichips25_template_small_cryo.def
 
 # Large DEF template
 #DIE_AREA: [0, 0, 500, 415]
 #FP_DEF_TEMPLATE: dir::def/heichips25_template_large.def
 
+# Use Leo's special PDN configuration file
+PDN_CFG: dir::pdn_cfg.tcl
+
 # Don't use power rings or TopMetal2 layer
 PDN_MULTILAYER: false
+#PDN_MULTILAYER: true
 RT_MAX_LAYER: TopMetal1
+#PDN_VPITCH: 20
+#PDN_HPITCH: 20
+
+PNR_SDC_FILE: dir::constraints/pudding_min.sdc
+SIGNOFF_SDC_FILE: dir::constraints/pudding_min.sdc
 
 # Enable for better SystemVerilog support
-#USE_SLANG: true
+USE_SLANG: true
+
+# reserve space for the DAC
+FP_OBSTRUCTIONS: 
+- [264.2, 85, 400, 115.33]
+- [400, 4, 497, 196]
+
+MACROS:
+  dac128module:
+    gds:
+      - dir::../gds/dac128module.gds
+    lef:
+      - dir::../gds/dac128module.lef
+#   nl:
+#     - dir::../src/dac128module.sv
+    instances:
+      dac:
+        location: [266.2, 87]
+        orientation: N
+  analog_wires:
+    gds:
+      - dir::../gds/analog_wires.gds
+    lef:
+      - dir::../gds/analog_wires.lef
+    instances:
+      wires:
+        location: [400, 4]
+        orientation: N
+
+# Connect macro power pins to the PDN
+PDN_CONNECT_MACROS_TO_GRID: true
+
+# Denser grid so a strap is always near the pins
+PDN_HPITCH: 60
+PDN_VPITCH: 60
+
+# Nudge straps so they actually cross the pin rectangles
+#PDN_HOFFSET: 20
+#PDN_VOFFSET: 20
+
+#PDN_HWIDTH: 2
+#PDN_VWIDTH: 2
+
+FP_MACRO_HORIZONTAL_HALO: 2
+FP_MACRO_VERTICAL_HALO: 2
+
+PDN_MACRO_CONNECTIONS:
+  - "dac VPWR VGND VDD VSS"
+
+# select primary GDS streamout tool 
+PRIMARY_GDSII_STREAMOUT_TOOL: magic

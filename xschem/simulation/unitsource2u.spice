@@ -1,0 +1,39 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/unitsource2u.sch
+.subckt unitsource2u VSS VDD VbiasP VcascP ON ONB Iout
+*.PININFO VSS:B VDD:B VbiasP:B VcascP:B ON:I ONB:I Iout:B
+xnonoverlap VDD VSS ON ONB on_n off_n nonoverlap
+xsw VDD off_n Vcasc on_n VcascP cascodeswitch_pmos
+xsrc VDD VbiasP Vcasc Iout pcsource2u
+.ends
+
+* expanding   symbol:  nonoverlap.sym # of pins=6
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/nonoverlap.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/nonoverlap.sch
+.subckt nonoverlap VDD VSS INP INN OUTN OUTP
+*.PININFO VSS:B VDD:B INP:I INN:I OUTP:O OUTN:O
+M1 OUTN INP VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+M2 OUTP INN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+M3 OUTN OUTP VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
+M4 OUTP OUTN VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  cascodeswitch_pmos.sym # of pins=5
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/cascodeswitch_pmos.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/cascodeswitch_pmos.sch
+.subckt cascodeswitch_pmos VDD off_n Vcasc on_n Vbpcasc
+*.PININFO off_n:I Vbpcasc:I Vcasc:O on_n:I VDD:I
+Mpullup Vcasc off_n VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+Mbias Vbpcasc on_n Vcasc VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  pcsource2u.sym # of pins=4
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/pcsource2u.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/pcsource2u.sch
+.subckt pcsource2u VDD VbiasP VcascodeP Iout
+*.PININFO VcascodeP:I VbiasP:I Iout:O VDD:I
+Msrc drain VbiasP VDD VDD sg13_lv_pmos w=1.45u l=5u ng=1 m=1
+Mcasc Iout VcascodeP drain VDD sg13_lv_pmos w=1.2u l=0.6u ng=1 m=1
+.ends
+

@@ -1,4 +1,4 @@
-all: macro copy-final
+all: macro copy-macro
 
 PDK_ROOT ?= ~/.ciel
 PDK ?= ihp-sg13g2
@@ -34,6 +34,9 @@ sim:
 sim-gl:
 	cd tb; GL=1 python3 testbench.py
 .PHONY: sim-gl
+
+gtkwave:
+	gtkwave tb/sim_build/heichips25_pudding.fst &
 
 # FPGA Emulation
 
@@ -107,6 +110,29 @@ ulx3s.bit: ulx3s.config
 	ecppack $< $@ --compress
 
 
+## TANG NANO 9K
+
+NANO9K_SOURCES = $(wildcard fpga/nano9k/*.sv) $(wildcard src/*.sv)
+
+synth-nano9k: nano9k.json
+
+pnr-nano9k: nano9k.fs
+
+upload-nano9k: nano9k.fs
+	openFPGALoader --board=tangnano9k nano9k.fs
+
+nano9k.json: $(NANO9K_SOURCES)
+	yosys -l $(basename $@)-yosys.log -DSYNTHESIS -DNANO9k -p 'synth_gowin -top nano9k_top -json $@' $^
+
+nano9k_pnr.json: nano9k.json fpga/nano9k/nano9k.cst
+	nextpnr-himbaechel --json $< --write $@ \
+		--device GW1NR-LV9QN88PC6/I5 \
+		--vopt family=GW1N-9C \
+		--vopt cst=fpga/nano9k/nano9k.cst
+
+nano9k.fs: nano9k_pnr.json
+	gowin_pack -d GW1N-9C -o $@ $<
+
 ## Basys 3
 
 BASYS3_SOURCES = $(wildcard fpga/basys3/*.sv) $(wildcard src/*.sv)
@@ -144,3 +170,4 @@ clean:
 	rm -f icebreaker.json icebreaker.asc icebreaker.bit icebreaker-yosys.log
 	rm -f ulx3s.json ulx3s.config ulx3s.bit ulx3s-yosys.log
 	rm -f basys3.json basys3.bin basys3.fasm basys3.frames basys3.bit basys3-yosys.log
+	rm -f nano9k.json nano9k.bin nano9k.fasm nano9k.frames nano9k.fs nano9k-yosys.log nano9k_pnr.json

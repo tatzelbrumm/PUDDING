@@ -1,0 +1,12 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 26/08/2025 23:12
+
+.SUBCKT NONOVERLAP
+M$1 \$6 \$3 \$2 \$2 sg13_lv_nmos L=0.52u W=0.15u AS=0.162p AD=0.0855p PS=2.16u
++ PD=1.14u
+M$2 \$2 \$6 \$3 \$2 sg13_lv_nmos L=0.52u W=0.15u AS=0.0855p AD=0.162p PS=1.14u
++ PD=2.16u
+M$3 \$6 \$5 \$1 \$1 sg13_lv_pmos L=0.13u W=0.3u AS=0.1725p AD=0.057p PS=1.75u
++ PD=0.68u
+M$4 \$1 \$4 \$3 \$1 sg13_lv_pmos L=0.13u W=0.3u AS=0.057p AD=0.1725p PS=0.68u
++ PD=1.75u
+.ENDS NONOVERLAP

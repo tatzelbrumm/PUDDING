@@ -1,0 +1,8 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 18/08/2025 23:21
+
+.SUBCKT PCASCSRC
+M$1 \$2 \$5 \$6 \$2 sg13_lv_pmos L=2u W=0.74u AS=0.2516p AD=0.0956p PS=2.16u
++ PD=1.04u
+M$2 \$6 \$3 \$4 \$2 sg13_lv_pmos L=0.3u W=0.3u AS=0.0956p AD=0.129p PS=1.04u
++ PD=1.46u
+.ENDS PCASCSRC

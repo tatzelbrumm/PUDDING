@@ -1,0 +1,50 @@
+** sch_path: /foss/designs/PUDDING_dev_leardilap/analog/non_overlap/xschem/non_overlap_single_tran_sim.sch
+**.subckt non_overlap_single_tran_sim
+Vdd net1 GND 1.5
+Vthermo thermo GND dc 0 ac 0 pulse(0, 1.5, 0, 100p, 100p, 10n, 20n, 5)
+x1 thermo ON net1 GND ON_N non_overlap
+**** begin user architecture code
+
+.lib cornerMOSlv.lib mos_ff
+.include sg13g2_stdcell.spice
+
+
+
+.param temp=127
+.control
+save all
+tran 50p 200n
+meas tran tdelay TRIG v(thermo) VAl=0.9 FALl=1 TARG v(ON) VAl=0.9 RISE=1
+write non_overlap_tran_logic.raw
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  non_overlap.sym # of pins=5
+** sym_path: /foss/designs/PUDDING_dev_leardilap/analog/non_overlap/xschem/non_overlap.sym
+** sch_path: /foss/designs/PUDDING_dev_leardilap/analog/non_overlap/xschem/non_overlap.sch
+.subckt non_overlap thermo ON VDD VSS ON_N
+*.iopin VSS
+*.ipin thermo
+*.opin ON
+*.opin ON_N
+*.iopin VDD
+x1 net4 net1 VDD VSS sg13g2_inv_1
+x2 net1 thermo net7 VDD VSS sg13g2_nor2_1
+x4 net3 net4 VDD VSS sg13g2_inv_1
+x5 net2 net3 VDD VSS sg13g2_inv_1
+x6 ON_N net2 VDD VSS sg13g2_inv_1
+x7 net8 net5 VDD VSS sg13g2_inv_1
+x8 net5 net3 net9 VDD VSS sg13g2_nor2_1
+x10 net7 net8 VDD VSS sg13g2_inv_1
+x11 net6 net7 VDD VSS sg13g2_inv_1
+x12 ON net6 VDD VSS sg13g2_inv_1
+x13 net9 thermo VDD VSS sg13g2_inv_1
+C1 net4 VSS 1p m=1
+C2 net8 VSS 1p m=1
+.ends
+
+.GLOBAL GND
+.end

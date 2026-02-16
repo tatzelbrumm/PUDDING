@@ -1,0 +1,9 @@
+# Logfile created on 2026-02-16 21:09:40 +0100 by logger.rb/v1.6.0
+2026-02-16 21:09:40 +0100: Memory Usage (421364K) : Starting running IHP-SG13G2 Klayout DRC maximum runset on /home/cmaier/EDA/PUDDING/gds/analog_wires.gds
+2026-02-16 21:09:40 +0100: Memory Usage (421364K) : Ruby Version for klayout: 3.3.10
+2026-02-16 21:09:40 +0100: Memory Usage (422384K) : Loading database to memory is complete.
+2026-02-16 21:09:40 +0100: Memory Usage (422384K) : IHP-SG13G2 Klayout DRC maximum runset output at: /home/cmaier/EDA/PUDDING/gds/drc_run_analog_wires/analog_wires_analog_wires_sg13g2_maximal.lyrdb
+2026-02-16 21:09:40 +0100: Memory Usage (422552K) : Evaluate switches.
+2026-02-16 21:09:40 +0100: Memory Usage (422552K) : Klayout will use  thread(s)
+2026-02-16 21:09:40 +0100: Memory Usage (422552K) : deep mode is enabled for sg13g2_maximal runset.
+2026-02-16 21:09:45 +0100: Memory Usage (445972K) : KLayout DRC run for maximum ruleSet completed in 4.51 seconds

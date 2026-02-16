@@ -1,0 +1,31 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/pcascsrc16.sch
+.subckt pcascsrc16 VDD Vbp Vcp[15] Vcp[14] Vcp[13] Vcp[12] Vcp[11] Vcp[10] Vcp[9] Vcp[8] Vcp[7] Vcp[6] Vcp[5] Vcp[4] Vcp[3] Vcp[2]
++ Vcp[1] Vcp[0] Iout
+*.PININFO Vcp[15:0]:I Vbp:I Iout:O VDD:I
+xsrc[15] VDD Vbp Vcp[15] Iout pcascsrc
+xsrc[14] VDD Vbp Vcp[14] Iout pcascsrc
+xsrc[13] VDD Vbp Vcp[13] Iout pcascsrc
+xsrc[12] VDD Vbp Vcp[12] Iout pcascsrc
+xsrc[11] VDD Vbp Vcp[11] Iout pcascsrc
+xsrc[10] VDD Vbp Vcp[10] Iout pcascsrc
+xsrc[9] VDD Vbp Vcp[9] Iout pcascsrc
+xsrc[8] VDD Vbp Vcp[8] Iout pcascsrc
+xsrc[7] VDD Vbp Vcp[7] Iout pcascsrc
+xsrc[6] VDD Vbp Vcp[6] Iout pcascsrc
+xsrc[5] VDD Vbp Vcp[5] Iout pcascsrc
+xsrc[4] VDD Vbp Vcp[4] Iout pcascsrc
+xsrc[3] VDD Vbp Vcp[3] Iout pcascsrc
+xsrc[2] VDD Vbp Vcp[2] Iout pcascsrc
+xsrc[1] VDD Vbp Vcp[1] Iout pcascsrc
+xsrc[0] VDD Vbp Vcp[0] Iout pcascsrc
+.ends
+
+* expanding   symbol:  pcascsrc.sym # of pins=4
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/pcascsrc.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/pcascsrc.sch
+.subckt pcascsrc VDD VbiasP VcascodeP Iout
+*.PININFO VcascodeP:I VbiasP:I Iout:O VDD:I
+Msrc drain VbiasP VDD VDD sg13_lv_pmos w=0.74u l=2u ng=1 m=1
+Mcasc Iout VcascodeP drain VDD sg13_lv_pmos w=0.3u l=0.3u ng=1 m=1
+.ends
+

@@ -1,0 +1,21 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 09/02/2026 02:51
+
+.SUBCKT UNITSOURCE2U VSS INP|ON OUTN OUTP INN|ONB VDD VcascP VcascodeP VbiasP
++ Iout
+M$1 OUTN OUTP VSS VSS sg13_lv_nmos L=0.52u W=0.15u AS=0.162p AD=0.0855p
++ PS=2.16u PD=1.14u
+M$2 VSS OUTN OUTP VSS sg13_lv_nmos L=0.52u W=0.15u AS=0.0855p AD=0.162p
++ PS=1.14u PD=2.16u
+M$3 OUTN INP|ON VDD VDD sg13_lv_pmos L=0.13u W=0.3u AS=0.1725p AD=0.057p
++ PS=1.75u PD=0.68u
+M$4 VDD INN|ONB OUTP VDD sg13_lv_pmos L=0.13u W=0.3u AS=0.057p AD=0.1725p
++ PS=0.68u PD=1.75u
+M$5 VcascP OUTN VcascodeP VDD sg13_lv_pmos L=0.13u W=0.3u AS=0.102p AD=0.057p
++ PS=1.28u PD=0.68u
+M$6 VcascodeP OUTP VDD VDD sg13_lv_pmos L=0.13u W=0.3u AS=0.057p AD=0.102p
++ PS=0.68u PD=1.28u
+M$7 VDD VbiasP \$10 VDD sg13_lv_pmos L=5u W=1.45u AS=0.493p AD=0.20875p
++ PS=3.58u PD=1.75u
+M$8 \$10 VcascodeP Iout VDD sg13_lv_pmos L=0.6u W=1.2u AS=0.20875p AD=0.516p
++ PS=1.75u PD=3.26u
+.ENDS UNITSOURCE2U

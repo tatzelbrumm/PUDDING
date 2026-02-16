@@ -1,0 +1,24 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 27/08/2025 17:20
+
+.SUBCKT PCSOURCE
+X$1 \$2 \$3 FEOL$contacts$5
+X$2 \$2 \$3 FEOL$contacts$7
+X$3 \$4 \$3 FEOL$contacts$4
+X$4 \$5 \$3 FEOL$contacts$6
+M$1 \$2 \$4 \$9 \$2 sg13_lv_pmos L=5u W=1.45u AS=0.493p AD=0.20875p PS=3.58u
++ PD=1.75u
+M$2 \$9 \$1 \$5 \$2 sg13_lv_pmos L=0.3u W=1.2u AS=0.20875p AD=0.516p PS=1.75u
++ PD=3.26u
+.ENDS PCSOURCE
+
+.SUBCKT FEOL$contacts$6 \$1 \$2
+.ENDS FEOL$contacts$6
+
+.SUBCKT FEOL$contacts$5 \$1 \$2
+.ENDS FEOL$contacts$5
+
+.SUBCKT FEOL$contacts$7 \$1 \$2
+.ENDS FEOL$contacts$7
+
+.SUBCKT FEOL$contacts$4 \$1 \$2
+.ENDS FEOL$contacts$4
