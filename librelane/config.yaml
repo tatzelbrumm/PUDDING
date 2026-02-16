@@ -31,8 +31,8 @@ FP_DEF_TEMPLATE: dir::def/heichips25_template_small_cryo.def
 PDN_CFG: dir::pdn_cfg.tcl
 
 # Don't use power rings or TopMetal2 layer
-#PDN_MULTILAYER: false
-PDN_MULTILAYER: true
+PDN_MULTILAYER: false
+#PDN_MULTILAYER: true
 RT_MAX_LAYER: TopMetal1
 #PDN_VPITCH: 20
 #PDN_HPITCH: 20
@@ -74,11 +74,11 @@ MACROS:
 PDN_CONNECT_MACROS_TO_GRID: true
 
 # Denser grid so a strap is always near the pins
-#PDN_HPITCH: 20
+PDN_HPITCH: 50
 #PDN_VPITCH: 20
 
 # Nudge straps so they actually cross the pin rectangles
-PDN_HOFFSET: 60
+#PDN_HOFFSET: 20
 #PDN_VOFFSET: 20
 
 #PDN_HWIDTH: 2
