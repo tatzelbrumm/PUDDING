@@ -78,8 +78,8 @@ PDN_CONNECT_MACROS_TO_GRID: true
 #PDN_VPITCH: 20
 
 # Nudge straps so they actually cross the pin rectangles
-#PDN_HOFFSET: 10
-#PDN_VOFFSET: 10
+PDN_HOFFSET: 60
+#PDN_VOFFSET: 20
 
 #PDN_HWIDTH: 2
 #PDN_VWIDTH: 2
