@@ -30,27 +30,27 @@ MACRO analog_wires
   PIN VbiasP[1]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 96.665 0.400 97.365 ;
+        RECT 0.000 97.045 0.400 97.745 ;
     END
   END VbiasP[1]
   PIN VbiasP[0]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 87.560 0.400 88.260 ;
+        RECT 0.000 94.445 0.400 95.145 ;
     END
   END VbiasP[0]
-  PIN VDDA
+  PIN VDDA[1]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 94.825 0.400 95.525 ;
+        RECT 0.000 101.800 0.400 103.530 ;
     END
-  END VDDA
-  PIN VDDA
+  END VDDA[1]
+  PIN VDDA[0]
     PORT
       LAYER Metal3 ;
         RECT 0.000 88.660 0.400 90.390 ;
     END
-  END VDDA
+  END VDDA[0]
   PIN i_in
     PORT
       LAYER Metal3 ;
