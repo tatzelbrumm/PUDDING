@@ -27,8 +27,9 @@ module heichips25_pudding(
     wire[1:0] iref;
     wire[1:0] bias;
     wire dacout;
+    wire vdda;
     // List all unused inputs to prevent warnings
-    wire _unused = &{ena, uio_in[7:0], ui_in[7:5], bias};
+    wire _unused = &{ena, uio_in[7:0], ui_in[7:5], vdda};
 
     logic[3:0] stateen, stateenp, stateenn;
 
@@ -94,8 +95,10 @@ assign uio_oe  = 8'hFF;
 (* keep_hierarchy = "yes", keep = "yes" *) analog_wires wires (
     .Iout(dacout),
     .VcascP(iref),
+    .VbiasP(bias),
     .i_out(i_out),
-    .i_in(i_in)
+    .i_in(i_in),
+    .VDDA(vdda)
     );
 endmodule
 
