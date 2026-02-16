@@ -27,9 +27,9 @@ module heichips25_pudding(
     wire[1:0] iref;
     wire[1:0] bias;
     wire dacout;
-    wire vdda;
+    wire [1:0]vdda;
     // List all unused inputs to prevent warnings
-    wire _unused = &{ena, uio_in[7:0], ui_in[7:5], vdda};
+    wire _unused = &{ena, uio_in[7:0], ui_in[7:5], vdda[1:0]};
 
     logic[3:0] stateen, stateenp, stateenn;
 
@@ -98,7 +98,7 @@ assign uio_oe  = 8'hFF;
     .VbiasP(bias),
     .i_out(i_out),
     .i_in(i_in),
-    .VDDA(vdda)
+    .VDDA(vdda[1:0])
     );
 endmodule
 
