@@ -40,15 +40,15 @@ MACRO heichips25_pudding
     END
     PORT
       LAYER TopMetal2 ;
-        RECT 2.880 22.480 496.800 24.680 ;
+        RECT 2.880 28.880 496.800 31.080 ;
     END
     PORT
       LAYER TopMetal2 ;
-        RECT 2.880 98.080 496.800 100.280 ;
+        RECT 2.880 104.480 496.800 106.680 ;
     END
     PORT
       LAYER TopMetal2 ;
-        RECT 2.880 173.680 496.800 175.880 ;
+        RECT 2.880 180.080 496.800 182.280 ;
     END
   END VGND
   PIN VPWR
@@ -84,15 +84,15 @@ MACRO heichips25_pudding
     END
     PORT
       LAYER TopMetal2 ;
-        RECT 2.880 16.280 496.800 18.480 ;
+        RECT 2.880 22.680 496.800 24.880 ;
     END
     PORT
       LAYER TopMetal2 ;
-        RECT 2.880 91.880 496.800 94.080 ;
+        RECT 2.880 98.280 496.800 100.480 ;
     END
     PORT
       LAYER TopMetal2 ;
-        RECT 2.880 167.480 496.800 169.680 ;
+        RECT 2.880 173.880 496.800 176.080 ;
     END
   END VPWR
   PIN clk
