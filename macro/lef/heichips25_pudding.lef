@@ -16,95 +16,27 @@ MACRO heichips25_pudding
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 41.580 3.150 43.780 193.410 ;
+        RECT 97.180 3.150 99.380 193.410 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 61.580 3.150 63.780 193.410 ;
+        RECT 172.780 3.150 174.980 193.410 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 81.580 3.150 83.780 193.410 ;
+        RECT 248.380 3.150 250.580 193.410 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 101.580 3.150 103.780 193.410 ;
+        RECT 323.980 3.150 326.180 193.410 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 121.580 3.150 123.780 193.410 ;
+        RECT 399.580 3.560 401.780 193.000 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 141.580 3.150 143.780 193.410 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 161.580 3.150 163.780 193.410 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 181.580 3.150 183.780 193.410 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 201.580 3.150 203.780 193.410 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 221.580 3.150 223.780 193.410 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 241.580 3.150 243.780 193.410 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 261.580 3.150 263.780 193.410 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 281.580 3.150 283.780 193.410 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 301.580 3.150 303.780 193.410 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 321.580 3.150 323.780 193.410 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 341.580 3.150 343.780 193.410 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 361.580 3.150 363.780 193.410 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 381.580 3.150 383.780 193.410 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 401.580 3.560 403.780 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 421.580 3.560 423.780 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 441.580 3.560 443.780 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 461.580 3.560 463.780 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 481.580 3.560 483.780 193.000 ;
+        RECT 475.180 3.560 477.380 193.000 ;
     END
     PORT
       LAYER TopMetal2 ;
@@ -112,35 +44,11 @@ MACRO heichips25_pudding
     END
     PORT
       LAYER TopMetal2 ;
-        RECT 2.880 42.480 496.800 44.680 ;
+        RECT 2.880 98.080 496.800 100.280 ;
     END
     PORT
       LAYER TopMetal2 ;
-        RECT 2.880 62.480 496.800 64.680 ;
-    END
-    PORT
-      LAYER TopMetal2 ;
-        RECT 2.880 82.480 496.800 84.680 ;
-    END
-    PORT
-      LAYER TopMetal2 ;
-        RECT 2.880 102.480 496.800 104.680 ;
-    END
-    PORT
-      LAYER TopMetal2 ;
-        RECT 2.880 122.480 496.800 124.680 ;
-    END
-    PORT
-      LAYER TopMetal2 ;
-        RECT 2.880 142.480 496.800 144.680 ;
-    END
-    PORT
-      LAYER TopMetal2 ;
-        RECT 2.880 162.480 496.800 164.680 ;
-    END
-    PORT
-      LAYER TopMetal2 ;
-        RECT 2.880 182.480 496.800 184.680 ;
+        RECT 2.880 173.680 496.800 175.880 ;
     END
   END VGND
   PIN VPWR
@@ -152,135 +60,39 @@ MACRO heichips25_pudding
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 35.380 3.560 37.580 193.000 ;
+        RECT 90.980 3.560 93.180 193.000 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 55.380 3.560 57.580 193.000 ;
+        RECT 166.580 3.560 168.780 193.000 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 75.380 3.560 77.580 193.000 ;
+        RECT 242.180 3.560 244.380 193.000 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 95.380 3.560 97.580 193.000 ;
+        RECT 317.780 3.560 319.980 193.000 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 115.380 3.560 117.580 193.000 ;
+        RECT 393.380 3.560 395.580 193.000 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 135.380 3.560 137.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 155.380 3.560 157.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 175.380 3.560 177.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 195.380 3.560 197.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 215.380 3.560 217.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 235.380 3.560 237.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 255.380 3.560 257.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 275.380 3.560 277.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 295.380 3.560 297.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 315.380 3.560 317.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 335.380 3.560 337.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 355.380 3.560 357.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 375.380 3.560 377.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 395.380 3.560 397.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 415.380 3.560 417.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 435.380 3.560 437.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 455.380 3.560 457.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 475.380 3.560 477.580 193.000 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 495.380 3.560 497.580 193.000 ;
+        RECT 468.980 3.560 471.180 193.000 ;
     END
     PORT
       LAYER TopMetal2 ;
-        RECT 2.880 16.280 497.580 18.480 ;
+        RECT 2.880 16.280 496.800 18.480 ;
     END
     PORT
       LAYER TopMetal2 ;
-        RECT 2.880 36.280 497.580 38.480 ;
+        RECT 2.880 91.880 496.800 94.080 ;
     END
     PORT
       LAYER TopMetal2 ;
-        RECT 2.880 56.280 497.580 58.480 ;
-    END
-    PORT
-      LAYER TopMetal2 ;
-        RECT 2.880 76.280 497.580 78.480 ;
-    END
-    PORT
-      LAYER TopMetal2 ;
-        RECT 2.880 96.280 497.580 98.480 ;
-    END
-    PORT
-      LAYER TopMetal2 ;
-        RECT 2.880 116.280 497.580 118.480 ;
-    END
-    PORT
-      LAYER TopMetal2 ;
-        RECT 2.880 136.280 497.580 138.480 ;
-    END
-    PORT
-      LAYER TopMetal2 ;
-        RECT 2.880 156.280 497.580 158.480 ;
-    END
-    PORT
-      LAYER TopMetal2 ;
-        RECT 2.880 176.280 497.580 178.480 ;
+        RECT 2.880 167.480 496.800 169.680 ;
     END
   END VPWR
   PIN clk
@@ -303,8 +115,8 @@ MACRO heichips25_pudding
   PIN i_in
     DIRECTION INOUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 12087.434570 ;
-    ANTENNADIFFAREA 13905.764648 ;
+    ANTENNAGATEAREA 12095.612305 ;
+    ANTENNADIFFAREA 13899.156250 ;
     PORT
       LAYER Metal3 ;
         RECT 438.885 107.930 500.000 108.630 ;
@@ -313,8 +125,8 @@ MACRO heichips25_pudding
   PIN i_out
     DIRECTION INOUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 12087.434570 ;
-    ANTENNADIFFAREA 13905.764648 ;
+    ANTENNAGATEAREA 12095.612305 ;
+    ANTENNADIFFAREA 13899.156250 ;
     PORT
       LAYER Metal3 ;
         RECT 400.000 99.745 500.000 100.445 ;
@@ -778,7 +590,7 @@ MACRO heichips25_pudding
         RECT 0.610 10.930 438.885 11.750 ;
         RECT 0.400 3.680 438.885 10.930 ;
       LAYER Metal4 ;
-        RECT 15.560 3.635 400.000 192.925 ;
+        RECT 12.860 3.635 400.000 192.925 ;
       LAYER Metal5 ;
         RECT 15.515 3.470 400.000 193.090 ;
   END
