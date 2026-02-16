@@ -16,19 +16,27 @@ MACRO heichips25_pudding
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 97.180 3.150 99.380 193.410 ;
+        RECT 81.580 3.150 83.780 193.410 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 172.780 3.150 174.980 193.410 ;
+        RECT 141.580 3.150 143.780 193.410 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 248.380 3.150 250.580 193.410 ;
+        RECT 201.580 3.150 203.780 193.410 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 323.980 3.150 326.180 193.410 ;
+        RECT 261.580 3.150 263.780 193.410 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 321.580 3.150 323.780 193.410 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 381.580 3.150 383.780 193.410 ;
     END
   END VGND
   PIN VPWR
@@ -40,23 +48,27 @@ MACRO heichips25_pudding
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 90.980 3.560 93.180 193.000 ;
+        RECT 75.380 3.560 77.580 193.000 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 166.580 3.560 168.780 193.000 ;
+        RECT 135.380 3.560 137.580 193.000 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 242.180 3.560 244.380 193.000 ;
+        RECT 195.380 3.560 197.580 193.000 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 317.780 3.560 319.980 193.000 ;
+        RECT 255.380 3.560 257.580 193.000 ;
     END
     PORT
       LAYER TopMetal1 ;
-        RECT 393.380 3.560 395.580 193.000 ;
+        RECT 315.380 3.560 317.580 193.000 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 375.380 3.560 377.580 193.000 ;
     END
   END VPWR
   PIN clk
@@ -79,8 +91,8 @@ MACRO heichips25_pudding
   PIN i_in
     DIRECTION INOUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 12095.612305 ;
-    ANTENNADIFFAREA 13899.156250 ;
+    ANTENNAGATEAREA 12081.646484 ;
+    ANTENNADIFFAREA 13884.434570 ;
     PORT
       LAYER Metal3 ;
         RECT 438.885 107.930 500.000 108.630 ;
@@ -89,8 +101,8 @@ MACRO heichips25_pudding
   PIN i_out
     DIRECTION INOUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 12095.612305 ;
-    ANTENNADIFFAREA 13899.156250 ;
+    ANTENNAGATEAREA 12081.646484 ;
+    ANTENNADIFFAREA 13884.434570 ;
     PORT
       LAYER Metal3 ;
         RECT 400.000 99.745 500.000 100.445 ;
@@ -554,9 +566,11 @@ MACRO heichips25_pudding
         RECT 0.610 10.930 438.885 11.750 ;
         RECT 0.400 3.680 438.885 10.930 ;
       LAYER Metal4 ;
-        RECT 12.860 3.635 400.000 192.925 ;
+        RECT 9.980 3.635 400.000 192.925 ;
       LAYER Metal5 ;
         RECT 15.515 3.470 400.000 193.090 ;
+      LAYER TopMetal1 ;
+        RECT 392.980 80.240 394.620 119.680 ;
   END
 END heichips25_pudding
 END LIBRARY
