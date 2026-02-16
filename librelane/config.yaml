@@ -75,7 +75,7 @@ PDN_CONNECT_MACROS_TO_GRID: true
 
 # Denser grid so a strap is always near the pins
 PDN_HPITCH: 60
-#PDN_VPITCH: 20
+PDN_VPITCH: 60
 
 # Nudge straps so they actually cross the pin rectangles
 #PDN_HOFFSET: 20
