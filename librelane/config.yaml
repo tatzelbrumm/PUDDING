@@ -34,8 +34,8 @@ PDN_CFG: dir::pdn_cfg.tcl
 #PDN_MULTILAYER: false
 PDN_MULTILAYER: true
 RT_MAX_LAYER: TopMetal1
-PDN_VPITCH: 20
-PDN_HPITCH: 20
+#PDN_VPITCH: 20
+#PDN_HPITCH: 20
 
 PNR_SDC_FILE: dir::constraints/pudding_min.sdc
 SIGNOFF_SDC_FILE: dir::constraints/pudding_min.sdc
