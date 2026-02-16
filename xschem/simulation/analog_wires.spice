@@ -1,0 +1,14 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/analog_wires.sch
+.subckt analog_wires VbiasP[1] VbiasP[0] VDDA[1] VDDA[0] VcascP[1] VcascP[0] Iout i_out i_in VDDA[1] VDDA[0] VbiasP[1] VbiasP[0]
++ VcascP[1] VcascP[0]
+*.PININFO VbiasP[1:0]:B VDDA[1:0]:B VcascP[1:0]:B Iout:B i_out:B i_in:B VDDA[1:0]:B VbiasP[1:0]:B VcascP[1:0]:B
+Mcbuffer vdda i_in vdda vdda sg13_hv_pmos w=8u l=8u ng=1 m=19
+Mbbuffer vdda bias vdda vdda sg13_hv_pmos w=8u l=8u ng=1 m=19
+R1 vdda VDDA[1] 0 m=1
+R2 vdda VDDA[1] 0 m=1
+R3 bias VbiasP[1] 0 m=1
+R4 bias VbiasP[1] 0 m=1
+R5 i_in VcascP[1] 0 m=1
+R6 i_in VcascP[1] 0 m=1
+R7 i_out Iout 0 m=1
+.ends
