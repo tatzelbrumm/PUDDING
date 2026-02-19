@@ -1,97 +1,194 @@
-# SPDX-FileCopyrightText: © 2025 XXX Authors
+# SPDX-Fil:contentReference[oaicite:2]{index=2}6
 # SPDX-License-Identifier: Apache-2.0
 
 import os
 import sys
 from pathlib import Path
+
 import cocotb
 from cocotb.clock import Clock
 from cocotb.runner import get_runner
-from cocotb.triggers import Timer, ClockCycles
+from cocotb.triggers import Timer, ClockCycles, RisingEdge
 
 
+# -----------------------------
+# Helpers: 128-bit shift/transfer reference model
+# -----------------------------
+def mask128(x: int) -> int:
+    return x & ((1 << 128) - 1)
+
+
+class RefModel:
+    def __init__(self):
+        self.daisy = 0
+        self.state = 0
+
+    def reset(self):
+        self.daisy = 0
+        self.state = 0
+
+    def step(self, datum: int, shift: int, transfer: int, dir_: int):
+        # Mirrors RTL priority: transfer > shift
+        if transfer:
+            if dir_:
+                self.state = self.daisy
+            else:
+                self.daisy = self.state
+        elif shift:
+            self.daisy = mask128((self.daisy << 1) | (datum & 1))
+
+    def uo_out(self) -> int:
+        return (self.daisy >> 120) & 0xFF
+
+    def uio_out(self) -> int:
+        return (self.state >> 120) & 0xFF
+
+
+# -----------------------------
+# Cocotb test
+# -----------------------------
 @cocotb.test()
-async def counter_test(dut):
-    """Testing the counter of the design."""
-    
-    # Create a clock with a period of 10ns = 100MHz
-    clock = Clock(dut.clk, 10, 'ns')
+async def heichips25_pudding_smoke_and_random(dut):
+    """Shift/transfer correctness + output mapping checks for heichips25_pudding."""
+
+    # 100 MHz clock (10 ns period) like the template
+    clock = Clock(dut.clk, 10, "ns")
     await cocotb.start(clock.start())
 
-    dut.ena.value    = 1 # always 1
-    dut.ui_in.value  = 0x01
+    # Drive always-on basics
+    dut.ena.value = 1
+    dut.ui_in.value = 0
     dut.uio_in.value = 0
 
-    # Reset the design for 100ns
+    # Optional power pins (exist in your RTL)
+    if hasattr(dut, "VPWR"):
+        dut.VPWR.value = 1
+    if hasattr(dut, "VGND"):
+        dut.VGND.value = 0
+
+    # Optional analog-ish inouts: keep quiet
+    if hasattr(dut, "i_in"):
+        dut.i_in.value = 0
+
+    ref = RefModel()
+
+    # Reset
     dut.rst_n.value = 0
-    await Timer(100, 'ns')
+    await Timer(100, "ns")
+    await RisingEdge(dut.clk)
+    ref.reset()
+
     dut.rst_n.value = 1
-    await Timer(100, 'ns')
+    await Timer(50, "ns")
+    await RisingEdge(dut.clk)
 
-    # Ensure the otuput is 0x00
-    #assert dut.uo_out.value == 0, "Output is not 0!"
+    # After reset, outputs should be 0
+    assert int(dut.uo_out.value) == 0
+    assert int(dut.uio_out.value) == 0
+    assert int(dut.uio_oe.value) == 0xFF  # in RTL it's hardwired
 
-    # Wait for 10 clock cycles
-    await ClockCycles(dut.clk, 10)
-    
-    # Ensure the otuput is still 0x00
-    #assert dut.uo_out.value == 0, "Output is not 0!"
-    
-    # Enable shifting in datum 1
-    dut.ui_in.value = 0x03
-    
-    # Wait for 256 clock cycles
-    await ClockCycles(dut.clk, 256)
-    
-    # Enable transfer to state
-    dut.uio_in.value = 0x0C
-    
-    # Wait for 10 clock cycles
-    await ClockCycles(dut.clk, 10)
-    
-    # Enable the counter
-    dut.uio_in.value = 0x04
-    
-    # Wait for 10 clock cycles
-    await ClockCycles(dut.clk, 10)
-    
-    # Enable shifting in datum 0
-    dut.uio_in.value = 0x02
-    
-    # Wait for 300 clock cycles
-    await ClockCycles(dut.clk, 300)
-    
-    # Ensure the otuput is 10-1
-    #assert dut.uo_out.value == 10-1, "Output is not 9!"
-    
-    # cocotb documentation: https://docs.cocotb.org/en/stable/refcard.html
-    # cocotb reference card: https://docs.cocotb.org/en/stable/refcard.html
+    async def drive_ui(datum=0, shift=0, transfer=0, dir_=0, stateen=1):
+        # ui_in mapping from your RTL:
+        # [0]=datum, [1]=shift, [2]=transfer, [3]=dir, [4]=stateen
+        v = (datum & 1) | ((shift & 1) << 1) | ((transfer & 1) << 2) | ((dir_ & 1) << 3) | ((stateen & 1) << 4)
+        dut.ui_in.value = v
 
+    async def pulse_shift(bitval: int):
+        # assert shift for one clock edge
+        await drive_ui(datum=bitval, shift=1, transfer=0, dir_=0, stateen=1)
+        await RisingEdge(dut.clk)
+        ref.step(datum=bitval, shift=1, transfer=0, dir_=0)
+        await drive_ui(datum=bitval, shift=0, transfer=0, dir_=0, stateen=1)
+
+    async def pulse_transfer(dirval: int):
+        await drive_ui(datum=0, shift=0, transfer=1, dir_=dirval, stateen=1)
+        await RisingEdge(dut.clk)
+        ref.step(datum=0, shift=0, transfer=1, dir_=dirval)
+        await drive_ui(datum=0, shift=0, transfer=0, dir_=dirval, stateen=1)
+
+    def check_outputs():
+        got_uo = int(dut.uo_out.value)
+        got_uio = int(dut.uio_out.value)
+        got_oe = int(dut.uio_oe.value)
+
+        exp_uo = ref.uo_out()
+        exp_uio = ref.uio_out()
+
+        assert got_oe == 0xFF, f"uio_oe mismatch got=0x{got_oe:02x} exp=0xff"
+        assert got_uo == exp_uo, f"uo_out mismatch got=0x{got_uo:02x} exp=0x{exp_uo:02x}"
+        assert got_uio == exp_uio, f"uio_out mismatch got=0x{got_uio:02x} exp=0x{exp_uio:02x}"
+
+    # Directed pattern load (LSB-first in the sense of successive datum bits)
+    pattern = 0x0123456789ABCDEFFEDCBA9876543210
+    for i in range(128):
+        await pulse_shift((pattern >> i) & 1)
+        check_outputs()
+
+    # Transfer daisy -> state
+    await pulse_transfer(1)
+    check_outputs()
+
+    # Dirty daisy a bit, then restore from state
+    for _ in range(10):
+        await pulse_shift((_ * 7) & 1)
+    check_outputs()
+
+    await pulse_transfer(0)
+    check_outputs()
+
+    # Randomized regression
+    import random
+    for _ in range(500):
+        sel = random.randrange(10)
+        if sel <= 5:
+            b = random.getrandbits(1)
+            await pulse_shift(b)
+        elif sel <= 7:
+            d = random.getrandbits(1)
+            await pulse_transfer(d)
+        else:
+            # idle
+            await drive_ui(datum=0, shift=0, transfer=0, dir_=0, stateen=1)
+            await RisingEdge(dut.clk)
+            # ref unchanged
+        check_outputs()
+
+
+# -----------------------------
+# Runner (matches template style)
+# -----------------------------
 if __name__ == "__main__":
+    sim = os.getenv("SIM", "icarus")
+    pdk_root = os.getenv("PDK_ROOT", "~/.ciel")
+    pdk = os.getenv("PDK", "ihp-sg13g2")
+    scl = os.getenv("SCL", "sg13g2_stdcell")
+    gl = os.getenv("GL", False)
 
-    sim         = os.getenv("SIM", "icarus")
-    pdk_root    = os.getenv("PDK_ROOT", "~/.ciel")
-    pdk         = os.getenv("PDK", "ihp-sg13g2")
-    scl         = os.getenv("SCL", "sg13g2_stdcell")
-    gl          = os.getenv("GL", False)
-
-    testbench_path = Path(__file__).resolve().parent
-    sources = []#[testbench_path / 'testbench.sv']
+    tb_path = Path(__file__).resolve().parent
+    sources = []
     defines = {}
 
-    MACRO_NL = testbench_path / '../macro/nl/heichips25_pudding.nl.v'
+    # Gate-level netlist path in the template repo layout:
+    #   macro/nl/<TOP>.nl.v
+    MACRO_NL = tb_path / "../macro/nl/heichips25_pudding.nl.v"
 
     if gl:
         if not MACRO_NL.exists():
             print(f"The macro netlist {MACRO_NL} does not exist. Did you implement the macro?")
             sys.exit(0)
-    
-        sources.append(Path(pdk_root).expanduser() / pdk / "libs.ref" / scl / "verilog" / f"{scl}.v" )
+
+        sources.append(Path(pdk_root).expanduser() / pdk / "libs.ref" / scl / "verilog" / f"{scl}.v")
         sources.append(MACRO_NL)
-        defines = {'FUNCTIONAL': True, 'UNIT_DELAY': '#0'}
+        defines = {"FUNCTIONAL": True, "UNIT_DELAY": "#0"}
     else:
-        sources.extend(list(testbench_path.glob('../src/*')))
-        defines = {'RTL': True}
+        # RTL: compile everything under src/
+        sources.extend(list((tb_path / "../src").glob("*.v")))
+        sources.extend(list((tb_path / "../src").glob("*.sv")))
+
+        # RTL-only sim stub for sg13g2_inv_1 (see file below)
+        sources.append(tb_path / "sg13g2_inv_1.v")
+
+        defines = {"RTL": True}
 
     hdl_toplevel = "heichips25_pudding"
 
@@ -100,15 +197,16 @@ if __name__ == "__main__":
         sources=sources,
         hdl_toplevel=hdl_toplevel,
         defines=defines,
-        timescale=['1ns', '1ps'],
+        timescale=["1ns", "1ps"],
         waves=True,
-        build_args=['--trace', '--trace-fst', '--trace-structs'] if sim == 'verilator' else ['-gno-specify'],
+        build_args=["--trace", "--trace-fst", "--trace-structs"] if sim == "verilator" else ["-gno-specify"],
     )
 
     runner.test(
         hdl_toplevel=hdl_toplevel,
-        test_module='testbench,',
-        timescale=['1ns', '1ps'],
+        test_module="testbench,",
+        timescale=["1ns", "1ps"],
         waves=True,
-        plusargs=['--trace-file', f'{hdl_toplevel}.fst']  if sim == 'verilator' else [],
+        plusargs=["--trace-file", f"{hdl_toplevel}.fst"] if sim == "verilator" else [],
     )
+
