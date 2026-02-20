@@ -205,7 +205,7 @@ if __name__ == "__main__":
 
     runner.test(
         hdl_toplevel=hdl_toplevel,
-        test_module="testbench,",
+        test_module="testbench",
         timescale=["1ns", "1ps"],
         waves=True,
         plusargs=["--trace-file", f"{hdl_toplevel}.fst"] if sim == "verilator" else [],
