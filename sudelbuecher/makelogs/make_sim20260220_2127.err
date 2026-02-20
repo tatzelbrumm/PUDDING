@@ -1,0 +1,47 @@
+/home/cmaier/EDA/PUDDING/src/heichips25_template_fg.v:9: error: 'heichips25_template' has already been declared in this scope.
+/home/cmaier/EDA/PUDDING/src/heichips25_template_cryo.v:9:      : It was declared here as a module.
+/home/cmaier/EDA/PUDDING/src/heichips25_template_fg.v:26: error: Module heichips25_template was already declared here: /home/cmaier/EDA/PUDDING/src/heichips25_template_cryo.v:9
+
+/home/cmaier/EDA/PUDDING/src/dac2u128out4in.sv:5: error: 'dac2u128out4in' has already been declared in this scope.
+/home/cmaier/EDA/PUDDING/src/dac2u128out4in.v:5:      : It was declared here as a module.
+/home/cmaier/EDA/PUDDING/src/dac2u128out4in.sv:13: error: Module dac2u128out4in was already declared here: /home/cmaier/EDA/PUDDING/src/dac2u128out4in.v:5
+
+/home/cmaier/EDA/PUDDING/src/dac_word_correction.sv:6: sorry: unpacked array parameters are not supported yet.
+/home/cmaier/EDA/PUDDING/src/dac_word_correction.sv:7: sorry: unpacked array parameters are not supported yet.
+/home/cmaier/EDA/PUDDING/src/heichips25_pudding.sv:124: error: 'inverterpair' has already been declared in this scope.
+/home/cmaier/EDA/PUDDING/src/inverterpair.sv:4:      : It was declared here as a module.
+/home/cmaier/EDA/PUDDING/src/heichips25_pudding.sv:131: error: Module inverterpair was already declared here: /home/cmaier/EDA/PUDDING/src/inverterpair.sv:4
+
+/home/cmaier/EDA/PUDDING/src/dac_s.sv:271: error: 'heichips25_pudding' has already been declared in this scope.
+/home/cmaier/EDA/PUDDING/src/heichips25_pudding.sv:9:      : It was declared here as a module.
+/home/cmaier/EDA/PUDDING/src/dac_s.sv:319: error: Module heichips25_pudding was already declared here: /home/cmaier/EDA/PUDDING/src/heichips25_pudding.sv:9
+
+Traceback (most recent call last):
+  File "/home/cmaier/EDA/PUDDING/tb/testbench.py", line 197, in <module>
+    runner.build(
+    ~~~~~~~~~~~~^
+        sources=sources,
+        ^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        build_args=["--trace", "--trace-fst", "--trace-structs"] if sim == "verilator" else ["-gno-specify"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/nix/store/0kwn3pa8al4np6jss3x11hhh5wp0h27q-python3-3.13.9-env/lib/python3.13/site-packages/cocotb_tools/runner.py", line 329, in build
+    self._execute(cmds, cwd=self.build_dir)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/0kwn3pa8al4np6jss3x11hhh5wp0h27q-python3-3.13.9-env/lib/python3.13/site-packages/cocotb_tools/runner.py", line 561, in _execute
+    self._execute_cmds(cmds, cwd)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/nix/store/0kwn3pa8al4np6jss3x11hhh5wp0h27q-python3-3.13.9-env/lib/python3.13/site-packages/cocotb_tools/runner.py", line 578, in _execute_cmds
+    subprocess.run(
+    ~~~~~~~~~~~~~~^
+        cmd, cwd=cwd, env=self.env, check=True, stdout=stdout, stderr=stderr
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/nix/store/0kwn3pa8al4np6jss3x11hhh5wp0h27q-python3-3.13.9-env/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['iverilog', '-o', '/home/cmaier/EDA/PUDDING/tb/sim_build/sim.vvp', '-s', 'heichips25_pudding', '-g2012', '-DRTL=True', '-gno-specify', '-s', 'cocotb_iverilog_dump', '-f', '/home/cmaier/EDA/PUDDING/tb/sim_build/cmds.f', '/home/cmaier/EDA/PUDDING/src/heichips25_template_cryo.v', '/home/cmaier/EDA/PUDDING/src/dac128module.v', '/home/cmaier/EDA/PUDDING/src/analog_wires.v', '/home/cmaier/EDA/PUDDING/src/heichips25_template_fg.v', '/home/cmaier/EDA/PUDDING/src/dac2u128out4in.v', '/home/cmaier/EDA/PUDDING/src/inverterpair.sv', '/home/cmaier/EDA/PUDDING/src/SPI_Slave.sv', '/home/cmaier/EDA/PUDDING/src/dac2u128out4in.sv', '/home/cmaier/EDA/PUDDING/src/thermometer_encoder.sv', '/home/cmaier/EDA/PUDDING/src/non_overlap.sv', '/home/cmaier/EDA/PUDDING/src/dac_word_correction.sv', '/home/cmaier/EDA/PUDDING/src/SPI_Master.sv', '/home/cmaier/EDA/PUDDING/src/heichips25_pudding.sv', '/home/cmaier/EDA/PUDDING/src/dac_s.sv', '/home/cmaier/EDA/PUDDING/tb/sg13g2_inv_1.v', '/home/cmaier/EDA/PUDDING/tb/sim_build/cocotb_iverilog_dump.v']' returned non-zero exit status 10.
+make: *** [Makefile:31: sim] Error 1
