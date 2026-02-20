@@ -7,7 +7,8 @@ from pathlib import Path
 
 import cocotb
 from cocotb.clock import Clock
-from cocotb.runner import get_runner
+from cocotb_tools.runner import get_runner
+#from cocotb.runner import get_runner
 from cocotb.triggers import Timer, ClockCycles, RisingEdge
 
 
