@@ -13,7 +13,7 @@ from cocotb.triggers import RisingEdge, Timer
 @cocotb.test()
 async def smoke(dut):
     clock = Clock(dut.clk, 10, "ns")
-    await cocotb.start_soon(clock.start())
+    await cocotb.start(clock.start())
 
     dut.ena.value = 1
     dut.ui_in.value = 0
@@ -56,7 +56,7 @@ if __name__ == "__main__":
             defines={"FUNCTIONAL": True, "UNIT_DELAY": "#0"},
             timescale=["1ns", "1ps"],
             waves=True,
-            build_args=["--trace", "--trace-fst", "--trace-structs"],
+            build_args=["--trace", "--trace-structs"],
         )
     else:
         # RTL — ONLY modules instantiated by heichips25_pudding.sv
