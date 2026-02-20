@@ -1,4 +1,4 @@
-# SPDX-Fil:contentReference[oaicite:2]{index=2}6
+# SPDX-FileCopyrightText: © 2025
 # SPDX-License-Identifier: Apache-2.0
 
 import os
@@ -8,8 +8,7 @@ from pathlib import Path
 import cocotb
 from cocotb.clock import Clock
 from cocotb_tools.runner import get_runner
-#from cocotb.runner import get_runner
-from cocotb.triggers import Timer, ClockCycles, RisingEdge
+from cocotb.triggers import Timer, RisingEdge
 
 
 # -----------------------------
@@ -52,7 +51,7 @@ class RefModel:
 async def heichips25_pudding_smoke_and_random(dut):
     """Shift/transfer correctness + output mapping checks for heichips25_pudding."""
 
-    # 100 MHz clock (10 ns period) like the template
+    # 100 MHz clock (10 ns period)
     clock = Clock(dut.clk, 10, "ns")
     await cocotb.start(clock.start())
 
@@ -91,11 +90,16 @@ async def heichips25_pudding_smoke_and_random(dut):
     async def drive_ui(datum=0, shift=0, transfer=0, dir_=0, stateen=1):
         # ui_in mapping from your RTL:
         # [0]=datum, [1]=shift, [2]=transfer, [3]=dir, [4]=stateen
-        v = (datum & 1) | ((shift & 1) << 1) | ((transfer & 1) << 2) | ((dir_ & 1) << 3) | ((stateen & 1) << 4)
+        v = (
+            (datum & 1)
+            | ((shift & 1) << 1)
+            | ((transfer & 1) << 2)
+            | ((dir_ & 1) << 3)
+            | ((stateen & 1) << 4)
+        )
         dut.ui_in.value = v
 
     async def pulse_shift(bitval: int):
-        # assert shift for one clock edge
         await drive_ui(datum=bitval, shift=1, transfer=0, dir_=0, stateen=1)
         await RisingEdge(dut.clk)
         ref.step(datum=bitval, shift=1, transfer=0, dir_=0)
@@ -119,7 +123,7 @@ async def heichips25_pudding_smoke_and_random(dut):
         assert got_uo == exp_uo, f"uo_out mismatch got=0x{got_uo:02x} exp=0x{exp_uo:02x}"
         assert got_uio == exp_uio, f"uio_out mismatch got=0x{got_uio:02x} exp=0x{exp_uio:02x}"
 
-    # Directed pattern load (LSB-first in the sense of successive datum bits)
+    # Directed pattern load
     pattern = 0x0123456789ABCDEFFEDCBA9876543210
     for i in range(128):
         await pulse_shift((pattern >> i) & 1)
@@ -139,6 +143,7 @@ async def heichips25_pudding_smoke_and_random(dut):
 
     # Randomized regression
     import random
+
     for _ in range(500):
         sel = random.randrange(10)
         if sel <= 5:
@@ -148,66 +153,64 @@ async def heichips25_pudding_smoke_and_random(dut):
             d = random.getrandbits(1)
             await pulse_transfer(d)
         else:
-            # idle
             await drive_ui(datum=0, shift=0, transfer=0, dir_=0, stateen=1)
             await RisingEdge(dut.clk)
-            # ref unchanged
         check_outputs()
 
 
 # -----------------------------
-# Runner (matches template style)
+# Runner (explicit sources; no globs; no duplicate logic)
 # -----------------------------
 if __name__ == "__main__":
-    sim = os.getenv("SIM", "icarus")
-    pdk_root = os.getenv("PDK_ROOT", "~/.ciel")
-    pdk = os.getenv("PDK", "ihp-sg13g2")
-    scl = os.getenv("SCL", "sg13g2_stdcell")
-    gl = os.getenv("GL", False)
-
-    tb_path = Path(__file__).resolve().parent
-    sources = []
-    defines = {}
-
-    # Gate-level netlist path in the template repo layout:
-    #   macro/nl/<TOP>.nl.v
-    MACRO_NL = tb_path / "../macro/nl/heichips25_pudding.nl.v"
-
-    if gl:
-        if not MACRO_NL.exists():
-            print(f"The macro netlist {MACRO_NL} does not exist. Did you implement the macro?")
-            sys.exit(0)
-
-        sources.append(Path(pdk_root).expanduser() / pdk / "libs.ref" / scl / "verilog" / f"{scl}.v")
-        sources.append(MACRO_NL)
-        defines = {"FUNCTIONAL": True, "UNIT_DELAY": "#0"}
-    else:
-        # RTL: compile everything under src/
-        sources.extend(list((tb_path / "../src").glob("*.v")))
-        sources.extend(list((tb_path / "../src").glob("*.sv")))
-
-        # RTL-only sim stub for sg13g2_inv_1 (see file below)
-        sources.append(tb_path / "sg13g2_inv_1.v")
-
-        defines = {"RTL": True}
-
-    hdl_toplevel = "heichips25_pudding"
+    sim = os.getenv("SIM", "verilator")
+    gl = os.getenv("GL", "0").lower() in ("1", "true", "yes", "y")
 
     runner = get_runner(sim)
-    runner.build(
-        sources=sources,
-        hdl_toplevel=hdl_toplevel,
-        defines=defines,
-        timescale=["1ns", "1ps"],
-        waves=True,
-        build_args=["--trace", "--trace-fst", "--trace-structs"] if sim == "verilator" else ["-gno-specify"],
-    )
+
+    if gl:
+        # Gate-level: netlist + stdcell library.
+        # If your stdcell lib path differs, set STDCELL_LIB to the full path of sg13g2_stdcell.v.
+        runner.build(
+            sources=[
+                Path("../macro/nl/heichips25_pudding.nl.v"),
+                Path(
+                    os.getenv(
+                        "STDCELL_LIB",
+                        "~/.ciel/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v",
+                    )
+                ).expanduser(),
+            ],
+            hdl_toplevel="heichips25_pudding",
+            defines={"FUNCTIONAL": True, "UNIT_DELAY": "#0"},
+            timescale=["1ns", "1ps"],
+            waves=True,
+            build_args=["--trace", "--trace-fst", "--trace-structs"]
+            if sim == "verilator"
+            else ["-gno-specify"],
+        )
+    else:
+        # RTL: ONLY what heichips25_pudding.sv instantiates (per your Verilator errors).
+        runner.build(
+            sources=[
+                Path("../src/heichips25_pudding.sv"),
+                Path("../src/dac128module.v"),
+                Path("../src/analog_wires.v"),
+                Path("sg13g2_inv_1.v"),
+            ],
+            hdl_toplevel="heichips25_pudding",
+            defines={"RTL": True},
+            timescale=["1ns", "1ps"],
+            waves=True,
+            build_args=["--trace", "--trace-fst", "--trace-structs"]
+            if sim == "verilator"
+            else ["-gno-specify"],
+        )
 
     runner.test(
-        hdl_toplevel=hdl_toplevel,
+        hdl_toplevel="heichips25_pudding",
         test_module="testbench",
         timescale=["1ns", "1ps"],
         waves=True,
-        plusargs=["--trace-file", f"{hdl_toplevel}.fst"] if sim == "verilator" else [],
+        plusargs=["--trace-file", "heichips25_pudding.fst"] if sim == "verilator" else [],
     )
 
