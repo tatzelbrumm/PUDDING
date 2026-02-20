@@ -32,7 +32,7 @@ async def smoke(dut):
     await RisingEdge(dut.clk)
 
     # simple sanity
-    for _ in range(10):
+    for _ in range(100):
         await RisingEdge(dut.clk)
 
 
