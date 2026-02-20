@@ -13,7 +13,7 @@ from cocotb.triggers import RisingEdge, Timer
 @cocotb.test()
 async def smoke(dut):
     clock = Clock(dut.clk, 10, "ns")
-    await cocotb.start(clock.start())
+    await cocotb.start_soon(clock.start())
 
     dut.ena.value = 1
     dut.ui_in.value = 0
