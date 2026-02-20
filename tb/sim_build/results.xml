@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1771627992" />
+    <testcase name="smoke" classname="testbench" file="/home/cmaier/EDA/PUDDING/tb/testbench.py" lineno="13" time="0.0014641284942626953" sim_time_ns="210.0" ratio_time="143430.03419638495" />
+  </testsuite>
+</testsuites>
