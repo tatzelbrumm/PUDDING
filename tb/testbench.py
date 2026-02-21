@@ -71,7 +71,7 @@ if __name__ == "__main__":
             defines={"RTL": True},
             timescale=["1ns", "1ps"],
             waves=True,
-            build_args=["--trace", "--trace-structs"],
+            build_args=["--trace", "--trace-fst", "--trace-structs"],
         )
 
     runner.test(
