@@ -40,7 +40,7 @@ async def smoke(dut):
 # Runner
 # -----------------------------
 if __name__ == "__main__":
-    sim = os.getenv("SIM", "icarus")
+    sim = os.getenv("SIM", "verilator")
     gl = os.getenv("GL", "0") == "1"
 
     runner = get_runner(sim)
