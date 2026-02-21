@@ -40,10 +40,14 @@ async def smoke(dut):
 # Runner
 # -----------------------------
 if __name__ == "__main__":
-    sim = os.getenv("SIM", "verilator")
+    sim = os.getenv("SIM", "icarus")
     gl = os.getenv("GL", "0") == "1"
 
     runner = get_runner(sim)
+
+    # Verilator-only compile flags
+    verilator_build_args = ["--trace", "--trace-fst", "--trace-structs"]
+    build_args = verilator_build_args if sim == "verilator" else []
 
     if gl:
         # Gate level
@@ -56,7 +60,7 @@ if __name__ == "__main__":
             defines={"FUNCTIONAL": True, "UNIT_DELAY": "#0"},
             timescale=["1ns", "1ps"],
             waves=True,
-            build_args=["--trace", "--trace-structs"],
+            build_args=build_args,
         )
     else:
         # RTL — ONLY modules instantiated by heichips25_pudding.sv
@@ -71,7 +75,7 @@ if __name__ == "__main__":
             defines={"RTL": True},
             timescale=["1ns", "1ps"],
             waves=True,
-            build_args=["--trace", "--trace-fst", "--trace-structs"],
+            build_args=build_args,
         )
 
     runner.test(
