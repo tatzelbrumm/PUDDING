@@ -1,6 +1,8 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1771637539" />
-    <testcase name="smoke" classname="testbench" file="/home/cmaier/EDA/PUDDING/tb/testbench.py" lineno="13" time="0.004719257354736328" sim_time_ns="1110.0" ratio_time="235206.49893907245" />
+    <property name="random_seed" value="1771639453" />
+    <testcase name="heichips25_pudding_smoke_and_random" classname="testbench" file="/home/cmaier/EDA/PUDDING/tb/testbench.py" lineno="47" time="0.012272119522094727" sim_time_ns="1400.0" ratio_time="114079.72335010588">
+      <failure error_type="AssertionError" error_msg="uo_out mismatch got=0x00 exp=0x01" />
+    </testcase>
   </testsuite>
 </testsuites>
