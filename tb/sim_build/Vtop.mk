@@ -41,6 +41,7 @@ VM_USER_CFLAGS = \
 # User LDLIBS (from -LDFLAGS on Verilator command line)
 VM_USER_LDLIBS = \
   -Wl,-rpath,/nix/store/yk336mn39lfjiawz9zq4qbgq29vhd694-python3.13-cocotb-2.0.0/lib/python3.13/site-packages/cocotb/libs -L/nix/store/yk336mn39lfjiawz9zq4qbgq29vhd694-python3.13-cocotb-2.0.0/lib/python3.13/site-packages/cocotb/libs -lcocotbvpi_verilator \
+  -lz \
 
 # User .cpp files (from .cpp's on Verilator command line)
 VM_USER_CLASSES = \

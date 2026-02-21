@@ -13,5 +13,5 @@ verilator.o: \
  /nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/verilated_sym_props.h \
  /nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/vltstd/sv_vpi_user.h \
  /nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/vltstd/vpi_user.h \
- /nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/verilated_vcd_c.h \
+ /nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/verilated_fst_c.h \
  /nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/verilated_trace.h
