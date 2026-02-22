@@ -1,3 +1,5 @@
+# Test bench, vibe coded by ChatGPT
+
 import os
 import sys
 from pathlib import Path
@@ -11,16 +13,20 @@ from cocotb.triggers import Timer, ClockCycles, RisingEdge
 # -----------------------------
 # Helpers: 128-bit shift/transfer reference model
 # -----------------------------
+
+# mask integer to 128 bits
 def mask128(x: int) -> int:
     return x & ((1 << 128) - 1)
 
-
+# Object-Oriented Obfuscation
 class RefModel:
     def __init__(self):
+        # reset registers
         self.daisy = 0
         self.state = 0
 
     def reset(self):
+        # reset registers
         self.daisy = 0
         self.state = 0
 
@@ -48,8 +54,8 @@ class RefModel:
 async def heichips25_pudding_smoke_and_random(dut):
     """Shift/transfer correctness + output mapping checks for heichips25_pudding."""
 
-    # 100 MHz clock (10 ns period) like the template
-    clock = Clock(dut.clk, 10, "ns")
+    # 1 MHz clock (1 us period) like the template
+    clock = Clock(dut.clk, 1, "us")
     await cocotb.start(clock.start())
 
     # Drive always-on basics
@@ -71,12 +77,12 @@ async def heichips25_pudding_smoke_and_random(dut):
 
     # Reset
     dut.rst_n.value = 0
-    await Timer(100, "ns")
+    await Timer(5, "us")
     await RisingEdge(dut.clk)
     ref.reset()
 
     dut.rst_n.value = 1
-    await Timer(50, "ns")
+    await Timer(3, "us")
     await RisingEdge(dut.clk)
 
     # After reset, outputs should be 0
@@ -111,9 +117,9 @@ async def heichips25_pudding_smoke_and_random(dut):
         exp_uo = ref.uo_out()
         exp_uio = ref.uio_out()
 
-        #assert got_oe == 0xFF, f"uio_oe mismatch got=0x{got_oe:02x} exp=0xff"
-        #assert got_uo == exp_uo, f"uo_out mismatch got=0x{got_uo:02x} exp=0x{exp_uo:02x}"
-        #assert got_uio == exp_uio, f"uio_out mismatch got=0x{got_uio:02x} exp=0x{exp_uio:02x}"
+        assert got_oe == 0xFF, f"uio_oe mismatch got=0x{got_oe:02x} exp=0xff"
+        assert got_uo == exp_uo, f"uo_out mismatch got=0x{got_uo:02x} exp=0x{exp_uo:02x}"
+        assert got_uio == exp_uio, f"uio_out mismatch got=0x{got_uio:02x} exp=0x{exp_uio:02x}"
 
     # Directed pattern load (LSB-first in the sense of successive datum bits)
     pattern = 0x0123456789ABCDEFFEDCBA9876543210
