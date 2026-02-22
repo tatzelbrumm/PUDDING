@@ -150,6 +150,9 @@ module tb_heichips25_pudding;
   // Main test sequence
   // ----------------------------
   initial begin
+    logic [127:0] pattern_a;
+    int sel;
+
     // init
     ui_in  = '0;
     uio_in = '0;
@@ -166,7 +169,6 @@ module tb_heichips25_pudding;
     @(posedge clk);
 
     // 1) Directed test: shift in a known pattern, transfer to state, transfer back
-    logic [127:0] pattern_a;
     pattern_a = 128'h0123_4567_89ab_cdef_fedc_ba98_7654_3210;
 
     $display("[TB] Loading daisychain pattern A via shift...");
@@ -185,7 +187,7 @@ module tb_heichips25_pudding;
     // 2) Randomized regress: random mix of shift/transfer/idle
     $display("[TB] Random stimulus phase...");
     for (int k = 0; k < 500; k++) begin
-      int sel = $urandom_range(0, 9);
+      sel = $urandom_range(0, 9);
       case (sel)
         0,1,2,3,4,5: begin
           pulse_shift($urandom_range(0,1));
