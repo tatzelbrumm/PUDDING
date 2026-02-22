@@ -62,16 +62,15 @@ module tb_heichips25_pudding;
   logic datum, shift, transfer, dir;
   logic stateen;
 
-  always_comb begin
-    datum    = ui_in[0];
-    shift    = ui_in[1];
-    transfer = ui_in[2];
-    dir      = ui_in[3];
-    stateen  = ui_in[4];
-  end
+  // Convenience aliases for ui_in bits (continuous assigns for Icarus compatibility)
+  assign datum    = ui_in[0];
+  assign shift    = ui_in[1];
+  assign transfer = ui_in[2];
+  assign dir      = ui_in[3];
+  assign stateen  = ui_in[4];
 
   // Reference model update at posedge
-  always_ff @(posedge clk) begin
+  always @(posedge clk) begin
     if (!rst_n) begin
       ref_daisychain <= '0;
       ref_state      <= '0;
@@ -93,7 +92,7 @@ module tb_heichips25_pudding;
   // Dedicated outputs: uo_out = daisychain[127:120]
   // IO outputs:       uio_out = state[127:120]
   // IO enable:        uio_oe = 8'hFF
-  always_ff @(posedge clk) begin
+  always @(posedge clk) begin
     if (rst_n) begin
       // uio_oe should always be driven
       assert (uio_oe === 8'hFF)
