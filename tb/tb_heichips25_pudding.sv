@@ -2,7 +2,6 @@
 `default_nettype none
 
 module tb_heichips25_pudding;
-
   // ----------------------------
   // Clk / reset
   // ----------------------------
@@ -68,6 +67,12 @@ module tb_heichips25_pudding;
   assign transfer = ui_in[2];
   assign dir      = ui_in[3];
   assign stateen  = ui_in[4];
+
+  // Set up waveform dump
+  initial begin
+    $dumpfile("test_heichips25_pudding.vcd");
+    $dumpvars(0, tb_heichips25_pudding);
+  end
 
   // Reference model update at posedge
   always @(posedge clk) begin
