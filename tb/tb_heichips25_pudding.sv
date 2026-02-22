@@ -28,8 +28,11 @@ module tb_heichips25_pudding;
   tri i_out;
 
   // power pins
-  logic VPWR;
-  logic VGND;
+  wire VPWR;
+  wire VGND;
+  // Tie off power pins for digital simulation
+  assign VPWR = 1'b1;
+  assign VGND = 1'b0;
 
   // ----------------------------
   // Instantiate DUT
@@ -159,8 +162,6 @@ module tb_heichips25_pudding;
     ena    = 1'b1;
 
     // power
-    VPWR = 1'b1;
-    VGND = 1'b0;
 
     // reset
     rst_n = 1'b0;
