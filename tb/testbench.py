@@ -54,6 +54,16 @@ class RefModel:
 async def heichips25_pudding_smoke_and_random(dut):
     """Shift/transfer correctness + output mapping checks for heichips25_pudding."""
 
+    errors = 0
+    # Helper function instead of assert equality
+    def check_equal(dut, name, got, exp):
+        nonlocal errors
+        if got != exp:
+            errors += 1
+            t = cocotb.utils.get_sim_time(units="us")
+            dut._log.error(
+                f"[{t} us] {name} mismatch got=0x{got:02x} exp=0x{exp:02x}"
+            )
     # 1 MHz clock (1 us period) like the template
     clock = Clock(dut.clk, 1, "us")
     await cocotb.start(clock.start())
@@ -117,9 +127,12 @@ async def heichips25_pudding_smoke_and_random(dut):
         exp_uo = ref.uo_out()
         exp_uio = ref.uio_out()
 
-        assert got_oe == 0xFF, f"uio_oe mismatch got=0x{got_oe:02x} exp=0xff"
-        assert got_uo == exp_uo, f"uo_out mismatch got=0x{got_uo:02x} exp=0x{exp_uo:02x}"
+        #assert got_oe == 0xFF, f"uio_oe mismatch got=0x{got_oe:02x} exp=0xff"
+        #assert got_uo == exp_uo, f"uo_out mismatch got=0x{got_uo:02x} exp=0x{exp_uo:02x}"
         #assert got_uio == exp_uio, f"uio_out mismatch got=0x{got_uio:02x} exp=0x{exp_uio:02x}"
+        check_equal(dut, "uio_oe", got_oe, 0xFF)
+        check_equal(dut, "uo_out", got_uo, exp_uo)
+        check_equal(dut, "uio_out", got_uio, exp_uio)
 
     # Directed pattern load (LSB-first in the sense of successive datum bits)
     pattern = 0x0123456789ABCDEFFEDCBA9876543210
@@ -156,6 +169,8 @@ async def heichips25_pudding_smoke_and_random(dut):
             # ref unchanged
         check_outputs()
 
+    # At the end of the test run, check if no errors
+    assert errors == 0, f"Test failed with {errors} mismatches"
 
 # -----------------------------
 # Runner
