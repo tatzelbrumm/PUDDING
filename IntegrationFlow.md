@@ -56,4 +56,12 @@ and returns empty `iverilog.out` and `iverilog.err` files.
 tb/tb_heichips25_pudding.sv:209: $finish called at 11870000 (1ps)
 ```
 
+GTKviewer doesn't allow displaying subsets of data vectors, like `state[127:120]` out of `state[127:0]`.  
+
+#### Gate level simulation
+
+`make sim-gl > >(tee make_sim.out) 2> >(tee make_sim.err >&2)` starts a new nightmare.  
+
+
+
 
