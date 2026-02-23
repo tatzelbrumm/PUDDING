@@ -187,10 +187,13 @@ if __name__ == "__main__":
 
     if gl:
         # Gate level
+        build_args += ["--Wno-fatal", "-Wno-PINMISSING"]
         runner.build(
             sources=[
                 Path("../macro/nl/heichips25_pudding.nl.v"),
                 Path("~/.ciel/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v").expanduser(),
+                Path("../src/dac128module.v"),
+                Path("../src/analog_wires.v"),
             ],
             hdl_toplevel="heichips25_pudding",
             defines={"FUNCTIONAL": True, "UNIT_DELAY": "#0"},
