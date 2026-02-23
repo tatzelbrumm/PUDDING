@@ -1,0 +1,254 @@
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:31:16: Ignoring unsupported: specify block construct
+   31 |    (A1 => X) = 0;
+      |                ^
+                     ... For warning description see https://verilator.org/warn/SPECIFYIGN?v=5.042
+                     ... Use "/* verilator lint_off SPECIFYIGN */" and lint_on around source to disable this message.
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:63:16: Ignoring unsupported: specify block construct
+   63 |    (A1 => X) = 0;
+      |                ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:95:15: Ignoring unsupported: specify block construct
+   95 |   (A1 => Y) = 0;
+      |               ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:124:15: Ignoring unsupported: specify block construct
+  124 |   (A1 => Y) = 0;
+      |               ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:155:16: Ignoring unsupported: specify block construct
+  155 |    (A1 => Y) = 0;
+      |                ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:215:16: Ignoring unsupported: specify block construct
+  215 |    (A1 => Y) = 0;
+      |                ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:246:14: Ignoring unsupported: specify block construct
+  246 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:264:14: Ignoring unsupported: specify block construct
+  264 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:282:14: Ignoring unsupported: specify block construct
+  282 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:301:14: Ignoring unsupported: specify block construct
+  301 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:320:14: Ignoring unsupported: specify block construct
+  320 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:340:14: Ignoring unsupported: specify block construct
+  340 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:371:14: Ignoring unsupported: specify block construct
+  371 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:388:14: Ignoring unsupported: specify block construct
+  388 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:405:14: Ignoring unsupported: specify block construct
+  405 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:422:14: Ignoring unsupported: specify block construct
+  422 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:439:14: Ignoring unsupported: specify block construct
+  439 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:486:36: Ignoring unsupported: specify block construct
+  486 |   (negedge RESET_B => (Q+:1'b0)) = 0;
+      |                                    ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:522:36: Ignoring unsupported: specify block construct
+  522 |   (negedge RESET_B => (Q+:1'b0)) = 0;
+      |                                    ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:555:36: Ignoring unsupported: specify block construct
+  555 |   (negedge RESET_B => (Q+:1'b0)) = 0;
+      |                                    ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:586:36: Ignoring unsupported: specify block construct
+  586 |   (negedge RESET_B => (Q+:1'b0)) = 0;
+      |                                    ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:615:14: Ignoring unsupported: specify block construct
+  615 |   (D => Q) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:644:14: Ignoring unsupported: specify block construct
+  644 |   (D => Q) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:677:14: Ignoring unsupported: specify block construct
+  677 |   (D => Q) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:711:14: Ignoring unsupported: specify block construct
+  711 |   (D => Q) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:745:14: Ignoring unsupported: specify block construct
+  745 |   (D => Q) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:770:14: Ignoring unsupported: specify block construct
+  770 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:787:14: Ignoring unsupported: specify block construct
+  787 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:804:14: Ignoring unsupported: specify block construct
+  804 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:821:14: Ignoring unsupported: specify block construct
+  821 |   (A => Z) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:839:14: Ignoring unsupported: specify block construct
+  839 |   (A => Z) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:857:14: Ignoring unsupported: specify block construct
+  857 |   (A => Z) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:875:14: Ignoring unsupported: specify block construct
+  875 |   (A => Z) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:894:14: Ignoring unsupported: specify block construct
+  894 |   (A => Z) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:913:14: Ignoring unsupported: specify block construct
+  913 |   (A => Z) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:972:14: Ignoring unsupported: specify block construct
+  972 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:989:14: Ignoring unsupported: specify block construct
+  989 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1006:14: Ignoring unsupported: specify block construct
+ 1006 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1023:14: Ignoring unsupported: specify block construct
+ 1023 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1040:14: Ignoring unsupported: specify block construct
+ 1040 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1063:19: Ignoring unsupported: specify block construct
+ 1063 |   (CLK => GCLK) = 0;
+      |                   ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1084:15: Ignoring unsupported: specify block construct
+ 1084 |   (A0 => X) = 0;
+      |               ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1107:15: Ignoring unsupported: specify block construct
+ 1107 |   (A0 => X) = 0;
+      |               ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1130:15: Ignoring unsupported: specify block construct
+ 1130 |   (A0 => X) = 0;
+      |               ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1171:14: Ignoring unsupported: specify block construct
+ 1171 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1192:14: Ignoring unsupported: specify block construct
+ 1192 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1214:16: Ignoring unsupported: specify block construct
+ 1214 |   (A_N => Y) = 0;
+      |                ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1236:16: Ignoring unsupported: specify block construct
+ 1236 |   (A_N => Y) = 0;
+      |                ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1257:14: Ignoring unsupported: specify block construct
+ 1257 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1280:16: Ignoring unsupported: specify block construct
+ 1280 |   (A_N => Y) = 0;
+      |                ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1302:14: Ignoring unsupported: specify block construct
+ 1302 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1325:14: Ignoring unsupported: specify block construct
+ 1325 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1346:14: Ignoring unsupported: specify block construct
+ 1346 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1368:14: Ignoring unsupported: specify block construct
+ 1368 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1390:14: Ignoring unsupported: specify block construct
+ 1390 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1411:14: Ignoring unsupported: specify block construct
+ 1411 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1433:14: Ignoring unsupported: specify block construct
+ 1433 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1455:14: Ignoring unsupported: specify block construct
+ 1455 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1478:14: Ignoring unsupported: specify block construct
+ 1478 |   (A => Y) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1502:15: Ignoring unsupported: specify block construct
+ 1502 |   (A1 => Y) = 0;
+      |               ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1523:14: Ignoring unsupported: specify block construct
+ 1523 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1541:14: Ignoring unsupported: specify block construct
+ 1541 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1559:14: Ignoring unsupported: specify block construct
+ 1559 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1578:14: Ignoring unsupported: specify block construct
+ 1578 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1597:14: Ignoring unsupported: specify block construct
+ 1597 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1617:14: Ignoring unsupported: specify block construct
+ 1617 |   (A => X) = 0;
+      |              ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1649:36: Ignoring unsupported: specify block construct
+ 1649 |   (negedge RESET_B => (Q+:1'b0)) = 0;
+      |                                    ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1699:36: Ignoring unsupported: specify block construct
+ 1699 |   (negedge RESET_B => (Q+:1'b0)) = 0;
+      |                                    ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1743:36: Ignoring unsupported: specify block construct
+ 1743 |   (negedge RESET_B => (Q+:1'b0)) = 0;
+      |                                    ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1785:36: Ignoring unsupported: specify block construct
+ 1785 |   (negedge RESET_B => (Q+:1'b0)) = 0;
+      |                                    ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1826:36: Ignoring unsupported: specify block construct
+ 1826 |   (negedge RESET_B => (Q+:1'b0)) = 0;
+      |                                    ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1877:19: Ignoring unsupported: specify block construct
+ 1877 |   (CLK => GCLK) = 0;
+      |                   ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1934:15: Ignoring unsupported: specify block construct
+ 1934 |    (A => Y) = 0;
+      |               ^
+%Warning-SPECIFYIGN: /home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1960:15: Ignoring unsupported: specify block construct
+ 1960 |    (A => X) = 0;
+      |               ^
+%Error: Exiting due to 74 warning(s)
+Traceback (most recent call last):
+  File "/home/cmaier/EDA/PUDDING/tb/testbench.py", line 201, in <module>
+    runner.build(
+    ~~~~~~~~~~~~^
+        sources=[
+        ^^^^^^^^^
+    ...<9 lines>...
+        build_args=build_args,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/nix/store/fj0dwrrnrqqyibzxi4ibd4rc7l3rnmyl-python3-3.13.9-env/lib/python3.13/site-packages/cocotb_tools/runner.py", line 329, in build
+    self._execute(cmds, cwd=self.build_dir)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/fj0dwrrnrqqyibzxi4ibd4rc7l3rnmyl-python3-3.13.9-env/lib/python3.13/site-packages/cocotb_tools/runner.py", line 561, in _execute
+    self._execute_cmds(cmds, cwd)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/nix/store/fj0dwrrnrqqyibzxi4ibd4rc7l3rnmyl-python3-3.13.9-env/lib/python3.13/site-packages/cocotb_tools/runner.py", line 578, in _execute_cmds
+    subprocess.run(
+    ~~~~~~~~~~~~~~^
+        cmd, cwd=cwd, env=self.env, check=True, stdout=stdout, stderr=stderr
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/nix/store/fj0dwrrnrqqyibzxi4ibd4rc7l3rnmyl-python3-3.13.9-env/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['perl', '/nix/store/8apdihpaag1032a4dl87pfpii1hkq25w-devshell-dir/bin/verilator', '-cc', '--exe', '-Mdir', '/home/cmaier/EDA/PUDDING/tb/sim_build', '--top-module', 'heichips25_pudding', '--vpi', '--public-flat-rw', '--prefix', 'Vtop', '-o', 'heichips25_pudding', '-LDFLAGS', '-Wl,-rpath,/nix/store/yk336mn39lfjiawz9zq4qbgq29vhd694-python3.13-cocotb-2.0.0/lib/python3.13/site-packages/cocotb/libs -L/nix/store/yk336mn39lfjiawz9zq4qbgq29vhd694-python3.13-cocotb-2.0.0/lib/python3.13/site-packages/cocotb/libs -lcocotbvpi_verilator', '--trace', '--trace', '--trace-fst', '--trace-structs', '-Wno-PINMISSING', '--timescale', '1ns/1ps', '-DFUNCTIONAL=True', '-DUNIT_DELAY="#0"', '/nix/store/yk336mn39lfjiawz9zq4qbgq29vhd694-python3.13-cocotb-2.0.0/lib/python3.13/site-packages/cocotb/share/lib/verilator/verilator.cpp', '/home/cmaier/EDA/PUDDING/macro/nl/heichips25_pudding.nl.v', '/home/cmaier/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v', '/home/cmaier/EDA/PUDDING/src/dac128module.v', '/home/cmaier/EDA/PUDDING/src/analog_wires.v']' returned non-zero exit status 1.
+make: *** [Makefile:35: sim-gl] Error 1
