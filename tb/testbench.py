@@ -73,6 +73,15 @@ async def heichips25_pudding_smoke_and_random(dut):
     dut.ui_in.value = 0
     dut.uio_in.value = 0
 
+    dut._log.info(f"clk exists={hasattr(dut,'clk')}")
+    dut._log.info(f"rst_n exists={hasattr(dut,'rst_n')}")
+    dut._log.info(f"ui_in object={dut.ui_in!r}")
+    try:
+        dut._log.info(f"ui_in len={len(dut.ui_in)}")
+    except Exception as e:
+        dut._log.info(f"ui_in len() failed: {e}")
+        dut._log.info(f"uo_out len={len(dut.uo_out)} uio_out len={len(dut.uio_out)}")
+
     # Optional power pins (exist in your RTL)
     if hasattr(dut, "VPWR"):
         dut.VPWR.value = 1
@@ -187,7 +196,8 @@ if __name__ == "__main__":
 
     if gl:
         # Gate level
-        build_args += ["--Wno-fatal", "-Wno-PINMISSING"]
+        # build_args += ["--Wno-fatal"] 
+        build_args += ["-Wno-PINMISSING"]
         runner.build(
             sources=[
                 Path("../macro/nl/heichips25_pudding.nl.v"),
