@@ -14,6 +14,12 @@ Notes for
 
 * [refcard](https://docs.cocotb.org/en/stable/refcard.html)  
 
+### Open Padrings  
+  
+* [Open Pad rings](https://github.com/KrzysztofHerman/Open-Padrings)  
+* [IHP-Open-PDK xschemIO](https://github.com/KrzysztofHerman/IHP-Open-PDK/tree/xschemIO-prabhat)  
+* [Example FLDO design](https://github.com/rjordans/TO_Sep2025/tree/main/FLDO)  
+
 ## Debugging the Debugger
 
 ### In an environment driven by software engineers' discussion forums, debugging the debugger is orders of magnitude harder than debugging the DUT itself
@@ -61,6 +67,8 @@ GTKviewer doesn't allow displaying subsets of data vectors, like `state[127:120]
 #### Gate level simulation
 
 `make sim-gl > >(tee make_sim.out) 2> >(tee make_sim.err >&2)` starts a new nightmare.  
+
+With asserts replaced by discrepancy logging, `make sim-gl` doesn't crash, but 
 
 
 
