@@ -77,6 +77,10 @@ The `sg13g2_dfrbpq_1` DFFs should get an asynchronous `RESET_B` input.
   
 [Gate level simulation](https://github.com/tatzelbrumm/PUDDING/blob/tatzelbranch/tb/gatelevel_sim.20260224_0313.pdf) passes, but with signal discrepancies.  
 
+### Asynchronous reset  
+  
+Specifying asynchronous reset for the daisychain and state register arrays saves considerable space and gates.
+
 
 
 
