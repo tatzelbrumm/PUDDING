@@ -1,0 +1,1 @@
+cd tb; GL=1 python3 testbench.py
