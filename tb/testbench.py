@@ -60,12 +60,12 @@ async def heichips25_pudding_smoke_and_random(dut):
         nonlocal errors
         if got != exp:
             errors += 1
-            t = cocotb.utils.get_sim_time(units="us")
+            t = cocotb.utils.get_sim_time(units="ns")
             dut._log.error(
-                f"[{t} us] {name} mismatch got=0x{got:02x} exp=0x{exp:02x}"
+                f"[{t} ns] {name} mismatch got=0x{got:02x} exp=0x{exp:02x}"
             )
-    # 1 MHz clock (1 us period) like the template
-    clock = Clock(dut.clk, 1, "us")
+    # 100 MHz clock (10 ns period) like the template
+    clock = Clock(dut.clk, 10, "ns")
     await cocotb.start(clock.start())
 
     # Drive always-on basics
@@ -96,12 +96,12 @@ async def heichips25_pudding_smoke_and_random(dut):
 
     # Reset
     dut.rst_n.value = 0
-    await Timer(5, "us")
+    await Timer(100, "ns")
     await RisingEdge(dut.clk)
     ref.reset()
 
     dut.rst_n.value = 1
-    await Timer(3, "us")
+    await Timer(50, "ns")
     await RisingEdge(dut.clk)
 
     # After reset, outputs should be 0
