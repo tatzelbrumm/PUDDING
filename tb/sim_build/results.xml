@@ -1,8 +1,8 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1771902097" />
-    <testcase name="heichips25_pudding_smoke_and_random" classname="testbench" file="/home/cmaier/EDA/PUDDING/tb/testbench.py" lineno="53" time="0.08377337455749512" sim_time_ns="6550.0" ratio_time="78187.13325800934">
-      <failure error_type="AssertionError" error_msg="Test failed with 365 mismatches&#10;assert 365 == 0" />
+    <property name="random_seed" value="1771903167" />
+    <testcase name="heichips25_pudding_smoke_and_random" classname="testbench" file="/home/cmaier/EDA/PUDDING/tb/testbench.py" lineno="53" time="0.5742166042327881" sim_time_ns="6550.0" ratio_time="11406.845346716276">
+      <failure error_type="AssertionError" error_msg="Test failed with 369 mismatches&#10;assert 369 == 0" />
     </testcase>
   </testsuite>
 </testsuites>
