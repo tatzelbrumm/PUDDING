@@ -1,0 +1,414 @@
+cd tb; python3 testbench.py
+- V e r i l a t i o n   R e p o r t: Verilator 5.042 2025-11-02 rev v5.040
+- Verilator: Built from 0.086 MB sources in 7 modules, into 0.141 MB in 9 C++ files needing 0.000 MB
+- Verilator: Walltime 0.029 s (elab=0.001, cvt=0.017, bld=0.000); cpu 0.029 s on 1 threads; alloced 20.941 MB
+make[1]: Entering directory '/home/cmaier/EDA/PUDDING/tb/sim_build'
+g++  -I.  -MMD -I/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include -I/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -Os  -c -o verilator.o /nix/store/yk336mn39lfjiawz9zq4qbgq29vhd694-python3.13-cocotb-2.0.0/lib/python3.13/site-packages/cocotb/share/lib/verilator/verilator.cpp
+g++ -Os  -I.  -MMD -I/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include -I/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated.o /nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/verilated.cpp
+g++ -Os  -I.  -MMD -I/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include -I/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_dpi.o /nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/verilated_dpi.cpp
+g++ -Os  -I.  -MMD -I/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include -I/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_vpi.o /nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/verilated_vpi.cpp
+g++ -Os  -I.  -MMD -I/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include -I/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_fst_c.o /nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/verilated_fst_c.cpp
+g++ -Os  -I.  -MMD -I/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include -I/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_threads.o /nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/verilated_threads.cpp
+python3 /nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop.cpp Vtop___024root__0.cpp Vtop__Dpi.cpp Vtop__Trace__0.cpp Vtop___024root__Slow.cpp Vtop___024root__0__Slow.cpp Vtop__Syms.cpp Vtop__Trace__0__Slow.cpp Vtop__TraceDecls__0__Slow.cpp > Vtop__ALL.cpp
+echo "" > Vtop__ALL.verilator_deplist.tmp
+g++ -Os  -I.  -MMD -I/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include -I/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=0 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o Vtop__ALL.o Vtop__ALL.cpp
+g++    verilator.o verilated.o verilated_dpi.o verilated_vpi.o verilated_fst_c.o verilated_threads.o Vtop__ALL.a   -Wl,-rpath,/nix/store/yk336mn39lfjiawz9zq4qbgq29vhd694-python3.13-cocotb-2.0.0/lib/python3.13/site-packages/cocotb/libs -L/nix/store/yk336mn39lfjiawz9zq4qbgq29vhd694-python3.13-cocotb-2.0.0/lib/python3.13/site-packages/cocotb/libs -lcocotbvpi_verilator -lz  -pthread -lpthread -latomic   -o heichips25_pudding
+rm Vtop__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/cmaier/EDA/PUDDING/tb/sim_build'
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.13.9 interpreter at /nix/store/8apdihpaag1032a4dl87pfpii1hkq25w-devshell-dir/bin/python3
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.042 2025-11-02
+     0.00ns INFO     cocotb                             Seeding Python random module with 1771902097
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.0 from /nix/store/fj0dwrrnrqqyibzxi4ibd4rc7l3rnmyl-python3-3.13.9-env/lib/python3.13/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running testbench.heichips25_pudding_smoke_and_random (1/1)
+                                                            Shift/transfer correctness + output mapping checks for heichips25_pudding.
+     0.00ns WARNING  py.warnings                        /home/cmaier/EDA/PUDDING/tb/testbench.py:69: DeprecationWarning: Use ``cocotb.start_soon`` instead.
+                                                          await cocotb.start(clock.start())
+     0.00ns INFO     cocotb.heichips25_pudding          clk exists=True
+     0.00ns INFO     cocotb.heichips25_pudding          rst_n exists=True
+     0.00ns INFO     cocotb.heichips25_pudding          ui_in object=LogicArrayObject(heichips25_pudding.ui_in)
+     0.00ns INFO     cocotb.heichips25_pudding          ui_in len=8
+  1400.00ns WARNING  py.warnings                        /home/cmaier/EDA/PUDDING/tb/testbench.py:63: DeprecationWarning: The 'units' argument has been renamed to 'unit'.
+                                                          t = cocotb.utils.get_sim_time(units="ns")
+  1400.00ns ERROR    cocotb.heichips25_pudding          [1400.0 ns] uo_out mismatch got=0x00 exp=0x01
+  1410.00ns ERROR    cocotb.heichips25_pudding          [1410.0 ns] uo_out mismatch got=0x01 exp=0x02
+  1420.00ns ERROR    cocotb.heichips25_pudding          [1420.0 ns] uo_out mismatch got=0x02 exp=0x04
+  1430.00ns ERROR    cocotb.heichips25_pudding          [1430.0 ns] uo_out mismatch got=0x04 exp=0x08
+  1440.00ns ERROR    cocotb.heichips25_pudding          [1440.0 ns] uio_out mismatch got=0x00 exp=0x08
+  1540.00ns ERROR    cocotb.heichips25_pudding          [1540.0 ns] uo_out mismatch got=0x98 exp=0x30
+  1550.00ns ERROR    cocotb.heichips25_pudding          [1550.0 ns] uo_out mismatch got=0x30 exp=0x08
+  1560.00ns ERROR    cocotb.heichips25_pudding          [1560.0 ns] uo_out mismatch got=0x08 exp=0x10
+  1570.00ns ERROR    cocotb.heichips25_pudding          [1570.0 ns] uo_out mismatch got=0x10 exp=0x21
+  1580.00ns ERROR    cocotb.heichips25_pudding          [1580.0 ns] uo_out mismatch got=0x21 exp=0x42
+  1590.00ns ERROR    cocotb.heichips25_pudding          [1590.0 ns] uo_out mismatch got=0x42 exp=0x84
+  1620.00ns ERROR    cocotb.heichips25_pudding          [1620.0 ns] uo_out mismatch got=0x84 exp=0x09
+  1630.00ns ERROR    cocotb.heichips25_pudding          [1630.0 ns] uio_out mismatch got=0x08 exp=0x09
+  1640.00ns ERROR    cocotb.heichips25_pudding          [1640.0 ns] uo_out mismatch got=0x09 exp=0x13
+  1670.00ns ERROR    cocotb.heichips25_pudding          [1670.0 ns] uo_out mismatch got=0x13 exp=0x09
+  1680.00ns ERROR    cocotb.heichips25_pudding          [1680.0 ns] uo_out mismatch got=0x09 exp=0x13
+  1690.00ns ERROR    cocotb.heichips25_pudding          [1690.0 ns] uo_out mismatch got=0x13 exp=0x09
+  1700.00ns ERROR    cocotb.heichips25_pudding          [1700.0 ns] uo_out mismatch got=0x09 exp=0x13
+  1710.00ns ERROR    cocotb.heichips25_pudding          [1710.0 ns] uo_out mismatch got=0x13 exp=0x26
+  1720.00ns ERROR    cocotb.heichips25_pudding          [1720.0 ns] uo_out mismatch got=0x26 exp=0x4c
+  1740.00ns ERROR    cocotb.heichips25_pudding          [1740.0 ns] uo_out mismatch got=0x4c exp=0x98
+  1750.00ns ERROR    cocotb.heichips25_pudding          [1750.0 ns] uo_out mismatch got=0x98 exp=0x30
+  1770.00ns ERROR    cocotb.heichips25_pudding          [1770.0 ns] uo_out mismatch got=0x30 exp=0x61
+  1780.00ns ERROR    cocotb.heichips25_pudding          [1780.0 ns] uo_out mismatch got=0x61 exp=0xc2
+  1790.00ns ERROR    cocotb.heichips25_pudding          [1790.0 ns] uio_out mismatch got=0x09 exp=0xc2
+  1840.00ns ERROR    cocotb.heichips25_pudding          [1840.0 ns] uo_out mismatch got=0xc2 exp=0x85
+  1850.00ns ERROR    cocotb.heichips25_pudding          [1850.0 ns] uo_out mismatch got=0x85 exp=0x0a
+  1870.00ns ERROR    cocotb.heichips25_pudding          [1870.0 ns] uo_out mismatch got=0x0a exp=0x15
+  1880.00ns ERROR    cocotb.heichips25_pudding          [1880.0 ns] uo_out mismatch got=0x15 exp=0xc2
+  1910.00ns ERROR    cocotb.heichips25_pudding          [1910.0 ns] uo_out mismatch got=0xc2 exp=0x85
+  1920.00ns ERROR    cocotb.heichips25_pudding          [1920.0 ns] uo_out mismatch got=0x85 exp=0x0a
+  1930.00ns ERROR    cocotb.heichips25_pudding          [1930.0 ns] uo_out mismatch got=0x0a exp=0x15
+  1940.00ns ERROR    cocotb.heichips25_pudding          [1940.0 ns] uo_out mismatch got=0x15 exp=0x2a
+  1950.00ns ERROR    cocotb.heichips25_pudding          [1950.0 ns] uo_out mismatch got=0x2a exp=0x54
+  1960.00ns ERROR    cocotb.heichips25_pudding          [1960.0 ns] uo_out mismatch got=0x54 exp=0xc2
+  1970.00ns ERROR    cocotb.heichips25_pudding          [1970.0 ns] uo_out mismatch got=0xc2 exp=0x85
+  1980.00ns ERROR    cocotb.heichips25_pudding          [1980.0 ns] uo_out mismatch got=0x85 exp=0x0a
+  1990.00ns ERROR    cocotb.heichips25_pudding          [1990.0 ns] uio_out mismatch got=0xc2 exp=0x0a
+  2000.00ns ERROR    cocotb.heichips25_pudding          [2000.0 ns] uo_out mismatch got=0x0a exp=0x15
+  2010.00ns ERROR    cocotb.heichips25_pudding          [2010.0 ns] uio_out mismatch got=0x0a exp=0x15
+  2020.00ns ERROR    cocotb.heichips25_pudding          [2020.0 ns] uo_out mismatch got=0x15 exp=0x2a
+  2030.00ns ERROR    cocotb.heichips25_pudding          [2030.0 ns] uo_out mismatch got=0x2a exp=0x54
+  2050.00ns ERROR    cocotb.heichips25_pudding          [2050.0 ns] uo_out mismatch got=0x54 exp=0xa9
+  2060.00ns ERROR    cocotb.heichips25_pudding          [2060.0 ns] uo_out mismatch got=0xa9 exp=0x53
+  2090.00ns ERROR    cocotb.heichips25_pudding          [2090.0 ns] uo_out mismatch got=0x53 exp=0xa6
+  2100.00ns ERROR    cocotb.heichips25_pudding          [2100.0 ns] uo_out mismatch got=0xa6 exp=0x4d
+  2120.00ns ERROR    cocotb.heichips25_pudding          [2120.0 ns] uo_out mismatch got=0x4d exp=0x9b
+  2130.00ns ERROR    cocotb.heichips25_pudding          [2130.0 ns] uo_out mismatch got=0x9b exp=0x37
+  2160.00ns ERROR    cocotb.heichips25_pudding          [2160.0 ns] uo_out mismatch got=0x37 exp=0x6e
+  2170.00ns ERROR    cocotb.heichips25_pudding          [2170.0 ns] uo_out mismatch got=0x6e exp=0xdc
+  2180.00ns ERROR    cocotb.heichips25_pudding          [2180.0 ns] uo_out mismatch got=0xdc exp=0xb8
+  2190.00ns ERROR    cocotb.heichips25_pudding          [2190.0 ns] uo_out mismatch got=0xb8 exp=0x70
+  2200.00ns ERROR    cocotb.heichips25_pudding          [2200.0 ns] uo_out mismatch got=0x70 exp=0x15
+  2210.00ns ERROR    cocotb.heichips25_pudding          [2210.0 ns] uo_out mismatch got=0x15 exp=0x2a
+  2220.00ns ERROR    cocotb.heichips25_pudding          [2220.0 ns] uo_out mismatch got=0x2a exp=0x54
+  2230.00ns ERROR    cocotb.heichips25_pudding          [2230.0 ns] uio_out mismatch got=0x15 exp=0x54
+  2240.00ns ERROR    cocotb.heichips25_pudding          [2240.0 ns] uo_out mismatch got=0x54 exp=0xa9
+  2250.00ns ERROR    cocotb.heichips25_pudding          [2250.0 ns] uo_out mismatch got=0xa9 exp=0x53
+  2260.00ns ERROR    cocotb.heichips25_pudding          [2260.0 ns] uo_out mismatch got=0x53 exp=0x54
+  2270.00ns ERROR    cocotb.heichips25_pudding          [2270.0 ns] uo_out mismatch got=0x54 exp=0xa9
+  2280.00ns ERROR    cocotb.heichips25_pudding          [2280.0 ns] uo_out mismatch got=0xa9 exp=0x53
+  2290.00ns ERROR    cocotb.heichips25_pudding          [2290.0 ns] uo_out mismatch got=0x53 exp=0xa6
+  2300.00ns ERROR    cocotb.heichips25_pudding          [2300.0 ns] uio_out mismatch got=0x54 exp=0xa6
+  2320.00ns ERROR    cocotb.heichips25_pudding          [2320.0 ns] uo_out mismatch got=0xa6 exp=0x4d
+  2340.00ns ERROR    cocotb.heichips25_pudding          [2340.0 ns] uo_out mismatch got=0x4d exp=0x9b
+  2350.00ns ERROR    cocotb.heichips25_pudding          [2350.0 ns] uo_out mismatch got=0x9b exp=0xa6
+  2360.00ns ERROR    cocotb.heichips25_pudding          [2360.0 ns] uo_out mismatch got=0xa6 exp=0x4d
+  2370.00ns ERROR    cocotb.heichips25_pudding          [2370.0 ns] uo_out mismatch got=0x4d exp=0x9b
+  2380.00ns ERROR    cocotb.heichips25_pudding          [2380.0 ns] uo_out mismatch got=0x9b exp=0x37
+  2400.00ns ERROR    cocotb.heichips25_pudding          [2400.0 ns] uo_out mismatch got=0x37 exp=0x6e
+  2410.00ns ERROR    cocotb.heichips25_pudding          [2410.0 ns] uo_out mismatch got=0x6e exp=0xdc
+  2420.00ns ERROR    cocotb.heichips25_pudding          [2420.0 ns] uo_out mismatch got=0xdc exp=0xb8
+  2430.00ns ERROR    cocotb.heichips25_pudding          [2430.0 ns] uo_out mismatch got=0xb8 exp=0x70
+  2440.00ns ERROR    cocotb.heichips25_pudding          [2440.0 ns] uo_out mismatch got=0x70 exp=0xe1
+  2450.00ns ERROR    cocotb.heichips25_pudding          [2450.0 ns] uo_out mismatch got=0xe1 exp=0xa6
+  2470.00ns ERROR    cocotb.heichips25_pudding          [2470.0 ns] uo_out mismatch got=0xa6 exp=0x4d
+  2480.00ns ERROR    cocotb.heichips25_pudding          [2480.0 ns] uo_out mismatch got=0x4d exp=0xa6
+  2490.00ns ERROR    cocotb.heichips25_pudding          [2490.0 ns] uo_out mismatch got=0xa6 exp=0x4d
+  2520.00ns ERROR    cocotb.heichips25_pudding          [2520.0 ns] uo_out mismatch got=0x4d exp=0x9b
+  2530.00ns ERROR    cocotb.heichips25_pudding          [2530.0 ns] uo_out mismatch got=0x9b exp=0x37
+  2550.00ns ERROR    cocotb.heichips25_pudding          [2550.0 ns] uio_out mismatch got=0xa6 exp=0x37
+  2560.00ns ERROR    cocotb.heichips25_pudding          [2560.0 ns] uo_out mismatch got=0x37 exp=0x6e
+  2570.00ns ERROR    cocotb.heichips25_pudding          [2570.0 ns] uo_out mismatch got=0x6e exp=0xdc
+  2590.00ns ERROR    cocotb.heichips25_pudding          [2590.0 ns] uo_out mismatch got=0xdc exp=0xb8
+  2600.00ns ERROR    cocotb.heichips25_pudding          [2600.0 ns] uo_out mismatch got=0xb8 exp=0x70
+  2620.00ns ERROR    cocotb.heichips25_pudding          [2620.0 ns] uio_out mismatch got=0x37 exp=0x70
+  2660.00ns ERROR    cocotb.heichips25_pudding          [2660.0 ns] uo_out mismatch got=0x70 exp=0xe1
+  2680.00ns ERROR    cocotb.heichips25_pudding          [2680.0 ns] uo_out mismatch got=0xe1 exp=0xc3
+  2690.00ns ERROR    cocotb.heichips25_pudding          [2690.0 ns] uo_out mismatch got=0xc3 exp=0x86
+  2710.00ns ERROR    cocotb.heichips25_pudding          [2710.0 ns] uio_out mismatch got=0x70 exp=0x86
+  2730.00ns ERROR    cocotb.heichips25_pudding          [2730.0 ns] uo_out mismatch got=0x86 exp=0x0c
+  2750.00ns ERROR    cocotb.heichips25_pudding          [2750.0 ns] uo_out mismatch got=0x0c exp=0x19
+  2760.00ns ERROR    cocotb.heichips25_pudding          [2760.0 ns] uo_out mismatch got=0x19 exp=0x32
+  2770.00ns ERROR    cocotb.heichips25_pudding          [2770.0 ns] uo_out mismatch got=0x32 exp=0x65
+  2790.00ns ERROR    cocotb.heichips25_pudding          [2790.0 ns] uo_out mismatch got=0x65 exp=0xca
+  2800.00ns ERROR    cocotb.heichips25_pudding          [2800.0 ns] uo_out mismatch got=0xca exp=0x95
+  2810.00ns ERROR    cocotb.heichips25_pudding          [2810.0 ns] uo_out mismatch got=0x95 exp=0x2b
+  2820.00ns ERROR    cocotb.heichips25_pudding          [2820.0 ns] uo_out mismatch got=0x2b exp=0x57
+  2830.00ns ERROR    cocotb.heichips25_pudding          [2830.0 ns] uo_out mismatch got=0x57 exp=0xae
+  2850.00ns ERROR    cocotb.heichips25_pudding          [2850.0 ns] uo_out mismatch got=0xae exp=0x5d
+  2860.00ns ERROR    cocotb.heichips25_pudding          [2860.0 ns] uo_out mismatch got=0x5d exp=0x86
+  2870.00ns ERROR    cocotb.heichips25_pudding          [2870.0 ns] uo_out mismatch got=0x86 exp=0x0c
+  2900.00ns ERROR    cocotb.heichips25_pudding          [2900.0 ns] uio_out mismatch got=0x86 exp=0x0c
+  2910.00ns ERROR    cocotb.heichips25_pudding          [2910.0 ns] uo_out mismatch got=0x0c exp=0x19
+  2920.00ns ERROR    cocotb.heichips25_pudding          [2920.0 ns] uo_out mismatch got=0x19 exp=0x32
+  2940.00ns ERROR    cocotb.heichips25_pudding          [2940.0 ns] uo_out mismatch got=0x32 exp=0x65
+  2950.00ns ERROR    cocotb.heichips25_pudding          [2950.0 ns] uo_out mismatch got=0x65 exp=0xca
+  2960.00ns ERROR    cocotb.heichips25_pudding          [2960.0 ns] uo_out mismatch got=0xca exp=0x95
+  2970.00ns ERROR    cocotb.heichips25_pudding          [2970.0 ns] uo_out mismatch got=0x95 exp=0x2b
+  2980.00ns ERROR    cocotb.heichips25_pudding          [2980.0 ns] uo_out mismatch got=0x2b exp=0x57
+  2990.00ns ERROR    cocotb.heichips25_pudding          [2990.0 ns] uo_out mismatch got=0x57 exp=0xae
+  3000.00ns ERROR    cocotb.heichips25_pudding          [3000.0 ns] uo_out mismatch got=0xae exp=0x5d
+  3020.00ns ERROR    cocotb.heichips25_pudding          [3020.0 ns] uo_out mismatch got=0x5d exp=0xba
+  3030.00ns ERROR    cocotb.heichips25_pudding          [3030.0 ns] uo_out mismatch got=0xba exp=0x74
+  3050.00ns ERROR    cocotb.heichips25_pudding          [3050.0 ns] uo_out mismatch got=0x74 exp=0xe9
+  3060.00ns ERROR    cocotb.heichips25_pudding          [3060.0 ns] uio_out mismatch got=0x0c exp=0xe9
+  3100.00ns ERROR    cocotb.heichips25_pudding          [3100.0 ns] uo_out mismatch got=0xe9 exp=0xd3
+  3110.00ns ERROR    cocotb.heichips25_pudding          [3110.0 ns] uo_out mismatch got=0xd3 exp=0xa7
+  3120.00ns ERROR    cocotb.heichips25_pudding          [3120.0 ns] uo_out mismatch got=0xa7 exp=0x4e
+  3130.00ns ERROR    cocotb.heichips25_pudding          [3130.0 ns] uio_out mismatch got=0xe9 exp=0x4e
+  3140.00ns ERROR    cocotb.heichips25_pudding          [3140.0 ns] uo_out mismatch got=0x4e exp=0x9d
+  3150.00ns ERROR    cocotb.heichips25_pudding          [3150.0 ns] uo_out mismatch got=0x9d exp=0x3b
+  3160.00ns ERROR    cocotb.heichips25_pudding          [3160.0 ns] uo_out mismatch got=0x3b exp=0x76
+  3170.00ns ERROR    cocotb.heichips25_pudding          [3170.0 ns] uo_out mismatch got=0x76 exp=0xed
+  3190.00ns ERROR    cocotb.heichips25_pudding          [3190.0 ns] uo_out mismatch got=0xed exp=0xdb
+  3200.00ns ERROR    cocotb.heichips25_pudding          [3200.0 ns] uo_out mismatch got=0xdb exp=0xb7
+  3210.00ns ERROR    cocotb.heichips25_pudding          [3210.0 ns] uio_out mismatch got=0x4e exp=0xb7
+  3220.00ns ERROR    cocotb.heichips25_pudding          [3220.0 ns] uo_out mismatch got=0xb7 exp=0x6f
+  3230.00ns ERROR    cocotb.heichips25_pudding          [3230.0 ns] uo_out mismatch got=0x6f exp=0xdf
+  3250.00ns ERROR    cocotb.heichips25_pudding          [3250.0 ns] uio_out mismatch got=0xb7 exp=0xdf
+  3260.00ns ERROR    cocotb.heichips25_pudding          [3260.0 ns] uo_out mismatch got=0xdf exp=0xbf
+  3270.00ns ERROR    cocotb.heichips25_pudding          [3270.0 ns] uo_out mismatch got=0xbf exp=0xdf
+  3280.00ns ERROR    cocotb.heichips25_pudding          [3280.0 ns] uo_out mismatch got=0xdf exp=0xbf
+  3290.00ns ERROR    cocotb.heichips25_pudding          [3290.0 ns] uio_out mismatch got=0xdf exp=0xbf
+  3300.00ns ERROR    cocotb.heichips25_pudding          [3300.0 ns] uo_out mismatch got=0xbf exp=0x7f
+  3310.00ns ERROR    cocotb.heichips25_pudding          [3310.0 ns] uio_out mismatch got=0xbf exp=0x7f
+  3340.00ns ERROR    cocotb.heichips25_pudding          [3340.0 ns] uo_out mismatch got=0x7f exp=0xff
+  3390.00ns ERROR    cocotb.heichips25_pudding          [3390.0 ns] uo_out mismatch got=0xff exp=0xfe
+  3420.00ns ERROR    cocotb.heichips25_pudding          [3420.0 ns] uo_out mismatch got=0xfe exp=0xfd
+  3430.00ns ERROR    cocotb.heichips25_pudding          [3430.0 ns] uo_out mismatch got=0xfd exp=0xfb
+  3440.00ns ERROR    cocotb.heichips25_pudding          [3440.0 ns] uo_out mismatch got=0xfb exp=0xf7
+  3450.00ns ERROR    cocotb.heichips25_pudding          [3450.0 ns] uo_out mismatch got=0xf7 exp=0xef
+  3460.00ns ERROR    cocotb.heichips25_pudding          [3460.0 ns] uo_out mismatch got=0xef exp=0x7f
+  3470.00ns ERROR    cocotb.heichips25_pudding          [3470.0 ns] uo_out mismatch got=0x7f exp=0xff
+  3480.00ns ERROR    cocotb.heichips25_pudding          [3480.0 ns] uo_out mismatch got=0xff exp=0x7f
+  3490.00ns ERROR    cocotb.heichips25_pudding          [3490.0 ns] uo_out mismatch got=0x7f exp=0xff
+  3550.00ns ERROR    cocotb.heichips25_pudding          [3550.0 ns] uo_out mismatch got=0xff exp=0xfe
+  3560.00ns ERROR    cocotb.heichips25_pudding          [3560.0 ns] uio_out mismatch got=0x7f exp=0xfe
+  3580.00ns ERROR    cocotb.heichips25_pudding          [3580.0 ns] uo_out mismatch got=0xfe exp=0xfd
+  3600.00ns ERROR    cocotb.heichips25_pudding          [3600.0 ns] uo_out mismatch got=0xfd exp=0xfb
+  3620.00ns ERROR    cocotb.heichips25_pudding          [3620.0 ns] uo_out mismatch got=0xfb exp=0xf7
+  3640.00ns ERROR    cocotb.heichips25_pudding          [3640.0 ns] uo_out mismatch got=0xf7 exp=0xef
+  3650.00ns ERROR    cocotb.heichips25_pudding          [3650.0 ns] uio_out mismatch got=0xfe exp=0xef
+  3660.00ns ERROR    cocotb.heichips25_pudding          [3660.0 ns] uo_out mismatch got=0xef exp=0xde
+  3670.00ns ERROR    cocotb.heichips25_pudding          [3670.0 ns] uo_out mismatch got=0xde exp=0xbd
+  3680.00ns ERROR    cocotb.heichips25_pudding          [3680.0 ns] uio_out mismatch got=0xef exp=0xbd
+  3700.00ns ERROR    cocotb.heichips25_pudding          [3700.0 ns] uo_out mismatch got=0xbd exp=0x7b
+  3710.00ns ERROR    cocotb.heichips25_pudding          [3710.0 ns] uo_out mismatch got=0x7b exp=0xf6
+  3720.00ns ERROR    cocotb.heichips25_pudding          [3720.0 ns] uo_out mismatch got=0xf6 exp=0xec
+  3740.00ns ERROR    cocotb.heichips25_pudding          [3740.0 ns] uo_out mismatch got=0xec exp=0xbd
+  3750.00ns ERROR    cocotb.heichips25_pudding          [3750.0 ns] uo_out mismatch got=0xbd exp=0x7b
+  3760.00ns ERROR    cocotb.heichips25_pudding          [3760.0 ns] uo_out mismatch got=0x7b exp=0xf6
+  3770.00ns ERROR    cocotb.heichips25_pudding          [3770.0 ns] uo_out mismatch got=0xf6 exp=0xec
+  3780.00ns ERROR    cocotb.heichips25_pudding          [3780.0 ns] uo_out mismatch got=0xec exp=0xd9
+  3790.00ns ERROR    cocotb.heichips25_pudding          [3790.0 ns] uo_out mismatch got=0xd9 exp=0xb3
+  3800.00ns ERROR    cocotb.heichips25_pudding          [3800.0 ns] uo_out mismatch got=0xb3 exp=0x67
+  3810.00ns ERROR    cocotb.heichips25_pudding          [3810.0 ns] uio_out mismatch got=0xbd exp=0x67
+  3830.00ns ERROR    cocotb.heichips25_pudding          [3830.0 ns] uo_out mismatch got=0x67 exp=0xcf
+  3840.00ns ERROR    cocotb.heichips25_pudding          [3840.0 ns] uo_out mismatch got=0xcf exp=0x9e
+  3860.00ns ERROR    cocotb.heichips25_pudding          [3860.0 ns] uo_out mismatch got=0x9e exp=0x67
+  3870.00ns ERROR    cocotb.heichips25_pudding          [3870.0 ns] uo_out mismatch got=0x67 exp=0xcf
+  3880.00ns ERROR    cocotb.heichips25_pudding          [3880.0 ns] uo_out mismatch got=0xcf exp=0x67
+  3900.00ns ERROR    cocotb.heichips25_pudding          [3900.0 ns] uo_out mismatch got=0x67 exp=0xcf
+  3920.00ns ERROR    cocotb.heichips25_pudding          [3920.0 ns] uo_out mismatch got=0xcf exp=0x9e
+  3930.00ns ERROR    cocotb.heichips25_pudding          [3930.0 ns] uio_out mismatch got=0x67 exp=0x9e
+  3960.00ns ERROR    cocotb.heichips25_pudding          [3960.0 ns] uo_out mismatch got=0x9e exp=0x3d
+  3970.00ns ERROR    cocotb.heichips25_pudding          [3970.0 ns] uo_out mismatch got=0x3d exp=0x7a
+  3980.00ns ERROR    cocotb.heichips25_pudding          [3980.0 ns] uo_out mismatch got=0x7a exp=0xf5
+  3990.00ns ERROR    cocotb.heichips25_pudding          [3990.0 ns] uio_out mismatch got=0x9e exp=0xf5
+  4000.00ns ERROR    cocotb.heichips25_pudding          [4000.0 ns] uo_out mismatch got=0xf5 exp=0xea
+  4030.00ns ERROR    cocotb.heichips25_pudding          [4030.0 ns] uo_out mismatch got=0xea exp=0xd5
+  4050.00ns ERROR    cocotb.heichips25_pudding          [4050.0 ns] uo_out mismatch got=0xd5 exp=0xab
+  4070.00ns ERROR    cocotb.heichips25_pudding          [4070.0 ns] uo_out mismatch got=0xab exp=0xf5
+  4080.00ns ERROR    cocotb.heichips25_pudding          [4080.0 ns] uo_out mismatch got=0xf5 exp=0xea
+  4100.00ns ERROR    cocotb.heichips25_pudding          [4100.0 ns] uo_out mismatch got=0xea exp=0xd5
+  4110.00ns ERROR    cocotb.heichips25_pudding          [4110.0 ns] uo_out mismatch got=0xd5 exp=0xab
+  4120.00ns ERROR    cocotb.heichips25_pudding          [4120.0 ns] uo_out mismatch got=0xab exp=0x56
+  4130.00ns ERROR    cocotb.heichips25_pudding          [4130.0 ns] uo_out mismatch got=0x56 exp=0xf5
+  4140.00ns ERROR    cocotb.heichips25_pudding          [4140.0 ns] uo_out mismatch got=0xf5 exp=0xea
+  4150.00ns ERROR    cocotb.heichips25_pudding          [4150.0 ns] uo_out mismatch got=0xea exp=0xf5
+  4160.00ns ERROR    cocotb.heichips25_pudding          [4160.0 ns] uo_out mismatch got=0xf5 exp=0xea
+  4180.00ns ERROR    cocotb.heichips25_pudding          [4180.0 ns] uo_out mismatch got=0xea exp=0xd5
+  4200.00ns ERROR    cocotb.heichips25_pudding          [4200.0 ns] uo_out mismatch got=0xd5 exp=0xab
+  4210.00ns ERROR    cocotb.heichips25_pudding          [4210.0 ns] uo_out mismatch got=0xab exp=0x56
+  4220.00ns ERROR    cocotb.heichips25_pudding          [4220.0 ns] uio_out mismatch got=0xf5 exp=0x56
+  4230.00ns ERROR    cocotb.heichips25_pudding          [4230.0 ns] uo_out mismatch got=0x56 exp=0xac
+  4240.00ns ERROR    cocotb.heichips25_pudding          [4240.0 ns] uo_out mismatch got=0xac exp=0x59
+  4250.00ns ERROR    cocotb.heichips25_pudding          [4250.0 ns] uio_out mismatch got=0x56 exp=0x59
+  4270.00ns ERROR    cocotb.heichips25_pudding          [4270.0 ns] uo_out mismatch got=0x59 exp=0xb2
+  4290.00ns ERROR    cocotb.heichips25_pudding          [4290.0 ns] uo_out mismatch got=0xb2 exp=0x64
+  4300.00ns ERROR    cocotb.heichips25_pudding          [4300.0 ns] uo_out mismatch got=0x64 exp=0xc8
+  4310.00ns ERROR    cocotb.heichips25_pudding          [4310.0 ns] uio_out mismatch got=0x59 exp=0xc8
+  4320.00ns ERROR    cocotb.heichips25_pudding          [4320.0 ns] uo_out mismatch got=0xc8 exp=0x91
+  4330.00ns ERROR    cocotb.heichips25_pudding          [4330.0 ns] uio_out mismatch got=0xc8 exp=0x91
+  4390.00ns ERROR    cocotb.heichips25_pudding          [4390.0 ns] uo_out mismatch got=0x91 exp=0x23
+  4400.00ns ERROR    cocotb.heichips25_pudding          [4400.0 ns] uio_out mismatch got=0x91 exp=0x23
+  4420.00ns ERROR    cocotb.heichips25_pudding          [4420.0 ns] uo_out mismatch got=0x23 exp=0x47
+  4430.00ns ERROR    cocotb.heichips25_pudding          [4430.0 ns] uo_out mismatch got=0x47 exp=0x8f
+  4440.00ns ERROR    cocotb.heichips25_pudding          [4440.0 ns] uo_out mismatch got=0x8f exp=0x1e
+  4460.00ns ERROR    cocotb.heichips25_pudding          [4460.0 ns] uo_out mismatch got=0x1e exp=0x3c
+  4470.00ns ERROR    cocotb.heichips25_pudding          [4470.0 ns] uo_out mismatch got=0x3c exp=0x79
+  4510.00ns ERROR    cocotb.heichips25_pudding          [4510.0 ns] uo_out mismatch got=0x79 exp=0xf3
+  4520.00ns ERROR    cocotb.heichips25_pudding          [4520.0 ns] uo_out mismatch got=0xf3 exp=0xe6
+  4530.00ns ERROR    cocotb.heichips25_pudding          [4530.0 ns] uo_out mismatch got=0xe6 exp=0xcd
+  4540.00ns ERROR    cocotb.heichips25_pudding          [4540.0 ns] uo_out mismatch got=0xcd exp=0x9a
+  4550.00ns ERROR    cocotb.heichips25_pudding          [4550.0 ns] uo_out mismatch got=0x9a exp=0x35
+  4560.00ns ERROR    cocotb.heichips25_pudding          [4560.0 ns] uo_out mismatch got=0x35 exp=0x6a
+  4570.00ns ERROR    cocotb.heichips25_pudding          [4570.0 ns] uo_out mismatch got=0x6a exp=0x23
+  4580.00ns ERROR    cocotb.heichips25_pudding          [4580.0 ns] uo_out mismatch got=0x23 exp=0x47
+  4590.00ns ERROR    cocotb.heichips25_pudding          [4590.0 ns] uo_out mismatch got=0x47 exp=0x8f
+  4600.00ns ERROR    cocotb.heichips25_pudding          [4600.0 ns] uo_out mismatch got=0x8f exp=0x1e
+  4610.00ns ERROR    cocotb.heichips25_pudding          [4610.0 ns] uo_out mismatch got=0x1e exp=0x23
+  4630.00ns ERROR    cocotb.heichips25_pudding          [4630.0 ns] uo_out mismatch got=0x23 exp=0x47
+  4650.00ns ERROR    cocotb.heichips25_pudding          [4650.0 ns] uo_out mismatch got=0x47 exp=0x8f
+  4660.00ns ERROR    cocotb.heichips25_pudding          [4660.0 ns] uio_out mismatch got=0x23 exp=0x8f
+  4670.00ns ERROR    cocotb.heichips25_pudding          [4670.0 ns] uo_out mismatch got=0x8f exp=0x1e
+  4680.00ns ERROR    cocotb.heichips25_pudding          [4680.0 ns] uo_out mismatch got=0x1e exp=0x3c
+  4690.00ns ERROR    cocotb.heichips25_pudding          [4690.0 ns] uo_out mismatch got=0x3c exp=0x79
+  4700.00ns ERROR    cocotb.heichips25_pudding          [4700.0 ns] uo_out mismatch got=0x79 exp=0xf3
+  4710.00ns ERROR    cocotb.heichips25_pudding          [4710.0 ns] uo_out mismatch got=0xf3 exp=0xe6
+  4730.00ns ERROR    cocotb.heichips25_pudding          [4730.0 ns] uio_out mismatch got=0x8f exp=0xe6
+  4740.00ns ERROR    cocotb.heichips25_pudding          [4740.0 ns] uo_out mismatch got=0xe6 exp=0xcd
+  4760.00ns ERROR    cocotb.heichips25_pudding          [4760.0 ns] uo_out mismatch got=0xcd exp=0xe6
+  4770.00ns ERROR    cocotb.heichips25_pudding          [4770.0 ns] uo_out mismatch got=0xe6 exp=0xcd
+  4780.00ns ERROR    cocotb.heichips25_pudding          [4780.0 ns] uo_out mismatch got=0xcd exp=0xe6
+  4790.00ns ERROR    cocotb.heichips25_pudding          [4790.0 ns] uo_out mismatch got=0xe6 exp=0xcd
+  4800.00ns ERROR    cocotb.heichips25_pudding          [4800.0 ns] uo_out mismatch got=0xcd exp=0x9a
+  4810.00ns ERROR    cocotb.heichips25_pudding          [4810.0 ns] uo_out mismatch got=0x9a exp=0x35
+  4820.00ns ERROR    cocotb.heichips25_pudding          [4820.0 ns] uo_out mismatch got=0x35 exp=0x6a
+  4830.00ns ERROR    cocotb.heichips25_pudding          [4830.0 ns] uo_out mismatch got=0x6a exp=0xe6
+  4840.00ns ERROR    cocotb.heichips25_pudding          [4840.0 ns] uo_out mismatch got=0xe6 exp=0xcd
+  4850.00ns ERROR    cocotb.heichips25_pudding          [4850.0 ns] uio_out mismatch got=0xe6 exp=0xcd
+  4890.00ns ERROR    cocotb.heichips25_pudding          [4890.0 ns] uo_out mismatch got=0xcd exp=0x9a
+  4900.00ns ERROR    cocotb.heichips25_pudding          [4900.0 ns] uo_out mismatch got=0x9a exp=0x35
+  4910.00ns ERROR    cocotb.heichips25_pudding          [4910.0 ns] uo_out mismatch got=0x35 exp=0xcd
+  4920.00ns ERROR    cocotb.heichips25_pudding          [4920.0 ns] uo_out mismatch got=0xcd exp=0x9a
+  4930.00ns ERROR    cocotb.heichips25_pudding          [4930.0 ns] uo_out mismatch got=0x9a exp=0x35
+  4940.00ns ERROR    cocotb.heichips25_pudding          [4940.0 ns] uo_out mismatch got=0x35 exp=0x6a
+  4960.00ns ERROR    cocotb.heichips25_pudding          [4960.0 ns] uo_out mismatch got=0x6a exp=0xd4
+  4990.00ns ERROR    cocotb.heichips25_pudding          [4990.0 ns] uo_out mismatch got=0xd4 exp=0xa8
+  5000.00ns ERROR    cocotb.heichips25_pudding          [5000.0 ns] uo_out mismatch got=0xa8 exp=0x51
+  5010.00ns ERROR    cocotb.heichips25_pudding          [5010.0 ns] uo_out mismatch got=0x51 exp=0xa2
+  5020.00ns ERROR    cocotb.heichips25_pudding          [5020.0 ns] uio_out mismatch got=0xcd exp=0xa2
+  5040.00ns ERROR    cocotb.heichips25_pudding          [5040.0 ns] uo_out mismatch got=0xa2 exp=0x45
+  5060.00ns ERROR    cocotb.heichips25_pudding          [5060.0 ns] uo_out mismatch got=0x45 exp=0xa2
+  5080.00ns ERROR    cocotb.heichips25_pudding          [5080.0 ns] uo_out mismatch got=0xa2 exp=0x45
+  5090.00ns ERROR    cocotb.heichips25_pudding          [5090.0 ns] uo_out mismatch got=0x45 exp=0x8b
+  5100.00ns ERROR    cocotb.heichips25_pudding          [5100.0 ns] uio_out mismatch got=0xa2 exp=0x8b
+  5120.00ns ERROR    cocotb.heichips25_pudding          [5120.0 ns] uo_out mismatch got=0x8b exp=0x16
+  5130.00ns ERROR    cocotb.heichips25_pudding          [5130.0 ns] uo_out mismatch got=0x16 exp=0x2c
+  5140.00ns ERROR    cocotb.heichips25_pudding          [5140.0 ns] uo_out mismatch got=0x2c exp=0x58
+  5150.00ns ERROR    cocotb.heichips25_pudding          [5150.0 ns] uo_out mismatch got=0x58 exp=0xb1
+  5160.00ns ERROR    cocotb.heichips25_pudding          [5160.0 ns] uo_out mismatch got=0xb1 exp=0x62
+  5170.00ns ERROR    cocotb.heichips25_pudding          [5170.0 ns] uo_out mismatch got=0x62 exp=0x8b
+  5180.00ns ERROR    cocotb.heichips25_pudding          [5180.0 ns] uo_out mismatch got=0x8b exp=0x16
+  5230.00ns ERROR    cocotb.heichips25_pudding          [5230.0 ns] uo_out mismatch got=0x16 exp=0x2c
+  5240.00ns ERROR    cocotb.heichips25_pudding          [5240.0 ns] uo_out mismatch got=0x2c exp=0x58
+  5250.00ns ERROR    cocotb.heichips25_pudding          [5250.0 ns] uo_out mismatch got=0x58 exp=0xb1
+  5260.00ns ERROR    cocotb.heichips25_pudding          [5260.0 ns] uo_out mismatch got=0xb1 exp=0x8b
+  5270.00ns ERROR    cocotb.heichips25_pudding          [5270.0 ns] uo_out mismatch got=0x8b exp=0x16
+  5290.00ns ERROR    cocotb.heichips25_pudding          [5290.0 ns] uo_out mismatch got=0x16 exp=0x2c
+  5300.00ns ERROR    cocotb.heichips25_pudding          [5300.0 ns] uo_out mismatch got=0x2c exp=0x58
+  5310.00ns ERROR    cocotb.heichips25_pudding          [5310.0 ns] uo_out mismatch got=0x58 exp=0x8b
+  5330.00ns ERROR    cocotb.heichips25_pudding          [5330.0 ns] uo_out mismatch got=0x8b exp=0x16
+  5340.00ns ERROR    cocotb.heichips25_pudding          [5340.0 ns] uo_out mismatch got=0x16 exp=0x2c
+  5350.00ns ERROR    cocotb.heichips25_pudding          [5350.0 ns] uo_out mismatch got=0x2c exp=0x58
+  5360.00ns ERROR    cocotb.heichips25_pudding          [5360.0 ns] uo_out mismatch got=0x58 exp=0xb1
+  5370.00ns ERROR    cocotb.heichips25_pudding          [5370.0 ns] uo_out mismatch got=0xb1 exp=0x62
+  5380.00ns ERROR    cocotb.heichips25_pudding          [5380.0 ns] uo_out mismatch got=0x62 exp=0xc4
+  5390.00ns ERROR    cocotb.heichips25_pudding          [5390.0 ns] uo_out mismatch got=0xc4 exp=0x89
+  5420.00ns ERROR    cocotb.heichips25_pudding          [5420.0 ns] uo_out mismatch got=0x89 exp=0x12
+  5440.00ns ERROR    cocotb.heichips25_pudding          [5440.0 ns] uo_out mismatch got=0x12 exp=0x24
+  5450.00ns ERROR    cocotb.heichips25_pudding          [5450.0 ns] uo_out mismatch got=0x24 exp=0x48
+  5470.00ns ERROR    cocotb.heichips25_pudding          [5470.0 ns] uo_out mismatch got=0x48 exp=0x90
+  5480.00ns ERROR    cocotb.heichips25_pudding          [5480.0 ns] uo_out mismatch got=0x90 exp=0x20
+  5500.00ns ERROR    cocotb.heichips25_pudding          [5500.0 ns] uo_out mismatch got=0x20 exp=0x40
+  5520.00ns ERROR    cocotb.heichips25_pudding          [5520.0 ns] uo_out mismatch got=0x40 exp=0x80
+  5530.00ns ERROR    cocotb.heichips25_pudding          [5530.0 ns] uo_out mismatch got=0x80 exp=0x8b
+  5540.00ns ERROR    cocotb.heichips25_pudding          [5540.0 ns] uo_out mismatch got=0x8b exp=0x16
+  5560.00ns ERROR    cocotb.heichips25_pudding          [5560.0 ns] uo_out mismatch got=0x16 exp=0x2c
+  5570.00ns ERROR    cocotb.heichips25_pudding          [5570.0 ns] uo_out mismatch got=0x2c exp=0x8b
+  5580.00ns ERROR    cocotb.heichips25_pudding          [5580.0 ns] uo_out mismatch got=0x8b exp=0x16
+  5600.00ns ERROR    cocotb.heichips25_pudding          [5600.0 ns] uo_out mismatch got=0x16 exp=0x2c
+  5610.00ns ERROR    cocotb.heichips25_pudding          [5610.0 ns] uo_out mismatch got=0x2c exp=0x58
+  5620.00ns ERROR    cocotb.heichips25_pudding          [5620.0 ns] uio_out mismatch got=0x8b exp=0x58
+  5630.00ns ERROR    cocotb.heichips25_pudding          [5630.0 ns] uo_out mismatch got=0x58 exp=0xb1
+  5640.00ns ERROR    cocotb.heichips25_pudding          [5640.0 ns] uio_out mismatch got=0x58 exp=0xb1
+  5650.00ns ERROR    cocotb.heichips25_pudding          [5650.0 ns] uo_out mismatch got=0xb1 exp=0x62
+  5660.00ns ERROR    cocotb.heichips25_pudding          [5660.0 ns] uo_out mismatch got=0x62 exp=0xc4
+  5670.00ns ERROR    cocotb.heichips25_pudding          [5670.0 ns] uo_out mismatch got=0xc4 exp=0x89
+  5690.00ns ERROR    cocotb.heichips25_pudding          [5690.0 ns] uo_out mismatch got=0x89 exp=0x12
+  5700.00ns ERROR    cocotb.heichips25_pudding          [5700.0 ns] uo_out mismatch got=0x12 exp=0x24
+  5710.00ns ERROR    cocotb.heichips25_pudding          [5710.0 ns] uo_out mismatch got=0x24 exp=0x48
+  5720.00ns ERROR    cocotb.heichips25_pudding          [5720.0 ns] uo_out mismatch got=0x48 exp=0x90
+  5730.00ns ERROR    cocotb.heichips25_pudding          [5730.0 ns] uo_out mismatch got=0x90 exp=0x20
+  5740.00ns ERROR    cocotb.heichips25_pudding          [5740.0 ns] uo_out mismatch got=0x20 exp=0x40
+  5750.00ns ERROR    cocotb.heichips25_pudding          [5750.0 ns] uo_out mismatch got=0x40 exp=0xb1
+  5770.00ns ERROR    cocotb.heichips25_pudding          [5770.0 ns] uo_out mismatch got=0xb1 exp=0x62
+  5780.00ns ERROR    cocotb.heichips25_pudding          [5780.0 ns] uo_out mismatch got=0x62 exp=0xc4
+  5790.00ns ERROR    cocotb.heichips25_pudding          [5790.0 ns] uo_out mismatch got=0xc4 exp=0x89
+  5800.00ns ERROR    cocotb.heichips25_pudding          [5800.0 ns] uio_out mismatch got=0xb1 exp=0x89
+  5820.00ns ERROR    cocotb.heichips25_pudding          [5820.0 ns] uo_out mismatch got=0x89 exp=0x12
+  5830.00ns ERROR    cocotb.heichips25_pudding          [5830.0 ns] uo_out mismatch got=0x12 exp=0x24
+  5840.00ns ERROR    cocotb.heichips25_pudding          [5840.0 ns] uo_out mismatch got=0x24 exp=0x48
+  5850.00ns ERROR    cocotb.heichips25_pudding          [5850.0 ns] uo_out mismatch got=0x48 exp=0x90
+  5870.00ns ERROR    cocotb.heichips25_pudding          [5870.0 ns] uo_out mismatch got=0x90 exp=0x20
+  5880.00ns ERROR    cocotb.heichips25_pudding          [5880.0 ns] uo_out mismatch got=0x20 exp=0x40
+  5890.00ns ERROR    cocotb.heichips25_pudding          [5890.0 ns] uo_out mismatch got=0x40 exp=0x80
+  5910.00ns ERROR    cocotb.heichips25_pudding          [5910.0 ns] uo_out mismatch got=0x80 exp=0x01
+  5920.00ns ERROR    cocotb.heichips25_pudding          [5920.0 ns] uo_out mismatch got=0x01 exp=0x89
+  5940.00ns ERROR    cocotb.heichips25_pudding          [5940.0 ns] uo_out mismatch got=0x89 exp=0x12
+  5950.00ns ERROR    cocotb.heichips25_pudding          [5950.0 ns] uio_out mismatch got=0x89 exp=0x12
+  5960.00ns ERROR    cocotb.heichips25_pudding          [5960.0 ns] uo_out mismatch got=0x12 exp=0x24
+  5970.00ns ERROR    cocotb.heichips25_pudding          [5970.0 ns] uio_out mismatch got=0x12 exp=0x24
+  6000.00ns ERROR    cocotb.heichips25_pudding          [6000.0 ns] uo_out mismatch got=0x24 exp=0x48
+  6030.00ns ERROR    cocotb.heichips25_pudding          [6030.0 ns] uo_out mismatch got=0x48 exp=0x90
+  6050.00ns ERROR    cocotb.heichips25_pudding          [6050.0 ns] uo_out mismatch got=0x90 exp=0x20
+  6060.00ns ERROR    cocotb.heichips25_pudding          [6060.0 ns] uo_out mismatch got=0x20 exp=0x40
+  6070.00ns ERROR    cocotb.heichips25_pudding          [6070.0 ns] uo_out mismatch got=0x40 exp=0x24
+  6080.00ns ERROR    cocotb.heichips25_pudding          [6080.0 ns] uo_out mismatch got=0x24 exp=0x48
+  6090.00ns ERROR    cocotb.heichips25_pudding          [6090.0 ns] uo_out mismatch got=0x48 exp=0x90
+  6100.00ns ERROR    cocotb.heichips25_pudding          [6100.0 ns] uo_out mismatch got=0x90 exp=0x24
+  6110.00ns ERROR    cocotb.heichips25_pudding          [6110.0 ns] uo_out mismatch got=0x24 exp=0x48
+  6130.00ns ERROR    cocotb.heichips25_pudding          [6130.0 ns] uo_out mismatch got=0x48 exp=0x90
+  6150.00ns ERROR    cocotb.heichips25_pudding          [6150.0 ns] uo_out mismatch got=0x90 exp=0x20
+  6160.00ns ERROR    cocotb.heichips25_pudding          [6160.0 ns] uo_out mismatch got=0x20 exp=0x40
+  6170.00ns ERROR    cocotb.heichips25_pudding          [6170.0 ns] uio_out mismatch got=0x24 exp=0x40
+  6180.00ns ERROR    cocotb.heichips25_pudding          [6180.0 ns] uo_out mismatch got=0x40 exp=0x80
+  6200.00ns ERROR    cocotb.heichips25_pudding          [6200.0 ns] uo_out mismatch got=0x80 exp=0x40
+  6220.00ns ERROR    cocotb.heichips25_pudding          [6220.0 ns] uo_out mismatch got=0x40 exp=0x80
+  6230.00ns ERROR    cocotb.heichips25_pudding          [6230.0 ns] uo_out mismatch got=0x80 exp=0x01
+  6250.00ns ERROR    cocotb.heichips25_pudding          [6250.0 ns] uo_out mismatch got=0x01 exp=0x02
+  6260.00ns ERROR    cocotb.heichips25_pudding          [6260.0 ns] uio_out mismatch got=0x40 exp=0x02
+  6280.00ns ERROR    cocotb.heichips25_pudding          [6280.0 ns] uo_out mismatch got=0x02 exp=0x05
+  6290.00ns ERROR    cocotb.heichips25_pudding          [6290.0 ns] uo_out mismatch got=0x05 exp=0x0a
+  6300.00ns ERROR    cocotb.heichips25_pudding          [6300.0 ns] uo_out mismatch got=0x0a exp=0x14
+  6310.00ns ERROR    cocotb.heichips25_pudding          [6310.0 ns] uo_out mismatch got=0x14 exp=0x29
+  6320.00ns ERROR    cocotb.heichips25_pudding          [6320.0 ns] uio_out mismatch got=0x02 exp=0x29
+  6330.00ns ERROR    cocotb.heichips25_pudding          [6330.0 ns] uo_out mismatch got=0x29 exp=0x53
+  6350.00ns ERROR    cocotb.heichips25_pudding          [6350.0 ns] uo_out mismatch got=0x53 exp=0xa6
+  6360.00ns ERROR    cocotb.heichips25_pudding          [6360.0 ns] uio_out mismatch got=0x29 exp=0xa6
+  6370.00ns ERROR    cocotb.heichips25_pudding          [6370.0 ns] uo_out mismatch got=0xa6 exp=0x4c
+  6380.00ns ERROR    cocotb.heichips25_pudding          [6380.0 ns] uo_out mismatch got=0x4c exp=0x98
+  6390.00ns ERROR    cocotb.heichips25_pudding          [6390.0 ns] uo_out mismatch got=0x98 exp=0x31
+  6400.00ns ERROR    cocotb.heichips25_pudding          [6400.0 ns] uo_out mismatch got=0x31 exp=0xa6
+  6410.00ns ERROR    cocotb.heichips25_pudding          [6410.0 ns] uo_out mismatch got=0xa6 exp=0x4c
+  6420.00ns ERROR    cocotb.heichips25_pudding          [6420.0 ns] uio_out mismatch got=0xa6 exp=0x4c
+  6430.00ns ERROR    cocotb.heichips25_pudding          [6430.0 ns] uo_out mismatch got=0x4c exp=0x98
+  6440.00ns ERROR    cocotb.heichips25_pudding          [6440.0 ns] uo_out mismatch got=0x98 exp=0x31
+  6460.00ns ERROR    cocotb.heichips25_pudding          [6460.0 ns] uo_out mismatch got=0x31 exp=0x63
+  6470.00ns ERROR    cocotb.heichips25_pudding          [6470.0 ns] uo_out mismatch got=0x63 exp=0x4c
+  6490.00ns ERROR    cocotb.heichips25_pudding          [6490.0 ns] uo_out mismatch got=0x4c exp=0x98
+  6500.00ns ERROR    cocotb.heichips25_pudding          [6500.0 ns] uo_out mismatch got=0x98 exp=0x31
+  6520.00ns ERROR    cocotb.heichips25_pudding          [6520.0 ns] uo_out mismatch got=0x31 exp=0x63
+  6550.00ns ERROR    cocotb.heichips25_pudding          [6550.0 ns] uo_out mismatch got=0x63 exp=0xc6
+  6550.00ns WARNING  ..chips25_pudding_smoke_and_random Test failed with 365 mismatches
+                                                        assert 365 == 0
+                                                        Traceback (most recent call last):
+                                                          File "/home/cmaier/EDA/PUDDING/tb/testbench.py", line 182, in heichips25_pudding_smoke_and_random
+                                                            assert errors == 0, f"Test failed with {errors} mismatches"
+                                                        AssertionError: Test failed with 365 mismatches
+                                                        assert 365 == 0
+  6550.00ns WARNING  cocotb.regression                  testbench.heichips25_pudding_smoke_and_random failed
+  6550.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** testbench.heichips25_pudding_smoke_and_random   FAIL        6550.00           0.08      78187.13  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=1 PASS=0 FAIL=1 SKIP=0                                6550.00           0.09      75811.41  **
+                                                        *******************************************************************************************************
+- :0: Verilog $finish
