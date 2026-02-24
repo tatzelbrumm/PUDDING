@@ -73,7 +73,9 @@ Default `SIM=verilator` crashes with errors.
 After lots of ChatGPT vibe coding, as of [https://github.com/tatzelbrumm/PUDDING/commit/b254a1ddd64bb234509f675fca174a70c727c5ec](https://github.com/tatzelbrumm/PUDDING/commit/b254a1ddd64bb234509f675fca174a70c727c5ec),  
 [`tb/testbench.py`](https://github.com/tatzelbrumm/PUDDING/blob/tatzelbranch/tb/testbench.py) produces the same errors as RTL verification.
 
-The `sg13g2_dfrbpq_1` DFFs should get an asynchronous `RESET_B` input.
+The `sg13g2_dfrbpq_1` DFFs should get an asynchronous `RESET_B` input.  
+  
+[Gate level simulation](https://github.com/tatzelbrumm/PUDDING/blob/tatzelbranch/tb/gatelevel_sim.20260224_0313.pdf) passes, but with signal discrepancies.  
 
 
 
