@@ -67,8 +67,14 @@ GTKviewer doesn't allow displaying subsets of data vectors, like `state[127:120]
 #### Gate level simulation
 
 `make sim-gl > >(tee make_sim.out) 2> >(tee make_sim.err >&2)` starts a new nightmare.  
+Default `SIM=verilator` crashes with errors.
 
-With asserts replaced by discrepancy logging, `make sim-gl` doesn't crash, but 
+`SIM=icarus make sim-gl > >(tee make_sim.out) 2> >(tee make_sim.err >&2)`  
+After lots of ChatGPT vibe coding, as of [https://github.com/tatzelbrumm/PUDDING/commit/b254a1ddd64bb234509f675fca174a70c727c5ec](https://github.com/tatzelbrumm/PUDDING/commit/b254a1ddd64bb234509f675fca174a70c727c5ec),  
+[`tb/testbench.py`](https://github.com/tatzelbrumm/PUDDING/blob/tatzelbranch/tb/testbench.py) produces the same errors as RTL verification.
+
+The `sg13g2_dfrbpq_1` DFFs should get an asynchronous `RESET_B` input.
+
 
 
 
