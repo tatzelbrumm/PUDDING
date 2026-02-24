@@ -45,7 +45,7 @@ module heichips25_pudding(
 
     assign stateen = {4{ui_in[4]}};
 
-    always_ff @(posedge clk) 
+    always_ff @(posedge clk or negedge rst_n) 
     begin
         if (!rst_n) 
         begin
