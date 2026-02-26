@@ -6,6 +6,3 @@
 /home/cmaier/.ciel/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1750: sorry: ifnone with an edge-sensitive path is not supported.
 /home/cmaier/.ciel/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1790: sorry: ifnone with an edge-sensitive path is not supported.
 /home/cmaier/.ciel/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v:1831: sorry: ifnone with an edge-sensitive path is not supported.
-tb_heichips25_pudding.sv:39: error: port ``VPWR'' is not a port of dut.
-tb_heichips25_pudding.sv:39: error: port ``VGND'' is not a port of dut.
-2 error(s) during elaboration.
