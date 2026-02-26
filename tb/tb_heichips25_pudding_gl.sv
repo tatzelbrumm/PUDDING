@@ -75,7 +75,7 @@ module tb_heichips25_pudding;
   end
 
   // Reference model update at posedge
-  always @(posedge clk) begin
+  always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
       ref_daisychain <= '0;
       ref_state      <= '0;
