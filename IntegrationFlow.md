@@ -81,7 +81,12 @@ The `sg13g2_dfrbpq_1` DFFs should get an asynchronous `RESET_B` input.
   
 Specifying asynchronous reset for the daisychain and state register arrays saves considerable space and gates.
 
-
+#### [Stand-alone SystemVerilog test base](https://github.com/tatzelbrumm/PUDDING/blob/tatzelbranch/tb/tb_heichips25_pudding_gl.sv)  
+  
+works with  
+```  
+[nix-shell:~/EDA/PUDDING/tb]$ iverilog -g2012 -o simv tb_heichips25_pudding_gl.sv ../macro/nl/heichips25_pudding.nl.v ~/.ciel/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v ../src/dac128module.v ../src/analog_wires.v > >(tee iverilog.out) 2> >(tee iverilog.err >&2) 
+```
 
 
 
