@@ -1,0 +1,20 @@
+[nix-shell:~/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/verilog-a]$ lart
+total 32
+-rw-r--r--  1 cmaier cmaier  852 Feb  7 14:50 README.md
+-rwxr-xr-x  1 cmaier cmaier  613 Feb  7 14:50 adms-compile-va.sh
+-rwxr-xr-x  1 cmaier cmaier 1074 Feb  7 14:50 openvaf-compile-va.sh
+drwxr-xr-x  2 cmaier cmaier 4096 Feb  7 14:50 psp103
+drwxr-xr-x  2 cmaier cmaier 4096 Feb  7 14:50 mosvar
+drwxr-xr-x  5 cmaier cmaier 4096 Feb  7 14:50 .
+drwxr-xr-x  2 cmaier cmaier 4096 Feb  7 14:50 r3_cmc
+drwxr-xr-x 17 cmaier cmaier 4096 Feb  7 14:50 ..
+[nix-shell:~/.ciel/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/verilog-a]$ ./openvaf-compile-va.sh 
+======================================================================
+             Compiling VerilogA models using: 'openvaf'             
+======================================================================
+Finished building psp103.va in 5.98s
+Finished building psp103_nqs.va in 11.95s
+Finished building r3_cmc.va in 0.52s
+Finished building mosvar.va in 0.51s
+done
+
