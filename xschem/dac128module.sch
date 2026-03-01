@@ -15,7 +15,7 @@ N 680 -480 720 -480 {lab=Vpcbias[0]}
 N 720 -480 720 -240 {lab=Vpcbias[0]}
 N 520 -580 620 -580 {lab=VDD}
 N 540 -460 560 -460 {lab=Vpbias[0]}
-N 540 -320 540 -270 {lab=Vpbias[0]}
+N 540 -300 540 -270 {lab=Vpbias[0]}
 N 620 -580 1100 -580 {lab=VDD}
 N 620 -140 1100 -140 {lab=VSS}
 N 1100 -580 1100 -540 {lab=VDD}
@@ -67,6 +67,9 @@ N 1200 -460 1240 -460 {lab=Iout}
 N 1200 -460 1200 -340 {lab=Iout}
 N 1160 -460 1200 -460 {lab=Iout}
 N 1560 -180 1680 -180 {lab=Vpcbias[1]}
+N 420 -300 540 -300 {lab=Vpbias[0]}
+N 540 -320 540 -300 {lab=Vpbias[0]}
+N 1560 -320 1700 -320 {lab=Vpbias[1]}
 C {title.sym} 160 0 0 0 {name=l1 author="Christoph Maier"}
 C {lab_wire.sym} 800 -500 0 0 {name=p20 lab=Vpbias[0]}
 C {sg13g2_pr/sg13_lv_pmos.sym} 560 -240 0 1 {name=Mcbias[0]
@@ -117,3 +120,5 @@ C {ipin.sym} 1400 -420 0 1 {name=p13 sig_type=std_logic lab=ONB[127:64]}
 C {ipin.sym} 1660 -440 0 0 {name=p14 sig_type=std_logic lab=EN[3:2]}
 C {ipin.sym} 1660 -420 0 0 {name=p15 sig_type=std_logic lab=ENB[3:2]}
 C {iopin.sym} 1560 -180 0 1 {name=p16 lab=Vpcbias[1]}
+C {iopin.sym} 420 -300 0 1 {name=p17 lab=Vpbias[0]}
+C {iopin.sym} 1560 -320 0 1 {name=p18 lab=Vpbias[1]}
