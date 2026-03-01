@@ -1,22 +1,19 @@
 ** sch_path: /home/cmaier/EDA/PUDDING/xschem/dac128module.sch
-.subckt dac128module VDD EN[3] EN[2] EN[1] EN[0] ENB[3] ENB[2] ENB[1] ENB[0] ON[127] ON[126] ON[125] ON[124] ON[123] ON[122]
-+ ON[121] ON[120] ON[119] ON[118] ON[117] ON[116] ON[115] ON[114] ON[113] ON[112] ON[111] ON[110] ON[109] ON[108] ON[107] ON[106] ON[105]
-+ ON[104] ON[103] ON[102] ON[101] ON[100] ON[99] ON[98] ON[97] ON[96] ON[95] ON[94] ON[93] ON[92] ON[91] ON[90] ON[89] ON[88] ON[87] ON[86]
-+ ON[85] ON[84] ON[83] ON[82] ON[81] ON[80] ON[79] ON[78] ON[77] ON[76] ON[75] ON[74] ON[73] ON[72] ON[71] ON[70] ON[69] ON[68] ON[67]
-+ ON[66] ON[65] ON[64] ON[63] ON[62] ON[61] ON[60] ON[59] ON[58] ON[57] ON[56] ON[55] ON[54] ON[53] ON[52] ON[51] ON[50] ON[49] ON[48]
-+ ON[47] ON[46] ON[45] ON[44] ON[43] ON[42] ON[41] ON[40] ON[39] ON[38] ON[37] ON[36] ON[35] ON[34] ON[33] ON[32] ON[31] ON[30] ON[29]
-+ ON[28] ON[27] ON[26] ON[25] ON[24] ON[23] ON[22] ON[21] ON[20] ON[19] ON[18] ON[17] ON[16] ON[15] ON[14] ON[13] ON[12] ON[11] ON[10]
-+ ON[9] ON[8] ON[7] ON[6] ON[5] ON[4] ON[3] ON[2] ON[1] ON[0] ONB[127] ONB[126] ONB[125] ONB[124] ONB[123] ONB[122] ONB[121] ONB[120]
-+ ONB[119] ONB[118] ONB[117] ONB[116] ONB[115] ONB[114] ONB[113] ONB[112] ONB[111] ONB[110] ONB[109] ONB[108] ONB[107] ONB[106] ONB[105]
-+ ONB[104] ONB[103] ONB[102] ONB[101] ONB[100] ONB[99] ONB[98] ONB[97] ONB[96] ONB[95] ONB[94] ONB[93] ONB[92] ONB[91] ONB[90] ONB[89]
-+ ONB[88] ONB[87] ONB[86] ONB[85] ONB[84] ONB[83] ONB[82] ONB[81] ONB[80] ONB[79] ONB[78] ONB[77] ONB[76] ONB[75] ONB[74] ONB[73] ONB[72]
-+ ONB[71] ONB[70] ONB[69] ONB[68] ONB[67] ONB[66] ONB[65] ONB[64] ONB[63] ONB[62] ONB[61] ONB[60] ONB[59] ONB[58] ONB[57] ONB[56] ONB[55]
-+ ONB[54] ONB[53] ONB[52] ONB[51] ONB[50] ONB[49] ONB[48] ONB[47] ONB[46] ONB[45] ONB[44] ONB[43] ONB[42] ONB[41] ONB[40] ONB[39] ONB[38]
-+ ONB[37] ONB[36] ONB[35] ONB[34] ONB[33] ONB[32] ONB[31] ONB[30] ONB[29] ONB[28] ONB[27] ONB[26] ONB[25] ONB[24] ONB[23] ONB[22] ONB[21]
-+ ONB[20] ONB[19] ONB[18] ONB[17] ONB[16] ONB[15] ONB[14] ONB[13] ONB[12] ONB[11] ONB[10] ONB[9] ONB[8] ONB[7] ONB[6] ONB[5] ONB[4] ONB[3]
-+ ONB[2] ONB[1] ONB[0] Iout Vpbias[1] Vpbias[0] Vpcbias[1] Vpcbias[0] VSS
-*.PININFO Iout:O ON[127:0]:I ONB[127:0]:I VSS:B VDD:B Vpcbias[1:0]:B EN[3:0]:I ENB[3:0]:I Vpbias[1:0]:B
-Mcbias[0] Vpcbias[0] Vpcbias[0] Vpbias[0] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=2
+**.subckt dac128module VDD EN[3],EN[2],EN[1],EN[0] ENB[3],ENB[2],ENB[1],ENB[0]
+*+ ON[127],ON[126],ON[125],ON[124],ON[123],ON[122],ON[121],ON[120],ON[119],ON[118],ON[117],ON[116],ON[115],ON[114],ON[113],ON[112],ON[111],ON[110],ON[109],ON[108],ON[107],ON[106],ON[105],ON[104],ON[103],ON[102],ON[101],ON[100],ON[99],ON[98],ON[97],ON[96],ON[95],ON[94],ON[93],ON[92],ON[91],ON[90],ON[89],ON[88],ON[87],ON[86],ON[85],ON[84],ON[83],ON[82],ON[81],ON[80],ON[79],ON[78],ON[77],ON[76],ON[75],ON[74],ON[73],ON[72],ON[71],ON[70],ON[69],ON[68],ON[67],ON[66],ON[65],ON[64],ON[63],ON[62],ON[61],ON[60],ON[59],ON[58],ON[57],ON[56],ON[55],ON[54],ON[53],ON[52],ON[51],ON[50],ON[49],ON[48],ON[47],ON[46],ON[45],ON[44],ON[43],ON[42],ON[41],ON[40],ON[39],ON[38],ON[37],ON[36],ON[35],ON[34],ON[33],ON[32],ON[31],ON[30],ON[29],ON[28],ON[27],ON[26],ON[25],ON[24],ON[23],ON[22],ON[21],ON[20],ON[19],ON[18],ON[17],ON[16],ON[15],ON[14],ON[13],ON[12],ON[11],ON[10],ON[9],ON[8],ON[7],ON[6],ON[5],ON[4],ON[3],ON[2],ON[1],ON[0]
+*+ ONB[127],ONB[126],ONB[125],ONB[124],ONB[123],ONB[122],ONB[121],ONB[120],ONB[119],ONB[118],ONB[117],ONB[116],ONB[115],ONB[114],ONB[113],ONB[112],ONB[111],ONB[110],ONB[109],ONB[108],ONB[107],ONB[106],ONB[105],ONB[104],ONB[103],ONB[102],ONB[101],ONB[100],ONB[99],ONB[98],ONB[97],ONB[96],ONB[95],ONB[94],ONB[93],ONB[92],ONB[91],ONB[90],ONB[89],ONB[88],ONB[87],ONB[86],ONB[85],ONB[84],ONB[83],ONB[82],ONB[81],ONB[80],ONB[79],ONB[78],ONB[77],ONB[76],ONB[75],ONB[74],ONB[73],ONB[72],ONB[71],ONB[70],ONB[69],ONB[68],ONB[67],ONB[66],ONB[65],ONB[64],ONB[63],ONB[62],ONB[61],ONB[60],ONB[59],ONB[58],ONB[57],ONB[56],ONB[55],ONB[54],ONB[53],ONB[52],ONB[51],ONB[50],ONB[49],ONB[48],ONB[47],ONB[46],ONB[45],ONB[44],ONB[43],ONB[42],ONB[41],ONB[40],ONB[39],ONB[38],ONB[37],ONB[36],ONB[35],ONB[34],ONB[33],ONB[32],ONB[31],ONB[30],ONB[29],ONB[28],ONB[27],ONB[26],ONB[25],ONB[24],ONB[23],ONB[22],ONB[21],ONB[20],ONB[19],ONB[18],ONB[17],ONB[16],ONB[15],ONB[14],ONB[13],ONB[12],ONB[11],ONB[10],ONB[9],ONB[8],ONB[7],ONB[6],ONB[5],ONB[4],ONB[3],ONB[2],ONB[1],ONB[0] Iout Vpbias[1],Vpbias[0] Vpcbias[1],Vpcbias[0] VSS
+*.opin Iout
+*.ipin
+*+ ON[127],ON[126],ON[125],ON[124],ON[123],ON[122],ON[121],ON[120],ON[119],ON[118],ON[117],ON[116],ON[115],ON[114],ON[113],ON[112],ON[111],ON[110],ON[109],ON[108],ON[107],ON[106],ON[105],ON[104],ON[103],ON[102],ON[101],ON[100],ON[99],ON[98],ON[97],ON[96],ON[95],ON[94],ON[93],ON[92],ON[91],ON[90],ON[89],ON[88],ON[87],ON[86],ON[85],ON[84],ON[83],ON[82],ON[81],ON[80],ON[79],ON[78],ON[77],ON[76],ON[75],ON[74],ON[73],ON[72],ON[71],ON[70],ON[69],ON[68],ON[67],ON[66],ON[65],ON[64],ON[63],ON[62],ON[61],ON[60],ON[59],ON[58],ON[57],ON[56],ON[55],ON[54],ON[53],ON[52],ON[51],ON[50],ON[49],ON[48],ON[47],ON[46],ON[45],ON[44],ON[43],ON[42],ON[41],ON[40],ON[39],ON[38],ON[37],ON[36],ON[35],ON[34],ON[33],ON[32],ON[31],ON[30],ON[29],ON[28],ON[27],ON[26],ON[25],ON[24],ON[23],ON[22],ON[21],ON[20],ON[19],ON[18],ON[17],ON[16],ON[15],ON[14],ON[13],ON[12],ON[11],ON[10],ON[9],ON[8],ON[7],ON[6],ON[5],ON[4],ON[3],ON[2],ON[1],ON[0]
+*.ipin
+*+ ONB[127],ONB[126],ONB[125],ONB[124],ONB[123],ONB[122],ONB[121],ONB[120],ONB[119],ONB[118],ONB[117],ONB[116],ONB[115],ONB[114],ONB[113],ONB[112],ONB[111],ONB[110],ONB[109],ONB[108],ONB[107],ONB[106],ONB[105],ONB[104],ONB[103],ONB[102],ONB[101],ONB[100],ONB[99],ONB[98],ONB[97],ONB[96],ONB[95],ONB[94],ONB[93],ONB[92],ONB[91],ONB[90],ONB[89],ONB[88],ONB[87],ONB[86],ONB[85],ONB[84],ONB[83],ONB[82],ONB[81],ONB[80],ONB[79],ONB[78],ONB[77],ONB[76],ONB[75],ONB[74],ONB[73],ONB[72],ONB[71],ONB[70],ONB[69],ONB[68],ONB[67],ONB[66],ONB[65],ONB[64],ONB[63],ONB[62],ONB[61],ONB[60],ONB[59],ONB[58],ONB[57],ONB[56],ONB[55],ONB[54],ONB[53],ONB[52],ONB[51],ONB[50],ONB[49],ONB[48],ONB[47],ONB[46],ONB[45],ONB[44],ONB[43],ONB[42],ONB[41],ONB[40],ONB[39],ONB[38],ONB[37],ONB[36],ONB[35],ONB[34],ONB[33],ONB[32],ONB[31],ONB[30],ONB[29],ONB[28],ONB[27],ONB[26],ONB[25],ONB[24],ONB[23],ONB[22],ONB[21],ONB[20],ONB[19],ONB[18],ONB[17],ONB[16],ONB[15],ONB[14],ONB[13],ONB[12],ONB[11],ONB[10],ONB[9],ONB[8],ONB[7],ONB[6],ONB[5],ONB[4],ONB[3],ONB[2],ONB[1],ONB[0]
+*.iopin VSS
+*.iopin VDD
+*.iopin Vpcbias[1],Vpcbias[0]
+*.ipin EN[3],EN[2],EN[1],EN[0]
+*.ipin ENB[3],ENB[2],ENB[1],ENB[0]
+*.iopin Vpbias[1],Vpbias[0]
+XMcbias[0] Vpcbias[0] Vpcbias[0] Vpbias[0] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=2
 xref[1] VDD Vpbias[0] EN[1] ENB[1] Vpbias[0] Vpcbias[0] VSS unitsource2u
 xref[0] VDD Vpbias[0] EN[0] ENB[0] Vpbias[0] Vpcbias[0] VSS unitsource2u
 xsrc[63] VDD Vpbias[0] ON[63] ONB[63] Iout Vpcbias[0] VSS unitsource2u
@@ -83,7 +80,7 @@ xsrc[3] VDD Vpbias[0] ON[3] ONB[3] Iout Vpcbias[0] VSS unitsource2u
 xsrc[2] VDD Vpbias[0] ON[2] ONB[2] Iout Vpcbias[0] VSS unitsource2u
 xsrc[1] VDD Vpbias[0] ON[1] ONB[1] Iout Vpcbias[0] VSS unitsource2u
 xsrc[0] VDD Vpbias[0] ON[0] ONB[0] Iout Vpcbias[0] VSS unitsource2u
-Mcbias[1] Vpcbias[1] Vpcbias[1] Vpbias[1] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=2
+XMcbias[1] Vpcbias[1] Vpcbias[1] Vpbias[1] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=2
 xref1[3] VDD Vpbias[1] EN[3] ENB[3] Vpbias[1] Vpcbias[1] VSS unitsource2u
 xref1[2] VDD Vpbias[1] EN[2] ENB[2] Vpbias[1] Vpcbias[1] VSS unitsource2u
 xsrc1[127] VDD Vpbias[1] ON[127] ONB[127] Iout Vpcbias[1] VSS unitsource2u
@@ -178,13 +175,19 @@ xsrc1[64] VDD Vpbias[1] ON[64] ONB[64] Iout Vpcbias[1] VSS unitsource2u
 
 
 **** end user architecture code
-.ends
+**.ends
 
 * expanding   symbol:  unitsource2u.sym # of pins=7
 ** sym_path: /home/cmaier/EDA/PUDDING/xschem/unitsource2u.sym
 ** sch_path: /home/cmaier/EDA/PUDDING/xschem/unitsource2u.sch
 .subckt unitsource2u VDD VbiasP ON ONB Iout VcascP VSS
-*.PININFO VSS:B VDD:B VbiasP:B VcascP:B ON:I ONB:I Iout:B
+*.iopin VSS
+*.iopin VDD
+*.iopin VbiasP
+*.iopin VcascP
+*.ipin ON
+*.ipin ONB
+*.iopin Iout
 xnonoverlap VDD VSS ON ONB on_n off_n nonoverlap
 xsw VDD off_n Vcasc on_n VcascP cascodeswitch_pmos
 xsrc VDD VbiasP Vcasc Iout pcsource2u
@@ -195,11 +198,16 @@ xsrc VDD VbiasP Vcasc Iout pcsource2u
 ** sym_path: /home/cmaier/EDA/PUDDING/xschem/nonoverlap.sym
 ** sch_path: /home/cmaier/EDA/PUDDING/xschem/nonoverlap.sch
 .subckt nonoverlap VDD VSS INP INN OUTN OUTP
-*.PININFO VSS:B VDD:B INP:I INN:I OUTP:O OUTN:O
-M1 OUTN INP VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
-M2 OUTP INN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
-M3 OUTN OUTP VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
-M4 OUTP OUTN VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
+*.iopin VSS
+*.iopin VDD
+*.ipin INP
+*.ipin INN
+*.opin OUTP
+*.opin OUTN
+XM1 OUTN INP VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+XM2 OUTP INN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+XM3 OUTN OUTP VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
+XM4 OUTP OUTN VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
 .ends
 
 
@@ -207,9 +215,13 @@ M4 OUTP OUTN VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
 ** sym_path: /home/cmaier/EDA/PUDDING/xschem/cascodeswitch_pmos.sym
 ** sch_path: /home/cmaier/EDA/PUDDING/xschem/cascodeswitch_pmos.sch
 .subckt cascodeswitch_pmos VDD off_n Vcasc on_n Vbpcasc
-*.PININFO off_n:I Vbpcasc:I Vcasc:O on_n:I VDD:I
-Mpullup Vcasc off_n VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
-Mbias Vbpcasc on_n Vcasc VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+*.ipin off_n
+*.ipin Vbpcasc
+*.opin Vcasc
+*.ipin on_n
+*.ipin VDD
+XMpullup Vcasc off_n VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+XMbias Vbpcasc on_n Vcasc VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
 .ends
 
 
@@ -217,8 +229,12 @@ Mbias Vbpcasc on_n Vcasc VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
 ** sym_path: /home/cmaier/EDA/PUDDING/xschem/pcsource2u.sym
 ** sch_path: /home/cmaier/EDA/PUDDING/xschem/pcsource2u.sch
 .subckt pcsource2u VDD VbiasP VcascodeP Iout
-*.PININFO VcascodeP:I VbiasP:I Iout:O VDD:I
-Msrc drain VbiasP VDD VDD sg13_lv_pmos w=1.45u l=5u ng=1 m=1
-Mcasc Iout VcascodeP drain VDD sg13_lv_pmos w=1.2u l=0.6u ng=1 m=1
+*.ipin VcascodeP
+*.ipin VbiasP
+*.opin Iout
+*.ipin VDD
+XMsrc drain VbiasP VDD VDD sg13_lv_pmos w=1.45u l=5u ng=1 m=1
+XMcasc Iout VcascodeP drain VDD sg13_lv_pmos w=1.2u l=0.6u ng=1 m=1
 .ends
 
+.end
