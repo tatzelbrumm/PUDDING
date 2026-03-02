@@ -18,26 +18,30 @@ Vidacn dac_n GND 0
 Vpleak[1] pbuf Vpbias[1] 0
 Vpleak[0] pbuf Vpbias[0] 0
 .save i(vpleak[1:0])
-xdac dac_p en[3] en[2] en[1] en[0] enb[3] enb[2] enb[1] enb[0] on[127] on[126] on[125] on[124] on[123] on[122] on[121] on[120]
-+ on[119] on[118] on[117] on[116] on[115] on[114] on[113] on[112] on[111] on[110] on[109] on[108] on[107] on[106] on[105] on[104] on[103]
-+ on[102] on[101] on[100] on[99] on[98] on[97] on[96] on[95] on[94] on[93] on[92] on[91] on[90] on[89] on[88] on[87] on[86] on[85] on[84]
-+ on[83] on[82] on[81] on[80] on[79] on[78] on[77] on[76] on[75] on[74] on[73] on[72] on[71] on[70] on[69] on[68] on[67] on[66] on[65]
-+ on[64] on[63] on[62] on[61] on[60] on[59] on[58] on[57] on[56] on[55] on[54] on[53] on[52] on[51] on[50] on[49] on[48] on[47] on[46]
-+ on[45] on[44] on[43] on[42] on[41] on[40] on[39] on[38] on[37] on[36] on[35] on[34] on[33] on[32] on[31] on[30] on[29] on[28] on[27]
-+ on[26] on[25] on[24] on[23] on[22] on[21] on[20] on[19] on[18] on[17] on[16] on[15] on[14] on[13] on[12] on[11] on[10] on[9] on[8] on[7]
-+ on[6] on[5] on[4] on[3] on[2] on[1] on[0] onb[127] onb[126] onb[125] onb[124] onb[123] onb[122] onb[121] onb[120] onb[119] onb[118]
-+ onb[117] onb[116] onb[115] onb[114] onb[113] onb[112] onb[111] onb[110] onb[109] onb[108] onb[107] onb[106] onb[105] onb[104] onb[103]
-+ onb[102] onb[101] onb[100] onb[99] onb[98] onb[97] onb[96] onb[95] onb[94] onb[93] onb[92] onb[91] onb[90] onb[89] onb[88] onb[87] onb[86]
-+ onb[85] onb[84] onb[83] onb[82] onb[81] onb[80] onb[79] onb[78] onb[77] onb[76] onb[75] onb[74] onb[73] onb[72] onb[71] onb[70] onb[69]
-+ onb[68] onb[67] onb[66] onb[65] onb[64] onb[63] onb[62] onb[61] onb[60] onb[59] onb[58] onb[57] onb[56] onb[55] onb[54] onb[53] onb[52]
-+ onb[51] onb[50] onb[49] onb[48] onb[47] onb[46] onb[45] onb[44] onb[43] onb[42] onb[41] onb[40] onb[39] onb[38] onb[37] onb[36] onb[35]
-+ onb[34] onb[33] onb[32] onb[31] onb[30] onb[29] onb[28] onb[27] onb[26] onb[25] onb[24] onb[23] onb[22] onb[21] onb[20] onb[19] onb[18]
-+ onb[17] onb[16] onb[15] onb[14] onb[13] onb[12] onb[11] onb[10] onb[9] onb[8] onb[7] onb[6] onb[5] onb[4] onb[3] onb[2] onb[1] onb[0]
-+ Vout Vpbias[1] Vpbias[0] Vpcbias[1] Vpcbias[0] dac_n dac128module
+xdac dac_p en[7] en[6] en[5] en[4] en[3] en[2] en[1] en[0] enb[7] enb[6] enb[5] enb[4] enb[3] enb[2] enb[1] enb[0] on[127] on[126]
++ on[125] on[124] on[123] on[122] on[121] on[120] on[119] on[118] on[117] on[116] on[115] on[114] on[113] on[112] on[111] on[110] on[109]
++ on[108] on[107] on[106] on[105] on[104] on[103] on[102] on[101] on[100] on[99] on[98] on[97] on[96] on[95] on[94] on[93] on[92] on[91]
++ on[90] on[89] on[88] on[87] on[86] on[85] on[84] on[83] on[82] on[81] on[80] on[79] on[78] on[77] on[76] on[75] on[74] on[73] on[72]
++ on[71] on[70] on[69] on[68] on[67] on[66] on[65] on[64] on[63] on[62] on[61] on[60] on[59] on[58] on[57] on[56] on[55] on[54] on[53]
++ on[52] on[51] on[50] on[49] on[48] on[47] on[46] on[45] on[44] on[43] on[42] on[41] on[40] on[39] on[38] on[37] on[36] on[35] on[34]
++ on[33] on[32] on[31] on[30] on[29] on[28] on[27] on[26] on[25] on[24] on[23] on[22] on[21] on[20] on[19] on[18] on[17] on[16] on[15]
++ on[14] on[13] on[12] on[11] on[10] on[9] on[8] on[7] on[6] on[5] on[4] on[3] on[2] on[1] on[0] onb[127] onb[126] onb[125] onb[124]
++ onb[123] onb[122] onb[121] onb[120] onb[119] onb[118] onb[117] onb[116] onb[115] onb[114] onb[113] onb[112] onb[111] onb[110] onb[109]
++ onb[108] onb[107] onb[106] onb[105] onb[104] onb[103] onb[102] onb[101] onb[100] onb[99] onb[98] onb[97] onb[96] onb[95] onb[94] onb[93]
++ onb[92] onb[91] onb[90] onb[89] onb[88] onb[87] onb[86] onb[85] onb[84] onb[83] onb[82] onb[81] onb[80] onb[79] onb[78] onb[77] onb[76]
++ onb[75] onb[74] onb[73] onb[72] onb[71] onb[70] onb[69] onb[68] onb[67] onb[66] onb[65] onb[64] onb[63] onb[62] onb[61] onb[60] onb[59]
++ onb[58] onb[57] onb[56] onb[55] onb[54] onb[53] onb[52] onb[51] onb[50] onb[49] onb[48] onb[47] onb[46] onb[45] onb[44] onb[43] onb[42]
++ onb[41] onb[40] onb[39] onb[38] onb[37] onb[36] onb[35] onb[34] onb[33] onb[32] onb[31] onb[30] onb[29] onb[28] onb[27] onb[26] onb[25]
++ onb[24] onb[23] onb[22] onb[21] onb[20] onb[19] onb[18] onb[17] onb[16] onb[15] onb[14] onb[13] onb[12] onb[11] onb[10] onb[9] onb[8]
++ onb[7] onb[6] onb[5] onb[4] onb[3] onb[2] onb[1] onb[0] Vout Vpbias[1] Vpbias[0] Vpcbias[1] Vpcbias[0] dac_n dac128module
 xbypass VDD pbuf iin analog_wires
 Vpcleak1[1] iin Vpcbias[1] 0
 Vpcleak1[0] iin Vpcbias[0] 0
 .save i(vpcleak1[1:0])
+xen[7] VDD en[7] enable enb[7] GND inverterpair
+xen[6] VDD en[6] enable enb[6] GND inverterpair
+xen[5] VDD en[5] enable enb[5] GND inverterpair
+xen[4] VDD en[4] enable enb[4] GND inverterpair
 xen[3] VDD en[3] enable enb[3] GND inverterpair
 xen[2] VDD en[2] enable enb[2] GND inverterpair
 xen[1] VDD en[1] enable enb[1] GND inverterpair
@@ -187,7 +191,7 @@ set appendwrite
 dc Vout 0 1.6 10m VlogI -8 -6 0.5
 *tran 10n 500u
 write test_dac128_dc.raw
-plot 2*(vout#branch-32*vprobe#branch)/(32*vprobe#branch+vout#branch)
+plot 2*(vout#branch-16*vprobe#branch)/(16*vprobe#branch+vout#branch)
 plot vdd pbuf iin enable switch v("en[0]") v("enb[0]") v("on[0]") v("onb[0]") Vout
 plot vout#branch vprobe#branch
 *plot @n.xsw.xmbias.nsg13_lv_pmos[ids] @n.xsw.xmpullup.nsg13_lv_pmos[ids]
@@ -233,22 +237,22 @@ plot vidacp#branch vidacn#branch
 * expanding   symbol:  dac128module.sym # of pins=9
 ** sym_path: /home/cmaier/EDA/PUDDING/xschem/dac128module.sym
 ** sch_path: /home/cmaier/EDA/PUDDING/xschem/dac128module.sch
-.subckt dac128module VDD EN[3] EN[2] EN[1] EN[0] ENB[3] ENB[2] ENB[1] ENB[0] ON[127] ON[126] ON[125] ON[124] ON[123] ON[122]
-+ ON[121] ON[120] ON[119] ON[118] ON[117] ON[116] ON[115] ON[114] ON[113] ON[112] ON[111] ON[110] ON[109] ON[108] ON[107] ON[106] ON[105]
-+ ON[104] ON[103] ON[102] ON[101] ON[100] ON[99] ON[98] ON[97] ON[96] ON[95] ON[94] ON[93] ON[92] ON[91] ON[90] ON[89] ON[88] ON[87] ON[86]
-+ ON[85] ON[84] ON[83] ON[82] ON[81] ON[80] ON[79] ON[78] ON[77] ON[76] ON[75] ON[74] ON[73] ON[72] ON[71] ON[70] ON[69] ON[68] ON[67]
-+ ON[66] ON[65] ON[64] ON[63] ON[62] ON[61] ON[60] ON[59] ON[58] ON[57] ON[56] ON[55] ON[54] ON[53] ON[52] ON[51] ON[50] ON[49] ON[48]
-+ ON[47] ON[46] ON[45] ON[44] ON[43] ON[42] ON[41] ON[40] ON[39] ON[38] ON[37] ON[36] ON[35] ON[34] ON[33] ON[32] ON[31] ON[30] ON[29]
-+ ON[28] ON[27] ON[26] ON[25] ON[24] ON[23] ON[22] ON[21] ON[20] ON[19] ON[18] ON[17] ON[16] ON[15] ON[14] ON[13] ON[12] ON[11] ON[10]
-+ ON[9] ON[8] ON[7] ON[6] ON[5] ON[4] ON[3] ON[2] ON[1] ON[0] ONB[127] ONB[126] ONB[125] ONB[124] ONB[123] ONB[122] ONB[121] ONB[120]
-+ ONB[119] ONB[118] ONB[117] ONB[116] ONB[115] ONB[114] ONB[113] ONB[112] ONB[111] ONB[110] ONB[109] ONB[108] ONB[107] ONB[106] ONB[105]
-+ ONB[104] ONB[103] ONB[102] ONB[101] ONB[100] ONB[99] ONB[98] ONB[97] ONB[96] ONB[95] ONB[94] ONB[93] ONB[92] ONB[91] ONB[90] ONB[89]
-+ ONB[88] ONB[87] ONB[86] ONB[85] ONB[84] ONB[83] ONB[82] ONB[81] ONB[80] ONB[79] ONB[78] ONB[77] ONB[76] ONB[75] ONB[74] ONB[73] ONB[72]
-+ ONB[71] ONB[70] ONB[69] ONB[68] ONB[67] ONB[66] ONB[65] ONB[64] ONB[63] ONB[62] ONB[61] ONB[60] ONB[59] ONB[58] ONB[57] ONB[56] ONB[55]
-+ ONB[54] ONB[53] ONB[52] ONB[51] ONB[50] ONB[49] ONB[48] ONB[47] ONB[46] ONB[45] ONB[44] ONB[43] ONB[42] ONB[41] ONB[40] ONB[39] ONB[38]
-+ ONB[37] ONB[36] ONB[35] ONB[34] ONB[33] ONB[32] ONB[31] ONB[30] ONB[29] ONB[28] ONB[27] ONB[26] ONB[25] ONB[24] ONB[23] ONB[22] ONB[21]
-+ ONB[20] ONB[19] ONB[18] ONB[17] ONB[16] ONB[15] ONB[14] ONB[13] ONB[12] ONB[11] ONB[10] ONB[9] ONB[8] ONB[7] ONB[6] ONB[5] ONB[4] ONB[3]
-+ ONB[2] ONB[1] ONB[0] Iout Vpbias[1] Vpbias[0] Vpcbias[1] Vpcbias[0] VSS
+.subckt dac128module VDD EN[7] EN[6] EN[5] EN[4] EN[3] EN[2] EN[1] EN[0] ENB[7] ENB[6] ENB[5] ENB[4] ENB[3] ENB[2] ENB[1] ENB[0]
++ ON[127] ON[126] ON[125] ON[124] ON[123] ON[122] ON[121] ON[120] ON[119] ON[118] ON[117] ON[116] ON[115] ON[114] ON[113] ON[112] ON[111]
++ ON[110] ON[109] ON[108] ON[107] ON[106] ON[105] ON[104] ON[103] ON[102] ON[101] ON[100] ON[99] ON[98] ON[97] ON[96] ON[95] ON[94] ON[93]
++ ON[92] ON[91] ON[90] ON[89] ON[88] ON[87] ON[86] ON[85] ON[84] ON[83] ON[82] ON[81] ON[80] ON[79] ON[78] ON[77] ON[76] ON[75] ON[74]
++ ON[73] ON[72] ON[71] ON[70] ON[69] ON[68] ON[67] ON[66] ON[65] ON[64] ON[63] ON[62] ON[61] ON[60] ON[59] ON[58] ON[57] ON[56] ON[55]
++ ON[54] ON[53] ON[52] ON[51] ON[50] ON[49] ON[48] ON[47] ON[46] ON[45] ON[44] ON[43] ON[42] ON[41] ON[40] ON[39] ON[38] ON[37] ON[36]
++ ON[35] ON[34] ON[33] ON[32] ON[31] ON[30] ON[29] ON[28] ON[27] ON[26] ON[25] ON[24] ON[23] ON[22] ON[21] ON[20] ON[19] ON[18] ON[17]
++ ON[16] ON[15] ON[14] ON[13] ON[12] ON[11] ON[10] ON[9] ON[8] ON[7] ON[6] ON[5] ON[4] ON[3] ON[2] ON[1] ON[0] ONB[127] ONB[126] ONB[125]
++ ONB[124] ONB[123] ONB[122] ONB[121] ONB[120] ONB[119] ONB[118] ONB[117] ONB[116] ONB[115] ONB[114] ONB[113] ONB[112] ONB[111] ONB[110]
++ ONB[109] ONB[108] ONB[107] ONB[106] ONB[105] ONB[104] ONB[103] ONB[102] ONB[101] ONB[100] ONB[99] ONB[98] ONB[97] ONB[96] ONB[95] ONB[94]
++ ONB[93] ONB[92] ONB[91] ONB[90] ONB[89] ONB[88] ONB[87] ONB[86] ONB[85] ONB[84] ONB[83] ONB[82] ONB[81] ONB[80] ONB[79] ONB[78] ONB[77]
++ ONB[76] ONB[75] ONB[74] ONB[73] ONB[72] ONB[71] ONB[70] ONB[69] ONB[68] ONB[67] ONB[66] ONB[65] ONB[64] ONB[63] ONB[62] ONB[61] ONB[60]
++ ONB[59] ONB[58] ONB[57] ONB[56] ONB[55] ONB[54] ONB[53] ONB[52] ONB[51] ONB[50] ONB[49] ONB[48] ONB[47] ONB[46] ONB[45] ONB[44] ONB[43]
++ ONB[42] ONB[41] ONB[40] ONB[39] ONB[38] ONB[37] ONB[36] ONB[35] ONB[34] ONB[33] ONB[32] ONB[31] ONB[30] ONB[29] ONB[28] ONB[27] ONB[26]
++ ONB[25] ONB[24] ONB[23] ONB[22] ONB[21] ONB[20] ONB[19] ONB[18] ONB[17] ONB[16] ONB[15] ONB[14] ONB[13] ONB[12] ONB[11] ONB[10] ONB[9]
++ ONB[8] ONB[7] ONB[6] ONB[5] ONB[4] ONB[3] ONB[2] ONB[1] ONB[0] Iout Vpbias[1] Vpbias[0] Vpcbias[1] Vpcbias[0] VSS
 *.opin Iout
 *.ipin
 *+ ON[127],ON[126],ON[125],ON[124],ON[123],ON[122],ON[121],ON[120],ON[119],ON[118],ON[117],ON[116],ON[115],ON[114],ON[113],ON[112],ON[111],ON[110],ON[109],ON[108],ON[107],ON[106],ON[105],ON[104],ON[103],ON[102],ON[101],ON[100],ON[99],ON[98],ON[97],ON[96],ON[95],ON[94],ON[93],ON[92],ON[91],ON[90],ON[89],ON[88],ON[87],ON[86],ON[85],ON[84],ON[83],ON[82],ON[81],ON[80],ON[79],ON[78],ON[77],ON[76],ON[75],ON[74],ON[73],ON[72],ON[71],ON[70],ON[69],ON[68],ON[67],ON[66],ON[65],ON[64],ON[63],ON[62],ON[61],ON[60],ON[59],ON[58],ON[57],ON[56],ON[55],ON[54],ON[53],ON[52],ON[51],ON[50],ON[49],ON[48],ON[47],ON[46],ON[45],ON[44],ON[43],ON[42],ON[41],ON[40],ON[39],ON[38],ON[37],ON[36],ON[35],ON[34],ON[33],ON[32],ON[31],ON[30],ON[29],ON[28],ON[27],ON[26],ON[25],ON[24],ON[23],ON[22],ON[21],ON[20],ON[19],ON[18],ON[17],ON[16],ON[15],ON[14],ON[13],ON[12],ON[11],ON[10],ON[9],ON[8],ON[7],ON[6],ON[5],ON[4],ON[3],ON[2],ON[1],ON[0]
@@ -257,10 +261,10 @@ plot vidacp#branch vidacn#branch
 *.iopin VSS
 *.iopin VDD
 *.iopin Vpcbias[1],Vpcbias[0]
-*.ipin EN[3],EN[2],EN[1],EN[0]
-*.ipin ENB[3],ENB[2],ENB[1],ENB[0]
+*.ipin EN[7],EN[6],EN[5],EN[4],EN[3],EN[2],EN[1],EN[0]
+*.ipin ENB[7],ENB[6],ENB[5],ENB[4],ENB[3],ENB[2],ENB[1],ENB[0]
 *.iopin Vpbias[1],Vpbias[0]
-XMcbias[0] Vpcbias[0] Vpcbias[0] Vpbias[0] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=2
+XMcbias[0] Vpcbias[0] Vpcbias[0] Vpbias[0] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=4
 **** begin user architecture code
 
 * device parameters
@@ -277,6 +281,8 @@ XMcbias[0] Vpcbias[0] Vpcbias[0] Vpbias[0] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1
 
 
 **** end user architecture code
+xref[3] VDD Vpbias[0] EN[3] ENB[3] Vpbias[0] Vpcbias[0] VSS unitsource2u
+xref[2] VDD Vpbias[0] EN[2] ENB[2] Vpbias[0] Vpcbias[0] VSS unitsource2u
 xref[1] VDD Vpbias[0] EN[1] ENB[1] Vpbias[0] Vpcbias[0] VSS unitsource2u
 xref[0] VDD Vpbias[0] EN[0] ENB[0] Vpbias[0] Vpcbias[0] VSS unitsource2u
 xsrc[63] VDD Vpbias[0] ON[63] ONB[63] Iout Vpcbias[0] VSS unitsource2u
@@ -343,9 +349,11 @@ xsrc[3] VDD Vpbias[0] ON[3] ONB[3] Iout Vpcbias[0] VSS unitsource2u
 xsrc[2] VDD Vpbias[0] ON[2] ONB[2] Iout Vpcbias[0] VSS unitsource2u
 xsrc[1] VDD Vpbias[0] ON[1] ONB[1] Iout Vpcbias[0] VSS unitsource2u
 xsrc[0] VDD Vpbias[0] ON[0] ONB[0] Iout Vpcbias[0] VSS unitsource2u
-XMcbias[1] Vpcbias[1] Vpcbias[1] Vpbias[1] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=2
-xref1[3] VDD Vpbias[1] EN[3] ENB[3] Vpbias[1] Vpcbias[1] VSS unitsource2u
-xref1[2] VDD Vpbias[1] EN[2] ENB[2] Vpbias[1] Vpcbias[1] VSS unitsource2u
+XMcbias[1] Vpcbias[1] Vpcbias[1] Vpbias[1] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=4
+xref1[7] VDD Vpbias[1] EN[7] ENB[7] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xref1[6] VDD Vpbias[1] EN[6] ENB[6] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xref1[5] VDD Vpbias[1] EN[5] ENB[5] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xref1[4] VDD Vpbias[1] EN[4] ENB[4] Vpbias[1] Vpcbias[1] VSS unitsource2u
 xsrc1[127] VDD Vpbias[1] ON[127] ONB[127] Iout Vpcbias[1] VSS unitsource2u
 xsrc1[126] VDD Vpbias[1] ON[126] ONB[126] Iout Vpcbias[1] VSS unitsource2u
 xsrc1[125] VDD Vpbias[1] ON[125] ONB[125] Iout Vpcbias[1] VSS unitsource2u
@@ -410,10 +418,10 @@ xsrc1[67] VDD Vpbias[1] ON[67] ONB[67] Iout Vpcbias[1] VSS unitsource2u
 xsrc1[66] VDD Vpbias[1] ON[66] ONB[66] Iout Vpcbias[1] VSS unitsource2u
 xsrc1[65] VDD Vpbias[1] ON[65] ONB[65] Iout Vpcbias[1] VSS unitsource2u
 xsrc1[64] VDD Vpbias[1] ON[64] ONB[64] Iout Vpcbias[1] VSS unitsource2u
-* tap: EN[3:0] --> EN[1:0]
-* tap: ENB[3:0] --> ENB[1:0]
-* tap: ENB[3:0] --> ENB[3:2]
-* tap: EN[3:0] --> EN[3:2]
+* tap: EN[7:0] --> EN[3:0]
+* tap: ENB[7:0] --> ENB[3:0]
+* tap: ENB[7:0] --> ENB[7:4]
+* tap: EN[7:0] --> EN[7:4]
 * tap: ON[127:0] --> ON[63:0]
 * tap: ONB[127:0] --> ONB[63:0]
 * tap: ON[127:0] --> ON[127:64]

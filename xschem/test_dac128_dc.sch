@@ -42,8 +42,8 @@ N 1060 -320 1060 -100 {lab=GND}
 N 840 -420 840 -100 {lab=GND}
 N 840 -700 840 -520 {lab=VDD}
 N 840 -700 1060 -700 {lab=VDD}
-N 900 -480 1260 -480 {lab=en[3:0]}
-N 900 -460 1260 -460 {lab=enb[3:0]}
+N 900 -480 1260 -480 {lab=en[7:0]}
+N 900 -460 1260 -460 {lab=enb[7:0]}
 N 740 -100 840 -100 {lab=GND}
 N 540 -700 840 -700 {lab=VDD}
 N 960 -100 1060 -100 {lab=GND}
@@ -76,7 +76,7 @@ set appendwrite
 dc Vout 0 1.6 10m VlogI -8 -6 0.5
 *tran 10n 500u
 write test_dac128_dc.raw
-plot 2*(vout#branch-32*vprobe#branch)/(32*vprobe#branch+vout#branch)
+plot 2*(vout#branch-16*vprobe#branch)/(16*vprobe#branch+vout#branch)
 plot vdd pbuf iin enable switch v(\\"en[0]\\") v(\\"enb[0]\\") v(\\"on[0]\\") v(\\"onb[0]\\") Vout
 plot vout#branch vprobe#branch
 *plot @n.xsw.xmbias.nsg13_lv_pmos[ids] @n.xsw.xmpullup.nsg13_lv_pmos[ids]
@@ -173,9 +173,9 @@ C {analog_wires.sym} 540 -640 0 0 {name=xbypass}
 C {vsource.sym} 1180 -570 0 1 {name=Vpcleak1[1:0] value=0 savecurrent=true}
 C {lab_wire.sym} 680 -620 2 1 {name=p5 lab=iin}
 C {lab_wire.sym} 680 -640 0 1 {name=p12 lab=pbuf}
-C {inverterpair.sym} 840 -480 0 0 {name=xen[3:0]}
+C {inverterpair.sym} 840 -480 0 0 {name=xen[7:0]}
 C {inverterpair.sym} 1060 -380 0 0 {name=xdrv[127:0]}
 C {vsource.sym} 740 -250 0 0 {name=VEN value="DC \{vdd\} PULSE(\{vdd\} \{vdd\} \{td\} \{tr\} \{tf\} \{ton\} \{tcyc\})" savecurrent=true}
 C {lab_wire.sym} 740 -480 0 0 {name=p13 sig_type=std_logic lab=enable}
-C {lab_wire.sym} 920 -460 0 1 {name=p14 sig_type=std_logic lab=enb[3:0]}
-C {lab_wire.sym} 920 -480 0 1 {name=p15 sig_type=std_logic lab=en[3:0]}
+C {lab_wire.sym} 920 -460 0 1 {name=p14 sig_type=std_logic lab=enb[7:0]}
+C {lab_wire.sym} 920 -480 0 1 {name=p15 sig_type=std_logic lab=en[7:0]}
