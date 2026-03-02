@@ -1,0 +1,302 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/test_dac32_dc.sch
+**.subckt test_dac32_dc
+Vout Vout GND {vout}
+.save i(vout)
+Vprobe net1 GND 0
+.save i(vprobe)
+G1 iin net1 CUR=' 10**V(logI) '
+VlogI logI GND {logI}
+.save i(vlogi)
+VDDA VDD GND {vdd}
+.save i(vdda)
+VSW switch GND DC {vdd} PULSE(0 {vdd} {td} {tr} {tf} {ton} {tcyc})
+.save i(vsw)
+Vidacp VDD dac_p 0
+.save i(vidacp)
+Vidacn dac_n GND 0
+.save i(vidacn)
+Vpleak[1] pbuf Vpbias[1] 0
+Vpleak[0] pbuf Vpbias[0] 0
+.save i(vpleak[1:0])
+xdac dac_p en[3] en[2] en[1] en[0] enb[3] enb[2] enb[1] enb[0] on[31] on[30] on[29] on[28] on[27] on[26] on[25] on[24] on[23]
++ on[22] on[21] on[20] on[19] on[18] on[17] on[16] on[15] on[14] on[13] on[12] on[11] on[10] on[9] on[8] on[7] on[6] on[5] on[4] on[3]
++ on[2] on[1] on[0] onb[31] onb[30] onb[29] onb[28] onb[27] onb[26] onb[25] onb[24] onb[23] onb[22] onb[21] onb[20] onb[19] onb[18]
++ onb[17] onb[16] onb[15] onb[14] onb[13] onb[12] onb[11] onb[10] onb[9] onb[8] onb[7] onb[6] onb[5] onb[4] onb[3] onb[2] onb[1] onb[0]
++ Vout Vpbias[1] Vpbias[0] Vpcbias[1] Vpcbias[0] dac_n dac32module
+xbypass VDD pbuf iin analog_wires
+Vpcleak1[1] iin Vpcbias[1] 0
+Vpcleak1[0] iin Vpcbias[0] 0
+.save i(vpcleak1[1:0])
+xen[3] VDD en[3] enable enb[3] GND inverterpair
+xen[2] VDD en[2] enable enb[2] GND inverterpair
+xen[1] VDD en[1] enable enb[1] GND inverterpair
+xen[0] VDD en[0] enable enb[0] GND inverterpair
+xdrv[31] VDD on[31] switch onb[31] GND inverterpair
+xdrv[30] VDD on[30] switch onb[30] GND inverterpair
+xdrv[29] VDD on[29] switch onb[29] GND inverterpair
+xdrv[28] VDD on[28] switch onb[28] GND inverterpair
+xdrv[27] VDD on[27] switch onb[27] GND inverterpair
+xdrv[26] VDD on[26] switch onb[26] GND inverterpair
+xdrv[25] VDD on[25] switch onb[25] GND inverterpair
+xdrv[24] VDD on[24] switch onb[24] GND inverterpair
+xdrv[23] VDD on[23] switch onb[23] GND inverterpair
+xdrv[22] VDD on[22] switch onb[22] GND inverterpair
+xdrv[21] VDD on[21] switch onb[21] GND inverterpair
+xdrv[20] VDD on[20] switch onb[20] GND inverterpair
+xdrv[19] VDD on[19] switch onb[19] GND inverterpair
+xdrv[18] VDD on[18] switch onb[18] GND inverterpair
+xdrv[17] VDD on[17] switch onb[17] GND inverterpair
+xdrv[16] VDD on[16] switch onb[16] GND inverterpair
+xdrv[15] VDD on[15] switch onb[15] GND inverterpair
+xdrv[14] VDD on[14] switch onb[14] GND inverterpair
+xdrv[13] VDD on[13] switch onb[13] GND inverterpair
+xdrv[12] VDD on[12] switch onb[12] GND inverterpair
+xdrv[11] VDD on[11] switch onb[11] GND inverterpair
+xdrv[10] VDD on[10] switch onb[10] GND inverterpair
+xdrv[9] VDD on[9] switch onb[9] GND inverterpair
+xdrv[8] VDD on[8] switch onb[8] GND inverterpair
+xdrv[7] VDD on[7] switch onb[7] GND inverterpair
+xdrv[6] VDD on[6] switch onb[6] GND inverterpair
+xdrv[5] VDD on[5] switch onb[5] GND inverterpair
+xdrv[4] VDD on[4] switch onb[4] GND inverterpair
+xdrv[3] VDD on[3] switch onb[3] GND inverterpair
+xdrv[2] VDD on[2] switch onb[2] GND inverterpair
+xdrv[1] VDD on[1] switch onb[1] GND inverterpair
+xdrv[0] VDD on[0] switch onb[0] GND inverterpair
+VEN enable GND DC {vdd} PULSE({vdd} {vdd} {td} {tr} {tf} {ton} {tcyc})
+.save i(ven)
+**** begin user architecture code
+
+
+.include test_dac32_dc.save
+.temp=27
+.options gmin=1e-15 abstol=1p method=gear
+.options savecurrents
+.control
+save all
+op
+write test_dac32_dc.raw
+set appendwrite
+dc Vout 0 1.6 10m VlogI -8 -6 0.5
+*tran 10n 500u
+write test_dac32_dc.raw
+plot title "output/reference current asymmetry" 2*(vout#branch-8*vprobe#branch)/(8*vprobe#branch+vout#branch)
+plot ylimit -20m 4m title "output/reference current asymmetry" 2*(vout#branch-8*vprobe#branch)/(8*vprobe#branch+vout#branch)
+plot vdd pbuf iin enable switch v("en[0]") v("enb[0]") v("on[0]") v("onb[0]") Vout
+plot vout#branch vprobe#branch
+*plot @n.xsw.xmbias.nsg13_lv_pmos[ids] @n.xsw.xmpullup.nsg13_lv_pmos[ids]
+plot vidacp#branch vidacn#branch
+*plot 0.5*(vidacp#branch+vidacn#branch) vidacp#branch-vidacn#branch
+.endc
+
+
+
+
+.include sg13g2_stdcell.spice
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+
+
+* device parameters
+.param l      = 5u
+.param w      = 1.45u
+.param lc     = 0.6u
+.param wc     = 1.2u
+.param lb     = 0.15u
+.param wb     = 5.85u
+.param lplogic= 0.13u
+.param wplogic= 0.5u
+.param lnlogic= 0.13u
+.param wnlogic= 0.15u
+* instrumentation parameters
+.param logI=-7
+.param vdd=1.6
+.param vout=0.6
+* simulation parameters
+.param celsius = 25
+.param td     = 25u
+.param tr     = 10p
+.param tf     = 10p
+.param ton    = 50u
+.param tcyc   = 100u
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  dac32module.sym # of pins=9
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/dac32module.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/dac32module.sch
+.subckt dac32module VDD EN[3] EN[2] EN[1] EN[0] ENB[3] ENB[2] ENB[1] ENB[0] ON[31] ON[30] ON[29] ON[28] ON[27] ON[26] ON[25]
++ ON[24] ON[23] ON[22] ON[21] ON[20] ON[19] ON[18] ON[17] ON[16] ON[15] ON[14] ON[13] ON[12] ON[11] ON[10] ON[9] ON[8] ON[7] ON[6] ON[5]
++ ON[4] ON[3] ON[2] ON[1] ON[0] ONB[31] ONB[30] ONB[29] ONB[28] ONB[27] ONB[26] ONB[25] ONB[24] ONB[23] ONB[22] ONB[21] ONB[20] ONB[19]
++ ONB[18] ONB[17] ONB[16] ONB[15] ONB[14] ONB[13] ONB[12] ONB[11] ONB[10] ONB[9] ONB[8] ONB[7] ONB[6] ONB[5] ONB[4] ONB[3] ONB[2] ONB[1]
++ ONB[0] Iout Vpbias[1] Vpbias[0] Vpcbias[1] Vpcbias[0] VSS
+*.opin Iout
+*.ipin
+*+ ON[31],ON[30],ON[29],ON[28],ON[27],ON[26],ON[25],ON[24],ON[23],ON[22],ON[21],ON[20],ON[19],ON[18],ON[17],ON[16],ON[15],ON[14],ON[13],ON[12],ON[11],ON[10],ON[9],ON[8],ON[7],ON[6],ON[5],ON[4],ON[3],ON[2],ON[1],ON[0]
+*.ipin
+*+ ONB[31],ONB[30],ONB[29],ONB[28],ONB[27],ONB[26],ONB[25],ONB[24],ONB[23],ONB[22],ONB[21],ONB[20],ONB[19],ONB[18],ONB[17],ONB[16],ONB[15],ONB[14],ONB[13],ONB[12],ONB[11],ONB[10],ONB[9],ONB[8],ONB[7],ONB[6],ONB[5],ONB[4],ONB[3],ONB[2],ONB[1],ONB[0]
+*.iopin VSS
+*.iopin VDD
+*.iopin Vpcbias[1],Vpcbias[0]
+*.ipin EN[3],EN[2],EN[1],EN[0]
+*.ipin ENB[3],ENB[2],ENB[1],ENB[0]
+*.iopin Vpbias[1],Vpbias[0]
+XMcbias[0] Vpcbias[0] Vpcbias[0] Vpbias[0] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=2
+**** begin user architecture code
+
+* device parameters
+.param l      = 5u
+.param w      = 1.45u
+.param lc     = 0.6u
+.param wc     = 1.2u
+.param lb     = 0.15u
+.param wb     = 5.85u
+.param lplogic= 0.13u
+.param wplogic= 0.5u
+.param lnlogic= 0.13u
+.param wnlogic= 0.15u
+
+
+**** end user architecture code
+xref[1] VDD Vpbias[0] EN[1] ENB[1] Vpbias[0] Vpcbias[0] VSS unitsource2u
+xref[0] VDD Vpbias[0] EN[0] ENB[0] Vpbias[0] Vpcbias[0] VSS unitsource2u
+xsrc[15] VDD Vpbias[0] ON[15] ONB[15] Iout Vpcbias[0] VSS unitsource2u
+xsrc[14] VDD Vpbias[0] ON[14] ONB[14] Iout Vpcbias[0] VSS unitsource2u
+xsrc[13] VDD Vpbias[0] ON[13] ONB[13] Iout Vpcbias[0] VSS unitsource2u
+xsrc[12] VDD Vpbias[0] ON[12] ONB[12] Iout Vpcbias[0] VSS unitsource2u
+xsrc[11] VDD Vpbias[0] ON[11] ONB[11] Iout Vpcbias[0] VSS unitsource2u
+xsrc[10] VDD Vpbias[0] ON[10] ONB[10] Iout Vpcbias[0] VSS unitsource2u
+xsrc[9] VDD Vpbias[0] ON[9] ONB[9] Iout Vpcbias[0] VSS unitsource2u
+xsrc[8] VDD Vpbias[0] ON[8] ONB[8] Iout Vpcbias[0] VSS unitsource2u
+xsrc[7] VDD Vpbias[0] ON[7] ONB[7] Iout Vpcbias[0] VSS unitsource2u
+xsrc[6] VDD Vpbias[0] ON[6] ONB[6] Iout Vpcbias[0] VSS unitsource2u
+xsrc[5] VDD Vpbias[0] ON[5] ONB[5] Iout Vpcbias[0] VSS unitsource2u
+xsrc[4] VDD Vpbias[0] ON[4] ONB[4] Iout Vpcbias[0] VSS unitsource2u
+xsrc[3] VDD Vpbias[0] ON[3] ONB[3] Iout Vpcbias[0] VSS unitsource2u
+xsrc[2] VDD Vpbias[0] ON[2] ONB[2] Iout Vpcbias[0] VSS unitsource2u
+xsrc[1] VDD Vpbias[0] ON[1] ONB[1] Iout Vpcbias[0] VSS unitsource2u
+xsrc[0] VDD Vpbias[0] ON[0] ONB[0] Iout Vpcbias[0] VSS unitsource2u
+XMcbias[1] Vpcbias[1] Vpcbias[1] Vpbias[1] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=2
+xref1[3] VDD Vpbias[1] EN[3] ENB[3] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xref1[2] VDD Vpbias[1] EN[2] ENB[2] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xsrc1[31] VDD Vpbias[1] ON[31] ONB[31] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[30] VDD Vpbias[1] ON[30] ONB[30] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[29] VDD Vpbias[1] ON[29] ONB[29] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[28] VDD Vpbias[1] ON[28] ONB[28] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[27] VDD Vpbias[1] ON[27] ONB[27] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[26] VDD Vpbias[1] ON[26] ONB[26] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[25] VDD Vpbias[1] ON[25] ONB[25] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[24] VDD Vpbias[1] ON[24] ONB[24] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[23] VDD Vpbias[1] ON[23] ONB[23] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[22] VDD Vpbias[1] ON[22] ONB[22] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[21] VDD Vpbias[1] ON[21] ONB[21] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[20] VDD Vpbias[1] ON[20] ONB[20] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[19] VDD Vpbias[1] ON[19] ONB[19] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[18] VDD Vpbias[1] ON[18] ONB[18] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[17] VDD Vpbias[1] ON[17] ONB[17] Iout Vpcbias[1] VSS unitsource2u
+xsrc1[16] VDD Vpbias[1] ON[16] ONB[16] Iout Vpcbias[1] VSS unitsource2u
+* tap: EN[3:0] --> EN[1:0]
+* tap: ENB[3:0] --> ENB[1:0]
+* tap: ENB[3:0] --> ENB[3:2]
+* tap: EN[3:0] --> EN[3:2]
+* tap: ON[31:0] --> ON[15:0]
+* tap: ONB[31:0] --> ONB[15:0]
+* tap: ON[31:0] --> ON[31:16]
+* tap: ONB[31:0] --> ONB[31:16]
+* tap: Vpbias[1:0] --> Vpbias[0]
+* tap: Vpcbias[1:0] --> Vpcbias[0]
+* tap: Vpbias[1:0] --> Vpbias[1]
+* tap: Vpcbias[1:0] --> Vpcbias[1]
+.ends
+
+
+* expanding   symbol:  analog_wires.sym # of pins=3
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/analog_wires.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/analog_wires.sch
+.subckt analog_wires vdda pbias pcbias
+*.iopin vdda
+*.iopin pcbias
+*.iopin pbias
+XMcbuffer vdda pcbias vdda vdda sg13_hv_pmos w=8u l=8u ng=1 m=19
+XMbbuffer vdda pbias vdda vdda sg13_hv_pmos w=8u l=8u ng=1 m=19
+.ends
+
+
+* expanding   symbol:  inverterpair.sym # of pins=5
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/inverterpair.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/inverterpair.sch
+.subckt inverterpair VDD OUTP IN OUTN VSS
+*.iopin VSS
+*.ipin IN
+*.opin OUTN
+*.opin OUTP
+*.iopin VDD
+xinv2 OUTP OUTN VDD VSS sg13g2_inv_1
+xinv1 OUTN IN VDD VSS sg13g2_inv_1
+.ends
+
+
+* expanding   symbol:  unitsource2u.sym # of pins=7
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/unitsource2u.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/unitsource2u.sch
+.subckt unitsource2u VDD VbiasP ON ONB Iout VcascP VSS
+*.iopin VSS
+*.iopin VDD
+*.iopin VbiasP
+*.iopin VcascP
+*.ipin ON
+*.ipin ONB
+*.iopin Iout
+xnonoverlap VDD VSS ON ONB on_n off_n nonoverlap
+xsw VDD off_n Vcasc on_n VcascP cascodeswitch_pmos
+xsrc VDD VbiasP Vcasc Iout pcsource2u
+.ends
+
+
+* expanding   symbol:  nonoverlap.sym # of pins=6
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/nonoverlap.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/nonoverlap.sch
+.subckt nonoverlap VDD VSS INP INN OUTN OUTP
+*.iopin VSS
+*.iopin VDD
+*.ipin INP
+*.ipin INN
+*.opin OUTP
+*.opin OUTN
+XM1 OUTN INP VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+XM2 OUTP INN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+XM3 OUTN OUTP VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
+XM4 OUTP OUTN VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  cascodeswitch_pmos.sym # of pins=5
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/cascodeswitch_pmos.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/cascodeswitch_pmos.sch
+.subckt cascodeswitch_pmos VDD off_n Vcasc on_n Vbpcasc
+*.ipin off_n
+*.ipin Vbpcasc
+*.opin Vcasc
+*.ipin on_n
+*.ipin VDD
+XMpullup Vcasc off_n VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+XMbias Vbpcasc on_n Vcasc VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  pcsource2u.sym # of pins=4
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/pcsource2u.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/pcsource2u.sch
+.subckt pcsource2u VDD VbiasP VcascodeP Iout
+*.ipin VcascodeP
+*.ipin VbiasP
+*.opin Iout
+*.ipin VDD
+XMsrc drain VbiasP VDD VDD sg13_lv_pmos w=1.45u l=5u ng=1 m=1
+XMcasc Iout VcascodeP drain VDD sg13_lv_pmos w=1.2u l=0.6u ng=1 m=1
+.ends
+
+.GLOBAL GND
+.end
