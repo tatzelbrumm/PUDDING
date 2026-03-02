@@ -60,7 +60,7 @@ N 1320 -380 1320 -180 {lab=dac_n}
 N 1320 -120 1320 -100 {lab=GND}
 N 1060 -100 1320 -100 {lab=GND}
 C {title.sym} 160 0 0 0 {name=l1 author="Christoph Maier"}
-C {vsource.sym} 1420 -250 0 0 {name=Vout value=\{vdd-vout\} savecurrent=true}
+C {vsource.sym} 1420 -250 0 0 {name=Vout value=\{vout\} savecurrent=true}
 C {gnd.sym} 460 -80 0 0 {name=l2 lab=GND}
 C {devices/code_shown.sym} 1500 -670 0 0 {name=NGSPICE only_toplevel=true 
 value="

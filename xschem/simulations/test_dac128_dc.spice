@@ -1,6 +1,6 @@
 ** sch_path: /home/cmaier/EDA/PUDDING/xschem/test_dac128_dc.sch
 **.subckt test_dac128_dc
-Vout Vout GND {vdd-vout}
+Vout Vout GND {vout}
 .save i(vout)
 Vprobe net1 GND 0
 .save i(vprobe)
