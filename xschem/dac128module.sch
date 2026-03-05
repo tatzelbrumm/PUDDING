@@ -14,7 +14,7 @@ N 680 -680 720 -680 {lab=Vpcbias[0]}
 N 720 -680 720 -460 {lab=Vpcbias[0]}
 N 520 -780 620 -780 {lab=VDD}
 N 540 -660 560 -660 {lab=Vpbias[0]}
-N 620 -780 1100 -780 {lab=VDD}
+N 920 -780 1100 -780 {lab=VDD}
 N 620 -60 1100 -60 {lab=VSS}
 N 1100 -780 1100 -740 {lab=VDD}
 N 540 -540 540 -490 {lab=Vpbias[0]}
@@ -22,11 +22,9 @@ N 520 -460 540 -460 {lab=VDD}
 N 520 -780 520 -460 {lab=VDD}
 N 1000 -620 1040 -620 {lab=ONB[63:0]}
 N 420 -60 620 -60 {lab=VSS}
-N 720 -680 1040 -680 {lab=Vpcbias[0]}
-N 700 -700 1040 -700 {lab=Vpbias[0]}
 N 420 -780 520 -780 {lab=VDD}
-N 680 -640 760 -640 {lab=EN[3:0]}
-N 680 -620 740 -620 {lab=ENB[3:0]}
+N 680 -640 760 -640 {lab=EN[7:0]}
+N 680 -620 740 -620 {lab=ENB[7:0]}
 N 1780 -780 1780 -740 {lab=VDD}
 N 1700 -700 1720 -700 {lab=Vpbias[1]}
 N 1680 -400 1860 -400 {lab=Vpcbias[1]}
@@ -37,7 +35,7 @@ N 1680 -680 1720 -680 {lab=Vpcbias[1]}
 N 1680 -680 1680 -460 {lab=Vpcbias[1]}
 N 1780 -780 1880 -780 {lab=VDD}
 N 1840 -660 1860 -660 {lab=Vpbias[1]}
-N 1300 -780 1780 -780 {lab=VDD}
+N 1620 -780 1780 -780 {lab=VDD}
 N 1300 -780 1300 -740 {lab=VDD}
 N 1780 -580 1780 -60 {lab=VSS}
 N 1860 -540 1860 -490 {lab=Vpbias[1]}
@@ -45,9 +43,7 @@ N 1860 -460 1880 -460 {lab=VDD}
 N 1880 -780 1880 -460 {lab=VDD}
 N 1360 -640 1420 -640 {lab=ON[127:64]}
 N 1360 -620 1400 -620 {lab=ONB[127:64]}
-N 1360 -680 1680 -680 {lab=Vpcbias[1]}
-N 1360 -700 1700 -700 {lab=Vpbias[1]}
-N 1660 -620 1720 -620 {lab=ENB[7:4]}
+N 1660 -620 1720 -620 {lab=ENB[15:8]}
 N 1100 -60 1300 -60 {lab=VSS}
 N 1100 -780 1300 -780 {lab=VDD}
 N 1200 -660 1240 -660 {lab=Iout}
@@ -65,30 +61,62 @@ N 540 -660 540 -540 {lab=Vpbias[0]}
 N 700 -700 700 -540 {lab=Vpbias[0]}
 N 1300 -60 1780 -60 {lab=VSS}
 N 420 -300 1860 -300 {lab=Vpcbias[1:0]}
-N 1640 -640 1720 -640 {lab=EN[7:4]}
+N 1640 -640 1720 -640 {lab=EN[15:8]}
 N 420 -100 1400 -100 {lab=ONB[127:0]}
 N 980 -640 1040 -640 {lab=ON[63:0]}
 N 420 -140 1420 -140 {lab=ON[127:0]}
-N 420 -220 1660 -220 {lab=ENB[7:0]}
-N 420 -260 1640 -260 {lab=EN[7:0]}
-N 1660 -620 1660 -230 {lab=ENB[7:4]}
-N 1640 -640 1640 -270 {lab=EN[7:4]}
+N 420 -220 1660 -220 {lab=ENB[15:0]}
+N 420 -260 1640 -260 {lab=EN[15:0]}
+N 1660 -620 1660 -230 {lab=ENB[15:8]}
+N 1640 -640 1640 -270 {lab=EN[15:8]}
 N 1400 -620 1400 -110 {lab=ONB[127:64]}
 N 1420 -640 1420 -150 {lab=ON[127:64]}
 N 1000 -620 1000 -110 {lab=ONB[63:0]}
 N 980 -640 980 -150 {lab=ON[63:0]}
-N 740 -620 740 -230 {lab=ENB[3:0]}
-N 760 -640 760 -270 {lab=EN[3:0]}
+N 740 -620 740 -230 {lab=ENB[7:0]}
+N 760 -640 760 -270 {lab=EN[7:0]}
 N 700 -540 700 -350 {lab=Vpbias[0]}
 N 720 -400 720 -310 {lab=Vpcbias[0]}
 N 1860 -400 1860 -310 {lab=Vpcbias[1]}
 N 1700 -540 1700 -350 {lab=Vpbias[1]}
+N 1480 -780 1480 -770 {lab=VDD}
+N 1300 -780 1480 -780 {lab=VDD}
+N 1580 -780 1580 -770 {lab=VDD}
+N 1520 -780 1580 -780 {lab=VDD}
+N 1620 -780 1620 -760 {lab=VDD}
+N 1580 -780 1620 -780 {lab=VDD}
+N 1520 -780 1520 -760 {lab=VDD}
+N 1480 -780 1520 -780 {lab=VDD}
+N 880 -780 880 -760 {lab=VDD}
+N 820 -780 880 -780 {lab=VDD}
+N 780 -780 780 -760 {lab=VDD}
+N 620 -780 780 -780 {lab=VDD}
+N 820 -780 820 -770 {lab=VDD}
+N 780 -780 820 -780 {lab=VDD}
+N 920 -780 920 -770 {lab=VDD}
+N 880 -780 920 -780 {lab=VDD}
+N 780 -720 780 -700 {lab=Vpbias[0]}
+N 700 -700 780 -700 {lab=Vpbias[0]}
+N 820 -710 820 -700 {lab=#net1}
+N 820 -700 1040 -700 {lab=#net1}
+N 880 -720 880 -680 {lab=Vpcbias[0]}
+N 720 -680 880 -680 {lab=Vpcbias[0]}
+N 920 -710 920 -680 {lab=#net2}
+N 920 -680 1040 -680 {lab=#net2}
+N 1480 -710 1480 -680 {lab=#net3}
+N 1360 -680 1480 -680 {lab=#net3}
+N 1360 -700 1580 -700 {lab=#net4}
+N 1580 -710 1580 -700 {lab=#net4}
+N 1520 -720 1520 -680 {lab=Vpcbias[1]}
+N 1520 -680 1680 -680 {lab=Vpcbias[1]}
+N 1620 -720 1620 -700 {lab=Vpbias[1]}
+N 1620 -700 1700 -700 {lab=Vpbias[1]}
 C {title.sym} 160 0 0 0 {name=l1 author="Christoph Maier"}
 C {sg13g2_pr/sg13_lv_pmos.sym} 560 -460 0 1 {name=Mcbias[0]
 l=0.15u
 w=5.85u
 ng=1
-m=4
+m=8
 model=sg13_lv_pmos
 spiceprefix=X
 }
@@ -105,7 +133,7 @@ C {devices/code_shown.sym} 60 -730 0 0 {name=params only_toplevel=false value="*
 .param lnlogic= 0.13u
 .param wnlogic= 0.15u
 "}
-C {unitsource2u.sym} 620 -660 0 1 {name=xref[3:0]}
+C {unitsource2u.sym} 620 -660 0 1 {name=xref[7:0]}
 C {unitsource2u.sym} 1100 -660 0 0 {name=xsrc[63:0]}
 C {ipin.sym} 420 -140 0 0 {name=p7 sig_type=std_logic lab=ON[127:0]}
 C {ipin.sym} 420 -100 0 0 {name=p8 sig_type=std_logic lab=ONB[127:0]}
@@ -116,25 +144,25 @@ C {sg13g2_pr/sg13_lv_pmos.sym} 1840 -460 0 0 {name=Mcbias[1]
 l=0.15u
 w=5.85u
 ng=1
-m=4
+m=8
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {unitsource2u.sym} 1780 -660 0 0 {name=xref1[7:4]}
+C {unitsource2u.sym} 1780 -660 0 0 {name=xref1[15:8]}
 C {unitsource2u.sym} 1300 -660 0 1 {name=xsrc1[127:64]}
-C {ipin.sym} 420 -260 0 0 {name=p14 sig_type=std_logic lab=EN[7:0]}
-C {ipin.sym} 420 -220 0 0 {name=p15 sig_type=std_logic lab=ENB[7:0]}
+C {ipin.sym} 420 -260 0 0 {name=p14 sig_type=std_logic lab=EN[15:0]}
+C {ipin.sym} 420 -220 0 0 {name=p15 sig_type=std_logic lab=ENB[15:0]}
 C {iopin.sym} 420 -340 0 1 {name=p17 lab=Vpbias[1:0]}
 C {lab_wire.sym} 440 -340 0 1 {name=p18 lab=Vpbias[1:0]}
 C {lab_wire.sym} 440 -300 0 1 {name=p16 lab=Vpcbias[1:0]}
-C {lab_wire.sym} 440 -260 0 1 {name=p26 lab=EN[7:0]}
-C {lab_wire.sym} 440 -220 0 1 {name=p27 lab=ENB[7:0]}
+C {lab_wire.sym} 440 -260 0 1 {name=p26 lab=EN[15:0]}
+C {lab_wire.sym} 440 -220 0 1 {name=p27 lab=ENB[15:0]}
 C {lab_wire.sym} 440 -140 0 1 {name=p28 lab=ON[127:0]}
 C {lab_wire.sym} 440 -100 0 1 {name=p29 lab=ONB[127:0]}
-C {bus_tap.sym} 750 -260 0 0 {name=l2 lab=[3:0]}
-C {bus_tap.sym} 730 -220 0 0 {name=l3 lab=[3:0]}
-C {bus_tap.sym} 1650 -220 0 0 {name=l4 lab=[7:4]}
-C {bus_tap.sym} 1630 -260 0 0 {name=l5 lab=[7:4]}
+C {bus_tap.sym} 750 -260 0 0 {name=l2 lab=[7:0]}
+C {bus_tap.sym} 730 -220 0 0 {name=l3 lab=[7:0]}
+C {bus_tap.sym} 1650 -220 0 0 {name=l4 lab=[15:8]}
+C {bus_tap.sym} 1630 -260 0 0 {name=l5 lab=[15:8]}
 C {bus_tap.sym} 970 -140 0 0 {name=l6 lab=[63:0]}
 C {bus_tap.sym} 990 -100 0 0 {name=l7 lab=[63:0]}
 C {bus_tap.sym} 1410 -140 0 0 {name=l8 lab=[127:64]}
@@ -143,3 +171,7 @@ C {bus_tap.sym} 690 -340 0 0 {name=l10 lab=[0]}
 C {bus_tap.sym} 710 -300 0 0 {name=l11 lab=[0]}
 C {bus_tap.sym} 1690 -340 0 0 {name=l12 lab=[1]}
 C {bus_tap.sym} 1850 -300 0 0 {name=l13 lab=[1]}
+C {vcvs.sym} 820 -740 0 0 {name=E1 value=1}
+C {vcvs.sym} 920 -740 0 0 {name=E2 value=1}
+C {vcvs.sym} 1580 -740 0 1 {name=E3 value=1}
+C {vcvs.sym} 1480 -740 0 1 {name=E4 value=1}
