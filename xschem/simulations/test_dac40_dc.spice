@@ -102,8 +102,8 @@ plot vidacp#branch vidacn#branch
 
 
 .include sg13g2_stdcell.spice
-.lib cornerMOSlv.lib mos_tt
-.lib cornerMOShv.lib mos_tt
+.lib cornerMOSlv.lib mos_ss
+.lib cornerMOShv.lib mos_ss
 
 
 * device parameters
