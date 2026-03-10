@@ -69,7 +69,7 @@ VEN enable GND DC {vdd} PULSE({vdd} {vdd} {td} {tr} {tf} {ton} {tcyc})
 
 
 .include test_dac32_dc.save
-.temp=27
+.temp=85
 .options gmin=1e-15 abstol=1p method=gear
 .options savecurrents
 .control

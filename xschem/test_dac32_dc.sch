@@ -65,7 +65,7 @@ C {gnd.sym} 460 -80 0 0 {name=l2 lab=GND}
 C {devices/code_shown.sym} 1500 -670 0 0 {name=NGSPICE only_toplevel=true 
 value="
 .include test_dac32_dc.save
-.temp=27
+.temp=85
 .options gmin=1e-15 abstol=1p method=gear
 .options savecurrents
 .control
