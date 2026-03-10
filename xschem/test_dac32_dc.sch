@@ -77,7 +77,7 @@ dc Vout 0 1.2 10m VlogI -8 -6 0.5
 *tran 10n 500u
 write test_dac32_dc.raw
 plot title \\"output/reference current asymmetry\\" 2*(vout#branch-8*vprobe#branch)/(8*vprobe#branch+vout#branch)
-plot ylimit -20m 4m title \\"output/reference current asymmetry\\" 2*(vout#branch-8*vprobe#branch)/(8*vprobe#branch+vout#branch)
+plot ylimit -40m 5m title \\"output/reference current asymmetry\\" 2*(vout#branch-8*vprobe#branch)/(8*vprobe#branch+vout#branch)
 plot vdd pbuf iin enable switch v(\\"en[0]\\") v(\\"enb[0]\\") v(\\"on[0]\\") v(\\"onb[0]\\") Vout
 plot vout#branch vprobe#branch
 *plot @n.xsw.xmbias.nsg13_lv_pmos[ids] @n.xsw.xmpullup.nsg13_lv_pmos[ids]
@@ -90,8 +90,8 @@ name=Libs_Ngspice
 simulator=ngspice
 only_toplevel=false
 value=".include sg13g2_stdcell.spice
-.lib cornerMOSlv.lib mos_ff
-.lib cornerMOShv.lib mos_ff"
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt"
       }
 C {launcher.sym} 130 -130 0 0 {name=h3
 descr=SimulateNGSPICE
