@@ -1,0 +1,84 @@
+════════════════════════════════════════════════════════════════════
+  test_ncmirror.raw
+════════════════════════════════════════════════════════════════════
+
+[0] Operating Point  (1 pts, 81 vars)
+  v(vdsrc)                                               49.89 mV
+  @n.xmcref.nsg13_hv_nmos[cgdol]                      7.806e-16 F
+  @n.xmcref.nsg13_hv_nmos[cgg]                           2.677 fF
+  @n.xmcref.nsg13_hv_nmos[cgsol]                      8.032e-16 F
+  @n.xmcref.nsg13_hv_nmos[gds]                           19.04 nS
+  @n.xmcref.nsg13_hv_nmos[gm]                            2.596 µS
+  i(@n.xmcref.nsg13_hv_nmos[ids])                          100 nA
+  v(@n.xmcref.nsg13_hv_nmos[vds])                        583.1 mV
+  v(@n.xmcref.nsg13_hv_nmos[vdss])                       105.8 mV
+  v(@n.xmcref.nsg13_hv_nmos[vgs])                        583.1 mV
+  v(@n.xmcref.nsg13_hv_nmos[vth])                        630.4 mV
+  @n.xmcsrc.nsg13_hv_nmos[cgdol]                      7.822e-16 F
+  @n.xmcsrc.nsg13_hv_nmos[cgg]                           2.677 fF
+  @n.xmcsrc.nsg13_hv_nmos[cgsol]                      8.032e-16 F
+  @n.xmcsrc.nsg13_hv_nmos[gds]                           19.22 nS
+  @n.xmcsrc.nsg13_hv_nmos[gm]                             2.59 µS
+  i(@n.xmcsrc.nsg13_hv_nmos[ids])                        99.83 nA
+  v(@n.xmcsrc.nsg13_hv_nmos[vds])                        550.1 mV
+  v(@n.xmcsrc.nsg13_hv_nmos[vdss])                       105.8 mV
+  v(@n.xmcsrc.nsg13_hv_nmos[vgs])                        583.2 mV
+  v(@n.xmcsrc.nsg13_hv_nmos[vth])                        630.6 mV
+  @n.xmref.nsg13_hv_nmos[cgdol]                       8.032e-16 F
+  @n.xmref.nsg13_hv_nmos[cgg]                            28.27 fF
+  @n.xmref.nsg13_hv_nmos[cgsol]                       8.046e-16 F
+  @n.xmref.nsg13_hv_nmos[gds]                            1.213 µS
+  @n.xmref.nsg13_hv_nmos[gm]                             1.258 µS
+  i(@n.xmref.nsg13_hv_nmos[ids])                           100 nA
+  v(@n.xmref.nsg13_hv_nmos[vds])                         50.03 mV
+  v(@n.xmref.nsg13_hv_nmos[vdss])                        135.2 mV
+  v(@n.xmref.nsg13_hv_nmos[vgs])                         633.1 mV
+  v(@n.xmref.nsg13_hv_nmos[vth])                         566.9 mV
+  @n.xmsrc.nsg13_hv_nmos[cgdol]                       8.032e-16 F
+  @n.xmsrc.nsg13_hv_nmos[cgg]                            28.28 fF
+  @n.xmsrc.nsg13_hv_nmos[cgsol]                       8.046e-16 F
+  @n.xmsrc.nsg13_hv_nmos[gds]                            1.216 µS
+  @n.xmsrc.nsg13_hv_nmos[gm]                             1.255 µS
+  i(@n.xmsrc.nsg13_hv_nmos[ids])                         99.83 nA
+  v(@n.xmsrc.nsg13_hv_nmos[vds])                         49.89 mV
+  v(@n.xmsrc.nsg13_hv_nmos[vdss])                        135.2 mV
+  v(@n.xmsrc.nsg13_hv_nmos[vgs])                         633.1 mV
+  v(@n.xmsrc.nsg13_hv_nmos[vth])                         566.9 mV
+
+[1] DC transfer characteristic  (605 pts, 82 vars)
+  5 IRef-Kurven × 121 VDS-Punkte  (VDS 0.00…1.20 V)
+        IRef     Iout@0.6V     Ratio       ro@0.6V
+       10 nA      10.02 nA   1.00217   3.653e+09 Ω
+    31.62 nA      31.65 nA   1.00082   1.076e+09 Ω
+      100 nA      99.89 nA   0.99885   3.191e+08 Ω
+    316.2 nA      315.1 nA   0.99630   1.022e+08 Ω
+        1 µA      993.7 nA   0.99367   3.522e+07 Ω
+
+[2] DC transfer characteristic  (605 pts, 82 vars)
+  5 IRef-Kurven × 121 VDS-Punkte  (VDS 0.00…1.20 V)
+        IRef     Iout@0.6V     Ratio       ro@0.6V
+       10 nA         10 nA   1.00030   1.205e+10 Ω
+    31.62 nA      31.61 nA   0.99969   3.272e+09 Ω
+      100 nA      99.89 nA   0.99890   1.087e+09 Ω
+    316.2 nA      315.7 nA   0.99819   3.878e+08 Ω
+        1 µA      997.3 nA   0.99729   9.234e+07 Ω
+
+[3] DC transfer characteristic  (605 pts, 82 vars)
+  5 IRef-Kurven × 121 VDS-Punkte  (VDS 0.00…1.20 V)
+        IRef     Iout@0.6V     Ratio       ro@0.6V
+       10 nA         10 nA   1.00046   8.504e+09 Ω
+    31.62 nA      31.61 nA   0.99968   2.693e+09 Ω
+      100 nA      99.87 nA   0.99867   8.625e+08 Ω
+    316.2 nA      315.4 nA   0.99753   2.846e+08 Ω
+        1 µA      996.2 nA   0.99624   8.115e+07 Ω
+
+[4] DC transfer characteristic  (605 pts, 82 vars)
+  5 IRef-Kurven × 121 VDS-Punkte  (VDS 0.00…1.20 V)
+        IRef     Iout@0.6V     Ratio       ro@0.6V
+       10 nA         10 nA   1.00006   1.817e+10 Ω
+    31.62 nA      31.61 nA   0.99959   4.920e+09 Ω
+      100 nA       99.9 nA   0.99901   1.597e+09 Ω
+    316.2 nA      315.7 nA   0.99844   5.226e+08 Ω
+        1 µA        997 nA   0.99696   4.992e+07 Ω
+
+════════════════════════════════════════════════════════════════════
