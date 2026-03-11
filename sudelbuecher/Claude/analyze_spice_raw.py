@@ -1,680 +1,482 @@
 #!/usr/bin/env python3
 """
-IHP 130nm ngspice .raw File Analyzer
-=====================================
-Liest ngspice Binary RAW files, exportiert CSV-Daten und erstellt Grafiken.
-Unterstützt: Operating Point, DC-Sweep (1D und 2D/parametric), AC, Transient.
-
-Verwendung:
-    python3 analyze_spice_raw.py <file.raw> [optionen]
-    python3 analyze_spice_raw.py test_nmirror.raw
-    python3 analyze_spice_raw.py test_ncmirror.raw --plot-type mirror
-    python3 analyze_spice_raw.py test_nmirror.raw --list-vars
-    python3 analyze_spice_raw.py test_nmirror.raw --vars "i(vd),v(vg)" --out myplot
+ngspice RAW analyzer — pure stdlib, keine Dependencies
+Usage: python3 analyze_spice_raw.py <file.raw> [--csv] [--list-vars] [--outdir DIR]
+Output: <stem>_summary.txt  and  <stem>.html  (standalone, kein Server)
 """
-
-import argparse
-import os
-import re
-import struct
-import sys
+import argparse, math, os, re, struct, sys
 from pathlib import Path
 
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
-import numpy as np
-import pandas as pd
 
-# ─── Matplotlib Style ────────────────────────────────────────────────────────
-plt.rcParams.update({
-    "figure.facecolor": "#0d1117",
-    "axes.facecolor": "#161b22",
-    "axes.edgecolor": "#30363d",
-    "axes.labelcolor": "#e6edf3",
-    "axes.titlecolor": "#e6edf3",
-    "xtick.color": "#8b949e",
-    "ytick.color": "#8b949e",
-    "grid.color": "#21262d",
-    "grid.linewidth": 0.8,
-    "text.color": "#e6edf3",
-    "legend.facecolor": "#161b22",
-    "legend.edgecolor": "#30363d",
-    "legend.labelcolor": "#e6edf3",
-    "font.family": "monospace",
-    "font.size": 10,
-    "axes.titlesize": 13,
-    "axes.labelsize": 11,
-    "figure.titlesize": 15,
-})
+# ─── Parse ─────────────────────────────────────────────────────────────────────
 
-PALETTE = ["#58a6ff", "#3fb950", "#ff7b72", "#d2a8ff", "#ffa657",
-           "#79c0ff", "#56d364", "#ff9492", "#bc8cff", "#ffb86c"]
+def parse_raw(path):
+    """Liest alle Plots aus einer ngspice binary RAW Datei.
+    Gibt Liste von dicts zurück: {name, nv, np, vars:[(idx,name,type)], data:[[float]]}"""
+    raw    = open(path, "rb").read()
+    plots  = []
+    pos    = 0
 
-
-# ─── RAW File Parser ──────────────────────────────────────────────────────────
-
-def parse_raw(filepath: str) -> list[dict]:
-    """
-    Parst eine ngspice Binary RAW Datei.
-    Gibt eine Liste von Plot-Dicts zurück:
-        {plotname, flags, nvars, npoints, variables: [{idx,name,type}], data: np.ndarray}
-    Mehrere Plots (parametric sweeps, OP + DC) werden alle zurückgegeben.
-    """
-    with open(filepath, "rb") as f:
-        raw = f.read()
-
-    plots = []
-    pos = 0
-
-    while pos < len(raw):
-        bm = raw.find(b"Binary:\n", pos)
-        if bm == -1:
-            break
-
-        header = raw[pos:bm].decode("utf-8", errors="replace")
-        meta = {}
+    while (binary_pos := raw.find(b"Binary:\n", pos)) != -1:
+        # Header parsen
+        header    = raw[pos:binary_pos].decode(errors="replace")
+        plot_name = ""
+        nv = np   = 0
         variables = []
 
-        for line in header.split("\n"):
+        for line in header.splitlines():
             line = line.strip()
-            if line.startswith("Title:"):
-                meta["title"] = line[6:].strip()
-            elif line.startswith("Date:"):
-                meta["date"] = line[5:].strip()
-            elif line.startswith("Plotname:"):
-                meta["plotname"] = line[9:].strip()
-            elif line.startswith("Flags:"):
-                meta["flags"] = line[6:].strip()
-            elif line.startswith("No. Variables:"):
-                meta["nvars"] = int(line[14:].strip())
-            elif line.startswith("No. Points:"):
-                meta["npoints"] = int(line[11:].strip())
-            elif re.match(r"\s*\d+\s", line):
-                parts = line.split("\t")
-                if len(parts) >= 3:
-                    variables.append({
-                        "idx": int(parts[0]),
-                        "name": parts[1].strip(),
-                        "type": parts[2].strip()
-                    })
+            if   line.startswith("Plotname:"):      plot_name = line[9:].strip()
+            elif line.startswith("No. Variables:"): nv        = int(line[14:])
+            elif line.startswith("No. Points:"):    np        = int(line[11:])
+            elif re.match(r"\d+\t", line):
+                idx, name, kind = line.split("\t")[:3]
+                variables.append((int(idx), name.strip(), kind.strip()))
 
-        nvars = meta.get("nvars", 0)
-        npoints = meta.get("npoints", 0)
-        is_complex = "complex" in meta.get("flags", "")
-        ds = bm + len(b"Binary:\n")
-
-        if nvars > 0 and npoints > 0:
-            if is_complex:
-                dtype = np.complex128
-                bpv = 16
-            else:
-                dtype = np.float64
-                bpv = 8
-
-            nb = nvars * npoints * bpv
-            arr = np.frombuffer(raw[ds:ds + nb], dtype=dtype).reshape(npoints, nvars)
-            meta.update({
-                "data": arr,
-                "variables": variables,
-                "filepath": filepath
-            })
-            plots.append(meta)
-            pos = ds + nb
+        # Binärdaten lesen
+        data_start = binary_pos + 8   # len("Binary:\n") == 8
+        if nv > 0 and np > 0:
+            flat = struct.unpack_from(f"<{nv * np}d", raw, data_start)
+            data = [list(flat[row * nv : (row + 1) * nv]) for row in range(np)]
+            plots.append({"name": plot_name, "nv": nv, "np": np,
+                          "vars": variables, "data": data})
+            pos = data_start + nv * np * 8
         else:
-            pos = ds + 1
+            pos = data_start + 1
 
     return plots
 
 
-def get_col(plot: dict, name: str) -> np.ndarray | None:
-    """Findet eine Spalte per Name (case-insensitiv, partial match)."""
-    vnames = [v["name"].lower() for v in plot["variables"]]
-    name_l = name.lower()
-    # Exact match first
-    for i, n in enumerate(vnames):
-        if n == name_l:
-            return plot["data"][:, i]
-    # Partial match
-    for i, n in enumerate(vnames):
-        if name_l in n:
-            return plot["data"][:, i]
+# ─── Helpers ───────────────────────────────────────────────────────────────────
+
+def find_col(plot, needle):
+    """Gibt Spaltenindex für Variablenname (exakt, dann partial, case-insensitiv)."""
+    needle = needle.lower()
+    names  = [name.lower() for (_, name, _) in plot["vars"]]
+    for i, name in enumerate(names):
+        if name == needle:    return i
+    for i, name in enumerate(names):
+        if needle in name:    return i
     return None
 
 
-def list_variables(plots: list[dict]):
-    """Gibt alle Variablen aller Plots aus."""
-    for pi, p in enumerate(plots):
-        pn = p.get("plotname", f"Plot {pi}")
-        npts = p.get("npoints", "?")
-        print(f"\n{'─'*60}")
-        print(f"  Plot [{pi}]: {pn}  ({npts} Punkte)")
-        print(f"{'─'*60}")
-        print(f"  {'#':>4}  {'Name':<50}  {'Typ'}")
-        print(f"  {'─'*4}  {'─'*50}  {'─'*15}")
-        for v in p["variables"]:
-            print(f"  {v['idx']:>4}  {v['name']:<50}  {v['type']}")
+def get_col(plot, needle):
+    """Gibt Spalte als Liste oder None."""
+    i = find_col(plot, needle)
+    return [row[i] for row in plot["data"]] if i is not None else None
 
 
-def detect_sweep_structure(plot: dict):
+def detect_outer_sweep(plot):
     """
-    Erkennt die Sweep-Struktur eines DC-Plots.
-    Gibt (n_inner, n_outer, sweep_axis) zurück.
+    DC-Sweeps haben eine innere (z.B. VDS) und eine äußere Achse (z.B. VlogI).
+    Erkennt die Struktur anhand von Rücksprüngen in Spalte 0.
+    Gibt (n_inner, n_outer, inner_axis) zurück.
     """
-    sweep_col = plot["data"][:, 0]
-    resets = np.where(np.diff(sweep_col) < -0.05)[0]
-    if len(resets) == 0:
-        return len(sweep_col), 1, sweep_col
-    n_inner = resets[0] + 1
+    axis    = [row[0] for row in plot["data"]]
+    resets  = [i for i in range(1, len(axis)) if axis[i] - axis[i-1] < -0.05]
+    n_inner = resets[0]          if resets else len(axis)
     n_outer = len(resets) + 1
-    return n_inner, n_outer, sweep_col[:n_inner]
+    return n_inner, n_outer, axis[:n_inner]
 
 
-# ─── Export ───────────────────────────────────────────────────────────────────
+def logi_to_iref(n_outer):
+    """Äußerer Sweep ist VlogI von -8 bis -6 → IRef in Ampere."""
+    return [10 ** (-8 + i * 2 / max(n_outer - 1, 1)) for i in range(n_outer)]
 
-def export_csv(plots: list[dict], out_prefix: str):
-    """Exportiert alle Plots als CSV-Dateien."""
-    csv_files = []
-    for pi, p in enumerate(plots):
-        pname = re.sub(r"[^\w]", "_", p.get("plotname", f"plot_{pi}")).lower()
-        fname = f"{out_prefix}_{pname}.csv"
 
-        # Flatten bei parametric sweeps mit Sweep-Index
-        n_inner, n_outer, _ = detect_sweep_structure(p)
-        data = p["data"]
-        vnames = [v["name"] for v in p["variables"]]
+def si(value, unit=""):
+    """Formatiert Zahl mit SI-Präfix, z.B. 1.5e-9 → '1.5 nA'."""
+    if not math.isfinite(value): return "n/a"
+    prefixes = [(1e15,"f"),(1e12,"p"),(1e9,"n"),(1e6,"µ"),(1e3,"m"),(1,"")]
+    for scale, prefix in prefixes:
+        if abs(value) * scale >= 0.999 and abs(value) * scale < 1000:
+            return f"{value * scale:.4g} {prefix}{unit}".strip()
+    return f"{value:.3e} {unit}".strip()
 
-        rows = []
-        for i_out in range(n_outer):
-            seg = data[i_out * n_inner:(i_out + 1) * n_inner, :]
-            df_seg = pd.DataFrame(seg.real, columns=vnames)
-            df_seg.insert(0, "sweep_idx", i_out)
-            rows.append(df_seg)
 
-        df = pd.concat(rows, ignore_index=True)
-        df.to_csv(fname, index=False, float_format="%.6e")
-        print(f"  CSV: {fname}  ({len(df)} Zeilen, {len(df.columns)} Spalten)")
-        csv_files.append(fname)
+UNIT_OF = {"voltage": "V", "current": "A", "admittance": "S", "capacitance": "F"}
+INTERESTING_KEYS = ("ids", "gm", "gds", "vth", "vgs", "vds", "cgg", "cgsol", "cgdol")
 
-    return csv_files
 
+# ─── Text Summary ──────────────────────────────────────────────────────────────
 
-# ─── Plots ────────────────────────────────────────────────────────────────────
+def make_summary(plots, path):
+    lines = ["═" * 68, f"  {Path(path).name}", "═" * 68]
 
-def si_formatter(unit="A"):
-    """Gibt einen Matplotlib FuncFormatter für SI-Präfixe zurück."""
-    prefixes = [(1e-15, "f"), (1e-12, "p"), (1e-9, "n"),
-                (1e-6, "µ"), (1e-3, "m"), (1, ""), (1e3, "k")]
+    for pi, plot in enumerate(plots):
+        name = plot["name"]
+        lines.append(f"\n[{pi}] {name}  ({plot['np']} pts, {plot['nv']} vars)")
 
-    def fmt(x, pos):
-        for val, pref in reversed(prefixes):
-            if abs(x) >= val * 0.99:
-                return f"{x/val:.3g} {pref}{unit}"
-        return f"{x:.3g} {unit}"
+        if "operating" in name.lower():
+            for (_, var_name, var_type) in plot["vars"]:
+                if any(k in var_name.lower() for k in INTERESTING_KEYS):
+                    value = plot["data"][0][find_col(plot, var_name)]
+                    unit  = UNIT_OF.get(var_type, "")
+                    lines.append(f"  {var_name:<48} {si(value, unit):>14}")
 
-    return ticker.FuncFormatter(fmt)
+        elif "dc" in name.lower() or "transfer" in name.lower():
+            n_inner, n_outer, vds_axis = detect_outer_sweep(plot)
+            i_vd     = get_col(plot, "i(vd)")        # < 0 when NMOS sinks current
+            i_vprobe = get_col(plot, "i(vprobe)")    # > 0, equals IRef
 
-
-def plot_dc_sweep(plots: list[dict], out_prefix: str, extra_vars: list[str] = None):
-    """
-    Plottet DC-Sweep Plots (IDs vs VDS für verschiedene IRef Kurven).
-    Für Current Mirror: Mirror Current + Mirror Ratio.
-    """
-    dc_plots = [p for p in plots if "dc" in p.get("plotname", "").lower()
-                or "transfer" in p.get("plotname", "").lower()]
-
-    if not dc_plots:
-        print("  Keine DC-Sweep Plots gefunden.")
-        return []
-
-    figs = []
-
-    for pi, p in enumerate(dc_plots):
-        vnames = [v["name"] for v in p["variables"]]
-        n_inner, n_outer, vd_axis = detect_sweep_structure(p)
-
-        # Schätze äußere Sweep-Werte (VlogI: -8 to -6)
-        # Suche in v-sweep ob es resets gibt
-        outer_vals = np.linspace(-8, -6, n_outer)  # Default
-        logi_col = get_col(p, "logi")
-        if logi_col is not None:
-            outer_vals = [logi_col[i * n_inner] for i in range(n_outer)]
-
-        # Finde relevante Ströme
-        iout_col = None
-        iref_col = None
-        for name in ["i(vd)", "vd#branch"]:
-            c = get_col(p, name)
-            if c is not None:
-                iout_col = c
-                break
-        for name in ["i(vprobe)", "vprobe#branch"]:
-            c = get_col(p, name)
-            if c is not None:
-                iref_col = c
-                break
-
-        if iout_col is None:
-            print(f"  [Plot {pi}] Kein Ausgangsstrom gefunden, überspringe.")
-            continue
-
-        # ── Figure Layout ────────────────────────────────────────────────
-        has_mirror = iref_col is not None
-        n_rows = 3 if has_mirror else 1
-        fig, axes = plt.subplots(n_rows, 1, figsize=(10, 4 * n_rows),
-                                 facecolor="#0d1117", sharex=True)
-        if n_rows == 1:
-            axes = [axes]
-
-        fig.suptitle(
-            f"{Path(p['filepath']).stem}  —  {p['plotname']} (Run {pi + 1})",
-            fontsize=14, fontweight="bold", color="#e6edf3", y=0.98
-        )
-
-        ax_ids = axes[0]
-        ax_ids.set_title("Ausgangsstrom I_out vs V_DS", pad=8)
-        ax_ids.set_ylabel("I_out")
-        ax_ids.yaxis.set_major_formatter(si_formatter("A"))
-        ax_ids.grid(True, alpha=0.4)
-
-        for i_out in range(n_outer):
-            seg_ids = -iout_col[i_out * n_inner:(i_out + 1) * n_inner]
-            I_ref = 10 ** outer_vals[i_out]
-            label = f"I_ref = {I_ref*1e9:.0f} nA" if I_ref < 1e-6 else \
-                    f"I_ref = {I_ref*1e6:.3f} µA"
-            ax_ids.plot(vd_axis, seg_ids, color=PALETTE[i_out % len(PALETTE)],
-                        linewidth=1.8, label=label)
-
-        ax_ids.axvline(0.1, color="#8b949e", linestyle="--", linewidth=0.8, alpha=0.6,
-                       label="V_DS = 100mV")
-        ax_ids.legend(fontsize=8, loc="lower right")
-
-        if has_mirror:
-            ax_ratio = axes[1]
-            ax_ratio.set_title("Mirror Ratio I_out / I_ref", pad=8)
-            ax_ratio.set_ylabel("Ratio")
-            ax_ratio.axhline(1.0, color="#8b949e", linestyle="--", linewidth=0.8, alpha=0.7)
-            ax_ratio.grid(True, alpha=0.4)
-
-            ax_ro = axes[2]
-            ax_ro.set_title("Ausgangsimpedanz r_o = ΔV_DS / ΔI_out", pad=8)
-            ax_ro.set_ylabel("r_o")
-            ax_ro.yaxis.set_major_formatter(si_formatter("Ω"))
-            ax_ro.grid(True, alpha=0.4)
-            ax_ro.set_xlabel("V_DS  [V]")
-
-            for i_out in range(n_outer):
-                seg_ids = -iout_col[i_out * n_inner:(i_out + 1) * n_inner]
-                seg_iref = -iref_col[i_out * n_inner:(i_out + 1) * n_inner]
-                I_ref = 10 ** outer_vals[i_out]
-
-                ratio = -seg_ids / (seg_iref + 1e-20)
-                # Nur für VDS > 0.05V sinnvoll
-                mask = vd_axis > 0.05
-                ax_ratio.plot(vd_axis[mask], ratio[mask],
-                              color=PALETTE[i_out % len(PALETTE)],
-                              linewidth=1.8,
-                              label=f"I_ref = {I_ref*1e6:.3f} µA")
-
-                # r_o via Ableitung (smoothed)
-                dV = np.diff(vd_axis)
-                dI = np.diff(seg_ids)
-                ro = dV / (dI + 1e-25)
-                ro_x = (vd_axis[:-1] + vd_axis[1:]) / 2
-                mask2 = (ro_x > 0.1) & (np.abs(ro) < 1e12)
-                if mask2.sum() > 2:
-                    ax_ro.semilogy(ro_x[mask2], np.abs(ro[mask2]),
-                                   color=PALETTE[i_out % len(PALETTE)],
-                                   linewidth=1.5, alpha=0.85)
-
-            ax_ratio.legend(fontsize=8)
-            axes[-1].set_xlabel("V_DS  [V]")
-
-        plt.tight_layout(rect=[0, 0, 1, 0.97])
-        fname = f"{out_prefix}_dc_run{pi+1}.png"
-        fig.savefig(fname, dpi=150, bbox_inches="tight",
-                    facecolor=fig.get_facecolor())
-        print(f"  Plot: {fname}")
-        figs.append(fname)
-        plt.close(fig)
-
-    return figs
-
-
-def plot_mirror_comparison(plots: list[dict], out_prefix: str):
-    """
-    Vergleichs-Plot für mehrere parametrische DC-Runs (z.B. verschiedene W/L).
-    Zeigt I_out@VDS=0.6V und Mirror Ratio als Funktion von I_ref.
-    """
-    dc_plots = [p for p in plots if "dc" in p.get("plotname", "").lower()
-                or "transfer" in p.get("plotname", "").lower()]
-    if len(dc_plots) < 2:
-        return []
-
-    fig, axes = plt.subplots(1, 2, figsize=(14, 5), facecolor="#0d1117")
-    fig.suptitle(f"{Path(dc_plots[0]['filepath']).stem}  —  Parametric Comparison",
-                 fontsize=14, fontweight="bold", color="#e6edf3")
-
-    ax_l = axes[0]
-    ax_r = axes[1]
-    ax_l.set_title("I_out @ V_DS = 0.6 V  vs  I_ref")
-    ax_l.set_xlabel("I_ref  [A]")
-    ax_l.set_ylabel("I_out  [A]")
-    ax_l.set_xscale("log")
-    ax_l.set_yscale("log")
-    ax_l.grid(True, alpha=0.4, which="both")
-
-    ax_r.set_title("Mirror Ratio @ V_DS = 0.6 V  vs  I_ref")
-    ax_r.set_xlabel("I_ref  [A]")
-    ax_r.set_ylabel("I_out / I_ref")
-    ax_r.set_xscale("log")
-    ax_r.grid(True, alpha=0.4)
-    ax_r.axhline(1.0, color="#8b949e", linestyle="--", linewidth=1, alpha=0.7)
-
-    # Ideale Linie
-    i_range = np.logspace(-8, -6, 100)
-    ax_l.plot(i_range, i_range, color="#8b949e", linestyle="--",
-              linewidth=1.2, alpha=0.7, label="ideal (ratio=1)")
-
-    vds_target = 0.6
-    run_labels = [f"Run {i+1}" for i in range(len(dc_plots))]
-
-    for pi, p in enumerate(dc_plots):
-        n_inner, n_outer, vd_axis = detect_sweep_structure(p)
-        outer_vals = np.linspace(-8, -6, n_outer)
-
-        iout_col = get_col(p, "i(vd)")
-        iref_col = get_col(p, "i(vprobe)")
-
-        if iout_col is None:
-            continue
-
-        i_ref_vals, i_out_vals, ratio_vals = [], [], []
-        vds_idx = np.argmin(np.abs(vd_axis - vds_target))
-
-        for i_out_idx in range(n_outer):
-            i_ref = 10 ** outer_vals[i_out_idx]
-            seg_ids = -iout_col[i_out_idx * n_inner:(i_out_idx + 1) * n_inner]
-            i_out_at_vds = seg_ids[vds_idx]
-            i_ref_vals.append(i_ref)
-            i_out_vals.append(i_out_at_vds)
-            if iref_col is not None:
-                seg_iref = -iref_col[i_out_idx * n_inner:(i_out_idx + 1) * n_inner]
-                ratio_vals.append(i_out_at_vds / (seg_iref[vds_idx] + 1e-20))
-            else:
-                ratio_vals.append(i_out_at_vds / (i_ref + 1e-20))
-
-        col = PALETTE[pi % len(PALETTE)]
-        ax_l.plot(i_ref_vals, i_out_vals, "o-", color=col,
-                  linewidth=1.8, markersize=6, label=run_labels[pi])
-        ax_r.plot(i_ref_vals, ratio_vals, "o-", color=col,
-                  linewidth=1.8, markersize=6, label=run_labels[pi])
-
-    ax_l.legend()
-    ax_r.legend()
-    plt.tight_layout(rect=[0, 0, 1, 0.95])
-
-    fname = f"{out_prefix}_comparison.png"
-    fig.savefig(fname, dpi=150, bbox_inches="tight",
-                facecolor=fig.get_facecolor())
-    print(f"  Plot: {fname}")
-    plt.close(fig)
-    return [fname]
-
-
-def plot_op_summary(plots: list[dict], out_prefix: str):
-    """Gibt Operating Point Daten als formatierte Tabelle aus und als PNG."""
-    op_plots = [p for p in plots if "operating" in p.get("plotname", "").lower()
-                or "op" == p.get("plotname", "").lower().strip()]
-    if not op_plots:
-        return []
-
-    figs = []
-    for pi, p in enumerate(op_plots):
-        vnames = [v["name"] for v in p["variables"]]
-        vals = p["data"][0, :]  # 1 Punkt
-
-        # Nur interessante Größen
-        interesting = {
-            "ids": "µA", "gm": "mS", "gds": "µS",
-            "vth": "V", "vgs": "V", "vds": "V",
-            "cgg": "fF", "cgsol": "fF", "cgdol": "fF"
-        }
-        scale = {
-            "µA": 1e6, "mS": 1e3, "µS": 1e6,
-            "V": 1, "fF": 1e15, "mA": 1e3
-        }
-
-        rows = []
-        for i, name in enumerate(vnames):
-            nl = name.lower()
-            for key, unit in interesting.items():
-                if key in nl:
-                    s = scale.get(unit, 1)
-                    rows.append((name, vals[i].real * s, unit))
-                    break
-
-        if not rows:
-            continue
-
-        # Tabellen-Plot
-        fig, ax = plt.subplots(figsize=(10, max(4, len(rows) * 0.4 + 1.5)),
-                               facecolor="#0d1117")
-        ax.set_facecolor("#0d1117")
-        ax.axis("off")
-        fig.suptitle(f"Operating Point — {Path(p['filepath']).stem}",
-                     fontsize=13, fontweight="bold", color="#e6edf3")
-
-        col_labels = ["Variable", "Wert", "Einheit"]
-        table_data = [[r[0], f"{r[1]:.4g}", r[2]] for r in rows]
-
-        tbl = ax.table(
-            cellText=table_data,
-            colLabels=col_labels,
-            cellLoc="left",
-            loc="center",
-            colWidths=[0.6, 0.2, 0.2]
-        )
-        tbl.auto_set_font_size(False)
-        tbl.set_fontsize(9)
-
-        for (row, col), cell in tbl.get_celld().items():
-            cell.set_edgecolor("#30363d")
-            if row == 0:
-                cell.set_facecolor("#21262d")
-                cell.set_text_props(color="#58a6ff", fontweight="bold")
-            else:
-                cell.set_facecolor("#161b22" if row % 2 == 0 else "#0d1117")
-                cell.set_text_props(color="#e6edf3")
-
-        plt.tight_layout()
-        fname = f"{out_prefix}_op_run{pi+1}.png"
-        fig.savefig(fname, dpi=150, bbox_inches="tight",
-                    facecolor=fig.get_facecolor())
-        print(f"  Plot: {fname}")
-        figs.append(fname)
-        plt.close(fig)
-
-    return figs
-
-
-def plot_custom_vars(plots: list[dict], var_list: list[str], out_prefix: str):
-    """Plottet beliebige Variablen aus allen DC-Plots."""
-    dc_plots = [p for p in plots if "dc" in p.get("plotname", "").lower()
-                or "transfer" in p.get("plotname", "").lower()]
-    if not dc_plots:
-        return []
-
-    fig, ax = plt.subplots(figsize=(10, 5), facecolor="#0d1117")
-    ax.set_title(f"Custom Variables: {', '.join(var_list)}")
-    ax.set_xlabel("V_DS  [V]")
-    ax.set_ylabel("Wert")
-    ax.grid(True, alpha=0.4)
-
-    color_idx = 0
-    for pi, p in enumerate(dc_plots):
-        n_inner, n_outer, vd_axis = detect_sweep_structure(p)
-        for var in var_list:
-            col = get_col(p, var)
-            if col is None:
-                print(f"  Warnung: Variable '{var}' nicht in Plot {pi} gefunden.")
+            if i_vd is None:
+                lines.append("  (Kein i(vd) gefunden)")
                 continue
-            for i_out in range(n_outer):
-                seg = col[i_out * n_inner:(i_out + 1) * n_inner]
-                label = f"Run{pi+1} {var} [sweep{i_out}]" if n_outer > 1 else f"Run{pi+1} {var}"
-                ax.plot(vd_axis, seg.real, color=PALETTE[color_idx % len(PALETTE)],
-                        linewidth=1.6, label=label)
-                color_idx += 1
 
-    ax.legend(fontsize=8)
-    plt.tight_layout()
-    fname = f"{out_prefix}_custom.png"
-    fig.savefig(fname, dpi=150, bbox_inches="tight",
-                facecolor=fig.get_facecolor())
-    print(f"  Plot: {fname}")
-    plt.close(fig)
-    return [fname]
+            iref_list = logi_to_iref(n_outer)
+            vds_idx   = min(range(len(vds_axis)), key=lambda i: abs(vds_axis[i] - 0.6))
 
+            lines.append(f"  {n_outer} IRef-Kurven × {n_inner} VDS-Punkte"
+                         f"  (VDS {vds_axis[0]:.2f}…{vds_axis[-1]:.2f} V)")
+            lines.append(f"  {'IRef':>10}  {'Iout@0.6V':>12}  {'Ratio':>8}  {'ro@0.6V':>12}")
 
-# ─── Summary Stats ────────────────────────────────────────────────────────────
+            for k in range(n_outer):
+                # Vorzeichen: Iout = -i(vd),  IRef = i(vprobe)
+                Iout = [-i_vd[k * n_inner + j]     for j in range(n_inner)]
+                IRef =  i_vprobe[k * n_inner + vds_idx] if i_vprobe else iref_list[k]
 
-def print_summary(plots: list[dict]):
-    """Gibt eine Zusammenfassung der wichtigsten Kennwerte aus."""
-    print("\n" + "═" * 65)
-    print("  SIMULATION SUMMARY")
-    print("═" * 65)
+                ratio = Iout[vds_idx] / (IRef + 1e-30)
 
-    for pi, p in enumerate(plots):
-        pname = p.get("plotname", "?")
-        npts = p.get("npoints", "?")
-        nvars = p.get("nvars", "?")
-        print(f"\n  [{pi}] {pname}  |  {npts} Punkte  |  {nvars} Variablen")
+                # r_o = median(dVDS/dIout) im linearen Bereich
+                ro_samples = [
+                    abs((vds_axis[j] - vds_axis[j-1]) / (Iout[j] - Iout[j-1] + 1e-30))
+                    for j in range(1, n_inner)
+                    if 0.3 < (vds_axis[j] + vds_axis[j-1]) / 2 < 0.9
+                ]
+                ro = sorted(ro_samples)[len(ro_samples) // 2] if ro_samples else float("nan")
 
-        if "dc" in pname.lower() or "transfer" in pname.lower():
-            n_inner, n_outer, vd_axis = detect_sweep_structure(p)
-            outer_vals = np.linspace(-8, -6, n_outer)
+                lines.append(f"  {si(IRef,'A'):>10}  {si(Iout[vds_idx],'A'):>12}"
+                             f"  {ratio:>8.5f}  {si(ro,'Ω'):>12}")
 
-            iout_col = get_col(p, "i(vd)")
-            iref_col = get_col(p, "i(vprobe)")
-
-            if iout_col is not None:
-                vds_idx = np.argmin(np.abs(vd_axis - 0.6))
-                print(f"      Sweep: {n_outer} IRef-Kurven × {n_inner} VDS-Punkte")
-                print(f"      {'IRef':>10}  {'Iout@0.6V':>12}  {'Ratio':>8}  {'ro@0.6V':>12}")
-                print(f"      {'─'*10}  {'─'*12}  {'─'*8}  {'─'*12}")
-
-                for i_out in range(n_outer):
-                    i_ref = 10 ** outer_vals[i_out]
-                    seg_ids = -iout_col[i_out * n_inner:(i_out + 1) * n_inner]
-                    i_at_vds = seg_ids[vds_idx]
-
-                    # r_o Schätzung
-                    dV = np.diff(vd_axis)
-                    dI = np.diff(seg_ids)
-                    mask = (vd_axis[:-1] > 0.4) & (vd_axis[:-1] < 0.8)
-                    ro = np.median(np.abs(dV[mask] / (dI[mask] + 1e-25))) if mask.sum() > 0 else float("nan")
-
-                    ratio = i_at_vds / (i_ref + 1e-20)
-                    print(f"      {i_ref*1e6:>8.3f}µA  {i_at_vds*1e6:>10.4f}µA  {ratio:>8.4f}  {ro:>10.2e}Ω")
-
-        elif "operating" in pname.lower():
-            # Zeige wichtige OP-Parameter
-            for v in p["variables"]:
-                if any(k in v["name"].lower() for k in ["ids", "gm", "vth"]):
-                    val = p["data"][0, v["idx"]]
-                    print(f"      {v['name']:<45}  {val:.4e}  {v['type']}")
+    lines.append("\n" + "═" * 68)
+    return "\n".join(lines)
 
 
-# ─── Main ─────────────────────────────────────────────────────────────────────
+# ─── CSV Export ────────────────────────────────────────────────────────────────
+
+def write_csv(plot, path):
+    n_inner, n_outer, _ = detect_outer_sweep(plot)
+    col_names = ",".join(name for (_, name, _) in plot["vars"])
+
+    with open(path, "w") as f:
+        f.write(f"sweep_idx,{col_names}\n")
+        for k in range(n_outer):
+            for j in range(n_inner):
+                row = plot["data"][k * n_inner + j]
+                f.write(f"{k}," + ",".join(f"{v:.6e}" for v in row) + "\n")
+
+
+# ─── SVG Chart ─────────────────────────────────────────────────────────────────
+#
+# Series format: [(label, [x...], [y...], color), ...]
+
+COLORS = ["#58a6ff","#3fb950","#ff7b72","#d2a8ff","#ffa657",
+          "#79c0ff","#56d364","#ff9492","#bc8cff","#ffb86c"]
+
+def make_svg(width, height, title, series, xlabel, ylabel,
+             xlog=False, ylog=False, hline=None):
+
+    PAD_L, PAD_R, PAD_T, PAD_B = 72, 20, 36, 48
+    W = width  - PAD_L - PAD_R
+    H = height - PAD_T - PAD_B
+
+    # Data range
+    all_x = [x for (_, xs, ys, _) in series for x in xs
+              if math.isfinite(x) and (x > 0 if xlog else True)]
+    all_y = [y for (_, xs, ys, _) in series for y in ys
+              if math.isfinite(y) and (y > 0 if ylog else True)]
+    if not all_x or not all_y:
+        return f'<svg width="{width}" height="{height}" style="background:#161b22"></svg>'
+
+    x_min, x_max = min(all_x), max(all_x)
+    y_min, y_max = min(all_y), max(all_y)
+    if x_min == x_max: x_max = x_min + 1
+    if y_min == y_max: y_max = y_min * 10 if y_min > 0 else y_min + 1
+
+    def to_px(x, lo, hi, out_size, log):
+        if log:
+            lx = math.log10(max(x,  1e-300))
+            ll = math.log10(max(lo, 1e-300))
+            lh = math.log10(max(hi, 1e-300))
+            return (lx - ll) / (lh - ll + 1e-30) * out_size
+        return (x - lo) / (hi - lo) * out_size
+
+    def px(x): return PAD_L + to_px(x, x_min, x_max, W, xlog)
+    def py(y): return PAD_T + H - to_px(y, y_min, y_max, H, ylog)
+
+    def nice_ticks(lo, hi, n=6):
+        if hi <= lo: return [lo]
+        step = (hi - lo) / n
+        mag  = 10 ** math.floor(math.log10(step))
+        step = min([1, 2, 2.5, 5, 10], key=lambda s: abs(s * mag - step)) * mag
+        v    = math.ceil(lo / step) * step
+        ticks = []
+        while v <= hi + step * 0.01:
+            ticks.append(round(v, 12)); v += step
+        return ticks
+
+    def log_ticks(lo, hi):
+        e0 = math.floor(math.log10(max(lo, 1e-300)))
+        e1 = math.ceil( math.log10(max(hi, 1e-300)))
+        return [10.0 ** e for e in range(int(e0), int(e1) + 1)]
+
+    def fmt(v):
+        a = abs(v)
+        for d, p in ((1e9,"G"),(1e6,"M"),(1e3,"k"),(1,""),(1e-3,"m"),(1e-6,"µ"),(1e-9,"n"),(1e-12,"p")):
+            if a / d >= 0.999 and a / d < 1000: return f"{v/d:.3g}{p}"
+        return f"{v:.2e}"
+
+    x_ticks = log_ticks(x_min, x_max) if xlog else nice_ticks(x_min, x_max, 7)
+    y_ticks = log_ticks(y_min, y_max) if ylog else nice_ticks(y_min, y_max, 6)
+    clip_id = f"c{abs(hash(title)) % 99999}"
+
+    svg = []
+    svg.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
+               f'style="background:#161b22;border-radius:6px;display:block;margin:4px">')
+    svg.append(f'<defs><clipPath id="{clip_id}">'
+               f'<rect x="{PAD_L}" y="{PAD_T}" width="{W}" height="{H}"/></clipPath></defs>')
+
+    # Grid lines + tick labels
+    for xv in x_ticks:
+        xp = px(xv)
+        if PAD_L <= xp <= PAD_L + W:
+            svg.append(f'<line x1="{xp:.1f}" y1="{PAD_T}" x2="{xp:.1f}" y2="{PAD_T+H}" stroke="#21262d"/>')
+            svg.append(f'<text x="{xp:.1f}" y="{PAD_T+H+14}" fill="#8b949e" font-size="10" '
+                       f'text-anchor="middle" font-family="monospace">{fmt(xv)}</text>')
+    for yv in y_ticks:
+        yp = py(yv)
+        if PAD_T <= yp <= PAD_T + H:
+            svg.append(f'<line x1="{PAD_L}" y1="{yp:.1f}" x2="{PAD_L+W}" y2="{yp:.1f}" stroke="#21262d"/>')
+            svg.append(f'<text x="{PAD_L-4}" y="{yp+4:.1f}" fill="#8b949e" font-size="10" '
+                       f'text-anchor="end" font-family="monospace">{fmt(yv)}</text>')
+
+    svg.append(f'<rect x="{PAD_L}" y="{PAD_T}" width="{W}" height="{H}" '
+               f'fill="none" stroke="#30363d" stroke-width="1.5"/>')
+
+    # Optional horizontal reference line
+    if hline is not None and y_min <= hline <= y_max:
+        yp = py(hline)
+        svg.append(f'<line x1="{PAD_L}" y1="{yp:.1f}" x2="{PAD_L+W}" y2="{yp:.1f}" '
+                   f'stroke="#555" stroke-dasharray="5,4"/>')
+
+    # Data series
+    for (label, xs, ys, color) in series:
+        points = []
+        for x, y in zip(xs, ys):
+            if not (math.isfinite(x) and math.isfinite(y)): continue
+            if xlog and x <= 0: continue
+            if ylog and y <= 0: continue
+            points.append(f"{px(x):.1f},{py(y):.1f}")
+        if points:
+            svg.append(f'<polyline clip-path="url(#{clip_id})" points="{" ".join(points)}" '
+                       f'fill="none" stroke="{color}" stroke-width="1.8" '
+                       f'stroke-linejoin="round" stroke-linecap="round"/>')
+
+    # Legend (top-right, inside plot)
+    for i, (label, _, _, color) in enumerate(series[:8]):
+        lx = PAD_L + W - 8
+        ly = PAD_T + 8 + i * 16
+        svg.append(f'<line x1="{lx-26}" y1="{ly+4}" x2="{lx-3}" y2="{ly+4}" '
+                   f'stroke="{color}" stroke-width="2"/>')
+        svg.append(f'<text x="{lx-29}" y="{ly+8}" fill="#c9d1d9" font-size="9" '
+                   f'text-anchor="end" font-family="monospace">{label}</text>')
+
+    # Axis labels + title
+    svg.append(f'<text x="{PAD_L+W//2}" y="{height-5}" fill="#8b949e" font-size="11" '
+               f'text-anchor="middle" font-family="monospace">{xlabel}</text>')
+    svg.append(f'<text x="11" y="{PAD_T+H//2}" fill="#8b949e" font-size="11" '
+               f'text-anchor="middle" font-family="monospace" '
+               f'transform="rotate(-90,11,{PAD_T+H//2})">{ylabel}</text>')
+    svg.append(f'<text x="{PAD_L+W//2}" y="{PAD_T-10}" fill="#e6edf3" font-size="12" '
+               f'font-weight="bold" text-anchor="middle" font-family="monospace">{title}</text>')
+    svg.append("</svg>")
+    return "\n".join(svg)
+
+
+# ─── HTML Report ───────────────────────────────────────────────────────────────
+
+HTML_CSS = """
+* { box-sizing: border-box; margin: 0; padding: 0 }
+body { background: #0d1117; color: #e6edf3; font-family: 'Courier New', monospace;
+       padding: 28px; line-height: 1.5 }
+h1   { color: #58a6ff; font-size: 1.3em; margin-bottom: 4px }
+h2   { color: #79c0ff; font-size: 1.0em; margin: 28px 0 10px;
+       padding-bottom: 5px; border-bottom: 1px solid #30363d }
+.sub { color: #8b949e; font-size: .82em; font-weight: normal }
+.row { display: flex; flex-wrap: wrap; gap: 6px }
+pre  { background: #161b22; border: 1px solid #30363d; border-radius: 6px;
+       padding: 14px; font-size: .79em; overflow-x: auto; color: #c9d1d9; margin: 14px 0 }
+table { border-collapse: collapse; font-size: .83em }
+th, td { padding: 5px 14px; border-bottom: 1px solid #21262d }
+th { background: #21262d; color: #58a6ff }
+tr:hover td { background: #161b22 }
+"""
+
+def make_html(plots, summary_text, path):
+    stem     = Path(path).stem
+    sections = []
+
+    for pi, plot in enumerate(plots):
+        name = plot["name"]
+
+        # ── Operating Point: einfache Tabelle ──────────────────────────
+        if "operating" in name.lower():
+            rows = ""
+            for (idx, var_name, var_type) in plot["vars"]:
+                if any(k in var_name.lower() for k in INTERESTING_KEYS):
+                    value = plot["data"][0][idx]
+                    unit  = UNIT_OF.get(var_type, "")
+                    rows += f"<tr><td>{var_name}</td><td>{si(value, unit)}</td></tr>"
+            if rows:
+                sections.append(
+                    f"<h2>Operating Point &mdash; Run {pi+1}</h2>"
+                    f"<table><tr><th>Variable</th><th>Wert</th></tr>{rows}</table>")
+            continue
+
+        if not ("dc" in name.lower() or "transfer" in name.lower()):
+            continue
+
+        # ── DC Sweep: drei Charts ───────────────────────────────────────
+        n_inner, n_outer, vds_axis = detect_outer_sweep(plot)
+        i_vd     = get_col(plot, "i(vd)")
+        i_vprobe = get_col(plot, "i(vprobe)")
+
+        if i_vd is None:
+            continue
+
+        iref_list = logi_to_iref(n_outer)
+        labels    = [si(iref, "A") for iref in iref_list]
+
+        def curve_slice(col, k):
+            return [col[k * n_inner + j] for j in range(n_inner)]
+
+        # Chart 1: Iout vs VDS
+        series_ids = []
+        for k in range(n_outer):
+            Iout = [-v for v in curve_slice(i_vd, k)]   # Iout = -i(vd)
+            series_ids.append((labels[k], vds_axis, Iout, COLORS[k % len(COLORS)]))
+
+        # Chart 2: Mirror Ratio = -i(vd) / i(vprobe) = Iout / IRef
+        series_ratio = []
+        if i_vprobe:
+            for k in range(n_outer):
+                Iout = [-v for v in curve_slice(i_vd, k)]
+                IRef =        curve_slice(i_vprobe, k)      # IRef = +i(vprobe)
+                xs   = [vds_axis[j] for j in range(n_inner) if vds_axis[j] > 0.05]
+                ys   = [Iout[j] / (IRef[j] + 1e-30) for j in range(n_inner) if vds_axis[j] > 0.05]
+                series_ratio.append((labels[k], xs, ys, COLORS[k % len(COLORS)]))
+
+        # Chart 3: r_o vs VDS (log Y)
+        series_ro = []
+        for k in range(n_outer):
+            Iout = [-v for v in curve_slice(i_vd, k)]
+            xs, ys = [], []
+            for j in range(1, n_inner):
+                vds_mid = (vds_axis[j] + vds_axis[j-1]) / 2
+                dVDS    =  vds_axis[j] - vds_axis[j-1]
+                dIout   =  Iout[j]    - Iout[j-1]
+                if vds_mid > 0.05 and abs(dIout) > 1e-30:
+                    xs.append(vds_mid)
+                    ys.append(abs(dVDS / dIout))
+            series_ro.append((labels[k], xs, ys, COLORS[k % len(COLORS)]))
+
+        sub = f"{n_outer} I_ref &times; {n_inner} V_DS"
+        sections.append(
+            f"<h2>DC Sweep &mdash; Run {pi+1} <span class=sub>({sub})</span></h2>"
+            f"<div class=row>"
+            f"{make_svg(640, 310, 'I_out vs V_DS', series_ids, 'V_DS [V]', 'I_out [A]')}"
+            + (f"{make_svg(640, 270, 'Mirror Ratio I_out/I_ref', series_ratio, 'V_DS [V]', 'I_out / I_ref', hline=1.0)}" if series_ratio else "")
+            + f"{make_svg(640, 270, 'r_o vs V_DS', series_ro, 'V_DS [V]', 'r_o [Ω]', ylog=True)}"
+            f"</div>")
+
+    # ── Parametric Comparison: alle DC-Runs zusammen ───────────────────
+    dc_plots = [p for p in plots
+                if "dc" in p["name"].lower() or "transfer" in p["name"].lower()]
+
+    if len(dc_plots) >= 2:
+        series_iout  = []
+        series_ratio = []
+
+        for pi, plot in enumerate(dc_plots):
+            n_inner, n_outer, vds_axis = detect_outer_sweep(plot)
+            i_vd     = get_col(plot, "i(vd)")
+            i_vprobe = get_col(plot, "i(vprobe)")
+            if i_vd is None: continue
+
+            vds_idx = min(range(len(vds_axis)), key=lambda i: abs(vds_axis[i] - 0.6))
+            xs = logi_to_iref(n_outer)
+
+            Iout_at_vds = [-i_vd    [k * n_inner + vds_idx] for k in range(n_outer)]
+            IRef_at_vds = [ i_vprobe[k * n_inner + vds_idx] for k in range(n_outer)] if i_vprobe else xs
+            ratio_at_vds = [Iout_at_vds[k] / (IRef_at_vds[k] + 1e-30) for k in range(n_outer)]
+
+            color = COLORS[pi % len(COLORS)]
+            series_iout .append((f"Run {pi+1}", xs, Iout_at_vds,  color))
+            series_ratio.append((f"Run {pi+1}", xs, ratio_at_vds, color))
+
+        # Ideallinie
+        all_x = sorted({x for (_, xs, _, _) in series_iout for x in xs})
+        series_iout.append(("ideal", all_x, all_x, "#555"))
+
+        sections.append(
+            "<h2>Parametric Comparison &mdash; alle Runs</h2>"
+            "<div class=row>"
+            + make_svg(640, 300, "I_out @ V_DS=0.6V vs I_ref", series_iout,
+                       "I_ref [A]", "I_out [A]", xlog=True, ylog=True)
+            + make_svg(640, 280, "Mirror Ratio vs I_ref", series_ratio,
+                       "I_ref [A]", "I_out / I_ref", xlog=True, hline=1.0)
+            + "</div>")
+
+    return (f"<!DOCTYPE html><html lang=de><head><meta charset=UTF-8>"
+            f"<title>{stem}</title><style>{HTML_CSS}</style></head><body>"
+            f"<h1>ngspice RAW &mdash; {stem}</h1>"
+            f"<pre>{summary_text}</pre>"
+            + "".join(sections)
+            + "</body></html>")
+
+
+# ─── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="IHP 130nm ngspice .raw Analyzer",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog=__doc__
-    )
-    parser.add_argument("rawfile", help="Pfad zur .raw Datei")
-    parser.add_argument("--out", default=None,
-                        help="Ausgabe-Präfix (Default: Dateiname ohne Erweiterung)")
-    parser.add_argument("--list-vars", action="store_true",
-                        help="Alle Variablen auflisten und beenden")
-    parser.add_argument("--no-csv", action="store_true",
-                        help="Kein CSV-Export")
-    parser.add_argument("--no-plot", action="store_true",
-                        help="Keine Grafiken")
-    parser.add_argument("--vars", default=None,
-                        help="Komma-getrennte Variablen für Custom-Plot, z.B. 'i(vd),v(vg)'")
-    parser.add_argument("--plot-type", default="auto",
-                        choices=["auto", "mirror", "basic"],
-                        help="Plot-Typ: auto, mirror (Current Mirror Analyse), basic")
-    parser.add_argument("--outdir", default=".",
-                        help="Ausgabe-Verzeichnis")
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("raw")
+    ap.add_argument("--outdir",    default=".")
+    ap.add_argument("--csv",       action="store_true", help="CSV-Dateien exportieren")
+    ap.add_argument("--list-vars", action="store_true", help="Variablen auflisten")
+    args = ap.parse_args()
 
-    args = parser.parse_args()
+    if not os.path.exists(args.raw):
+        sys.exit(f"Fehler: '{args.raw}' nicht gefunden.")
 
-    rawfile = args.rawfile
-    if not os.path.exists(rawfile):
-        print(f"Fehler: Datei '{rawfile}' nicht gefunden.")
-        sys.exit(1)
-
-    out_prefix = args.out or Path(rawfile).stem
-    out_prefix = os.path.join(args.outdir, out_prefix)
     os.makedirs(args.outdir, exist_ok=True)
+    stem = os.path.join(args.outdir, Path(args.raw).stem)
 
-    print(f"\n{'═'*65}")
-    print(f"  IHP 130nm ngspice RAW Analyzer")
-    print(f"  Datei: {rawfile}")
-    print(f"{'═'*65}")
-
-    # Parse
-    print("\n  Parsing RAW file...")
-    plots = parse_raw(rawfile)
-    print(f"  → {len(plots)} Plot(s) gefunden.")
+    plots = parse_raw(args.raw)
+    print(f"{len(plots)} plot(s) in {args.raw}\n")
 
     if args.list_vars:
-        list_variables(plots)
+        for pi, plot in enumerate(plots):
+            print(f"[{pi}] {plot['name']}  ({plot['np']} pts, {plot['nv']} vars)")
+            for (idx, name, kind) in plot["vars"]:
+                print(f"  {idx:3d}  {name:<50}  {kind}")
         return
 
-    # Summary
-    print_summary(plots)
+    summary = make_summary(plots, args.raw)
+    print(summary)
 
-    all_outputs = []
+    open(f"{stem}_summary.txt", "w").write(summary)
+    print(f"\n→ {stem}_summary.txt")
 
-    # CSV Export
-    if not args.no_csv:
-        print("\n  CSV-Export:")
-        csv_files = export_csv(plots, out_prefix)
-        all_outputs.extend(csv_files)
+    if args.csv:
+        for pi, plot in enumerate(plots):
+            slug = re.sub(r"\W", "_", plot["name"]).lower()
+            out  = f"{stem}_{slug}.csv"
+            write_csv(plot, out)
+            print(f"→ {out}")
 
-    # Plots
-    if not args.no_plot:
-        print("\n  Grafiken:")
-
-        # OP Summary
-        op_figs = plot_op_summary(plots, out_prefix)
-        all_outputs.extend(op_figs)
-
-        # DC Sweeps
-        dc_figs = plot_dc_sweep(plots, out_prefix)
-        all_outputs.extend(dc_figs)
-
-        # Mirror Comparison (wenn mehrere DC-Runs vorhanden)
-        dc_count = sum(1 for p in plots if "dc" in p.get("plotname", "").lower()
-                       or "transfer" in p.get("plotname", "").lower())
-        if dc_count >= 2 and args.plot_type in ("auto", "mirror"):
-            comp_figs = plot_mirror_comparison(plots, out_prefix)
-            all_outputs.extend(comp_figs)
-
-        # Custom Vars
-        if args.vars:
-            var_list = [v.strip() for v in args.vars.split(",")]
-            custom_figs = plot_custom_vars(plots, var_list, out_prefix)
-            all_outputs.extend(custom_figs)
-
-    print(f"\n{'═'*65}")
-    print(f"  Fertig! {len(all_outputs)} Dateien erstellt:")
-    for f in all_outputs:
-        print(f"    {f}")
-    print(f"{'═'*65}\n")
+    html = make_html(plots, summary, args.raw)
+    open(f"{stem}.html", "w").write(html)
+    print(f"→ {stem}.html")
 
 
 if __name__ == "__main__":
