@@ -130,8 +130,8 @@ save all
 op
 write test_ncmirror.raw
 set appendwrite
-foreach l_val 5u
-  foreach lc_val 0.5u 2u 5u
+foreach l_val 5u 20u
+  foreach lc_val 2u 20u
     alterparam l = $l_val
     alterparam lc = $lc_val
     reset
