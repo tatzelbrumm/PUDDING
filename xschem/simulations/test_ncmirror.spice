@@ -1,14 +1,16 @@
-** sch_path: /home/cmaier/EDA/PUDDING/xschem/test_nmirror.sch
-**.subckt test_nmirror
-XMsrc Vd Vg GND GND sg13_hv_nmos w=w l=l ng=1 m=1
-XMref Vg Vg GND GND sg13_hv_nmos w=w l=l ng=1 m=1
-Vprobe GND net1 0
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/test_ncmirror.sch
+**.subckt test_ncmirror
+XMsrc Vdsrc Vg GND GND sg13_hv_nmos w=w l=l ng=1 m=1
+XMref Vdref Vg GND GND sg13_hv_nmos w=w l=l ng=1 m=1
+Vprobe GND vss 0
 .save i(vprobe)
-G1 net1 Vg CUR=' 10**V(logI) '
+G1 vss Vg CUR=' 10**V(logI) '
 VlogI logI GND {logI}
 .save i(vlogi)
 Vd Vd GND {vout}
 .save i(vd)
+XMcsrc Vd Vg Vdsrc GND sg13_hv_nmos w=w l=lc ng=1 m=1
+XMcref Vg Vg Vdref GND sg13_hv_nmos w=w l=lc ng=1 m=1
 **** begin user architecture code
 
 
@@ -19,7 +21,8 @@ Vd Vd GND {vout}
 
 * device parameters
 .param l      = 5u
-.param w      = 1u
+.param lc     = 1u
+.param w      = 2u
 * instrumentation parameters
 .param logI=-7
 .param vout=0.6
@@ -28,24 +31,24 @@ Vd Vd GND {vout}
 
 
 
-.include test_nmirror.save
+.include test_ncmirror.save
 .temp=27
 .options gmin=1e-15 abstol=1p method=gear
 .options savecurrents
 .control
 save all
 op
-write test_nmirror.raw
+write test_ncmirror.raw
 set appendwrite
 foreach l_val 5u
-  foreach w_val 1u 2u
+  foreach lc_val 0.5u 2u 5u
     alterparam l = $l_val
-    alterparam w = $w_val
+    alterparam lc = $lc_val
     reset
     save all
     dc Vd 0 1.2 10m VlogI -8 -6 0.5
-    write test_nmirror.raw
-    plot Vg Vd
+    write test_ncmirror.raw
+    plot Vg Vd Vdref Vdsrc
     plot vprobe#branch 0-vd#branch
     plot 2*(vprobe#branch+vd#branch)/(vprobe#branch-vd#branch)
   end

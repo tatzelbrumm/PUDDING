@@ -104,7 +104,7 @@ xschem setprop rect 2 0 fullxzoom
 }
 C {devices/code_shown.sym} 20 -490 0 0 {name=params only_toplevel=false value="* device parameters
 .param l      = 5u
-.param lc     = 0.5u
+.param lc     = 1u
 .param w      = 2u
 * instrumentation parameters
 .param logI=-7
@@ -130,14 +130,14 @@ save all
 op
 write test_ncmirror.raw
 set appendwrite
-foreach l_val 5u 20u
-  foreach w_val 2u
+foreach l_val 5u
+  foreach lc_val 0.5u 2u 5u
     alterparam l = $l_val
-    alterparam w = $w_val
+    alterparam lc = $lc_val
     reset
     save all
     dc Vd 0 1.2 10m VlogI -8 -6 0.5
-    write test_nmirror.raw
+    write test_ncmirror.raw
     plot Vg Vd Vdref Vdsrc
     plot vprobe#branch 0-vd#branch
     plot 2*(vprobe#branch+vd#branch)/(vprobe#branch-vd#branch)
