@@ -29,9 +29,10 @@ module heichips25_pudding(
     wire [1:0] dacout;
     wire [3:0] vdda;
     // List all unused inputs to prevent warnings
-    wire _unused = &{ena, uio_in[7:0], ui_in[7:5], vdda[3:0], iref[3:0], bias[3:0], dacout[1:0]};
+    wire _unused = &{ena, uio_in[7:0], ui_in[7:6], vdda[3:0], iref[3:0], bias[3:0], dacout[1:0]};
 
-    logic[3:0] stateen, stateenp, stateenn;
+    logic[3:0] dacen0, dacenp0, dacenn0;
+    logic[3:0] dacen1, dacenp1, dacenn1;
 
     logic datum, shift, transfer, dir;
 
@@ -43,7 +44,8 @@ module heichips25_pudding(
     assign transfer = ui_in[2];
     assign dir      = ui_in[3];
 
-    assign stateen = {4{ui_in[4]}};
+    assign dacen0 = {4{ui_in[4]}};
+    assign dacen1 = {4{ui_in[5]}};
 
     always_ff @(posedge clk or negedge rst_n) 
     begin
@@ -73,10 +75,16 @@ assign uo_out  = daisychain[63:56];
 assign uio_out = state[63:56];
 assign uio_oe  = 8'hFF;
 
-    digital4 digitalen (
-    .in(stateen[3:0]),
-    .outp(stateenp[3:0]),
-    .outn(stateenn[3:0])
+    digital4 digitalen0 (
+    .in(dacen0[3:0]),
+    .outp(dacenp0[3:0]),
+    .outn(dacenn0[3:0])
+    );
+
+    digital4 digitalen1 (
+    .in(dacen1[3:0]),
+    .outp(dacenp1[3:0]),
+    .outn(dacenn1[3:0])
     );
 
 
@@ -86,8 +94,8 @@ assign uio_oe  = 8'hFF;
     .VbiasP(bias[1:0]),
     .ON(state[31:0]),
     .ONB(~state[31:0]),
-    .EN(stateenp[3:0]),
-    .ENB(stateenn[3:0]),
+    .EN(dacenp0[3:0]),
+    .ENB(dacenn0[3:0]),
     .VDD(VPWR),
     .VSS(VGND)
     );
@@ -98,8 +106,8 @@ assign uio_oe  = 8'hFF;
     .VbiasP(bias[3:2]),
     .ON(state[63:32]),
     .ONB(~state[63:32]),
-    .EN(stateenp[3:0]),
-    .ENB(stateenn[3:0]),
+    .EN(dacenp1[3:0]),
+    .ENB(dacenn1[3:0]),
     .VDD(VPWR),
     .VSS(VGND)
     );
