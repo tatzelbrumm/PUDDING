@@ -7,90 +7,90 @@ MACRO analog_wires
   FOREIGN analog_wires ;
   ORIGIN 0.000 0.000 ;
   SIZE 99.600 BY 188.000 ;
-  PIN VcascP[2]
-    PORT
-      LAYER Metal3 ;
-        RECT 0.000 112.560 10.910 113.260 ;
-    END
-  END VcascP[2]
-  PIN VcascP[3]
-    PORT
-      LAYER Metal3 ;
-        RECT 0.000 128.930 10.910 129.630 ;
-    END
-  END VcascP[3]
-  PIN Iout[1]
-    PORT
-      LAYER Metal3 ;
-        RECT 0.000 120.745 21.910 121.445 ;
-    END
-  END Iout[1]
-  PIN VDDA[2]
-    PORT
-      LAYER Metal3 ;
-        RECT 0.000 113.660 20.700 115.390 ;
-    END
-  END VDDA[2]
-  PIN VDDA[3]
-    PORT
-      LAYER Metal3 ;
-        RECT 0.000 126.800 20.700 128.530 ;
-    END
-  END VDDA[3]
-  PIN VbiasP[3]
-    PORT
-      LAYER Metal3 ;
-        RECT 0.000 122.045 21.910 122.745 ;
-    END
-  END VbiasP[3]
-  PIN VbiasP[2]
-    PORT
-      LAYER Metal3 ;
-        RECT 0.000 119.445 21.910 120.145 ;
-    END
-  END VbiasP[2]
   PIN VcascP[0]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 62.560 10.910 63.260 ;
+        RECT 0.000 42.560 10.910 43.260 ;
     END
   END VcascP[0]
   PIN VcascP[1]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 78.930 10.910 79.630 ;
+        RECT 0.000 58.930 10.910 59.630 ;
     END
   END VcascP[1]
   PIN Iout[0]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 70.745 21.910 71.445 ;
+        RECT 0.000 50.745 21.910 51.445 ;
     END
   END Iout[0]
   PIN VDDA[0]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 63.660 20.700 65.390 ;
+        RECT 0.000 43.660 20.700 45.390 ;
     END
   END VDDA[0]
   PIN VDDA[1]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 76.800 20.700 78.530 ;
+        RECT 0.000 56.800 20.700 58.530 ;
     END
   END VDDA[1]
   PIN VbiasP[1]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 72.045 21.910 72.745 ;
+        RECT 0.000 52.045 21.910 52.745 ;
     END
   END VbiasP[1]
   PIN VbiasP[0]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 69.445 21.910 70.145 ;
+        RECT 0.000 49.445 21.910 50.145 ;
     END
   END VbiasP[0]
+  PIN VcascP[2]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 132.560 10.910 133.260 ;
+    END
+  END VcascP[2]
+  PIN VcascP[3]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 148.930 10.910 149.630 ;
+    END
+  END VcascP[3]
+  PIN Iout[1]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 140.745 21.910 141.445 ;
+    END
+  END Iout[1]
+  PIN VDDA[2]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 133.660 20.700 135.390 ;
+    END
+  END VDDA[2]
+  PIN VDDA[3]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 146.800 20.700 148.530 ;
+    END
+  END VDDA[3]
+  PIN VbiasP[3]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 142.045 21.910 142.745 ;
+    END
+  END VbiasP[3]
+  PIN VbiasP[2]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 139.445 21.910 140.145 ;
+    END
+  END VbiasP[2]
   PIN i_in
     PORT
       LAYER Metal3 ;

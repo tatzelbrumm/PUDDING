@@ -1,41 +1,58 @@
 magic
 tech ihp-sg13g2
 magscale 1 2
-timestamp 1771122832
-<< metal1 >>
-rect 0 19149 340 19289
-<< metal2 >>
-rect 460 17512 600 20926
+timestamp 1773342836
 << metal3 >>
+rect 0 29786 2182 29926
+rect 0 29360 4140 29706
+rect 0 28409 4382 28549
+rect 0 28149 4382 28289
+rect 0 27889 4382 28029
+rect 0 26732 4140 27078
+rect 0 26512 2182 26652
 rect 0 20786 19920 20926
-rect 200 19149 19920 19289
-rect 0 17512 600 17652
-use via_stack$1  via_stack$1_0
-timestamp 1771122832
-transform 1 0 270 0 1 19219
-box -70 -70 70 70
-use via_stack  via_stack_0
-timestamp 1771122832
-transform 1 0 530 0 1 20856
-box -70 -70 70 70
-use via_stack  via_stack_1
-timestamp 1771122832
-transform 1 0 530 0 1 17582
-box -70 -70 70 70
+rect 0 19149 19920 19289
+rect 0 11786 2182 11926
+rect 0 11360 4140 11706
+rect 0 10409 4382 10549
+rect 0 10149 4382 10289
+rect 0 9889 4382 10029
+rect 0 8732 4140 9078
+rect 0 8512 2182 8652
 << labels >>
-flabel metal3 s 19840 20786 19920 20926 0 FreeSans 800 0 0 0 i_in
+flabel metal3 s 0 8512 80 8652 0 FreeSans 800 0 0 0 VcascP[0]
 port 2 nsew
-flabel metal3 s 19840 19149 19920 19289 0 FreeSans 800 0 0 0 i_out
+flabel metal3 s 0 11786 80 11926 0 FreeSans 800 0 0 0 VcascP[1]
 port 3 nsew
-flabel metal3 s 19880 20856 19880 20856 0 FreeSans 800 0 0 0 i_in
-flabel metal3 s 19880 19219 19880 19219 0 FreeSans 800 0 0 0 i_out
-flabel metal3 s 0 20786 80 20926 0 FreeSans 800 0 0 0 VcascP[1]
+flabel metal3 s 0 10149 80 10289 0 FreeSans 800 0 0 0 Iout[0]
 port 4 nsew
-flabel metal3 s 0 17512 80 17652 0 FreeSans 800 0 0 0 VcascP[0]
+flabel metal3 s 0 8732 80 9078 0 FreeSans 800 0 0 0 VDDA[0]
 port 5 nsew
-flabel metal1 s 0 19149 80 19289 0 FreeSans 800 0 0 0 Iout
+flabel metal3 s 0 11360 80 11706 0 FreeSans 800 0 0 0 VDDA[1]
 port 6 nsew
+flabel metal3 s 0 10409 80 10549 0 FreeSans 800 0 0 0 VbiasP[1]
+port 7 nsew
+flabel metal3 s 0 9889 80 10029 0 FreeSans 800 0 0 0 VbiasP[0]
+port 8 nsew
+flabel metal3 s 0 26512 80 26652 0 FreeSans 800 0 0 0 VcascP[2]
+port 9 nsew
+flabel metal3 s 0 29786 80 29926 0 FreeSans 800 0 0 0 VcascP[3]
+port 10 nsew
+flabel metal3 s 0 28149 80 28289 0 FreeSans 800 0 0 0 Iout[1]
+port 11 nsew
+flabel metal3 s 0 26732 80 27078 0 FreeSans 800 0 0 0 VDDA[2]
+port 12 nsew
+flabel metal3 s 0 29360 80 29706 0 FreeSans 800 0 0 0 VDDA[3]
+port 13 nsew
+flabel metal3 s 0 28409 80 28549 0 FreeSans 800 0 0 0 VbiasP[3]
+port 14 nsew
+flabel metal3 s 0 27889 80 28029 0 FreeSans 800 0 0 0 VbiasP[2]
+port 15 nsew
+flabel metal3 s 19840 20786 19920 20926 0 FreeSans 800 0 0 0 i_in
+port 16 nsew
+flabel metal3 s 19840 19149 19920 19289 0 FreeSans 800 0 0 0 i_out
+port 17 nsew
 << properties >>
 string FIXED_BBOX 0 0 19920 37600
-string path 0.000 87.910 3.000 87.910 
+string path 0.000 104.280 99.600 104.280 
 << end >>
