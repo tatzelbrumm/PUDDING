@@ -66,7 +66,7 @@
             "Y_WIDTH": "00000000000000000000000000100000"
           },
           "attributes": {
-            "src": "../src/heichips25_pudding.sv:100.10-100.23"
+            "src": "../src/heichips25_pudding.sv:108.10-108.23"
           },
           "port_directions": {
             "A": "input",
@@ -86,7 +86,7 @@
             "Y_WIDTH": "00000000000000000000000000100000"
           },
           "attributes": {
-            "src": "../src/heichips25_pudding.sv:88.10-88.22"
+            "src": "../src/heichips25_pudding.sv:96.10-96.22"
           },
           "port_directions": {
             "A": "input",
@@ -106,7 +106,7 @@
             "WIDTH": "00000000000000000000000001000000"
           },
           "attributes": {
-            "src": "../src/heichips25_pudding.sv:48.5"
+            "src": "../src/heichips25_pudding.sv:50.5"
           },
           "port_directions": {
             "AD": "input",
@@ -132,7 +132,7 @@
             "WIDTH": "00000000000000000000000001000000"
           },
           "attributes": {
-            "src": "../src/heichips25_pudding.sv:48.5"
+            "src": "../src/heichips25_pudding.sv:50.5"
           },
           "port_directions": {
             "AD": "input",
@@ -156,7 +156,7 @@
             "WIDTH": "00000000000000000000000001000000"
           },
           "attributes": {
-            "src": "../src/heichips25_pudding.sv:66.17-66.56|../src/heichips25_pudding.sv:64.18-67.16"
+            "src": "../src/heichips25_pudding.sv:68.17-68.56|../src/heichips25_pudding.sv:66.18-69.16"
           },
           "port_directions": {
             "A": "input",
@@ -179,7 +179,7 @@
           },
           "attributes": {
             "full_case": "00000000000000000000000000000001",
-            "src": "../src/heichips25_pudding.sv:60.21-60.41|../src/heichips25_pudding.sv:59.17-62.41"
+            "src": "../src/heichips25_pudding.sv:62.21-62.41|../src/heichips25_pudding.sv:61.17-64.41"
           },
           "port_directions": {
             "A": "input",
@@ -202,7 +202,7 @@
           },
           "attributes": {
             "full_case": "00000000000000000000000000000001",
-            "src": "../src/heichips25_pudding.sv:59.17-62.41|../src/heichips25_pudding.sv:57.13-67.16"
+            "src": "../src/heichips25_pudding.sv:61.17-64.41|../src/heichips25_pudding.sv:59.13-69.16"
           },
           "port_directions": {
             "A": "input",
@@ -225,7 +225,7 @@
           },
           "attributes": {
             "full_case": "00000000000000000000000000000001",
-            "src": "../src/heichips25_pudding.sv:60.21-60.41|../src/heichips25_pudding.sv:59.17-62.41"
+            "src": "../src/heichips25_pudding.sv:62.21-62.41|../src/heichips25_pudding.sv:61.17-64.41"
           },
           "port_directions": {
             "A": "input",
@@ -248,7 +248,7 @@
           },
           "attributes": {
             "full_case": "00000000000000000000000000000001",
-            "src": "../src/heichips25_pudding.sv:59.17-62.41|../src/heichips25_pudding.sv:57.13-67.16"
+            "src": "../src/heichips25_pudding.sv:61.17-64.41|../src/heichips25_pudding.sv:59.13-69.16"
           },
           "port_directions": {
             "A": "input",
@@ -271,7 +271,7 @@
           },
           "attributes": {
             "full_case": "00000000000000000000000000000001",
-            "src": "../src/heichips25_pudding.sv:59.17-62.41|../src/heichips25_pudding.sv:57.13-67.16"
+            "src": "../src/heichips25_pudding.sv:61.17-64.41|../src/heichips25_pudding.sv:59.13-69.16"
           },
           "port_directions": {
             "A": "input",
@@ -294,7 +294,7 @@
           },
           "attributes": {
             "full_case": "00000000000000000000000000000001",
-            "src": "../src/heichips25_pudding.sv:59.17-62.41|../src/heichips25_pudding.sv:57.13-67.16"
+            "src": "../src/heichips25_pudding.sv:61.17-64.41|../src/heichips25_pudding.sv:59.13-69.16"
           },
           "port_directions": {
             "A": "input",
@@ -317,7 +317,7 @@
           },
           "attributes": {
             "full_case": "00000000000000000000000000000001",
-            "src": "../src/heichips25_pudding.sv:59.17-62.41|../src/heichips25_pudding.sv:57.13-67.16"
+            "src": "../src/heichips25_pudding.sv:61.17-64.41|../src/heichips25_pudding.sv:59.13-69.16"
           },
           "port_directions": {
             "A": "input",
@@ -341,7 +341,7 @@
             "hdlname": "dac0",
             "keep": "yes",
             "keep_hierarchy": "yes",
-            "src": "../src/heichips25_pudding.sv:83.56"
+            "src": "../src/heichips25_pudding.sv:91.56"
           },
           "port_directions": {
             "EN": "input",
@@ -375,7 +375,7 @@
             "hdlname": "dac1",
             "keep": "yes",
             "keep_hierarchy": "yes",
-            "src": "../src/heichips25_pudding.sv:95.56"
+            "src": "../src/heichips25_pudding.sv:103.56"
           },
           "port_directions": {
             "EN": "input",
@@ -389,26 +389,26 @@
             "VcascP": "inout"
           },
           "connections": {
-            "EN": [ 729, 730, 731, 732 ],
-            "ENB": [ 733, 734, 735, 736 ],
-            "Iout": [ 742 ],
+            "EN": [ 742, 743, 744, 745 ],
+            "ENB": [ 746, 747, 748, 749 ],
+            "Iout": [ 750 ],
             "ON": [ 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 27, 28, 29, 30, 31, 32, 33, 34 ],
             "ONB": [ 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96 ],
             "VDD": [ 39 ],
             "VSS": [ 40 ],
-            "VbiasP": [ 743, 744 ],
-            "VcascP": [ 745, 746 ]
+            "VbiasP": [ 751, 752 ],
+            "VcascP": [ 753, 754 ]
           }
         },
-        "digitalen.g[0].u.inv1": {
+        "digitalen0.g[0].u.inv1": {
           "hide_name": 0,
           "type": "sg13g2_inv_1",
           "parameters": {
           },
           "attributes": {
-            "hdlname": "digitalen g[0] u inv1",
+            "hdlname": "digitalen0 g[0] u inv1",
             "keep": "1",
-            "src": "../src/heichips25_pudding.sv:141.25"
+            "src": "../src/heichips25_pudding.sv:149.25"
           },
           "port_directions": {
             "A": "input",
@@ -419,15 +419,15 @@
             "Y": [ 733 ]
           }
         },
-        "digitalen.g[0].u.inv2": {
+        "digitalen0.g[0].u.inv2": {
           "hide_name": 0,
           "type": "sg13g2_inv_1",
           "parameters": {
           },
           "attributes": {
-            "hdlname": "digitalen g[0] u inv2",
+            "hdlname": "digitalen0 g[0] u inv2",
             "keep": "1",
-            "src": "../src/heichips25_pudding.sv:142.25"
+            "src": "../src/heichips25_pudding.sv:150.25"
           },
           "port_directions": {
             "A": "input",
@@ -438,15 +438,15 @@
             "Y": [ 729 ]
           }
         },
-        "digitalen.g[1].u.inv1": {
+        "digitalen0.g[1].u.inv1": {
           "hide_name": 0,
           "type": "sg13g2_inv_1",
           "parameters": {
           },
           "attributes": {
-            "hdlname": "digitalen g[1] u inv1",
+            "hdlname": "digitalen0 g[1] u inv1",
             "keep": "1",
-            "src": "../src/heichips25_pudding.sv:141.25"
+            "src": "../src/heichips25_pudding.sv:149.25"
           },
           "port_directions": {
             "A": "input",
@@ -457,15 +457,15 @@
             "Y": [ 734 ]
           }
         },
-        "digitalen.g[1].u.inv2": {
+        "digitalen0.g[1].u.inv2": {
           "hide_name": 0,
           "type": "sg13g2_inv_1",
           "parameters": {
           },
           "attributes": {
-            "hdlname": "digitalen g[1] u inv2",
+            "hdlname": "digitalen0 g[1] u inv2",
             "keep": "1",
-            "src": "../src/heichips25_pudding.sv:142.25"
+            "src": "../src/heichips25_pudding.sv:150.25"
           },
           "port_directions": {
             "A": "input",
@@ -476,15 +476,15 @@
             "Y": [ 730 ]
           }
         },
-        "digitalen.g[2].u.inv1": {
+        "digitalen0.g[2].u.inv1": {
           "hide_name": 0,
           "type": "sg13g2_inv_1",
           "parameters": {
           },
           "attributes": {
-            "hdlname": "digitalen g[2] u inv1",
+            "hdlname": "digitalen0 g[2] u inv1",
             "keep": "1",
-            "src": "../src/heichips25_pudding.sv:141.25"
+            "src": "../src/heichips25_pudding.sv:149.25"
           },
           "port_directions": {
             "A": "input",
@@ -495,15 +495,15 @@
             "Y": [ 735 ]
           }
         },
-        "digitalen.g[2].u.inv2": {
+        "digitalen0.g[2].u.inv2": {
           "hide_name": 0,
           "type": "sg13g2_inv_1",
           "parameters": {
           },
           "attributes": {
-            "hdlname": "digitalen g[2] u inv2",
+            "hdlname": "digitalen0 g[2] u inv2",
             "keep": "1",
-            "src": "../src/heichips25_pudding.sv:142.25"
+            "src": "../src/heichips25_pudding.sv:150.25"
           },
           "port_directions": {
             "A": "input",
@@ -514,15 +514,15 @@
             "Y": [ 731 ]
           }
         },
-        "digitalen.g[3].u.inv1": {
+        "digitalen0.g[3].u.inv1": {
           "hide_name": 0,
           "type": "sg13g2_inv_1",
           "parameters": {
           },
           "attributes": {
-            "hdlname": "digitalen g[3] u inv1",
+            "hdlname": "digitalen0 g[3] u inv1",
             "keep": "1",
-            "src": "../src/heichips25_pudding.sv:141.25"
+            "src": "../src/heichips25_pudding.sv:149.25"
           },
           "port_directions": {
             "A": "input",
@@ -533,15 +533,15 @@
             "Y": [ 736 ]
           }
         },
-        "digitalen.g[3].u.inv2": {
+        "digitalen0.g[3].u.inv2": {
           "hide_name": 0,
           "type": "sg13g2_inv_1",
           "parameters": {
           },
           "attributes": {
-            "hdlname": "digitalen g[3] u inv2",
+            "hdlname": "digitalen0 g[3] u inv2",
             "keep": "1",
-            "src": "../src/heichips25_pudding.sv:142.25"
+            "src": "../src/heichips25_pudding.sv:150.25"
           },
           "port_directions": {
             "A": "input",
@@ -550,6 +550,158 @@
           "connections": {
             "A": [ 736 ],
             "Y": [ 732 ]
+          }
+        },
+        "digitalen1.g[0].u.inv1": {
+          "hide_name": 0,
+          "type": "sg13g2_inv_1",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "digitalen1 g[0] u inv1",
+            "keep": "1",
+            "src": "../src/heichips25_pudding.sv:149.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8 ],
+            "Y": [ 746 ]
+          }
+        },
+        "digitalen1.g[0].u.inv2": {
+          "hide_name": 0,
+          "type": "sg13g2_inv_1",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "digitalen1 g[0] u inv2",
+            "keep": "1",
+            "src": "../src/heichips25_pudding.sv:150.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 746 ],
+            "Y": [ 742 ]
+          }
+        },
+        "digitalen1.g[1].u.inv1": {
+          "hide_name": 0,
+          "type": "sg13g2_inv_1",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "digitalen1 g[1] u inv1",
+            "keep": "1",
+            "src": "../src/heichips25_pudding.sv:149.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8 ],
+            "Y": [ 747 ]
+          }
+        },
+        "digitalen1.g[1].u.inv2": {
+          "hide_name": 0,
+          "type": "sg13g2_inv_1",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "digitalen1 g[1] u inv2",
+            "keep": "1",
+            "src": "../src/heichips25_pudding.sv:150.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 747 ],
+            "Y": [ 743 ]
+          }
+        },
+        "digitalen1.g[2].u.inv1": {
+          "hide_name": 0,
+          "type": "sg13g2_inv_1",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "digitalen1 g[2] u inv1",
+            "keep": "1",
+            "src": "../src/heichips25_pudding.sv:149.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8 ],
+            "Y": [ 748 ]
+          }
+        },
+        "digitalen1.g[2].u.inv2": {
+          "hide_name": 0,
+          "type": "sg13g2_inv_1",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "digitalen1 g[2] u inv2",
+            "keep": "1",
+            "src": "../src/heichips25_pudding.sv:150.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 748 ],
+            "Y": [ 744 ]
+          }
+        },
+        "digitalen1.g[3].u.inv1": {
+          "hide_name": 0,
+          "type": "sg13g2_inv_1",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "digitalen1 g[3] u inv1",
+            "keep": "1",
+            "src": "../src/heichips25_pudding.sv:149.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8 ],
+            "Y": [ 749 ]
+          }
+        },
+        "digitalen1.g[3].u.inv2": {
+          "hide_name": 0,
+          "type": "sg13g2_inv_1",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "digitalen1 g[3] u inv2",
+            "keep": "1",
+            "src": "../src/heichips25_pudding.sv:150.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 749 ],
+            "Y": [ 745 ]
           }
         },
         "wires": {
@@ -561,7 +713,7 @@
             "hdlname": "wires",
             "keep": "yes",
             "keep_hierarchy": "yes",
-            "src": "../src/heichips25_pudding.sv:107.57"
+            "src": "../src/heichips25_pudding.sv:115.57"
           },
           "port_directions": {
             "Iout": "inout",
@@ -572,10 +724,10 @@
             "i_out": "inout"
           },
           "connections": {
-            "Iout": [ 737, 742 ],
-            "VDDA": [ 747, 748, 749, 750 ],
-            "VbiasP": [ 738, 739, 743, 744 ],
-            "VcascP": [ 740, 741, 745, 746 ],
+            "Iout": [ 737, 750 ],
+            "VDDA": [ 755, 756, 757, 758 ],
+            "VbiasP": [ 738, 739, 751, 752 ],
+            "VcascP": [ 740, 741, 753, 754 ],
             "i_in": [ 37 ],
             "i_out": [ 38 ]
           }
@@ -598,21 +750,21 @@
           "hide_name": 1,
           "bits": [ 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664 ],
           "attributes": {
-            "src": "../src/heichips25_pudding.sv:59.17-62.41"
+            "src": "../src/heichips25_pudding.sv:61.17-64.41"
           }
         },
         "$daisychain$6": {
           "hide_name": 1,
           "bits": [ 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728 ],
           "attributes": {
-            "src": "../src/heichips25_pudding.sv:64.18-67.16"
+            "src": "../src/heichips25_pudding.sv:66.18-69.16"
           }
         },
         "$daisychain$7": {
           "hide_name": 1,
           "bits": [ 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224 ],
           "attributes": {
-            "src": "../src/heichips25_pudding.sv:57.13-67.16"
+            "src": "../src/heichips25_pudding.sv:59.13-69.16"
           }
         },
         "$procmux$13_Y": {
@@ -663,7 +815,7 @@
         },
         "bias": {
           "hide_name": 0,
-          "bits": [ 738, 739, 743, 744 ],
+          "bits": [ 738, 739, 751, 752 ],
           "attributes": {
             "hdlname": "bias",
             "src": "../src/heichips25_pudding.sv:28.16",
@@ -680,7 +832,7 @@
         },
         "dacout": {
           "hide_name": 0,
-          "bits": [ 737, 742 ],
+          "bits": [ 737, 750 ],
           "attributes": {
             "hdlname": "dacout",
             "src": "../src/heichips25_pudding.sv:29.16",
@@ -692,71 +844,135 @@
           "bits": [ 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 11, 12, 13, 14, 15, 16, 17, 18 ],
           "attributes": {
             "hdlname": "daisychain",
-            "src": "../src/heichips25_pudding.sv:38.17"
+            "src": "../src/heichips25_pudding.sv:39.17"
           }
         },
-        "digitalen.g[0].u.OUTN": {
+        "digitalen0.g[0].u.OUTN": {
           "hide_name": 0,
           "bits": [ 733 ],
           "attributes": {
-            "hdlname": "digitalen g[0] u OUTN",
-            "src": "../src/heichips25_pudding.sv:138.18"
+            "hdlname": "digitalen0 g[0] u OUTN",
+            "src": "../src/heichips25_pudding.sv:146.18"
           }
         },
-        "digitalen.g[0].u.OUTP": {
+        "digitalen0.g[0].u.OUTP": {
           "hide_name": 0,
           "bits": [ 729 ],
           "attributes": {
-            "hdlname": "digitalen g[0] u OUTP",
-            "src": "../src/heichips25_pudding.sv:139.18"
+            "hdlname": "digitalen0 g[0] u OUTP",
+            "src": "../src/heichips25_pudding.sv:147.18"
           }
         },
-        "digitalen.g[1].u.OUTN": {
+        "digitalen0.g[1].u.OUTN": {
           "hide_name": 0,
           "bits": [ 734 ],
           "attributes": {
-            "hdlname": "digitalen g[1] u OUTN",
-            "src": "../src/heichips25_pudding.sv:138.18"
+            "hdlname": "digitalen0 g[1] u OUTN",
+            "src": "../src/heichips25_pudding.sv:146.18"
           }
         },
-        "digitalen.g[1].u.OUTP": {
+        "digitalen0.g[1].u.OUTP": {
           "hide_name": 0,
           "bits": [ 730 ],
           "attributes": {
-            "hdlname": "digitalen g[1] u OUTP",
-            "src": "../src/heichips25_pudding.sv:139.18"
+            "hdlname": "digitalen0 g[1] u OUTP",
+            "src": "../src/heichips25_pudding.sv:147.18"
           }
         },
-        "digitalen.g[2].u.OUTN": {
+        "digitalen0.g[2].u.OUTN": {
           "hide_name": 0,
           "bits": [ 735 ],
           "attributes": {
-            "hdlname": "digitalen g[2] u OUTN",
-            "src": "../src/heichips25_pudding.sv:138.18"
+            "hdlname": "digitalen0 g[2] u OUTN",
+            "src": "../src/heichips25_pudding.sv:146.18"
           }
         },
-        "digitalen.g[2].u.OUTP": {
+        "digitalen0.g[2].u.OUTP": {
           "hide_name": 0,
           "bits": [ 731 ],
           "attributes": {
-            "hdlname": "digitalen g[2] u OUTP",
-            "src": "../src/heichips25_pudding.sv:139.18"
+            "hdlname": "digitalen0 g[2] u OUTP",
+            "src": "../src/heichips25_pudding.sv:147.18"
           }
         },
-        "digitalen.g[3].u.OUTN": {
+        "digitalen0.g[3].u.OUTN": {
           "hide_name": 0,
           "bits": [ 736 ],
           "attributes": {
-            "hdlname": "digitalen g[3] u OUTN",
-            "src": "../src/heichips25_pudding.sv:138.18"
+            "hdlname": "digitalen0 g[3] u OUTN",
+            "src": "../src/heichips25_pudding.sv:146.18"
           }
         },
-        "digitalen.g[3].u.OUTP": {
+        "digitalen0.g[3].u.OUTP": {
           "hide_name": 0,
           "bits": [ 732 ],
           "attributes": {
-            "hdlname": "digitalen g[3] u OUTP",
-            "src": "../src/heichips25_pudding.sv:139.18"
+            "hdlname": "digitalen0 g[3] u OUTP",
+            "src": "../src/heichips25_pudding.sv:147.18"
+          }
+        },
+        "digitalen1.g[0].u.OUTN": {
+          "hide_name": 0,
+          "bits": [ 746 ],
+          "attributes": {
+            "hdlname": "digitalen1 g[0] u OUTN",
+            "src": "../src/heichips25_pudding.sv:146.18"
+          }
+        },
+        "digitalen1.g[0].u.OUTP": {
+          "hide_name": 0,
+          "bits": [ 742 ],
+          "attributes": {
+            "hdlname": "digitalen1 g[0] u OUTP",
+            "src": "../src/heichips25_pudding.sv:147.18"
+          }
+        },
+        "digitalen1.g[1].u.OUTN": {
+          "hide_name": 0,
+          "bits": [ 747 ],
+          "attributes": {
+            "hdlname": "digitalen1 g[1] u OUTN",
+            "src": "../src/heichips25_pudding.sv:146.18"
+          }
+        },
+        "digitalen1.g[1].u.OUTP": {
+          "hide_name": 0,
+          "bits": [ 743 ],
+          "attributes": {
+            "hdlname": "digitalen1 g[1] u OUTP",
+            "src": "../src/heichips25_pudding.sv:147.18"
+          }
+        },
+        "digitalen1.g[2].u.OUTN": {
+          "hide_name": 0,
+          "bits": [ 748 ],
+          "attributes": {
+            "hdlname": "digitalen1 g[2] u OUTN",
+            "src": "../src/heichips25_pudding.sv:146.18"
+          }
+        },
+        "digitalen1.g[2].u.OUTP": {
+          "hide_name": 0,
+          "bits": [ 744 ],
+          "attributes": {
+            "hdlname": "digitalen1 g[2] u OUTP",
+            "src": "../src/heichips25_pudding.sv:147.18"
+          }
+        },
+        "digitalen1.g[3].u.OUTN": {
+          "hide_name": 0,
+          "bits": [ 749 ],
+          "attributes": {
+            "hdlname": "digitalen1 g[3] u OUTN",
+            "src": "../src/heichips25_pudding.sv:146.18"
+          }
+        },
+        "digitalen1.g[3].u.OUTP": {
+          "hide_name": 0,
+          "bits": [ 745 ],
+          "attributes": {
+            "hdlname": "digitalen1 g[3] u OUTP",
+            "src": "../src/heichips25_pudding.sv:147.18"
           }
         },
         "ena": {
@@ -785,7 +1001,7 @@
         },
         "iref": {
           "hide_name": 0,
-          "bits": [ 740, 741, 745, 746 ],
+          "bits": [ 740, 741, 753, 754 ],
           "attributes": {
             "hdlname": "iref",
             "src": "../src/heichips25_pudding.sv:27.16",
@@ -805,7 +1021,7 @@
           "bits": [ 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 27, 28, 29, 30, 31, 32, 33, 34 ],
           "attributes": {
             "hdlname": "state",
-            "src": "../src/heichips25_pudding.sv:39.17"
+            "src": "../src/heichips25_pudding.sv:40.17"
           }
         },
         "ui_in": {
@@ -850,7 +1066,7 @@
         },
         "vdda": {
           "hide_name": 0,
-          "bits": [ 747, 748, 749, 750 ],
+          "bits": [ 755, 756, 757, 758 ],
           "attributes": {
             "hdlname": "vdda",
             "src": "../src/heichips25_pudding.sv:30.16",
