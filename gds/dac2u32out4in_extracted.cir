@@ -1,4 +1,4 @@
-* Extracted by KLayout with SG13G2 LVS runset on : 12/03/2026 00:58
+* Extracted by KLayout with SG13G2 LVS runset on : 12/03/2026 01:22
 
 .SUBCKT dac2u32out4in VSS ENB[0]|ONB ONB|ONB[0] ON|ON[1] ONB|ONB[1] ON|ON[2]
 + ONB|ONB[2] ONB|ONB[3] ON|ON[4] ONB|ONB[4] ON|ON[5] ONB|ONB[5] ONB|ONB[6]
