@@ -47,7 +47,7 @@ USE_SLANG: true
 FP_OBSTRUCTIONS: 
 # dac obstruction height is 30.33
 - [360.2, 20.62, 400, 46.95]
-- [360.2, 130, 400, 160.33]
+- [360.2, 148.9, 400, 179.23]
 - [400, 4, 497, 196]
 
 MACROS:
@@ -63,7 +63,7 @@ MACROS:
         location: [362.2, 22.62]
         orientation: N
       dac1:
-        location: [362.2, 132]
+        location: [362.2, 150.9]
         orientation: N
   analog_wires:
     gds:

@@ -52,43 +52,43 @@ MACRO analog_wires
   PIN VcascP[2]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 132.560 10.910 133.260 ;
+        RECT 0.000 151.460 10.910 152.160 ;
     END
   END VcascP[2]
   PIN VcascP[3]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 148.930 10.910 149.630 ;
+        RECT 0.000 167.830 10.910 168.530 ;
     END
   END VcascP[3]
   PIN Iout[1]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 140.745 21.910 141.445 ;
+        RECT 0.000 159.645 21.910 160.345 ;
     END
   END Iout[1]
   PIN VDDA[2]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 133.660 20.700 135.390 ;
+        RECT 0.000 152.560 20.700 154.290 ;
     END
   END VDDA[2]
   PIN VDDA[3]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 146.800 20.700 148.530 ;
+        RECT 0.000 165.700 20.700 167.430 ;
     END
   END VDDA[3]
   PIN VbiasP[3]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 142.045 21.910 142.745 ;
+        RECT 0.000 160.945 21.910 161.645 ;
     END
   END VbiasP[3]
   PIN VbiasP[2]
     PORT
       LAYER Metal3 ;
-        RECT 0.000 139.445 21.910 140.145 ;
+        RECT 0.000 158.345 21.910 159.045 ;
     END
   END VbiasP[2]
   PIN i_in
