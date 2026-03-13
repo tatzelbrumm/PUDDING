@@ -57,6 +57,11 @@ cell_dacbuffer.shapes(L_30_2).insert(
 cell_dacbuffer.shapes(L_30_2).insert(
     pya.DPolygon([pya.DPoint(0, 24.46), pya.DPoint(0, 26.19), pya.DPoint(37.8, 26.19), pya.DPoint(37.8, 24.46), pya.DPoint(0, 24.46)]))
 _txt = pya.Text("VSS",
+               pya.Trans(0, False, pya.Vector(18900, 250)))
+_txt.halign = 1
+_txt.valign = 1
+cell_dacbuffer.shapes(L_8_25).insert(_txt)
+_txt = pya.Text("VSS",
                pya.Trans(0, False, pya.Vector(18900, 865)))
 _txt.halign = 1
 _txt.valign = 1
@@ -86,6 +91,11 @@ _txt = pya.Text("VSS",
 _txt.halign = 1
 _txt.valign = 1
 cell_dacbuffer.shapes(L_30_25).insert(_txt)
+_txt = pya.Text("VSS",
+               pya.Trans(0, False, pya.Vector(18900, 25940)))
+_txt.halign = 1
+_txt.valign = 1
+cell_dacbuffer.shapes(L_8_25).insert(_txt)
 
 # Save
 layout.write("output.gds")
