@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<klayout-macro>
+ <description>BasicsLib – FEOL contacts + PMOS buffer cap</description>
+ <version/>
+ <category>pymacros</category>
+ <prolog/>
+ <epilog/>
+ <doc/>
+ <autorun>false</autorun>
+ <autorun-early>false</autorun-early>
+ <priority>0</priority>
+ <shortcut/>
+ <show-in-menu>false</show-in-menu>
+ <group-name/>
+ <menu-path/>
+ <interpreter>python</interpreter>
+ <dsl-interpreter-name/>
+ <text># -*- coding: utf-8 -*-
+import pya
+
+
+# ── PCell: feol_contact ───────────────────────────────────────────────────────
+#
+# A single row/column of contacts with an M1 landing bar.
+# Parameters l and h are in nm (integer).
+
+class feol_contact(pya.PCellDeclarationHelper):
+
+    def __init__(self):
+        super().__init__()
+        self.param("l",        self.TypeInt,   "contact length (nm)", default=260)
+        self.param("h",        self.TypeInt,   "contact height (nm)", default=160)
+        self.param("ly_active",self.TypeLayer, "Active (diffusion)",  default=pya.LayerInfo(1, 0))
+        self.param("ly_po",    self.TypeLayer, "Poly (Gate)",         default=pya.LayerInfo(5, 0))
+        self.param("ly_co",    self.TypeLayer, "Contact (CO)",        default=pya.LayerInfo(6, 0))
+        self.param("ly_m1",    self.TypeLayer, "Metal 1",             default=pya.LayerInfo(8, 0))
+        self.param("ly_pimp",  self.TypeLayer, "P+ implant",          default=pya.LayerInfo(14, 0))
+        self.param("ly_nwell", self.TypeLayer, "N-Well",              default=pya.LayerInfo(31, 0))
+        self.param("ly_pr",    self.TypeLayer, "Placement boundary",  default=pya.LayerInfo(63, 0))
+
+    def display_text_impl(self):
+        return f"feol_contact(l={self.l}, h={self.h})"
+
+    def coerce_parameters_impl(self):
+        if self.l &lt;= 260: self.l = 260
+        if self.h &lt;= 160: self.h = 160
+
+    def produce_impl(self):
+        ly_co = self.layout.layer(self.ly_co)
+        ly_m1 = self.layout.layer(self.ly_m1)
+
+        contact_size     = 160
+        contact_distance = 180
+        contact_pitch    = contact_size + contact_distance
+        metal1endcap     =  50
+
+        l = self.l
+        h = self.h
+
+        n_cuts_x = max(0, (l + contact_distance - 2 * metal1endcap) // contact_pitch)
+        n_cuts_y = max(0, (h + contact_distance)                     // contact_pitch)
+        xext     = n_cuts_x * contact_pitch - contact_distance
+        yext     = n_cuts_y * contact_pitch - contact_distance
+        start_x  = (l - xext) // 2
+        start_y  = (h - yext) // 2
+
+        for row in range(n_cuts_y):
+            for col in range(n_cuts_x):
+                xl = start_x + col * contact_pitch
+                yb = start_y + row * contact_pitch
+                self.cell.shapes(ly_co).insert(pya.Box(xl, yb, xl + contact_size, yb + contact_size))
+
+        self.cell.shapes(ly_m1).insert(pya.Box(0, 0, l, h))
+
+
+# ── PCell: pmos_buffer_cap ────────────────────────────────────────────────────
+#
+# PMOS gate capacitor.  Parameters w and l are the gate dimensions in µm.
+#
+# Layout overview
+# ---------------
+#   - Gate poly bar  :  x ∈ [gate_x0 - poly_ol,  gate_x0 + l + poly_or]
+#                       y ∈ [gate_y0,             gate_y0 + w]
+#   - M1 S/D bus     :  x ∈ [0,  w]
+#                       y ∈ [gate_y0 - sd_m1_ext,  gate_y0 + w + sd_m1_ext]
+#   - Active stripes :  source below gate, drain above gate
+#   - FEOL contact bars (via feol_contact pcell):
+#       source / drain  – horizontal, w wide, sd_m1_h tall
+#       gate left/right – vertical,   w tall, sd_m1_h wide  (rot=90, mirrorX)
+#
+# Cell bounding box:
+#   x : 0  …  w
+#   y : -0.51  …  w + 1.19   (i.e. w + 1.70 µm tall)
+
+class pmos_buffer_cap(pya.PCellDeclarationHelper):
+
+    def __init__(self):
+        super().__init__()
+        # ── user parameters ───────────────────────────────────────────────
+        self.param("w", self.TypeDouble, "Gate width  w (µm)", default=8.0)
+        self.param("l", self.TypeDouble, "Gate length l (µm)", default=8.0)
+        # ── layer parameters ──────────────────────────────────────────────
+        self.param("ly_active", self.TypeLayer, "Active (diffusion)", default=pya.LayerInfo(1, 0))
+        self.param("ly_po",     self.TypeLayer, "Poly (Gate)",        default=pya.LayerInfo(5, 0))
+        self.param("ly_co",     self.TypeLayer, "Contact (CO)",       default=pya.LayerInfo(6, 0))
+        self.param("ly_m1",     self.TypeLayer, "Metal 1",            default=pya.LayerInfo(8, 0))
+
+    def display_text_impl(self):
+        return f"pmos_buffer_cap(w={self.w:.3f}, l={self.l:.3f})"
+
+    def coerce_parameters_impl(self):
+        if self.w &lt; 0.5: self.w = 0.5
+        if self.l &lt; 0.5: self.l = 0.5
+
+    def produce_impl(self):
+        dbu = self.layout.dbu    # µm per DBU  (e.g. 0.001)
+
+        def u(um):
+            """µm → integer DBU"""
+            return round(um / dbu)
+
+        def box(layer_idx, x1, y1, x2, y2):
+            self.cell.shapes(layer_idx).insert(pya.Box(u(x1), u(y1), u(x2), u(y2)))
+
+        def place_feol(ox, oy, l_nm, rot=0, mirror=False):
+            """Instantiate a feol_contact pcell from this same library."""
+            # Retrieve the pcell declaration from our own library layout
+            pcell_decl = self.layout.pcell_declaration("FEOL contacts")
+            params = {
+                "l":         l_nm,
+                "h":         160,
+                "ly_active": self.ly_active,
+                "ly_po":     self.ly_po,
+                "ly_co":     self.ly_co,
+                "ly_m1":     self.ly_m1,
+            }
+            pcell_var  = self.layout.add_pcell_variant(pcell_decl, params)
+            t = pya.CplxTrans(1.0, rot, mirror, u(ox), u(oy))
+            self.cell.insert(pya.CellInstArray(pcell_var, t))
+
+        # ── resolve layers ────────────────────────────────────────────────
+        ly_active = self.layout.layer(self.ly_active)
+        ly_po     = self.layout.layer(self.ly_po)
+        ly_m1     = self.layout.layer(self.ly_m1)
+
+        # ── gate dimensions ───────────────────────────────────────────────
+        w = self.w   # gate width  (y direction)
+        l = self.l   # gate length (x direction)
+
+        # ── fixed process offsets (µm) ────────────────────────────────────
+        gate_x0    = 0.34   # origin → gate lower-left corner (x)
+        gate_y0    = 0.34   # origin → gate lower-left corner (y)
+        sd_m1_h    = 0.16   # source/drain contact bar height
+        sd_gap     = 0.62   # gate edge → near edge of SD bar
+        sd_m1_ext  = 0.78   # gate edge → far  edge of SD bar  (sd_gap + sd_m1_h)
+        active_ext = 0.85   # gate edge → outer edge of active
+        active_h   = 0.30   # active stripe height
+        poly_ol    = 0.79   # poly overhang left  of gate_x0
+        poly_or    = 0.11   # poly overhang right of gate_x1
+        gc_inner   = 0.12   # gate contact bar: overlap inside gate edge
+        gc_outer   = 0.60   # gate contact bar: extension outside gate edge
+
+        # ── derived ───────────────────────────────────────────────────────
+        gate_x1 = gate_x0 + l
+        gate_y1 = gate_y0 + w
+
+        # ── M1 source/drain bus ───────────────────────────────────────────
+        box(ly_m1,
+            0,              gate_y0 - sd_m1_ext,
+            w,              gate_y1 + sd_m1_ext)
+
+        # ── active stripes ────────────────────────────────────────────────
+        box(ly_active,
+            0,   gate_y0 - active_ext,
+            w,   gate_y0 - active_ext + active_h)          # source
+
+        box(ly_active,
+            0,   gate_y1 + active_ext - active_h,
+            w,   gate_y1 + active_ext)                     # drain
+
+        # ── gate poly ─────────────────────────────────────────────────────
+        box(ly_po,
+            gate_x0 - poly_ol,   gate_y0,
+            gate_x1 + poly_or,   gate_y1)
+
+        # ── FEOL contact bars ─────────────────────────────────────────────
+        w_nm = round(w * 1000)   # gate width in nm → contact bar length
+
+        place_feol(0,                          gate_y0 - sd_m1_ext,  w_nm)           # source
+        place_feol(0,                          gate_y1 + sd_gap,     w_nm)           # drain
+        place_feol(gate_x0 - gc_outer - gc_inner, gate_y0,           w_nm, rot=90, mirror=True)  # gate left
+        place_feol(gate_x1 - gc_inner,            gate_y0,           w_nm, rot=90, mirror=True)  # gate right
+
+
+# ── Library registration ──────────────────────────────────────────────────────
+
+class BasicsLib(pya.Library):
+    def __init__(self):
+        super().__init__()
+        self.description = "BasicsLib – FEOL contacts + PMOS buffer cap"
+        self.layout().register_pcell("FEOL contacts",   feol_contact())
+        self.layout().register_pcell("pmos_buffer_cap", pmos_buffer_cap())
+        self.register("BasicsLib")
+
+BasicsLib()
+</text>
+</klayout-macro>
