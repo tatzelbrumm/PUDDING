@@ -65,6 +65,10 @@ xdrv[1] VDD on[1] switch onb[1] GND inverterpair
 xdrv[0] VDD on[0] switch onb[0] GND inverterpair
 VEN enable GND DC {vdd} PULSE({vdd} {vdd} {td} {tr} {tf} {ton} {tcyc})
 .save i(ven)
+XMcbuffer[1] VDD Vpcbias[1] VDD VDD sg13_hv_pmos w=8u l=4.46u ng=1 m=2
+XMcbuffer[0] VDD Vpcbias[0] VDD VDD sg13_hv_pmos w=8u l=4.46u ng=1 m=2
+XMbbuffer[1] VDD Vpbias[1] VDD VDD sg13_hv_pmos w=8u l=4.46u ng=1 m=2
+XMbbuffer[0] VDD Vpbias[0] VDD VDD sg13_hv_pmos w=8u l=4.46u ng=1 m=2
 **** begin user architecture code
 
 
@@ -294,16 +298,8 @@ XMbias Vbpcasc on_n Vcasc VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
 *.ipin VbiasP
 *.opin Iout
 *.ipin VDD
-XMsrc drain net4 VDD net1 sg13_lv_pmos w=1.45u l=5u ng=1 m=1
-XMcasc Iout net3 drain net2 sg13_lv_pmos w=1.2u l=0.6u ng=1 m=1
-Vgsrc net4 VbiasP 0
-.save i(vgsrc)
-Vgcasc net3 VcascodeP 0
-.save i(vgcasc)
-Vbsrc VDD net1 0
-.save i(vbsrc)
-Vbcasc VDD net2 0
-.save i(vbcasc)
+XMsrc drain VbiasP VDD VDD sg13_lv_pmos w=1.45u l=5u ng=1 m=1
+XMcasc Iout VcascodeP drain VDD sg13_lv_pmos w=1.2u l=0.6u ng=1 m=1
 .ends
 
 .GLOBAL GND
