@@ -39,7 +39,7 @@ class feol_contact(pya.PCellDeclarationHelper):
         self.param("ly_pr",    self.TypeLayer, "Placement boundary",  default=pya.LayerInfo(63, 0))
 
     def display_text_impl(self):
-        return f"feol_contact(l={self.l}, h={self.h})"
+        return f"feol_contact(l={self.l}nm, h={self.h}nm)"
 
     def coerce_parameters_impl(self):
         if self.l &lt;= 260: self.l = 260
@@ -73,74 +73,74 @@ class feol_contact(pya.PCellDeclarationHelper):
 # ── PCell: pmos_buffer_cap ────────────────────────────────────────────────────
 #
 # Single PMOS gate capacitor.
-#   w  = gate width  (µm) — cell x-extent, scales all y-dimensions
-#   l  = gate length (µm) — poly/gate-contact x-extent only
+#   w_nm  = gate width  (nm, integer) — scales all y-dimensions and cell x-extent
+#   l_nm  = gate length (nm, integer) — scales poly/gate-contact x-extent only
 #
-# All offsets derived by mapping pmosHV$2 through its rot90+mirrorX placement
-# (cell_x = y_internal, cell_y = x_internal) for the W=L=8 reference:
+# Using nm integers (TypeInt) avoids KLayout's TypeDouble variant-cache bug
+# where floating-point parameter changes fail to trigger cell regeneration.
 #
-#  Layer        cell-x                      cell-y
-#  ─────────────────────────────────────────────────────────────────────
-#  active main  [0,  w]                     [0,  w+0.68]
-#  active src   [0,  w]                     [-0.85, -0.55]  outer S/D tie
-#  active drn   [0,  w]                     [gate_y1+0.55, gate_y1+0.85]
-#  poly  5/0    [gate_x0-0.79, gate_x1+0.11] [gate_y0, gate_y1]  (incl gate arm)
-#  poly  5/2    [-0.18, w+0.18]             [gate_y0, gate_y1]  (channel pin only)
-#  M1 bus 8/0   [0,  w]                     [-0.44, gate_y1+0.78]
-#  M1 pin 8/2   [0,  w]                     [0.07,  w+0.61]
-#  pimp  14/0   [-0.40, w+0.40]             [gate_y0-0.52, gate_y1+0.52]
-#  nwell 31/0   [-0.62, w+0.62]             [gate_y0-1.47, gate_y1+1.47]
+# All offsets derived from pmosHV$2 mapped through rot90+mirrorX (W=L=8000nm ref):
+#
+#  Layer        cell-x (nm)                   cell-y (nm)
+#  ─────────────────────────────────────────────────────────────────────────────
+#  active main  [0,  w_nm]                    [0,  w_nm+680]
+#  active src   [0,  w_nm]                    [-850, -550]   outer S/D tie
+#  active drn   [0,  w_nm]                    [gate_y1+550, gate_y1+850]
+#  poly  5/0    [gate_x0-790, gate_x1+110]    [gate_y0, gate_y1]  (incl gate arm)
+#  poly  5/2    [-180, w_nm+180]              [gate_y0, gate_y1]  (channel pin)
+#  M1 bus 8/0   [0,  w_nm]                    [-440, gate_y1+780]
+#  M1 pin 8/2   [0,  w_nm]                    [70,  w_nm+610]
+#  pimp  14/0   [-400, w_nm+400]              [gate_y0-520, gate_y1+520]
+#  nwell 31/0   [-620, w_nm+620]              [gate_y0-1470, gate_y1+1470]
 #  dnwell 44/0  same as nwell
-#  gate cont 40 [0, 0.30]                   [gate_y1+0.04, gate_y1+0.34]
-#  dev marker 51[−0.18, w+0.18]             [gate_y0, gate_y1]
+#  gate cont 40 [0, 300]                      [gate_y1+40, gate_y1+340]
+#  dev mark  51 [-180, w_nm+180]              [gate_y0, gate_y1]
 #
-#  gate_x0 = gate_y0 = 0.34
+#  gate_x0 = gate_y0 = 340 nm
 #
-#  FEOL contact bars (feol_contact pcell, length = w*1000 nm, height = 160 nm):
-#    source  at (0,            -0.44)          rot=0
-#    drain   at (0,            gate_y1+0.62)   rot=0
-#    gate-L  at (gate_x0-0.72, gate_y0)        rot=90, mirrorX
-#    gate-R  at (gate_x1-0.12, gate_y0)        rot=90, mirrorX
+#  FEOL contact bars (feol_contact pcell, length=w_nm, height=160nm):
+#    source   at (0,          -440)             rot=0
+#    drain    at (0,          gate_y1+620)      rot=0
+#    gate-L   at (gate_x0-720, gate_y0)         rot=90, mirrorX
+#    gate-R   at (gate_x1-120, gate_y0)         rot=90, mirrorX
 
 class pmos_buffer_cap(pya.PCellDeclarationHelper):
 
     def __init__(self):
         super().__init__()
-        self.param("w",          self.TypeDouble, "Gate width  w (µm)", default=8.0)
-        self.param("l",          self.TypeDouble, "Gate length l (µm)", default=8.0)
-        self.param("ly_active",  self.TypeLayer,  "Active (diffusion)", default=pya.LayerInfo( 1, 0))
-        self.param("ly_po",      self.TypeLayer,  "Poly (Gate)",        default=pya.LayerInfo( 5, 0))
-        self.param("ly_co",      self.TypeLayer,  "Contact (CO)",       default=pya.LayerInfo( 6, 0))
-        self.param("ly_m1",      self.TypeLayer,  "Metal 1",            default=pya.LayerInfo( 8, 0))
-        self.param("ly_pimp",    self.TypeLayer,  "P+ implant",         default=pya.LayerInfo(14, 0))
-        self.param("ly_nwell",   self.TypeLayer,  "N-Well",             default=pya.LayerInfo(31, 0))
-        self.param("ly_dnwell",  self.TypeLayer,  "Deep N-Well",        default=pya.LayerInfo(44, 0))
-        self.param("ly_gatecont",self.TypeLayer,  "Gate cont marker",   default=pya.LayerInfo(40, 0))
-        self.param("ly_devmark", self.TypeLayer,  "Device marker",      default=pya.LayerInfo(51, 0))
-        self.param("ly_polypin", self.TypeLayer,  "Poly pin (5/2)",     default=pya.LayerInfo( 5, 2))
-        self.param("ly_m1pin",   self.TypeLayer,  "M1 pin (8/2)",       default=pya.LayerInfo( 8, 2))
+        # gate dimensions in nm (TypeInt avoids KLayout TypeDouble cache bug)
+        self.param("w_nm",       self.TypeInt,   "Gate width  (nm)", default=8000)
+        self.param("l_nm",       self.TypeInt,   "Gate length (nm)", default=8000)
+        self.param("ly_active",  self.TypeLayer, "Active (diffusion)", default=pya.LayerInfo( 1, 0))
+        self.param("ly_po",      self.TypeLayer, "Poly (Gate)",        default=pya.LayerInfo( 5, 0))
+        self.param("ly_co",      self.TypeLayer, "Contact (CO)",       default=pya.LayerInfo( 6, 0))
+        self.param("ly_m1",      self.TypeLayer, "Metal 1",            default=pya.LayerInfo( 8, 0))
+        self.param("ly_pimp",    self.TypeLayer, "P+ implant",         default=pya.LayerInfo(14, 0))
+        self.param("ly_nwell",   self.TypeLayer, "N-Well",             default=pya.LayerInfo(31, 0))
+        self.param("ly_dnwell",  self.TypeLayer, "Deep N-Well",        default=pya.LayerInfo(44, 0))
+        self.param("ly_gatecont",self.TypeLayer, "Gate cont marker",   default=pya.LayerInfo(40, 0))
+        self.param("ly_devmark", self.TypeLayer, "Device marker",      default=pya.LayerInfo(51, 0))
+        self.param("ly_polypin", self.TypeLayer, "Poly pin (5/2)",     default=pya.LayerInfo( 5, 2))
+        self.param("ly_m1pin",   self.TypeLayer, "M1 pin (8/2)",       default=pya.LayerInfo( 8, 2))
 
     def display_text_impl(self):
-        return f"pmos_buffer_cap(w={self.w:.3f}, l={self.l:.3f})"
+        return f"pmos_buffer_cap(w={self.w_nm}nm, l={self.l_nm}nm)"
 
     def coerce_parameters_impl(self):
-        if self.w &lt; 0.5: self.w = 0.5
-        if self.l &lt; 0.5: self.l = 0.5
+        if self.w_nm &lt; 500:  self.w_nm = 500
+        if self.l_nm &lt; 500:  self.l_nm = 500
 
     def produce_impl(self):
-        dbu = self.layout.dbu
-
-        def u(um):
-            return round(um / dbu)
+        # all coordinates are in nm = DBU (dbu=0.001µm → 1DBU=1nm)
 
         def box(lyr, x1, y1, x2, y2):
-            self.cell.shapes(lyr).insert(pya.Box(u(x1), u(y1), u(x2), u(y2)))
+            self.cell.shapes(lyr).insert(pya.Box(x1, y1, x2, y2))
 
-        def place_feol(ox, oy, l_nm, rot=0, mirror=False):
+        def place_feol(ox, oy, length_nm, rot=0, mirror=False):
             pcell_id   = self.layout.pcell_id("FEOL contacts")
             pcell_decl = self.layout.pcell_declaration("FEOL contacts")
             param_map  = {
-                "l": l_nm, "h": 160,
+                "l": length_nm, "h": 160,
                 "ly_active": self.ly_active, "ly_po": self.ly_po,
                 "ly_co":     self.ly_co,     "ly_m1": self.ly_m1,
             }
@@ -148,7 +148,7 @@ class pmos_buffer_cap(pya.PCellDeclarationHelper):
                       for p in pcell_decl.get_parameters()]
             pcell_var = self.layout.add_pcell_variant(pcell_id, params)
             self.cell.insert(pya.CellInstArray(
-                pcell_var, pya.CplxTrans(1.0, rot, mirror, u(ox), u(oy))))
+                pcell_var, pya.CplxTrans(1.0, rot, mirror, ox, oy)))
 
         # resolve layers
         ly_active   = self.layout.layer(self.ly_active)
@@ -162,84 +162,46 @@ class pmos_buffer_cap(pya.PCellDeclarationHelper):
         ly_gatecont = self.layout.layer(self.ly_gatecont)
         ly_devmark  = self.layout.layer(self.ly_devmark)
 
-        w = self.w
-        l = self.l
+        w = self.w_nm    # gate width  in nm = DBU
+        l = self.l_nm    # gate length in nm = DBU
 
-        # fixed offsets (µm)
-        gate_x0    = 0.34
-        gate_y0    = 0.34
-        sd_m1_ext  = 0.78   # gate_y edge → far  edge of S/D M1
-        sd_gap     = 0.62   # gate_y edge → near edge of S/D M1
-        active_ext = 0.85   # gate_y edge → outer tie active edge
-        active_h   = 0.30   # tie active stripe height
-        poly_ol    = 0.79   # poly overhang left  of gate_x0 (includes gate arm)
-        poly_or    = 0.11   # poly overhang right of gate_x1
-        poly_ch    = 0.18   # channel poly overhang beyond active edge in x
-        gc_inner   = 0.12   # gate contact bar overlap inside gate_x edge
-        gc_outer   = 0.60   # gate contact bar extension outside gate_x edge
-        nw_x_ext   = 0.62
-        nw_y_ext   = 1.47
-        pimp_x_ext = 0.40
-        pimp_y_ext = 0.52
-
+        # fixed process offsets — all in nm
+        gate_x0 =  340   # origin → gate left  edge
+        gate_y0 =  340   # origin → gate bottom edge
         gate_x1 = gate_x0 + l
         gate_y1 = gate_y0 + w
 
         # ── active ───────────────────────────────────────────────────────
-        # main: covers full gate + S/D contact area
-        box(ly_active,  0,   0,
-                        w,   w + 0.68)
-
-        # outer tie-down S/D contact stripes
-        box(ly_active,  0,   gate_y0 - active_ext,
-                        w,   gate_y0 - active_ext + active_h)   # source
-
-        box(ly_active,  0,   gate_y1 + active_ext - active_h,
-                        w,   gate_y1 + active_ext)               # drain
+        box(ly_active,  0,    0,         w,   w + 680)   # main gate+S/D area
+        box(ly_active,  0,  -850,        w,  -550)        # source tie
+        box(ly_active,  0,   gate_y1+550, w,  gate_y1+850) # drain  tie
 
         # ── poly ─────────────────────────────────────────────────────────
-        # drawing layer: full gate arm width
-        box(ly_po,      gate_x0 - poly_ol,   gate_y0,
-                        gate_x1 + poly_or,    gate_y1)
-
-        # pin layer: channel region only (no gate arm)
-        box(ly_polypin, -poly_ch,             gate_y0,
-                         w + poly_ch,          gate_y1)
+        box(ly_po,      gate_x0-790,  gate_y0,  gate_x1+110,  gate_y1)  # drawing (incl arm)
+        box(ly_polypin, -180,         gate_y0,  w+180,         gate_y1)  # pin (channel only)
 
         # ── M1 ───────────────────────────────────────────────────────────
-        # S/D bus
-        box(ly_m1,      0,   gate_y0 - sd_m1_ext,
-                        w,   gate_y1 + sd_m1_ext)
-
-        # pin markers (from pmosHV S/D contact strips)
-        box(ly_m1pin,   0,   0.07,
-                        w,   w + 0.61)
+        box(ly_m1,    0,  gate_y0-780,  w,  gate_y1+780)   # S/D bus
+        box(ly_m1pin, 0,  70,           w,  w+610)          # pin markers
 
         # ── nwell / deep nwell ────────────────────────────────────────────
-        box(ly_nwell,  -nw_x_ext,    gate_y0 - nw_y_ext,
-                        w + nw_x_ext, gate_y1 + nw_y_ext)
-
-        box(ly_dnwell, -nw_x_ext,    gate_y0 - nw_y_ext,
-                        w + nw_x_ext, gate_y1 + nw_y_ext)
+        box(ly_nwell,  -620, gate_y0-1470,  w+620, gate_y1+1470)
+        box(ly_dnwell, -620, gate_y0-1470,  w+620, gate_y1+1470)
 
         # ── pimp ─────────────────────────────────────────────────────────
-        box(ly_pimp,   -pimp_x_ext,    gate_y0 - pimp_y_ext,
-                        w + pimp_x_ext, gate_y1 + pimp_y_ext)
+        box(ly_pimp,   -400, gate_y0-520,   w+400, gate_y1+520)
 
         # ── gate contact marker (layer 40) ────────────────────────────────
-        box(ly_gatecont, 0.00,  gate_y1 + 0.04,
-                         0.30,  gate_y1 + 0.34)
+        box(ly_gatecont, 0, gate_y1+40,  300, gate_y1+340)
 
         # ── device marker (layer 51) ──────────────────────────────────────
-        box(ly_devmark, -poly_ch,   gate_y0,
-                         w + poly_ch, gate_y1)
+        box(ly_devmark, -180, gate_y0,  w+180, gate_y1)
 
         # ── FEOL contact bars ─────────────────────────────────────────────
-        w_nm = round(w * 1000)
-        place_feol(0,                              gate_y0 - sd_m1_ext, w_nm)           # source
-        place_feol(0,                              gate_y1 + sd_gap,    w_nm)           # drain
-        place_feol(gate_x0 - gc_outer - gc_inner,  gate_y0, w_nm, rot=90, mirror=True)  # gate L
-        place_feol(gate_x1 - gc_inner,             gate_y0, w_nm, rot=90, mirror=True)  # gate R
+        place_feol(0,             gate_y0-780,  w)            # source
+        place_feol(0,             gate_y1+620,  w)            # drain
+        place_feol(gate_x0-720,  gate_y0,  w, rot=90, mirror=True)   # gate L
+        place_feol(gate_x1-120,  gate_y0,  w, rot=90, mirror=True)   # gate R
 
 
 # ── PCell: pmos_cap_array ─────────────────────────────────────────────────────
@@ -248,56 +210,51 @@ class pmos_buffer_cap(pya.PCellDeclarationHelper):
 # wire frame.
 #
 # Parameter:
-#   w  gate width of each sub-cap (µm) = cell x-extent = gate length (square gate)
-#      Cell height = w + 1.70 µm.
+#   w_nm  gate width of each sub-cap (nm, integer)
+#         cell x-extent = w_nm,  cell height = w_nm + 1700 nm,  gate l = w (square)
 #
-# Wire-frame positions (dacbuffer, µm):
-#   Iout M1  centre=13.095  hw=0.350  top=13.445
-#   Top VSS  centre=25.325  hw=0.865  bot=24.460
+# Wire-frame positions (all in nm):
+#   Iout M1  centre=13095nm  hw=350nm  top=13445nm
+#   Top VSS  centre=25325nm  hw=865nm  bot=24460nm
 #
-# Design rules from reference placement:
-#   m1_spacing     = 0.28   M1 min spacing
-#   nwell_spacing  = 3.105  distance x=0 to cap nwell left edge
-#   nwell_ext_left = 0.62   cap nwell left overhang of cell origin
-#   cap_m1_bot_ext = 0.44   cap M1 bottom below cell y-origin
+# Design rules (nm):
+#   m1_spacing     = 280   M1 min spacing
+#   nwell_spacing  = 3105  x=0 to cap nwell left edge
+#   nwell_ext_left =  620  cap nwell left overhang of cell origin
+#   cap_m1_bot_ext =  440  cap M1 bottom below cell y-origin
 #
-# x_origin = 3.725,  y_base = 14.165,  pitch = w + 1.70
+# x_origin = 3725 nm,  y_base = 14165 nm,  pitch = w_nm + 1700
 
 class pmos_cap_array(pya.PCellDeclarationHelper):
 
     def __init__(self):
         super().__init__()
-        self.param("w",          self.TypeDouble, "Gate width of each sub-cap (µm)", default=2.0)
-        self.param("ly_active",  self.TypeLayer,  "Active (diffusion)", default=pya.LayerInfo( 1, 0))
-        self.param("ly_po",      self.TypeLayer,  "Poly (Gate)",        default=pya.LayerInfo( 5, 0))
-        self.param("ly_co",      self.TypeLayer,  "Contact (CO)",       default=pya.LayerInfo( 6, 0))
-        self.param("ly_m1",      self.TypeLayer,  "Metal 1",            default=pya.LayerInfo( 8, 0))
-        self.param("ly_pimp",    self.TypeLayer,  "P+ implant",         default=pya.LayerInfo(14, 0))
-        self.param("ly_nwell",   self.TypeLayer,  "N-Well",             default=pya.LayerInfo(31, 0))
-        self.param("ly_dnwell",  self.TypeLayer,  "Deep N-Well",        default=pya.LayerInfo(44, 0))
-        self.param("ly_gatecont",self.TypeLayer,  "Gate cont marker",   default=pya.LayerInfo(40, 0))
-        self.param("ly_devmark", self.TypeLayer,  "Device marker",      default=pya.LayerInfo(51, 0))
-        self.param("ly_polypin", self.TypeLayer,  "Poly pin (5/2)",     default=pya.LayerInfo( 5, 2))
-        self.param("ly_m1pin",   self.TypeLayer,  "M1 pin (8/2)",       default=pya.LayerInfo( 8, 2))
+        self.param("w_nm",       self.TypeInt,   "Gate width of each sub-cap (nm)", default=2000)
+        self.param("ly_active",  self.TypeLayer, "Active (diffusion)", default=pya.LayerInfo( 1, 0))
+        self.param("ly_po",      self.TypeLayer, "Poly (Gate)",        default=pya.LayerInfo( 5, 0))
+        self.param("ly_co",      self.TypeLayer, "Contact (CO)",       default=pya.LayerInfo( 6, 0))
+        self.param("ly_m1",      self.TypeLayer, "Metal 1",            default=pya.LayerInfo( 8, 0))
+        self.param("ly_pimp",    self.TypeLayer, "P+ implant",         default=pya.LayerInfo(14, 0))
+        self.param("ly_nwell",   self.TypeLayer, "N-Well",             default=pya.LayerInfo(31, 0))
+        self.param("ly_dnwell",  self.TypeLayer, "Deep N-Well",        default=pya.LayerInfo(44, 0))
+        self.param("ly_gatecont",self.TypeLayer, "Gate cont marker",   default=pya.LayerInfo(40, 0))
+        self.param("ly_devmark", self.TypeLayer, "Device marker",      default=pya.LayerInfo(51, 0))
+        self.param("ly_polypin", self.TypeLayer, "Poly pin (5/2)",     default=pya.LayerInfo( 5, 2))
+        self.param("ly_m1pin",   self.TypeLayer, "M1 pin (8/2)",       default=pya.LayerInfo( 8, 2))
 
     def display_text_impl(self):
-        return f"pmos_cap_array(w={self.w:.3f})"
+        return f"pmos_cap_array(w={self.w_nm}nm)"
 
     def coerce_parameters_impl(self):
-        if self.w &lt; 0.5: self.w = 0.5
+        if self.w_nm &lt; 500: self.w_nm = 500
 
     def produce_impl(self):
-        dbu = self.layout.dbu
-
-        def u(um):
-            return round(um / dbu)
-
         def place_cap(ox, oy):
             pcell_id   = self.layout.pcell_id("pmos_buffer_cap")
             pcell_decl = self.layout.pcell_declaration("pmos_buffer_cap")
             param_map  = {
-                "w":          self.w,
-                "l":          self.w,
+                "w_nm":       self.w_nm,
+                "l_nm":       self.w_nm,      # square gate
                 "ly_active":  self.ly_active,
                 "ly_po":      self.ly_po,
                 "ly_co":      self.ly_co,
@@ -314,20 +271,21 @@ class pmos_cap_array(pya.PCellDeclarationHelper):
                       for p in pcell_decl.get_parameters()]
             pcell_var = self.layout.add_pcell_variant(pcell_id, params)
             self.cell.insert(pya.CellInstArray(
-                pcell_var, pya.CplxTrans(1.0, 0, False, u(ox), u(oy))))
+                pcell_var, pya.CplxTrans(1.0, 0, False, ox, oy)))
 
-        iout_top       = 13.095 + 0.35
-        m1_spacing     = 0.28
-        nwell_spacing  = 3.105
-        nwell_ext_left = 0.62
-        cap_m1_bot_ext = 0.44
+        # all positions in nm
+        iout_top   = 13095 + 350      # = 13445 nm
+        m1_spacing =   280
+        nw_left    =   620
+        nw_spacing =  3105
+        m1_bot_ext =   440
 
-        x_origin   = nwell_spacing + nwell_ext_left
-        y_base     = iout_top + m1_spacing + cap_m1_bot_ext
-        cell_pitch = self.w + 1.70
+        x_origin   = nw_spacing + nw_left            # = 3725 nm
+        y_base     = iout_top + m1_spacing + m1_bot_ext  # = 14165 nm
+        pitch      = self.w_nm + 1700
 
         for n in range(4):
-            place_cap(x_origin, y_base + n * cell_pitch)
+            place_cap(x_origin, y_base + n * pitch)
 
 
 # ── Library registration ──────────────────────────────────────────────────────
