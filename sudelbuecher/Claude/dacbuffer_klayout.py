@@ -14,7 +14,7 @@ L_GatPoly_pin = layout.layer(pya.LayerInfo(8, 2, "GatPoly_pin"))
 L_GatPoly_label = layout.layer(pya.LayerInfo(8, 25, "GatPoly_label"))
 L_Metal2 = layout.layer(pya.LayerInfo(14, 0, "Metal2"))
 L_Metal5 = layout.layer(pya.LayerInfo(30, 0, "Metal5"))
-L_30_2 = layout.layer(30, 2)
+L_Metal5_pin = layout.layer(pya.LayerInfo(30, 2, "Metal5_pin"))
 L_Metal5_label = layout.layer(pya.LayerInfo(30, 25, "Metal5_label"))
 L_TopMetal1 = layout.layer(pya.LayerInfo(31, 0, "TopMetal1"))
 L_DNWell = layout.layer(pya.LayerInfo(40, 0, "DNWell"))
@@ -275,17 +275,17 @@ _txt = pya.Text("Iout",
 _txt.halign = 1
 _txt.valign = 1
 cell_dacbuffer.shapes(L_GatPoly_label).insert(_txt)
-cell_dacbuffer.shapes(L_30_2).insert(
+cell_dacbuffer.shapes(L_Metal5_pin).insert(
     pya.DPolygon([pya.DPoint(0, 0), pya.DPoint(0, 1.73), pya.DPoint(37.8, 1.73), pya.DPoint(37.8, 0), pya.DPoint(0, 0)]))
-cell_dacbuffer.shapes(L_30_2).insert(
+cell_dacbuffer.shapes(L_Metal5_pin).insert(
     pya.DPolygon([pya.DPoint(0, 2.43), pya.DPoint(0, 4.16), pya.DPoint(37.8, 4.16), pya.DPoint(37.8, 2.43), pya.DPoint(0, 2.43)]))
-cell_dacbuffer.shapes(L_30_2).insert(
+cell_dacbuffer.shapes(L_Metal5_pin).insert(
     pya.DPolygon([pya.DPoint(0, 5.66), pya.DPoint(0, 7.39), pya.DPoint(37.8, 7.39), pya.DPoint(37.8, 5.66), pya.DPoint(0, 5.66)]))
-cell_dacbuffer.shapes(L_30_2).insert(
+cell_dacbuffer.shapes(L_Metal5_pin).insert(
     pya.DPolygon([pya.DPoint(0, 18.8), pya.DPoint(0, 20.53), pya.DPoint(37.8, 20.53), pya.DPoint(37.8, 18.8), pya.DPoint(0, 18.8)]))
-cell_dacbuffer.shapes(L_30_2).insert(
+cell_dacbuffer.shapes(L_Metal5_pin).insert(
     pya.DPolygon([pya.DPoint(0, 22.03), pya.DPoint(0, 23.76), pya.DPoint(37.8, 23.76), pya.DPoint(37.8, 22.03), pya.DPoint(0, 22.03)]))
-cell_dacbuffer.shapes(L_30_2).insert(
+cell_dacbuffer.shapes(L_Metal5_pin).insert(
     pya.DPolygon([pya.DPoint(0, 24.46), pya.DPoint(0, 26.19), pya.DPoint(37.8, 26.19), pya.DPoint(37.8, 24.46), pya.DPoint(0, 24.46)]))
 _txt = pya.Text("VSS",
                pya.Trans(0, False, pya.Vector(18900, 865)))
