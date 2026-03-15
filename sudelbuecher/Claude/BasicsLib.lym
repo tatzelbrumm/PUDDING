@@ -104,6 +104,9 @@ class pmos_buffer_cap(pya.PCellDeclarationHelper):
         self.param("ly_po",     self.TypeLayer, "Poly (Gate)",        default=pya.LayerInfo(5, 0))
         self.param("ly_co",     self.TypeLayer, "Contact (CO)",       default=pya.LayerInfo(6, 0))
         self.param("ly_m1",     self.TypeLayer, "Metal 1",            default=pya.LayerInfo(8, 0))
+        self.param("ly_nwell",  self.TypeLayer, "N-Well",             default=pya.LayerInfo(31, 0))
+        self.param("ly_dnwell", self.TypeLayer, "Deep N-Well",        default=pya.LayerInfo(44, 0))
+        self.param("ly_pimp",   self.TypeLayer, "P+ implant",         default=pya.LayerInfo(14, 0))
 
     def display_text_impl(self):
         return f"pmos_buffer_cap(w={self.w:.3f}, l={self.l:.3f})"
@@ -134,7 +137,7 @@ class pmos_buffer_cap(pya.PCellDeclarationHelper):
                 "ly_co":     self.ly_co,
                 "ly_m1":     self.ly_m1,
             }
-            # add_pcell_variant needs pcell_id (int) + params as ordered list
+            # add_pcell_variant requires pcell_id (int) + params as ordered list
             params    = [param_map.get(p.name, p.default) for p in pcell_decl.get_parameters()]
             pcell_var = self.layout.add_pcell_variant(pcell_id, params)
             t = pya.CplxTrans(1.0, rot, mirror, u(ox), u(oy))
@@ -144,6 +147,9 @@ class pmos_buffer_cap(pya.PCellDeclarationHelper):
         ly_active = self.layout.layer(self.ly_active)
         ly_po     = self.layout.layer(self.ly_po)
         ly_m1     = self.layout.layer(self.ly_m1)
+        ly_nwell  = self.layout.layer(self.ly_nwell)
+        ly_dnwell = self.layout.layer(self.ly_dnwell)
+        ly_pimp   = self.layout.layer(self.ly_pimp)
 
         # ── gate dimensions ───────────────────────────────────────────────
         w = self.w   # gate width  (y direction)
@@ -192,6 +198,24 @@ class pmos_buffer_cap(pya.PCellDeclarationHelper):
         place_feol(0,                          gate_y1 + sd_gap,     w_nm)           # drain
         place_feol(gate_x0 - gc_outer - gc_inner, gate_y0,           w_nm, rot=90, mirror=True)  # gate left
         place_feol(gate_x1 - gc_inner,            gate_y0,           w_nm, rot=90, mirror=True)  # gate right
+
+        # ── nwell, deep nwell, pimp ───────────────────────────────────────
+        # Offsets measured from pmosHV$2 (rot90+mirrorX reference cell, W=L=8):
+        #   nwell/dnwell: x = [-0.62, W+0.62],  y = [gate_y0-1.47, gate_y1+1.47]
+        #   pimp:         x = [-0.40, W+0.40],  y = [gate_y0-0.52, gate_y1+0.52]
+        nw_x_ext   = 0.62   # nwell overhang beyond active in x
+        nw_y_ext   = 1.47   # nwell overhang beyond gate in y
+        pimp_x_ext = 0.40   # pimp overhang beyond active in x
+        pimp_y_ext = 0.52   # pimp overhang beyond gate in y
+
+        box(ly_nwell,  -nw_x_ext,          gate_y0 - nw_y_ext,
+                        w + nw_x_ext,       gate_y1 + nw_y_ext)
+
+        box(ly_dnwell, -nw_x_ext,          gate_y0 - nw_y_ext,
+                        w + nw_x_ext,       gate_y1 + nw_y_ext)
+
+        box(ly_pimp,   -pimp_x_ext,        gate_y0 - pimp_y_ext,
+                        w + pimp_x_ext,     gate_y1 + pimp_y_ext)
 
 
 # ── Library registration ──────────────────────────────────────────────────────
