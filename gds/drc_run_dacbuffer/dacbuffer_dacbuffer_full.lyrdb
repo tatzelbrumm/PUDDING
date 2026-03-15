@@ -3215,7 +3215,113 @@
    <references>
    </references>
   </cell>
+  <cell>
+   <name>pmos_buffer_cap</name>
+   <variant />
+   <layout-name>pmos_buffer_cap</layout-name>
+   <references>
+    <ref>
+     <parent>dacbuffer</parent>
+     <trans>r0 *1 13.725,16.39</trans>
+    </ref>
+   </references>
+  </cell>
+  <cell>
+   <name>pmos_buffer_cap$1</name>
+   <variant />
+   <layout-name>pmos_buffer_cap$1</layout-name>
+   <references>
+    <ref>
+     <parent>dacbuffer</parent>
+     <trans>m0 *1 3.725,25.07</trans>
+    </ref>
+   </references>
+  </cell>
  </cells>
  <items>
+  <item>
+   <tags />
+   <category>'NW.b1'</category>
+   <cell>pmos_buffer_cap</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (-0.62,-1.13;-0.62,9.81)|(-1.38,9.81;-1.38,-1.13)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>'NW.b1'</category>
+   <cell>pmos_buffer_cap$1</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (9.38,-1.13;9.38,9.81)|(8.62,9.81;8.62,-1.13)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>'NBL.c'</category>
+   <cell>pmos_buffer_cap</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (0.38,-0.13;0.38,8.81)|(-2.38,8.81;-2.38,-0.13)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>'NBL.c'</category>
+   <cell>pmos_buffer_cap$1</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (10.38,-0.13;10.38,8.81)|(7.62,8.81;7.62,-0.13)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>'NBL.d'</category>
+   <cell>pmos_buffer_cap</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (0.38,-0.13;0.38,8.81)/(-1.38,9.81;-1.38,-1.13)</value>
+   </values>
+  </item>
+  <item>
+   <tags />
+   <category>'NBL.d'</category>
+   <cell>pmos_buffer_cap$1</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>edge-pair: (7.62,8.81;7.62,-0.13)/(9.38,-1.13;9.38,9.81)</value>
+   </values>
+  </item>
+ <item>
+   <tags />
+   <category>'TGO.e'</category>
+   <cell>dacbuffer</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment />
+   <image />
+   <values>
+    <value>polygon: (12.345,15.26;12.345,26.2;13.105,26.2;13.105,15.26)</value>
+   </values>
+  </item>
  </items>
 </report-database>
