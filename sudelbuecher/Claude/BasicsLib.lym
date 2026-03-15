@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<klayout-macro>
- <description>BasicsLib - FEOL contacts, PMOS buffer cap</description>
- <version/>
- <category>pymacros</category>
- <prolog/><epilog/><doc/>
- <autorun>true</autorun>
- <autorun-early>false</autorun-early>
- <priority>0</priority>
- <shortcut/>
- <show-in-menu>false</show-in-menu>
- <group-name/><menu-path/>
- <interpreter>python</interpreter>
- <dsl-interpreter-name/>
- <text># -*- coding: utf-8 -*-
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;klayout-macro&gt;
+ &lt;description&gt;BasicsLib - FEOL contacts, PMOS buffer cap&lt;/description&gt;
+ &lt;version/&gt;
+ &lt;category&gt;pymacros&lt;/category&gt;
+ &lt;prolog/&gt;&lt;epilog/&gt;&lt;doc/&gt;
+ &lt;autorun&gt;true&lt;/autorun&gt;
+ &lt;autorun-early&gt;false&lt;/autorun-early&gt;
+ &lt;priority&gt;0&lt;/priority&gt;
+ &lt;shortcut/&gt;
+ &lt;show-in-menu&gt;false&lt;/show-in-menu&gt;
+ &lt;group-name/&gt;&lt;menu-path/&gt;
+ &lt;interpreter&gt;python&lt;/interpreter&gt;
+ &lt;dsl-interpreter-name/&gt;
+ &lt;text&gt;# -*- coding: utf-8 -*-
 import pya
 
 
@@ -155,7 +155,7 @@ class pmos_buffer_cap(pya.PCellDeclarationHelper):
         # GatPoly
         box(ly_po,  -gat_c, xpb,  W+gat_c, xpe)
         box(ly_po2, -gat_c, xpb,  W+gat_c, xpe)
-        box(ly_po,  -0.45,  xpb,  W+0.45,  xpe)
+        box(ly_po,  -0.46,  xpb,  W+0.46,  xpe)
 
         # M1
         box(ly_m1,  0, -m1_ext, W,  xde+m1_ext)
@@ -209,7 +209,7 @@ class pmos_buffer_cap(pya.PCellDeclarationHelper):
                 u(cell_x_left + cnt_a + m1_c), u(ym1t)))
 
         gate_bar(gate_L_ox,         L)
-        gate_bar(gate_R_ox - cnt_a, L)
+        gate_bar(gate_R_ox,          L)
 
 # ── Library registration ──────────────────────────────────────────────────────
 
@@ -221,5 +221,5 @@ class BasicsLib(pya.Library):
         self.layout().register_pcell("pmos_buffer_cap", pmos_buffer_cap())
         self.register("BasicsLib")
 
-BasicsLib()</text>
-</klayout-macro>
+BasicsLib()&lt;/text&gt;
+&lt;/klayout-macro&gt;
