@@ -26,7 +26,7 @@ import re, sys
 
 # ── open the existing dac4x32module GDS ──────────────────────────────────────
 GDS_IN  = "dac4x32module.gds"
-GDS_OUT = "dac4x32module_out.gds"   # overwrite in place (change to _out.gds to be safe)
+GDS_OUT = "dac4x32module.gds"   # overwrite in place (change to _out.gds to be safe)
 
 layout = pya.Layout()
 layout.read(GDS_IN)
@@ -52,9 +52,24 @@ for shape in sub.shapes(l_label):
         if re.match(r'(EN|ENB|ON|ONB)\[', name):
             sub_pins[name] = (t.x * layout.dbu, t.y * layout.dbu)
 
-# ── dac2u32out4in array origins (um) ─────────────────────────────────────────
-# CellArray: origin=(22.05,0), spacing=(75.6,0), columns=4
-inst_origins = [22.05 + i*75.6 for i in range(4)]
+# ── find dac2u32out4in instance origins (may be a single array instance) ────
+# KLayout CellInstArray: iterate with each_inst(), expand columns/rows manually
+inst_origins = []
+for inst in top.each_inst():
+    if layout.cell(inst.cell_index).name == "dac2u32out4in":
+        na = inst.size_a if inst.is_regular_array() else 1
+        nb = inst.size_b if inst.is_regular_array() else 1
+        for ia in range(na):
+            for ib in range(nb):
+                disp = inst.dtrans.disp
+                if inst.is_regular_array():
+                    disp = disp + inst.a * ia + inst.b * ib
+                inst_origins.append(disp.x * layout.dbu)
+inst_origins = sorted(inst_origins)
+
+if len(inst_origins) != 4:
+    print(f"Warning: found {len(inst_origins)} dac2u32out4in origins, expected 4")
+print("Instance origins (um):", inst_origins)
 
 # ── global name mapping ───────────────────────────────────────────────────────
 def global_name(sub_name, k):
