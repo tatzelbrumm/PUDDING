@@ -94,13 +94,13 @@ MACRO input_mirror
   PIN Iout
     PORT
       LAYER Metal3 ;
-        RECT 0.000 95.745 49.600 96.445 ;
+        RECT 0.000 95.745 0.700 96.445 ;
     END
   END Iout
   PIN i_in
     PORT
       LAYER Metal3 ;
-        RECT 25.000 103.930 49.600 104.630 ;
+        RECT 49.200 103.930 49.600 104.630 ;
     END
   END i_in
   PIN i_out
