@@ -1,0 +1,100 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO input_mirror
+  CLASS BLOCK ;
+  FOREIGN input_mirror ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 49.600 BY 188.000 ;
+  PIN VDD
+    USE POWER ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 88.660 0.700 90.390 ;
+    END
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 85.430 0.700 87.160 ;
+    END
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 101.800 0.700 103.530 ;
+    END
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 105.030 0.700 106.760 ;
+    END
+  END VDD
+  PIN VSS
+    USE GROUND ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 83.000 0.700 84.730 ;
+    END
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 107.460 0.700 109.190 ;
+    END
+  END VSS
+  PIN VbiasP[0]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 87.560 0.700 88.260 ;
+    END
+  END VbiasP[0]
+  PIN VbiasP[1]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 91.480 0.700 92.180 ;
+    END
+  END VbiasP[1]
+  PIN VbiasP[2]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 92.580 0.700 93.280 ;
+    END
+  END VbiasP[2]
+  PIN VbiasP[3]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 93.680 0.700 94.380 ;
+    END
+  END VbiasP[3]
+  PIN VbiasP[4]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 97.805 0.700 98.505 ;
+    END
+  END VbiasP[4]
+  PIN VbiasP[5]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 98.905 0.700 99.605 ;
+    END
+  END VbiasP[5]
+  PIN VbiasP[6]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 100.005 0.700 100.705 ;
+    END
+  END VbiasP[6]
+  PIN VbiasP[7]
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 103.930 0.700 104.630 ;
+    END
+  END VbiasP[7]
+  PIN Iout
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 95.745 49.600 96.445 ;
+    END
+  END Iout
+  OBS
+      LAYER Metal3 ;
+        RECT 25.000 103.930 49.600 104.630 ;
+  END
+END input_mirror
+END LIBRARY
+
