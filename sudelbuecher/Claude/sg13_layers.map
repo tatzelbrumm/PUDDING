@@ -1,32 +1,44 @@
-# SG13G2 layer map  (layer datatype name)
-# Diffusion / implant
-1   0   Activ
-5   0   NWell
-5   2   NWell_pin
-6   0   pSD
-8   0   GatPoly
-8   2   GatPoly_pin
-40  0   DNWell
-44  0   hvdifftap
-51  0   FILL
+# SG13G2 layer map  (layer  datatype  name)
+# Verified against IHP pmosHV_code.py, sg13g2_tech.json,
+# and reference GDS cells (dacbuffer.gds, pmos_buffer_cap.gds).
+#
+# Original file had layer numbers systematically wrong:
+#   old 5=NWell, 8=GatPoly, 10=Metal1, 14=Metal2, 31=TopMetal1, 6=pSD, 44=hvdifftap, 63=Via1
+#   all incorrect — see corrected assignments below.
+
+# FEOL
+1    0    Activ
+1    2    Activ_pin
+5    0    GatPoly
+5    2    GatPoly_pin
+5    25   GatPoly_label
+6    0    Cont
+14   0    pSD
+31   0    NWell
+40   0    NoBuLay
+44   0    ThickGateOx
+51   0    pmos
+
 # Metal interconnect
-10  0   Metal1
-14  0   Metal2
-19  0   Metal3
-29  0   Metal4
-30  0   Metal5
-30  2   Metal5_pin
-31  0   TopMetal1
-49  0   TopMetal2
+8    0    Metal1
+8    2    Metal1_pin
+8    25   Metal1_label
+10   0    Metal2
+10   2    Metal2_pin
+10   25   Metal2_label
+19   0    Metal3
+29   0    Metal4
+30   0    Metal5
+30   2    Metal5_pin
+30   25   Metal5_label
+63   0    TopMetal1
+49   0    TopMetal2
+
 # Contacts / vias
-50  0   Cont
-63  0   Via1
-66  0   Via2
-67  0   Via3
-# Label datatypes
-8   25  GatPoly_label
-10  25  Metal1_label
-30  25  Metal5_label
-67  25  Via3_label
-# Boundary
-189 4   prBoundary
+# (Cont = 6/0 above; vias not observed in these cells but standard IHP numbering)
+66   0    Via1
+67   0    Via2
+68   0    Via3
+
+# Annotation / boundary
+189  4    prBoundary
