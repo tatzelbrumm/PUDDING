@@ -1,0 +1,15 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/inverterpair.sch
+**.subckt inverterpair VDD OUTP IN OUTN VSS
+*.iopin VSS
+*.ipin IN
+*.opin OUTN
+*.opin OUTP
+*.iopin VDD
+xinv2 OUTP OUTN VDD VSS sg13g2_inv_1
+xinv1 OUTN IN VDD VSS sg13g2_inv_1
+**** begin user architecture code
+ .lib cornerMOSlv.lib mos_tt
+
+**** end user architecture code
+**.ends
+.end

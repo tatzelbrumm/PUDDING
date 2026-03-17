@@ -1,0 +1,9 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/analog_wires.sch
+**.subckt analog_wires vdda pbias pcbias
+*.iopin vdda
+*.iopin pcbias
+*.iopin pbias
+XMcbuffer vdda pcbias vdda vdda sg13_hv_pmos w=8u l=8u ng=1 m=19
+XMbbuffer vdda pbias vdda vdda sg13_hv_pmos w=8u l=8u ng=1 m=19
+**.ends
+.end

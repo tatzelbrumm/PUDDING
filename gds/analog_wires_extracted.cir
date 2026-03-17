@@ -1,0 +1,9 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 01/03/2026 21:31
+
+.SUBCKT analog_wires VDDA[0]|VDDA[1] VcascP[0]|VcascP[1]|i_in
++ VbiasP[0]|VbiasP[1]
+M$1 VDDA[0]|VDDA[1] VcascP[0]|VcascP[1]|i_in VDDA[0]|VDDA[1] VDDA[0]|VDDA[1]
++ sg13_hv_pmos L=8u W=152u AS=51.68p AD=51.68p PS=316.92u PD=316.92u
+M$2 VDDA[0]|VDDA[1] VbiasP[0]|VbiasP[1] VDDA[0]|VDDA[1] VDDA[0]|VDDA[1]
++ sg13_hv_pmos L=8u W=152u AS=51.68p AD=51.68p PS=316.92u PD=316.92u
+.ENDS analog_wires

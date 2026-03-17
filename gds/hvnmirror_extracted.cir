@@ -1,0 +1,56 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 16/03/2026 22:58
+
+.SUBCKT hvnmirror vss Iin Iout[0] Iout[1] Iout[2] Iout[3] Iout[4] Iout[5]
++ Iout[6] Iout[7]
+M$1 vss Iin \$19 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u PD=2.38u
+M$2 \$19 Iin Iin vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u PD=4.68u
+M$3 vss Iin \$20 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u PD=2.38u
+M$4 \$20 Iin Iin vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u PD=4.68u
+M$5 vss Iin \$21 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u PD=2.38u
+M$6 \$21 Iin Iin vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u PD=4.68u
+M$7 vss Iin \$22 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u PD=2.38u
+M$8 \$22 Iin Iin vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u PD=4.68u
+M$9 vss Iin \$23 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u PD=2.38u
+M$10 \$23 Iin Iout[0] vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u
++ PD=4.68u
+M$11 vss Iin \$24 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u
++ PD=2.38u
+M$12 \$24 Iin Iout[1] vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u
++ PD=4.68u
+M$13 vss Iin \$25 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u
++ PD=2.38u
+M$14 \$25 Iin Iout[2] vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u
++ PD=4.68u
+M$15 vss Iin \$26 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u
++ PD=2.38u
+M$16 \$26 Iin Iout[3] vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u
++ PD=4.68u
+M$17 vss Iin \$27 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u
++ PD=2.38u
+M$18 \$27 Iin Iout[4] vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u
++ PD=4.68u
+M$19 vss Iin \$28 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u
++ PD=2.38u
+M$20 \$28 Iin Iout[5] vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u
++ PD=4.68u
+M$21 vss Iin \$29 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u
++ PD=2.38u
+M$22 \$29 Iin Iout[6] vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u
++ PD=4.68u
+M$23 vss Iin \$30 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u
++ PD=2.38u
+M$24 \$30 Iin Iout[7] vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u
++ PD=4.68u
+M$25 vss Iin \$31 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u
++ PD=2.38u
+M$26 \$31 Iin Iin vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u PD=4.68u
+M$27 vss Iin \$32 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u
++ PD=2.38u
+M$28 \$32 Iin Iin vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u PD=4.68u
+M$29 vss Iin \$33 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u
++ PD=2.38u
+M$30 \$33 Iin Iin vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u PD=4.68u
+M$31 vss Iin \$34 vss sg13_hv_nmos L=10u W=2u AS=0.68p AD=0.38p PS=4.68u
++ PD=2.38u
+M$32 \$34 Iin Iin vss sg13_hv_nmos L=5u W=2u AS=0.38p AD=0.68p PS=2.38u PD=4.68u
+.ENDS hvnmirror

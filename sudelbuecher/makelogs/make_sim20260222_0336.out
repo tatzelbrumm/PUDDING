@@ -1,0 +1,36 @@
+cd tb; python3 testbench.py
+- V e r i l a t i o n   R e p o r t: Verilator 5.042 2025-11-02 rev v5.040
+- Verilator: Built from 0.000 MB sources in 0 modules, into 0.000 MB in 0 C++ files needing 0.000 MB
+- Verilator: Walltime 0.001 s (elab=0.000, cvt=0.000, bld=0.000); cpu 0.001 s on 1 threads; alloced 19.445 MB
+make[1]: Entering directory '/home/cmaier/EDA/PUDDING/tb/sim_build'
+make[1]: Nothing to be done for 'default'.
+make[1]: Leaving directory '/home/cmaier/EDA/PUDDING/tb/sim_build'
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.13.9 interpreter at /nix/store/8apdihpaag1032a4dl87pfpii1hkq25w-devshell-dir/bin/python3
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.042 2025-11-02
+     0.00ns INFO     cocotb                             Seeding Python random module with 1771727792
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.0 from /nix/store/fj0dwrrnrqqyibzxi4ibd4rc7l3rnmyl-python3-3.13.9-env/lib/python3.13/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running testbench.heichips25_pudding_smoke_and_random (1/1)
+                                                            Shift/transfer correctness + output mapping checks for heichips25_pudding.
+     0.00ns WARNING  py.warnings                        /home/cmaier/EDA/PUDDING/tb/testbench.py:59: DeprecationWarning: Use ``cocotb.start_soon`` instead.
+                                                          await cocotb.start(clock.start())
+133000.00ns WARNING  ..chips25_pudding_smoke_and_random uo_out mismatch got=0x00 exp=0x01
+                                                        assert 0 == 1
+                                                        Traceback (most recent call last):
+                                                          File "/home/cmaier/EDA/PUDDING/tb/testbench.py", line 128, in heichips25_pudding_smoke_and_random
+                                                            check_outputs()
+                                                            ~~~~~~~~~~~~~^^
+                                                          File "/home/cmaier/EDA/PUDDING/tb/testbench.py", line 121, in check_outputs
+                                                            assert got_uo == exp_uo, f"uo_out mismatch got=0x{got_uo:02x} exp=0x{exp_uo:02x}"
+                                                        AssertionError: uo_out mismatch got=0x00 exp=0x01
+                                                        assert 0 == 1
+133000.00ns WARNING  cocotb.regression                  testbench.heichips25_pudding_smoke_and_random failed
+133000.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** testbench.heichips25_pudding_smoke_and_random   FAIL      133000.00           0.01   10400522.63  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=1 PASS=0 FAIL=1 SKIP=0                              133000.00           0.01    9055001.66  **
+                                                        *******************************************************************************************************
+- :0: Verilog $finish

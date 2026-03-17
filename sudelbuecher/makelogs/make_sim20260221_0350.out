@@ -1,0 +1,27 @@
+cd tb; python3 testbench.py
+- V e r i l a t i o n   R e p o r t: Verilator 5.042 2025-11-02 rev v5.040
+- Verilator: Built from 0.000 MB sources in 0 modules, into 0.000 MB in 0 C++ files needing 0.000 MB
+- Verilator: Walltime 0.001 s (elab=0.000, cvt=0.000, bld=0.000); cpu 0.001 s on 1 threads; alloced 19.445 MB
+make[1]: Entering directory '/home/cmaier/EDA/PUDDING/tb/sim_build'
+make[1]: Nothing to be done for 'default'.
+make[1]: Leaving directory '/home/cmaier/EDA/PUDDING/tb/sim_build'
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.13.9 interpreter at /nix/store/iq9j3v7zr89dwps09kyf70jlcdqivhp7-devshell-dir/bin/python3
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.042 2025-11-02
+     0.00ns INFO     cocotb                             Seeding Python random module with 1771642206
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.0 from /nix/store/0kwn3pa8al4np6jss3x11hhh5wp0h27q-python3-3.13.9-env/lib/python3.13/site-packages/cocotb
+     0.00ns INFO     cocotb.regression                  pytest not found, install it to enable better AssertionError messages
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running testbench.heichips25_pudding_smoke_and_random (1/1)
+                                                            Shift/transfer correctness + output mapping checks for heichips25_pudding.
+     0.00ns WARNING  py.warnings                        /home/cmaier/EDA/PUDDING/tb/testbench.py:53: DeprecationWarning: Use ``cocotb.start_soon`` instead.
+                                                          await cocotb.start(clock.start())
+  6550.00ns INFO     cocotb.regression                  testbench.heichips25_pudding_smoke_and_random passed
+  6550.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** testbench.heichips25_pudding_smoke_and_random   PASS        6550.00           0.05     133381.36  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                6550.00           0.05     128292.53  **
+                                                        *******************************************************************************************************
+- :0: Verilog $finish

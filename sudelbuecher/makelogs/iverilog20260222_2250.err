@@ -1,0 +1,15 @@
+tb/tb_heichips25_pudding_fixed.sv:48: error: Variable 'VPWR' cannot be driven by a primitive or continuous assignment with non-default strength.
+tb/tb_heichips25_pudding_fixed.sv:48: error: Inout port expression must support continuous assignment.
+tb/tb_heichips25_pudding_fixed.sv:48:      : Port 11 (VPWR) of heichips25_pudding is connected to VPWR
+tb/tb_heichips25_pudding_fixed.sv:49: error: Variable 'VGND' cannot be driven by a primitive or continuous assignment with non-default strength.
+tb/tb_heichips25_pudding_fixed.sv:49: error: Inout port expression must support continuous assignment.
+tb/tb_heichips25_pudding_fixed.sv:49:      : Port 12 (VGND) of heichips25_pudding is connected to VGND
+tb/tb_heichips25_pudding_fixed.sv:62: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+tb/tb_heichips25_pudding_fixed.sv:62: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+tb/tb_heichips25_pudding_fixed.sv:62: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+tb/tb_heichips25_pudding_fixed.sv:62: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+tb/tb_heichips25_pudding_fixed.sv:62: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+tb/tb_heichips25_pudding_fixed.sv:97: warning: System task ($fatal) cannot be synthesized in an always_ff process.
+tb/tb_heichips25_pudding_fixed.sv:100: warning: System task ($fatal) cannot be synthesized in an always_ff process.
+tb/tb_heichips25_pudding_fixed.sv:104: warning: System task ($fatal) cannot be synthesized in an always_ff process.
+4 error(s) during elaboration.

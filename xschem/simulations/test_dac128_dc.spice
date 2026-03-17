@@ -1,0 +1,553 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/test_dac128_dc.sch
+**.subckt test_dac128_dc
+Vout Vout GND {vout}
+.save i(vout)
+Vprobe net1 GND 0
+.save i(vprobe)
+G1 iin net1 CUR=' 10**V(logI) '
+VlogI logI GND {logI}
+.save i(vlogi)
+VDDA VDD GND {vdd}
+.save i(vdda)
+VSW switch GND DC {vdd} PULSE(0 {vdd} {td} {tr} {tf} {ton} {tcyc})
+.save i(vsw)
+Vidacp VDD dac_p 0
+.save i(vidacp)
+Vidacn dac_n GND 0
+.save i(vidacn)
+Vpleak[1] pbuf Vpbias[1] 0
+Vpleak[0] pbuf Vpbias[0] 0
+.save i(vpleak[1:0])
+xdac dac_p en[15] en[14] en[13] en[12] en[11] en[10] en[9] en[8] en[7] en[6] en[5] en[4] en[3] en[2] en[1] en[0] enb[15] enb[14]
++ enb[13] enb[12] enb[11] enb[10] enb[9] enb[8] enb[7] enb[6] enb[5] enb[4] enb[3] enb[2] enb[1] enb[0] on[127] on[126] on[125] on[124]
++ on[123] on[122] on[121] on[120] on[119] on[118] on[117] on[116] on[115] on[114] on[113] on[112] on[111] on[110] on[109] on[108] on[107]
++ on[106] on[105] on[104] on[103] on[102] on[101] on[100] on[99] on[98] on[97] on[96] on[95] on[94] on[93] on[92] on[91] on[90] on[89]
++ on[88] on[87] on[86] on[85] on[84] on[83] on[82] on[81] on[80] on[79] on[78] on[77] on[76] on[75] on[74] on[73] on[72] on[71] on[70]
++ on[69] on[68] on[67] on[66] on[65] on[64] on[63] on[62] on[61] on[60] on[59] on[58] on[57] on[56] on[55] on[54] on[53] on[52] on[51]
++ on[50] on[49] on[48] on[47] on[46] on[45] on[44] on[43] on[42] on[41] on[40] on[39] on[38] on[37] on[36] on[35] on[34] on[33] on[32]
++ on[31] on[30] on[29] on[28] on[27] on[26] on[25] on[24] on[23] on[22] on[21] on[20] on[19] on[18] on[17] on[16] on[15] on[14] on[13]
++ on[12] on[11] on[10] on[9] on[8] on[7] on[6] on[5] on[4] on[3] on[2] on[1] on[0] onb[127] onb[126] onb[125] onb[124] onb[123] onb[122]
++ onb[121] onb[120] onb[119] onb[118] onb[117] onb[116] onb[115] onb[114] onb[113] onb[112] onb[111] onb[110] onb[109] onb[108] onb[107]
++ onb[106] onb[105] onb[104] onb[103] onb[102] onb[101] onb[100] onb[99] onb[98] onb[97] onb[96] onb[95] onb[94] onb[93] onb[92] onb[91]
++ onb[90] onb[89] onb[88] onb[87] onb[86] onb[85] onb[84] onb[83] onb[82] onb[81] onb[80] onb[79] onb[78] onb[77] onb[76] onb[75] onb[74]
++ onb[73] onb[72] onb[71] onb[70] onb[69] onb[68] onb[67] onb[66] onb[65] onb[64] onb[63] onb[62] onb[61] onb[60] onb[59] onb[58] onb[57]
++ onb[56] onb[55] onb[54] onb[53] onb[52] onb[51] onb[50] onb[49] onb[48] onb[47] onb[46] onb[45] onb[44] onb[43] onb[42] onb[41] onb[40]
++ onb[39] onb[38] onb[37] onb[36] onb[35] onb[34] onb[33] onb[32] onb[31] onb[30] onb[29] onb[28] onb[27] onb[26] onb[25] onb[24] onb[23]
++ onb[22] onb[21] onb[20] onb[19] onb[18] onb[17] onb[16] onb[15] onb[14] onb[13] onb[12] onb[11] onb[10] onb[9] onb[8] onb[7] onb[6]
++ onb[5] onb[4] onb[3] onb[2] onb[1] onb[0] Vout Vpbias[1] Vpbias[0] Vpcbias[1] Vpcbias[0] dac_n dac128module
+xbypass VDD pbuf iin analog_wires
+Vpcleak[1] iin Vpcbias[1] 0
+Vpcleak[0] iin Vpcbias[0] 0
+.save i(vpcleak[1:0])
+xen[15] VDD en[15] enable enb[15] GND inverterpair
+xen[14] VDD en[14] enable enb[14] GND inverterpair
+xen[13] VDD en[13] enable enb[13] GND inverterpair
+xen[12] VDD en[12] enable enb[12] GND inverterpair
+xen[11] VDD en[11] enable enb[11] GND inverterpair
+xen[10] VDD en[10] enable enb[10] GND inverterpair
+xen[9] VDD en[9] enable enb[9] GND inverterpair
+xen[8] VDD en[8] enable enb[8] GND inverterpair
+xen[7] VDD en[7] enable enb[7] GND inverterpair
+xen[6] VDD en[6] enable enb[6] GND inverterpair
+xen[5] VDD en[5] enable enb[5] GND inverterpair
+xen[4] VDD en[4] enable enb[4] GND inverterpair
+xen[3] VDD en[3] enable enb[3] GND inverterpair
+xen[2] VDD en[2] enable enb[2] GND inverterpair
+xen[1] VDD en[1] enable enb[1] GND inverterpair
+xen[0] VDD en[0] enable enb[0] GND inverterpair
+xdrv[127] VDD on[127] switch onb[127] GND inverterpair
+xdrv[126] VDD on[126] switch onb[126] GND inverterpair
+xdrv[125] VDD on[125] switch onb[125] GND inverterpair
+xdrv[124] VDD on[124] switch onb[124] GND inverterpair
+xdrv[123] VDD on[123] switch onb[123] GND inverterpair
+xdrv[122] VDD on[122] switch onb[122] GND inverterpair
+xdrv[121] VDD on[121] switch onb[121] GND inverterpair
+xdrv[120] VDD on[120] switch onb[120] GND inverterpair
+xdrv[119] VDD on[119] switch onb[119] GND inverterpair
+xdrv[118] VDD on[118] switch onb[118] GND inverterpair
+xdrv[117] VDD on[117] switch onb[117] GND inverterpair
+xdrv[116] VDD on[116] switch onb[116] GND inverterpair
+xdrv[115] VDD on[115] switch onb[115] GND inverterpair
+xdrv[114] VDD on[114] switch onb[114] GND inverterpair
+xdrv[113] VDD on[113] switch onb[113] GND inverterpair
+xdrv[112] VDD on[112] switch onb[112] GND inverterpair
+xdrv[111] VDD on[111] switch onb[111] GND inverterpair
+xdrv[110] VDD on[110] switch onb[110] GND inverterpair
+xdrv[109] VDD on[109] switch onb[109] GND inverterpair
+xdrv[108] VDD on[108] switch onb[108] GND inverterpair
+xdrv[107] VDD on[107] switch onb[107] GND inverterpair
+xdrv[106] VDD on[106] switch onb[106] GND inverterpair
+xdrv[105] VDD on[105] switch onb[105] GND inverterpair
+xdrv[104] VDD on[104] switch onb[104] GND inverterpair
+xdrv[103] VDD on[103] switch onb[103] GND inverterpair
+xdrv[102] VDD on[102] switch onb[102] GND inverterpair
+xdrv[101] VDD on[101] switch onb[101] GND inverterpair
+xdrv[100] VDD on[100] switch onb[100] GND inverterpair
+xdrv[99] VDD on[99] switch onb[99] GND inverterpair
+xdrv[98] VDD on[98] switch onb[98] GND inverterpair
+xdrv[97] VDD on[97] switch onb[97] GND inverterpair
+xdrv[96] VDD on[96] switch onb[96] GND inverterpair
+xdrv[95] VDD on[95] switch onb[95] GND inverterpair
+xdrv[94] VDD on[94] switch onb[94] GND inverterpair
+xdrv[93] VDD on[93] switch onb[93] GND inverterpair
+xdrv[92] VDD on[92] switch onb[92] GND inverterpair
+xdrv[91] VDD on[91] switch onb[91] GND inverterpair
+xdrv[90] VDD on[90] switch onb[90] GND inverterpair
+xdrv[89] VDD on[89] switch onb[89] GND inverterpair
+xdrv[88] VDD on[88] switch onb[88] GND inverterpair
+xdrv[87] VDD on[87] switch onb[87] GND inverterpair
+xdrv[86] VDD on[86] switch onb[86] GND inverterpair
+xdrv[85] VDD on[85] switch onb[85] GND inverterpair
+xdrv[84] VDD on[84] switch onb[84] GND inverterpair
+xdrv[83] VDD on[83] switch onb[83] GND inverterpair
+xdrv[82] VDD on[82] switch onb[82] GND inverterpair
+xdrv[81] VDD on[81] switch onb[81] GND inverterpair
+xdrv[80] VDD on[80] switch onb[80] GND inverterpair
+xdrv[79] VDD on[79] switch onb[79] GND inverterpair
+xdrv[78] VDD on[78] switch onb[78] GND inverterpair
+xdrv[77] VDD on[77] switch onb[77] GND inverterpair
+xdrv[76] VDD on[76] switch onb[76] GND inverterpair
+xdrv[75] VDD on[75] switch onb[75] GND inverterpair
+xdrv[74] VDD on[74] switch onb[74] GND inverterpair
+xdrv[73] VDD on[73] switch onb[73] GND inverterpair
+xdrv[72] VDD on[72] switch onb[72] GND inverterpair
+xdrv[71] VDD on[71] switch onb[71] GND inverterpair
+xdrv[70] VDD on[70] switch onb[70] GND inverterpair
+xdrv[69] VDD on[69] switch onb[69] GND inverterpair
+xdrv[68] VDD on[68] switch onb[68] GND inverterpair
+xdrv[67] VDD on[67] switch onb[67] GND inverterpair
+xdrv[66] VDD on[66] switch onb[66] GND inverterpair
+xdrv[65] VDD on[65] switch onb[65] GND inverterpair
+xdrv[64] VDD on[64] switch onb[64] GND inverterpair
+xdrv[63] VDD on[63] switch onb[63] GND inverterpair
+xdrv[62] VDD on[62] switch onb[62] GND inverterpair
+xdrv[61] VDD on[61] switch onb[61] GND inverterpair
+xdrv[60] VDD on[60] switch onb[60] GND inverterpair
+xdrv[59] VDD on[59] switch onb[59] GND inverterpair
+xdrv[58] VDD on[58] switch onb[58] GND inverterpair
+xdrv[57] VDD on[57] switch onb[57] GND inverterpair
+xdrv[56] VDD on[56] switch onb[56] GND inverterpair
+xdrv[55] VDD on[55] switch onb[55] GND inverterpair
+xdrv[54] VDD on[54] switch onb[54] GND inverterpair
+xdrv[53] VDD on[53] switch onb[53] GND inverterpair
+xdrv[52] VDD on[52] switch onb[52] GND inverterpair
+xdrv[51] VDD on[51] switch onb[51] GND inverterpair
+xdrv[50] VDD on[50] switch onb[50] GND inverterpair
+xdrv[49] VDD on[49] switch onb[49] GND inverterpair
+xdrv[48] VDD on[48] switch onb[48] GND inverterpair
+xdrv[47] VDD on[47] switch onb[47] GND inverterpair
+xdrv[46] VDD on[46] switch onb[46] GND inverterpair
+xdrv[45] VDD on[45] switch onb[45] GND inverterpair
+xdrv[44] VDD on[44] switch onb[44] GND inverterpair
+xdrv[43] VDD on[43] switch onb[43] GND inverterpair
+xdrv[42] VDD on[42] switch onb[42] GND inverterpair
+xdrv[41] VDD on[41] switch onb[41] GND inverterpair
+xdrv[40] VDD on[40] switch onb[40] GND inverterpair
+xdrv[39] VDD on[39] switch onb[39] GND inverterpair
+xdrv[38] VDD on[38] switch onb[38] GND inverterpair
+xdrv[37] VDD on[37] switch onb[37] GND inverterpair
+xdrv[36] VDD on[36] switch onb[36] GND inverterpair
+xdrv[35] VDD on[35] switch onb[35] GND inverterpair
+xdrv[34] VDD on[34] switch onb[34] GND inverterpair
+xdrv[33] VDD on[33] switch onb[33] GND inverterpair
+xdrv[32] VDD on[32] switch onb[32] GND inverterpair
+xdrv[31] VDD on[31] switch onb[31] GND inverterpair
+xdrv[30] VDD on[30] switch onb[30] GND inverterpair
+xdrv[29] VDD on[29] switch onb[29] GND inverterpair
+xdrv[28] VDD on[28] switch onb[28] GND inverterpair
+xdrv[27] VDD on[27] switch onb[27] GND inverterpair
+xdrv[26] VDD on[26] switch onb[26] GND inverterpair
+xdrv[25] VDD on[25] switch onb[25] GND inverterpair
+xdrv[24] VDD on[24] switch onb[24] GND inverterpair
+xdrv[23] VDD on[23] switch onb[23] GND inverterpair
+xdrv[22] VDD on[22] switch onb[22] GND inverterpair
+xdrv[21] VDD on[21] switch onb[21] GND inverterpair
+xdrv[20] VDD on[20] switch onb[20] GND inverterpair
+xdrv[19] VDD on[19] switch onb[19] GND inverterpair
+xdrv[18] VDD on[18] switch onb[18] GND inverterpair
+xdrv[17] VDD on[17] switch onb[17] GND inverterpair
+xdrv[16] VDD on[16] switch onb[16] GND inverterpair
+xdrv[15] VDD on[15] switch onb[15] GND inverterpair
+xdrv[14] VDD on[14] switch onb[14] GND inverterpair
+xdrv[13] VDD on[13] switch onb[13] GND inverterpair
+xdrv[12] VDD on[12] switch onb[12] GND inverterpair
+xdrv[11] VDD on[11] switch onb[11] GND inverterpair
+xdrv[10] VDD on[10] switch onb[10] GND inverterpair
+xdrv[9] VDD on[9] switch onb[9] GND inverterpair
+xdrv[8] VDD on[8] switch onb[8] GND inverterpair
+xdrv[7] VDD on[7] switch onb[7] GND inverterpair
+xdrv[6] VDD on[6] switch onb[6] GND inverterpair
+xdrv[5] VDD on[5] switch onb[5] GND inverterpair
+xdrv[4] VDD on[4] switch onb[4] GND inverterpair
+xdrv[3] VDD on[3] switch onb[3] GND inverterpair
+xdrv[2] VDD on[2] switch onb[2] GND inverterpair
+xdrv[1] VDD on[1] switch onb[1] GND inverterpair
+xdrv[0] VDD on[0] switch onb[0] GND inverterpair
+VEN enable GND DC {vdd} PULSE({vdd} {vdd} {td} {tr} {tf} {ton} {tcyc})
+.save i(ven)
+**** begin user architecture code
+
+
+.include test_dac128_dc.save
+.temp=27
+.options gmin=1e-15 abstol=1p method=gear
+.options savecurrents
+.control
+save all
+op
+write test_dac128_dc.raw
+set appendwrite
+dc Vout 0 1.6 10m VlogI -7 -5 0.5
+*tran 10n 500u
+write test_dac128_dc.raw
+plot 2*(vout#branch-8*vprobe#branch)/(8*vprobe#branch+vout#branch)
+plot vdd pbuf iin enable switch v("en[0]") v("enb[0]") v("on[0]") v("onb[0]") Vout
+plot vout#branch vprobe#branch
+*plot @n.xsw.xmbias.nsg13_lv_pmos[ids] @n.xsw.xmpullup.nsg13_lv_pmos[ids]
+plot vidacp#branch vidacn#branch
+*plot 0.5*(vidacp#branch+vidacn#branch) vidacp#branch-vidacn#branch
+.endc
+
+
+
+
+.include sg13g2_stdcell.spice
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+
+
+* device parameters
+.param l      = 5u
+.param w      = 1.45u
+.param lc     = 0.6u
+.param wc     = 1.2u
+.param lb     = 0.15u
+.param wb     = 5.85u
+.param lplogic= 0.13u
+.param wplogic= 0.5u
+.param lnlogic= 0.13u
+.param wnlogic= 0.15u
+* instrumentation parameters
+.param logI=-6
+.param vdd=1.6
+.param vout=0.6
+* simulation parameters
+.param celsius = 25
+.param td     = 25u
+.param tr     = 10p
+.param tf     = 10p
+.param ton    = 50u
+.param tcyc   = 100u
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  dac128module.sym # of pins=9
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/dac128module.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/dac128module.sch
+.subckt dac128module VDD EN[15] EN[14] EN[13] EN[12] EN[11] EN[10] EN[9] EN[8] EN[7] EN[6] EN[5] EN[4] EN[3] EN[2] EN[1] EN[0]
++ ENB[15] ENB[14] ENB[13] ENB[12] ENB[11] ENB[10] ENB[9] ENB[8] ENB[7] ENB[6] ENB[5] ENB[4] ENB[3] ENB[2] ENB[1] ENB[0] ON[127] ON[126]
++ ON[125] ON[124] ON[123] ON[122] ON[121] ON[120] ON[119] ON[118] ON[117] ON[116] ON[115] ON[114] ON[113] ON[112] ON[111] ON[110] ON[109]
++ ON[108] ON[107] ON[106] ON[105] ON[104] ON[103] ON[102] ON[101] ON[100] ON[99] ON[98] ON[97] ON[96] ON[95] ON[94] ON[93] ON[92] ON[91]
++ ON[90] ON[89] ON[88] ON[87] ON[86] ON[85] ON[84] ON[83] ON[82] ON[81] ON[80] ON[79] ON[78] ON[77] ON[76] ON[75] ON[74] ON[73] ON[72]
++ ON[71] ON[70] ON[69] ON[68] ON[67] ON[66] ON[65] ON[64] ON[63] ON[62] ON[61] ON[60] ON[59] ON[58] ON[57] ON[56] ON[55] ON[54] ON[53]
++ ON[52] ON[51] ON[50] ON[49] ON[48] ON[47] ON[46] ON[45] ON[44] ON[43] ON[42] ON[41] ON[40] ON[39] ON[38] ON[37] ON[36] ON[35] ON[34]
++ ON[33] ON[32] ON[31] ON[30] ON[29] ON[28] ON[27] ON[26] ON[25] ON[24] ON[23] ON[22] ON[21] ON[20] ON[19] ON[18] ON[17] ON[16] ON[15]
++ ON[14] ON[13] ON[12] ON[11] ON[10] ON[9] ON[8] ON[7] ON[6] ON[5] ON[4] ON[3] ON[2] ON[1] ON[0] ONB[127] ONB[126] ONB[125] ONB[124]
++ ONB[123] ONB[122] ONB[121] ONB[120] ONB[119] ONB[118] ONB[117] ONB[116] ONB[115] ONB[114] ONB[113] ONB[112] ONB[111] ONB[110] ONB[109]
++ ONB[108] ONB[107] ONB[106] ONB[105] ONB[104] ONB[103] ONB[102] ONB[101] ONB[100] ONB[99] ONB[98] ONB[97] ONB[96] ONB[95] ONB[94] ONB[93]
++ ONB[92] ONB[91] ONB[90] ONB[89] ONB[88] ONB[87] ONB[86] ONB[85] ONB[84] ONB[83] ONB[82] ONB[81] ONB[80] ONB[79] ONB[78] ONB[77] ONB[76]
++ ONB[75] ONB[74] ONB[73] ONB[72] ONB[71] ONB[70] ONB[69] ONB[68] ONB[67] ONB[66] ONB[65] ONB[64] ONB[63] ONB[62] ONB[61] ONB[60] ONB[59]
++ ONB[58] ONB[57] ONB[56] ONB[55] ONB[54] ONB[53] ONB[52] ONB[51] ONB[50] ONB[49] ONB[48] ONB[47] ONB[46] ONB[45] ONB[44] ONB[43] ONB[42]
++ ONB[41] ONB[40] ONB[39] ONB[38] ONB[37] ONB[36] ONB[35] ONB[34] ONB[33] ONB[32] ONB[31] ONB[30] ONB[29] ONB[28] ONB[27] ONB[26] ONB[25]
++ ONB[24] ONB[23] ONB[22] ONB[21] ONB[20] ONB[19] ONB[18] ONB[17] ONB[16] ONB[15] ONB[14] ONB[13] ONB[12] ONB[11] ONB[10] ONB[9] ONB[8]
++ ONB[7] ONB[6] ONB[5] ONB[4] ONB[3] ONB[2] ONB[1] ONB[0] Iout Vpbias[1] Vpbias[0] Vpcbias[1] Vpcbias[0] VSS
+*.opin Iout
+*.ipin
+*+ ON[127],ON[126],ON[125],ON[124],ON[123],ON[122],ON[121],ON[120],ON[119],ON[118],ON[117],ON[116],ON[115],ON[114],ON[113],ON[112],ON[111],ON[110],ON[109],ON[108],ON[107],ON[106],ON[105],ON[104],ON[103],ON[102],ON[101],ON[100],ON[99],ON[98],ON[97],ON[96],ON[95],ON[94],ON[93],ON[92],ON[91],ON[90],ON[89],ON[88],ON[87],ON[86],ON[85],ON[84],ON[83],ON[82],ON[81],ON[80],ON[79],ON[78],ON[77],ON[76],ON[75],ON[74],ON[73],ON[72],ON[71],ON[70],ON[69],ON[68],ON[67],ON[66],ON[65],ON[64],ON[63],ON[62],ON[61],ON[60],ON[59],ON[58],ON[57],ON[56],ON[55],ON[54],ON[53],ON[52],ON[51],ON[50],ON[49],ON[48],ON[47],ON[46],ON[45],ON[44],ON[43],ON[42],ON[41],ON[40],ON[39],ON[38],ON[37],ON[36],ON[35],ON[34],ON[33],ON[32],ON[31],ON[30],ON[29],ON[28],ON[27],ON[26],ON[25],ON[24],ON[23],ON[22],ON[21],ON[20],ON[19],ON[18],ON[17],ON[16],ON[15],ON[14],ON[13],ON[12],ON[11],ON[10],ON[9],ON[8],ON[7],ON[6],ON[5],ON[4],ON[3],ON[2],ON[1],ON[0]
+*.ipin
+*+ ONB[127],ONB[126],ONB[125],ONB[124],ONB[123],ONB[122],ONB[121],ONB[120],ONB[119],ONB[118],ONB[117],ONB[116],ONB[115],ONB[114],ONB[113],ONB[112],ONB[111],ONB[110],ONB[109],ONB[108],ONB[107],ONB[106],ONB[105],ONB[104],ONB[103],ONB[102],ONB[101],ONB[100],ONB[99],ONB[98],ONB[97],ONB[96],ONB[95],ONB[94],ONB[93],ONB[92],ONB[91],ONB[90],ONB[89],ONB[88],ONB[87],ONB[86],ONB[85],ONB[84],ONB[83],ONB[82],ONB[81],ONB[80],ONB[79],ONB[78],ONB[77],ONB[76],ONB[75],ONB[74],ONB[73],ONB[72],ONB[71],ONB[70],ONB[69],ONB[68],ONB[67],ONB[66],ONB[65],ONB[64],ONB[63],ONB[62],ONB[61],ONB[60],ONB[59],ONB[58],ONB[57],ONB[56],ONB[55],ONB[54],ONB[53],ONB[52],ONB[51],ONB[50],ONB[49],ONB[48],ONB[47],ONB[46],ONB[45],ONB[44],ONB[43],ONB[42],ONB[41],ONB[40],ONB[39],ONB[38],ONB[37],ONB[36],ONB[35],ONB[34],ONB[33],ONB[32],ONB[31],ONB[30],ONB[29],ONB[28],ONB[27],ONB[26],ONB[25],ONB[24],ONB[23],ONB[22],ONB[21],ONB[20],ONB[19],ONB[18],ONB[17],ONB[16],ONB[15],ONB[14],ONB[13],ONB[12],ONB[11],ONB[10],ONB[9],ONB[8],ONB[7],ONB[6],ONB[5],ONB[4],ONB[3],ONB[2],ONB[1],ONB[0]
+*.iopin VSS
+*.iopin VDD
+*.iopin Vpcbias[1],Vpcbias[0]
+*.ipin EN[15],EN[14],EN[13],EN[12],EN[11],EN[10],EN[9],EN[8],EN[7],EN[6],EN[5],EN[4],EN[3],EN[2],EN[1],EN[0]
+*.ipin ENB[15],ENB[14],ENB[13],ENB[12],ENB[11],ENB[10],ENB[9],ENB[8],ENB[7],ENB[6],ENB[5],ENB[4],ENB[3],ENB[2],ENB[1],ENB[0]
+*.iopin Vpbias[1],Vpbias[0]
+XMcbias[0] Vpcbias[0] Vpcbias[0] Vpbias[0] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=8
+**** begin user architecture code
+
+* device parameters
+.param l      = 5u
+.param w      = 1.45u
+.param lc     = 0.6u
+.param wc     = 1.2u
+.param lb     = 0.15u
+.param wb     = 5.85u
+.param lplogic= 0.13u
+.param wplogic= 0.5u
+.param lnlogic= 0.13u
+.param wnlogic= 0.15u
+
+
+**** end user architecture code
+xref[7] VDD Vpbias[0] EN[7] ENB[7] Vpbias[0] Vpcbias[0] VSS unitsource2u
+xref[6] VDD Vpbias[0] EN[6] ENB[6] Vpbias[0] Vpcbias[0] VSS unitsource2u
+xref[5] VDD Vpbias[0] EN[5] ENB[5] Vpbias[0] Vpcbias[0] VSS unitsource2u
+xref[4] VDD Vpbias[0] EN[4] ENB[4] Vpbias[0] Vpcbias[0] VSS unitsource2u
+xref[3] VDD Vpbias[0] EN[3] ENB[3] Vpbias[0] Vpcbias[0] VSS unitsource2u
+xref[2] VDD Vpbias[0] EN[2] ENB[2] Vpbias[0] Vpcbias[0] VSS unitsource2u
+xref[1] VDD Vpbias[0] EN[1] ENB[1] Vpbias[0] Vpcbias[0] VSS unitsource2u
+xref[0] VDD Vpbias[0] EN[0] ENB[0] Vpbias[0] Vpcbias[0] VSS unitsource2u
+xsrc[63] VDD net1 ON[63] ONB[63] Iout net2 VSS unitsource2u
+xsrc[62] VDD net1 ON[62] ONB[62] Iout net2 VSS unitsource2u
+xsrc[61] VDD net1 ON[61] ONB[61] Iout net2 VSS unitsource2u
+xsrc[60] VDD net1 ON[60] ONB[60] Iout net2 VSS unitsource2u
+xsrc[59] VDD net1 ON[59] ONB[59] Iout net2 VSS unitsource2u
+xsrc[58] VDD net1 ON[58] ONB[58] Iout net2 VSS unitsource2u
+xsrc[57] VDD net1 ON[57] ONB[57] Iout net2 VSS unitsource2u
+xsrc[56] VDD net1 ON[56] ONB[56] Iout net2 VSS unitsource2u
+xsrc[55] VDD net1 ON[55] ONB[55] Iout net2 VSS unitsource2u
+xsrc[54] VDD net1 ON[54] ONB[54] Iout net2 VSS unitsource2u
+xsrc[53] VDD net1 ON[53] ONB[53] Iout net2 VSS unitsource2u
+xsrc[52] VDD net1 ON[52] ONB[52] Iout net2 VSS unitsource2u
+xsrc[51] VDD net1 ON[51] ONB[51] Iout net2 VSS unitsource2u
+xsrc[50] VDD net1 ON[50] ONB[50] Iout net2 VSS unitsource2u
+xsrc[49] VDD net1 ON[49] ONB[49] Iout net2 VSS unitsource2u
+xsrc[48] VDD net1 ON[48] ONB[48] Iout net2 VSS unitsource2u
+xsrc[47] VDD net1 ON[47] ONB[47] Iout net2 VSS unitsource2u
+xsrc[46] VDD net1 ON[46] ONB[46] Iout net2 VSS unitsource2u
+xsrc[45] VDD net1 ON[45] ONB[45] Iout net2 VSS unitsource2u
+xsrc[44] VDD net1 ON[44] ONB[44] Iout net2 VSS unitsource2u
+xsrc[43] VDD net1 ON[43] ONB[43] Iout net2 VSS unitsource2u
+xsrc[42] VDD net1 ON[42] ONB[42] Iout net2 VSS unitsource2u
+xsrc[41] VDD net1 ON[41] ONB[41] Iout net2 VSS unitsource2u
+xsrc[40] VDD net1 ON[40] ONB[40] Iout net2 VSS unitsource2u
+xsrc[39] VDD net1 ON[39] ONB[39] Iout net2 VSS unitsource2u
+xsrc[38] VDD net1 ON[38] ONB[38] Iout net2 VSS unitsource2u
+xsrc[37] VDD net1 ON[37] ONB[37] Iout net2 VSS unitsource2u
+xsrc[36] VDD net1 ON[36] ONB[36] Iout net2 VSS unitsource2u
+xsrc[35] VDD net1 ON[35] ONB[35] Iout net2 VSS unitsource2u
+xsrc[34] VDD net1 ON[34] ONB[34] Iout net2 VSS unitsource2u
+xsrc[33] VDD net1 ON[33] ONB[33] Iout net2 VSS unitsource2u
+xsrc[32] VDD net1 ON[32] ONB[32] Iout net2 VSS unitsource2u
+xsrc[31] VDD net1 ON[31] ONB[31] Iout net2 VSS unitsource2u
+xsrc[30] VDD net1 ON[30] ONB[30] Iout net2 VSS unitsource2u
+xsrc[29] VDD net1 ON[29] ONB[29] Iout net2 VSS unitsource2u
+xsrc[28] VDD net1 ON[28] ONB[28] Iout net2 VSS unitsource2u
+xsrc[27] VDD net1 ON[27] ONB[27] Iout net2 VSS unitsource2u
+xsrc[26] VDD net1 ON[26] ONB[26] Iout net2 VSS unitsource2u
+xsrc[25] VDD net1 ON[25] ONB[25] Iout net2 VSS unitsource2u
+xsrc[24] VDD net1 ON[24] ONB[24] Iout net2 VSS unitsource2u
+xsrc[23] VDD net1 ON[23] ONB[23] Iout net2 VSS unitsource2u
+xsrc[22] VDD net1 ON[22] ONB[22] Iout net2 VSS unitsource2u
+xsrc[21] VDD net1 ON[21] ONB[21] Iout net2 VSS unitsource2u
+xsrc[20] VDD net1 ON[20] ONB[20] Iout net2 VSS unitsource2u
+xsrc[19] VDD net1 ON[19] ONB[19] Iout net2 VSS unitsource2u
+xsrc[18] VDD net1 ON[18] ONB[18] Iout net2 VSS unitsource2u
+xsrc[17] VDD net1 ON[17] ONB[17] Iout net2 VSS unitsource2u
+xsrc[16] VDD net1 ON[16] ONB[16] Iout net2 VSS unitsource2u
+xsrc[15] VDD net1 ON[15] ONB[15] Iout net2 VSS unitsource2u
+xsrc[14] VDD net1 ON[14] ONB[14] Iout net2 VSS unitsource2u
+xsrc[13] VDD net1 ON[13] ONB[13] Iout net2 VSS unitsource2u
+xsrc[12] VDD net1 ON[12] ONB[12] Iout net2 VSS unitsource2u
+xsrc[11] VDD net1 ON[11] ONB[11] Iout net2 VSS unitsource2u
+xsrc[10] VDD net1 ON[10] ONB[10] Iout net2 VSS unitsource2u
+xsrc[9] VDD net1 ON[9] ONB[9] Iout net2 VSS unitsource2u
+xsrc[8] VDD net1 ON[8] ONB[8] Iout net2 VSS unitsource2u
+xsrc[7] VDD net1 ON[7] ONB[7] Iout net2 VSS unitsource2u
+xsrc[6] VDD net1 ON[6] ONB[6] Iout net2 VSS unitsource2u
+xsrc[5] VDD net1 ON[5] ONB[5] Iout net2 VSS unitsource2u
+xsrc[4] VDD net1 ON[4] ONB[4] Iout net2 VSS unitsource2u
+xsrc[3] VDD net1 ON[3] ONB[3] Iout net2 VSS unitsource2u
+xsrc[2] VDD net1 ON[2] ONB[2] Iout net2 VSS unitsource2u
+xsrc[1] VDD net1 ON[1] ONB[1] Iout net2 VSS unitsource2u
+xsrc[0] VDD net1 ON[0] ONB[0] Iout net2 VSS unitsource2u
+XMcbias[1] Vpcbias[1] Vpcbias[1] Vpbias[1] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=8
+xref1[15] VDD Vpbias[1] EN[15] ENB[15] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xref1[14] VDD Vpbias[1] EN[14] ENB[14] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xref1[13] VDD Vpbias[1] EN[13] ENB[13] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xref1[12] VDD Vpbias[1] EN[12] ENB[12] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xref1[11] VDD Vpbias[1] EN[11] ENB[11] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xref1[10] VDD Vpbias[1] EN[10] ENB[10] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xref1[9] VDD Vpbias[1] EN[9] ENB[9] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xref1[8] VDD Vpbias[1] EN[8] ENB[8] Vpbias[1] Vpcbias[1] VSS unitsource2u
+xsrc1[127] VDD net4 ON[127] ONB[127] Iout net3 VSS unitsource2u
+xsrc1[126] VDD net4 ON[126] ONB[126] Iout net3 VSS unitsource2u
+xsrc1[125] VDD net4 ON[125] ONB[125] Iout net3 VSS unitsource2u
+xsrc1[124] VDD net4 ON[124] ONB[124] Iout net3 VSS unitsource2u
+xsrc1[123] VDD net4 ON[123] ONB[123] Iout net3 VSS unitsource2u
+xsrc1[122] VDD net4 ON[122] ONB[122] Iout net3 VSS unitsource2u
+xsrc1[121] VDD net4 ON[121] ONB[121] Iout net3 VSS unitsource2u
+xsrc1[120] VDD net4 ON[120] ONB[120] Iout net3 VSS unitsource2u
+xsrc1[119] VDD net4 ON[119] ONB[119] Iout net3 VSS unitsource2u
+xsrc1[118] VDD net4 ON[118] ONB[118] Iout net3 VSS unitsource2u
+xsrc1[117] VDD net4 ON[117] ONB[117] Iout net3 VSS unitsource2u
+xsrc1[116] VDD net4 ON[116] ONB[116] Iout net3 VSS unitsource2u
+xsrc1[115] VDD net4 ON[115] ONB[115] Iout net3 VSS unitsource2u
+xsrc1[114] VDD net4 ON[114] ONB[114] Iout net3 VSS unitsource2u
+xsrc1[113] VDD net4 ON[113] ONB[113] Iout net3 VSS unitsource2u
+xsrc1[112] VDD net4 ON[112] ONB[112] Iout net3 VSS unitsource2u
+xsrc1[111] VDD net4 ON[111] ONB[111] Iout net3 VSS unitsource2u
+xsrc1[110] VDD net4 ON[110] ONB[110] Iout net3 VSS unitsource2u
+xsrc1[109] VDD net4 ON[109] ONB[109] Iout net3 VSS unitsource2u
+xsrc1[108] VDD net4 ON[108] ONB[108] Iout net3 VSS unitsource2u
+xsrc1[107] VDD net4 ON[107] ONB[107] Iout net3 VSS unitsource2u
+xsrc1[106] VDD net4 ON[106] ONB[106] Iout net3 VSS unitsource2u
+xsrc1[105] VDD net4 ON[105] ONB[105] Iout net3 VSS unitsource2u
+xsrc1[104] VDD net4 ON[104] ONB[104] Iout net3 VSS unitsource2u
+xsrc1[103] VDD net4 ON[103] ONB[103] Iout net3 VSS unitsource2u
+xsrc1[102] VDD net4 ON[102] ONB[102] Iout net3 VSS unitsource2u
+xsrc1[101] VDD net4 ON[101] ONB[101] Iout net3 VSS unitsource2u
+xsrc1[100] VDD net4 ON[100] ONB[100] Iout net3 VSS unitsource2u
+xsrc1[99] VDD net4 ON[99] ONB[99] Iout net3 VSS unitsource2u
+xsrc1[98] VDD net4 ON[98] ONB[98] Iout net3 VSS unitsource2u
+xsrc1[97] VDD net4 ON[97] ONB[97] Iout net3 VSS unitsource2u
+xsrc1[96] VDD net4 ON[96] ONB[96] Iout net3 VSS unitsource2u
+xsrc1[95] VDD net4 ON[95] ONB[95] Iout net3 VSS unitsource2u
+xsrc1[94] VDD net4 ON[94] ONB[94] Iout net3 VSS unitsource2u
+xsrc1[93] VDD net4 ON[93] ONB[93] Iout net3 VSS unitsource2u
+xsrc1[92] VDD net4 ON[92] ONB[92] Iout net3 VSS unitsource2u
+xsrc1[91] VDD net4 ON[91] ONB[91] Iout net3 VSS unitsource2u
+xsrc1[90] VDD net4 ON[90] ONB[90] Iout net3 VSS unitsource2u
+xsrc1[89] VDD net4 ON[89] ONB[89] Iout net3 VSS unitsource2u
+xsrc1[88] VDD net4 ON[88] ONB[88] Iout net3 VSS unitsource2u
+xsrc1[87] VDD net4 ON[87] ONB[87] Iout net3 VSS unitsource2u
+xsrc1[86] VDD net4 ON[86] ONB[86] Iout net3 VSS unitsource2u
+xsrc1[85] VDD net4 ON[85] ONB[85] Iout net3 VSS unitsource2u
+xsrc1[84] VDD net4 ON[84] ONB[84] Iout net3 VSS unitsource2u
+xsrc1[83] VDD net4 ON[83] ONB[83] Iout net3 VSS unitsource2u
+xsrc1[82] VDD net4 ON[82] ONB[82] Iout net3 VSS unitsource2u
+xsrc1[81] VDD net4 ON[81] ONB[81] Iout net3 VSS unitsource2u
+xsrc1[80] VDD net4 ON[80] ONB[80] Iout net3 VSS unitsource2u
+xsrc1[79] VDD net4 ON[79] ONB[79] Iout net3 VSS unitsource2u
+xsrc1[78] VDD net4 ON[78] ONB[78] Iout net3 VSS unitsource2u
+xsrc1[77] VDD net4 ON[77] ONB[77] Iout net3 VSS unitsource2u
+xsrc1[76] VDD net4 ON[76] ONB[76] Iout net3 VSS unitsource2u
+xsrc1[75] VDD net4 ON[75] ONB[75] Iout net3 VSS unitsource2u
+xsrc1[74] VDD net4 ON[74] ONB[74] Iout net3 VSS unitsource2u
+xsrc1[73] VDD net4 ON[73] ONB[73] Iout net3 VSS unitsource2u
+xsrc1[72] VDD net4 ON[72] ONB[72] Iout net3 VSS unitsource2u
+xsrc1[71] VDD net4 ON[71] ONB[71] Iout net3 VSS unitsource2u
+xsrc1[70] VDD net4 ON[70] ONB[70] Iout net3 VSS unitsource2u
+xsrc1[69] VDD net4 ON[69] ONB[69] Iout net3 VSS unitsource2u
+xsrc1[68] VDD net4 ON[68] ONB[68] Iout net3 VSS unitsource2u
+xsrc1[67] VDD net4 ON[67] ONB[67] Iout net3 VSS unitsource2u
+xsrc1[66] VDD net4 ON[66] ONB[66] Iout net3 VSS unitsource2u
+xsrc1[65] VDD net4 ON[65] ONB[65] Iout net3 VSS unitsource2u
+xsrc1[64] VDD net4 ON[64] ONB[64] Iout net3 VSS unitsource2u
+* tap: EN[15:0] --> EN[7:0]
+* tap: ENB[15:0] --> ENB[7:0]
+* tap: ENB[15:0] --> ENB[15:8]
+* tap: EN[15:0] --> EN[15:8]
+* tap: ON[127:0] --> ON[63:0]
+* tap: ONB[127:0] --> ONB[63:0]
+* tap: ON[127:0] --> ON[127:64]
+* tap: ONB[127:0] --> ONB[127:64]
+* tap: Vpbias[1:0] --> Vpbias[0]
+* tap: Vpcbias[1:0] --> Vpcbias[0]
+* tap: Vpbias[1:0] --> Vpbias[1]
+* tap: Vpcbias[1:0] --> Vpcbias[1]
+E1 VDD net1 VDD Vpbias[0] 1
+E2 VDD net2 VDD Vpcbias[0] 1
+E3 VDD net4 VDD Vpbias[1] 1
+E4 VDD net3 VDD Vpcbias[1] 1
+.ends
+
+
+* expanding   symbol:  analog_wires.sym # of pins=3
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/analog_wires.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/analog_wires.sch
+.subckt analog_wires vdda pbias pcbias
+*.iopin vdda
+*.iopin pcbias
+*.iopin pbias
+XMcbuffer vdda pcbias vdda vdda sg13_hv_pmos w=8u l=8u ng=1 m=19
+XMbbuffer vdda pbias vdda vdda sg13_hv_pmos w=8u l=8u ng=1 m=19
+.ends
+
+
+* expanding   symbol:  inverterpair.sym # of pins=5
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/inverterpair.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/inverterpair.sch
+.subckt inverterpair VDD OUTP IN OUTN VSS
+*.iopin VSS
+*.ipin IN
+*.opin OUTN
+*.opin OUTP
+*.iopin VDD
+xinv2 OUTP OUTN VDD VSS sg13g2_inv_1
+xinv1 OUTN IN VDD VSS sg13g2_inv_1
+.ends
+
+
+* expanding   symbol:  unitsource2u.sym # of pins=7
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/unitsource2u.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/unitsource2u.sch
+.subckt unitsource2u VDD VbiasP ON ONB Iout VcascP VSS
+*.iopin VSS
+*.iopin VDD
+*.iopin VbiasP
+*.iopin VcascP
+*.ipin ON
+*.ipin ONB
+*.iopin Iout
+xnonoverlap VDD VSS ON ONB on_n off_n nonoverlap
+xsw VDD off_n Vcasc on_n VcascP cascodeswitch_pmos
+xsrc VDD VbiasP Vcasc Iout pcsource2u
+.ends
+
+
+* expanding   symbol:  nonoverlap.sym # of pins=6
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/nonoverlap.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/nonoverlap.sch
+.subckt nonoverlap VDD VSS INP INN OUTN OUTP
+*.iopin VSS
+*.iopin VDD
+*.ipin INP
+*.ipin INN
+*.opin OUTP
+*.opin OUTN
+XM1 OUTN INP VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+XM2 OUTP INN VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+XM3 OUTN OUTP VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
+XM4 OUTP OUTN VSS VSS sg13_lv_nmos w=0.15u l=0.52u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  cascodeswitch_pmos.sym # of pins=5
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/cascodeswitch_pmos.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/cascodeswitch_pmos.sch
+.subckt cascodeswitch_pmos VDD off_n Vcasc on_n Vbpcasc
+*.ipin off_n
+*.ipin Vbpcasc
+*.opin Vcasc
+*.ipin on_n
+*.ipin VDD
+XMpullup Vcasc off_n VDD VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+XMbias Vbpcasc on_n Vcasc VDD sg13_lv_pmos w=0.3u l=0.13u ng=1 m=1
+.ends
+
+
+* expanding   symbol:  pcsource2u.sym # of pins=4
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/pcsource2u.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/pcsource2u.sch
+.subckt pcsource2u VDD VbiasP VcascodeP Iout
+*.ipin VcascodeP
+*.ipin VbiasP
+*.opin Iout
+*.ipin VDD
+XMsrc drain net4 VDD net1 sg13_lv_pmos w=1.45u l=5u ng=1 m=1
+XMcasc Iout net3 drain net2 sg13_lv_pmos w=1.2u l=0.6u ng=1 m=1
+Vgsrc net4 VbiasP 0
+.save i(vgsrc)
+Vgcasc net3 VcascodeP 0
+.save i(vgcasc)
+Vbsrc VDD net1 0
+.save i(vbsrc)
+Vbcasc VDD net2 0
+.save i(vbcasc)
+.ends
+
+.GLOBAL GND
+.end

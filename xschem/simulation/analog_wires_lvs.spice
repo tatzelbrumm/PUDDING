@@ -1,0 +1,8 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/analog_wires.sch
+* hand edited to match extracted circuit
+
+.subckt analog_wires VDDA[0]|VDDA[1] VcascP[0]|VcascP[1]|i_in VbiasP[0]|VbiasP[1]
+*.PININFO vdda:B pcbias:B pbias:B
+Mcbuffer vdda pcbias vdda vdda sg13_hv_pmos w=8u l=8u ng=1 m=19
+Mbbuffer vdda pbias vdda vdda sg13_hv_pmos w=8u l=8u ng=1 m=19
+.ends

@@ -3,8 +3,8 @@
 DESIGN_NAME: heichips25_pudding
 VERILOG_FILES: 
 - dir::../src/heichips25_pudding.sv
-- dir::../src/dac128module.v
-- dir::../src/analog_wires.v
+- dir::../src/dac4x32module.v
+- dir::../src/input_mirror.v
 
 CLOCK_PORT: clk
 CLOCK_PERIOD: 10 # 10ns = 100MHz
@@ -45,29 +45,30 @@ USE_SLANG: true
 
 # reserve space for the DAC
 FP_OBSTRUCTIONS: 
-- [264.2, 85, 400, 115.33]
-- [400, 4, 497, 196]
+# dac obstruction height is 30.33
+- [139.3, 85, 450, 115.33]
+- [450, 4, 497, 196]
 
 MACROS:
-  dac128module:
+  dac4x32module:
     gds:
-      - dir::../gds/dac128module.gds
+      - dir::../gds/dac4x32module.gds
     lef:
-      - dir::../gds/dac128module.lef
+      - dir::../gds/dac4x32module.lef
 #   nl:
-#     - dir::../src/dac128module.sv
+#     - dir::../src/dac4x32module.sv
     instances:
       dac:
-        location: [266.2, 87]
+        location: [141.3, 87]
         orientation: N
-  analog_wires:
+  input_mirror:
     gds:
-      - dir::../gds/analog_wires.gds
+      - dir::../gds/input_mirror.gds
     lef:
-      - dir::../gds/analog_wires.lef
+      - dir::../gds/input_mirror.lef
     instances:
       wires:
-        location: [400, 4]
+        location: [450, 4]
         orientation: N
 
 # Connect macro power pins to the PDN

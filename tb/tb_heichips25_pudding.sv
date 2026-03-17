@@ -2,7 +2,6 @@
 `default_nettype none
 
 module tb_heichips25_pudding;
-
   // ----------------------------
   // Clk / reset
   // ----------------------------
@@ -28,8 +27,11 @@ module tb_heichips25_pudding;
   tri i_out;
 
   // power pins
-  logic VPWR;
-  logic VGND;
+  wire VPWR;
+  wire VGND;
+  // Tie off power pins for digital simulation
+  assign VPWR = 1'b1;
+  assign VGND = 1'b0;
 
   // ----------------------------
   // Instantiate DUT
@@ -59,16 +61,21 @@ module tb_heichips25_pudding;
   logic datum, shift, transfer, dir;
   logic stateen;
 
-  always_comb begin
-    datum    = ui_in[0];
-    shift    = ui_in[1];
-    transfer = ui_in[2];
-    dir      = ui_in[3];
-    stateen  = ui_in[4];
+  // Convenience aliases for ui_in bits (continuous assigns for Icarus compatibility)
+  assign datum    = ui_in[0];
+  assign shift    = ui_in[1];
+  assign transfer = ui_in[2];
+  assign dir      = ui_in[3];
+  assign stateen  = ui_in[4];
+
+  // Set up waveform dump
+  initial begin
+    $dumpfile("test_heichips25_pudding.vcd");
+    $dumpvars(0, tb_heichips25_pudding);
   end
 
   // Reference model update at posedge
-  always_ff @(posedge clk) begin
+  always @(posedge clk) begin
     if (!rst_n) begin
       ref_daisychain <= '0;
       ref_state      <= '0;
@@ -90,7 +97,7 @@ module tb_heichips25_pudding;
   // Dedicated outputs: uo_out = daisychain[127:120]
   // IO outputs:       uio_out = state[127:120]
   // IO enable:        uio_oe = 8'hFF
-  always_ff @(posedge clk) begin
+  always @(posedge clk) begin
     if (rst_n) begin
       // uio_oe should always be driven
       assert (uio_oe === 8'hFF)
@@ -150,14 +157,15 @@ module tb_heichips25_pudding;
   // Main test sequence
   // ----------------------------
   initial begin
+    logic [127:0] pattern_a;
+    int sel;
+
     // init
     ui_in  = '0;
     uio_in = '0;
     ena    = 1'b1;
 
     // power
-    VPWR = 1'b1;
-    VGND = 1'b0;
 
     // reset
     rst_n = 1'b0;
@@ -166,7 +174,6 @@ module tb_heichips25_pudding;
     @(posedge clk);
 
     // 1) Directed test: shift in a known pattern, transfer to state, transfer back
-    logic [127:0] pattern_a;
     pattern_a = 128'h0123_4567_89ab_cdef_fedc_ba98_7654_3210;
 
     $display("[TB] Loading daisychain pattern A via shift...");
@@ -185,7 +192,7 @@ module tb_heichips25_pudding;
     // 2) Randomized regress: random mix of shift/transfer/idle
     $display("[TB] Random stimulus phase...");
     for (int k = 0; k < 500; k++) begin
-      int sel = $urandom_range(0, 9);
+      sel = $urandom_range(0, 9);
       case (sel)
         0,1,2,3,4,5: begin
           pulse_shift($urandom_range(0,1));

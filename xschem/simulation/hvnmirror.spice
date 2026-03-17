@@ -1,0 +1,36 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/hvnmirror.sch
+.subckt hvnmirror VSS Iin Iout[0] Iout[1] Iout[2] Iout[3] Iout[4] Iout[5] Iout[6] Iout[7]
+*.PININFO VSS:B Iin:B Iout[0]:B Iout[1]:B Iout[2]:B Iout[3]:B Iout[4]:B Iout[5]:B Iout[6]:B Iout[7]:B
+M2[7] vd_in[7] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M2[6] vd_in[6] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M2[5] vd_in[5] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M2[4] vd_in[4] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M2[3] vd_in[3] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M2[2] vd_in[2] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M2[1] vd_in[1] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M2[0] vd_in[0] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M3 vd_0 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M1[7] Iin Iin vd_in[7] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M1[6] Iin Iin vd_in[6] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M1[5] Iin Iin vd_in[5] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M1[4] Iin Iin vd_in[4] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M1[3] Iin Iin vd_in[3] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M1[2] Iin Iin vd_in[2] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M1[1] Iin Iin vd_in[1] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M1[0] Iin Iin vd_in[0] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M4 Iout[0] Iin vd_0 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M5 vd_1 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M6 Iout[1] Iin vd_1 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M7 vd_2 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M8 Iout[2] Iin vd_2 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M9 vd_3 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M10 Iout[3] Iin vd_3 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M11 vd_4 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M12 Iout[4] Iin vd_4 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M13 vd_5 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M14 Iout[5] Iin vd_5 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M15 vd_6 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M16 Iout[6] Iin vd_6 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+M17 vd_7 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+M18 Iout[7] Iin vd_7 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+.ends

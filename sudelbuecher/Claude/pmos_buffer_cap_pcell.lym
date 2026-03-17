@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<klayout-macro>
+ <description>PMOS buffer cap PCell</description>
+ <version/>
+ <category>pymacros</category>
+ <prolog/>
+ <epilog/>
+ <doc/>
+ <autorun>false</autorun>
+ <autorun-early>false</autorun-early>
+ <priority>0</priority>
+ <shortcut/>
+ <show-in-menu>false</show-in-menu>
+ <group-name/>
+ <menu-path/>
+ <interpreter>python</interpreter>
+ <dsl-interpreter-name/>
+ <text># -*- coding: utf-8 -*-
+"""
+pmos_buffer_cap PCell
+=====================
+A PMOS capacitor with:
+  - gate area  w × l  (w = width in y, l = length in x, both in µm)
+  - source/drain M1 contact bars above and below the gate (horizontal)
+  - gate poly contact bars left and right of the gate (vertical)
+  - one pmosHV transistor sub-cell (placed rot=90, mirrorX)
+
+All offsets below are derived from the reference cell (w=l=8 µm) and are
+fixed design-rule constants of the process.  They are collected in one place
+at the top of produce_impl() so they are easy to adjust.
+
+Coordinate convention
+---------------------
+  gate_x0, gate_y0   lower-left corner of the gate rectangle in the cell frame
+  gate area occupies  x ∈ [gate_x0, gate_x0+l],  y ∈ [gate_y0, gate_y0+w]
+
+Cell total size (excluding nwell halo which comes from pmosHV sub-cell):
+  x : 0  …  w            (width  = w)
+  y : gate_y0 - active_ext  …  gate_y0 + w + active_ext
+    = 0.34 - 0.85         …  0.34 + w + 0.85
+    = -0.51               …  w + 1.19
+  Total height = w + 2 × 0.85 = w + 1.70
+"""
+
+import pya
+
+
+class PmosBufferCap(pya.PCellDeclarationHelper):
+
+    def __init__(self):
+        super().__init__()
+        # ── user parameters ───────────────────────────────────────────────
+        self.param("w", self.TypeDouble, "Gate width  w (µm)", default=8.0)
+        self.param("l", self.TypeDouble, "Gate length l (µm)", default=8.0)
+        # ── layer parameters ──────────────────────────────────────────────
+        self.param("ly_active", self.TypeLayer, "Active (diffusion)",
+                   default=pya.LayerInfo(1, 0))
+        self.param("ly_po",     self.TypeLayer, "Poly (Gate)",
+                   default=pya.LayerInfo(5, 0))
+        self.param("ly_co",     self.TypeLayer, "Contact (CO)",
+                   default=pya.LayerInfo(6, 0))
+        self.param("ly_m1",     self.TypeLayer, "Metal 1",
+                   default=pya.LayerInfo(8, 0))
+
+    def display_text_impl(self):
+        return f"pmos_buffer_cap(w={self.w:.3f}, l={self.l:.3f})"
+
+    def coerce_parameters_impl(self):
+        # minimum gate size – tighten to process rules as needed
+        if self.w &lt; 0.5: self.w = 0.5
+        if self.l &lt; 0.5: self.l = 0.5
+
+    def produce_impl(self):
+        dbu = self.layout.dbu          # e.g. 0.001 µm/DBU  → 1 nm/DBU
+
+        # ── unit conversion helpers ───────────────────────────────────────
+        def u(um):
+            """µm → integer DBU"""
+            return round(um / dbu)
+
+        def box(layer_idx, x1, y1, x2, y2):
+            """Insert a box given µm coordinates."""
+            self.cell.shapes(layer_idx).insert(
+                pya.Box(u(x1), u(y1), u(x2), u(y2)))
+
+        def place(cell_name, ox, oy, rot=0, mirror=False):
+            """Place a sub-cell by name (must exist in the layout)."""
+            sub = self.layout.cell(cell_name)
+            if sub is None:
+                raise RuntimeError(f"Sub-cell '{cell_name}' not found in layout")
+            t = pya.CplxTrans(1.0, rot, mirror, u(ox), u(oy))
+            self.cell.insert(pya.CellInstArray(sub.cell_index(), t))
+
+        # ── resolve layers ────────────────────────────────────────────────
+        ly_active = self.layout.layer(self.ly_active)
+        ly_po     = self.layout.layer(self.ly_po)
+        ly_m1     = self.layout.layer(self.ly_m1)
+
+        # ── user parameters (short names) ────────────────────────────────
+        w = self.w   # gate width  (y direction in cell frame)
+        l = self.l   # gate length (x direction in cell frame)
+
+        # ── fixed process offsets (µm) ────────────────────────────────────
+        #
+        # gate_x0 / gate_y0
+        #   Fixed offset from origin to the lower-left gate corner.
+        #   Equals the width of the source/drain M1 strip (= 0.16 contact
+        #   bar height + 0.18 enclosure), rounded to 0.34 µm.
+        gate_x0 = 0.34
+        gate_y0 = 0.34
+
+        # sd_m1_h   height of the horizontal source/drain M1 contact bar
+        # sd_gap    distance from gate edge to the near edge of the SD bar
+        # sd_m1_ext gate edge to far edge of SD bar  (= sd_gap + sd_m1_h)
+        sd_m1_h   = 0.16
+        sd_gap    = 0.62
+        sd_m1_ext = sd_gap + sd_m1_h   # = 0.78
+
+        # active_ext  gate edge to outer edge of active layer (SD regions)
+        active_ext = 0.85               # = sd_m1_ext + 0.07 active enclosure
+
+        # active_h   total height of the horizontal active stripe
+        active_h   = 0.30               # = sd_m1_h + 2 × 0.07
+
+        # poly_ol    poly overhang beyond the M1 bus in x (both sides)
+        # poly_or    poly overhang beyond gate_x1 in x (gate contact side)
+        poly_ol = 0.79                  # left  overhang  = gate_x0 - 0.45 = 0.79
+        poly_or = 0.11                  # right overhang  = 8.45 - gate_x1 = 0.11
+
+        # gc_inner   how far the gate contact bar extends INSIDE gate_x0/x1
+        # gc_outer   how far it extends OUTSIDE
+        gc_inner = 0.12
+        gc_outer = 0.60                 # bar extends 0.60 beyond gate edge  (0.72 - 0.12)
+
+        # ── derived coordinates ───────────────────────────────────────────
+        gate_x1 = gate_x0 + l
+        gate_y1 = gate_y0 + w
+
+        # ── M1 bus: covers full width in x, source+gate+drain span in y ──
+        box(ly_m1,
+            0,              gate_y0 - sd_m1_ext,
+            w,              gate_y1 + sd_m1_ext)
+
+        # ── Active stripes: source (bottom) and drain (top) ───────────────
+        box(ly_active,
+            0,              gate_y0 - active_ext,
+            w,              gate_y0 - active_ext + active_h)   # source
+
+        box(ly_active,
+            0,              gate_y1 + active_ext - active_h,
+            w,              gate_y1 + active_ext)               # drain
+
+        # ── Gate poly: spans gate area plus overhangs in x ───────────────
+        box(ly_po,
+            gate_x0 - poly_ol,   gate_y0,
+            gate_x1 + poly_or,   gate_y1)
+
+        # ── FEOL contact bars ─────────────────────────────────────────────
+        #
+        # Source/drain: horizontal bars, each w wide and sd_m1_h tall.
+        # The FEOL contact sub-cell "FEOL$contacts$1" is oriented with its
+        # long axis in x and is w µm wide (l_nm = w*1000 nm) and sd_m1_h tall.
+        #
+        # Gate contacts: same pcell placed rot=90/mirror so it runs vertically,
+        # spanning the full gate width w in y and sd_m1_h in x.
+        #   left bar  : inner right edge is gc_inner left of gate_x0
+        #   right bar : inner left edge is gc_inner right of gate_x1 (overlaps poly)
+
+        place("FEOL$contacts$1",
+              ox=0,               oy=gate_y0 - sd_m1_ext)   # source (bottom)
+
+        place("FEOL$contacts$1",
+              ox=0,               oy=gate_y1 + sd_gap)       # drain  (top)
+
+        place("FEOL$contacts$1",
+              ox=gate_x0 - gc_outer - gc_inner,   oy=gate_y0,
+              rot=90, mirror=True)                            # gate contact left
+
+        place("FEOL$contacts$1",
+              ox=gate_x1 - gc_inner,              oy=gate_y0,
+              rot=90, mirror=True)                            # gate contact right
+
+        # ── pmosHV transistor sub-cell ────────────────────────────────────
+        #
+        # pmosHV$2 is placed rot=90 + mirrorX so that:
+        #   its internal x (gate length direction) → cell y (gate width direction)
+        #   its internal y (gate width direction)  → cell x (gate length direction)
+        # Origin at (0, 0); the sub-cell's own geometry fills the gate area
+        # and provides nwell, pimp, contacts etc.
+        place("pmosHV$2", ox=0, oy=0, rot=90, mirror=True)
+
+
+# ── Library registration ──────────────────────────────────────────────────────
+
+class PmosCapLib(pya.Library):
+    def __init__(self):
+        super().__init__()
+        self.description = "PMOS buffer cap PCell"
+        self.layout().register_pcell("pmos_buffer_cap", PmosBufferCap())
+        self.register("PmosCapLib")
+
+
+PmosCapLib()
+</text>
+</klayout-macro>

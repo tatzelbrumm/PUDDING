@@ -1,0 +1,37 @@
+In file included from /nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/gtkwave/fstapi.c:44,
+                 from /nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/verilated_fst_c.cpp:37:
+/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/gtkwave/fstapi.h:37:10: fatal error: zlib.h: No such file or directory
+   37 | #include <zlib.h>
+      |          ^~~~~~~~
+compilation terminated.
+make[1]: *** [/nix/store/wc042p92sfn2pxyv3i8b86008f5j1kyc-verilator-5.042/share/verilator/include/verilated.mk:289: verilated_fst_c.o] Error 1
+make[1]: *** Waiting for unfinished jobs....
+Traceback (most recent call last):
+  File "/home/cmaier/EDA/PUDDING/tb/testbench.py", line 193, in <module>
+    runner.build(
+    ~~~~~~~~~~~~^
+        sources=[
+        ^^^^^^^^^
+    ...<11 lines>...
+        else ["-gno-specify"],
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/nix/store/0kwn3pa8al4np6jss3x11hhh5wp0h27q-python3-3.13.9-env/lib/python3.13/site-packages/cocotb_tools/runner.py", line 329, in build
+    self._execute(cmds, cwd=self.build_dir)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/0kwn3pa8al4np6jss3x11hhh5wp0h27q-python3-3.13.9-env/lib/python3.13/site-packages/cocotb_tools/runner.py", line 561, in _execute
+    self._execute_cmds(cmds, cwd)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/nix/store/0kwn3pa8al4np6jss3x11hhh5wp0h27q-python3-3.13.9-env/lib/python3.13/site-packages/cocotb_tools/runner.py", line 578, in _execute_cmds
+    subprocess.run(
+    ~~~~~~~~~~~~~~^
+        cmd, cwd=cwd, env=self.env, check=True, stdout=stdout, stderr=stderr
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/nix/store/0kwn3pa8al4np6jss3x11hhh5wp0h27q-python3-3.13.9-env/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['make', '-j', '4', '-C', '/home/cmaier/EDA/PUDDING/tb/sim_build', '-f', 'Vtop.mk', 'VM_TRACE=1']' returned non-zero exit status 2.
+make: *** [Makefile:31: sim] Error 1

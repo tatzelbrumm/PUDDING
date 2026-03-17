@@ -1,0 +1,43 @@
+v {xschem version=3.4.7 file_version=1.2}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+V {}
+S {}
+E {}
+L 4 -60 0 -40 0 {}
+L 4 -60 20 -40 20 {}
+L 4 -60 -60 -40 -60 {}
+L 4 -60 60 -40 60 {}
+L 4 0 -100 0 -80 {}
+L 4 -60 -40 -40 -40 {}
+L 4 -60 40 -40 40 {}
+L 4 0 80 0 100 {}
+L 4 0 -40 0 -20 {}
+L 4 0 20 0 40 {}
+L 4 40 0 60 0 {}
+B 5 -2.5 -102.5 2.5 -97.5 {name=VDD dir=inout}
+B 5 -62.5 -2.5 -57.5 2.5 {name=EN[3:0] sig_type=std_logic dir=in}
+B 5 -62.5 17.5 -57.5 22.5 {name=ENB[3:0] sig_type=std_logic dir=in}
+B 5 -62.5 37.5 -57.5 42.5 {name=ON[63:0] sig_type=std_logic dir=in}
+B 5 -62.5 57.5 -57.5 62.5 {name=ONB[63:0] sig_type=std_logic dir=in}
+B 5 57.5 -2.5 62.5 2.5 {name=Iout dir=out}
+B 5 -62.5 -62.5 -57.5 -57.5 {name=Vpbias[1:0] dir=inout}
+B 5 -62.5 -42.5 -57.5 -37.5 {name=Vpcbias[1:0] dir=inout}
+B 5 -2.5 97.5 2.5 102.5 {name=VSS dir=inout}
+A 4 0 -10 14.14213562373095 135 360 {}
+A 4 0 10 14.14213562373095 135 360 {}
+P 4 5 40 -80 -40 -80 -40 80 40 80 40 -80 {}
+T {EN[3:0]} -35 -4 0 0 0.2 0.2 {}
+T {ENB[3:0]} -35 16 0 0 0.2 0.2 {}
+T {ON[63:0]} -35 36 0 0 0.2 0.2 {}
+T {ONB[63:0]} -35 56 0 0 0.2 0.2 {}
+T {Iout} 35 -4 0 1 0.2 0.2 {}
+T {Vpbias[1:0]} -35 -64 0 0 0.2 0.2 {}
+T {Vpcbias[1:0]} -35 -44 0 0 0.2 0.2 {}
+T {@name} 35 -92 0 0 0.2 0.2 {}
+T {VDD} -5 -66 2 1 0.2 0.2 {}
+T {VSS} 5 66 0 1 0.2 0.2 {}
+T {@symname} -45.5 -26 0 0 0.3 0.3 {}

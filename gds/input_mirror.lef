@@ -1,0 +1,118 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO input_mirror
+  CLASS BLOCK ;
+  FOREIGN input_mirror ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 49.600 BY 188.000 ;
+  PIN VSSA
+    ANTENNADIFFAREA 59.278999 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 83.000 20.760 84.730 ;
+    END
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 107.460 0.700 109.195 ;
+    END
+  END VSSA
+  PIN i_out
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 95.745 49.600 96.445 ;
+    END
+  END i_out
+  PIN VbiasP[0]
+    ANTENNADIFFAREA 0.680000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 87.560 19.460 88.260 ;
+    END
+  END VbiasP[0]
+  PIN VbiasP[1]
+    ANTENNADIFFAREA 0.680000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 91.480 18.160 92.180 ;
+    END
+  END VbiasP[1]
+  PIN VbiasP[2]
+    ANTENNADIFFAREA 0.680000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 92.580 16.860 93.280 ;
+    END
+  END VbiasP[2]
+  PIN VbiasP[3]
+    ANTENNADIFFAREA 0.680000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 93.680 15.560 94.380 ;
+    END
+  END VbiasP[3]
+  PIN VbiasP[4]
+    ANTENNADIFFAREA 0.680000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 97.805 14.260 98.505 ;
+    END
+  END VbiasP[4]
+  PIN VbiasP[5]
+    ANTENNADIFFAREA 0.680000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 98.905 12.960 99.605 ;
+    END
+  END VbiasP[5]
+  PIN VbiasP[6]
+    ANTENNADIFFAREA 0.680000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 100.005 11.660 100.705 ;
+    END
+  END VbiasP[6]
+  PIN VbiasP[7]
+    ANTENNADIFFAREA 0.680000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 103.930 10.360 104.630 ;
+    END
+  END VbiasP[7]
+  PIN i_in
+    ANTENNAGATEAREA 480.000000 ;
+    ANTENNADIFFAREA 5.440000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 38.425 103.930 49.600 104.630 ;
+    END
+  END i_in
+  OBS
+      LAYER GatPoly ;
+        RECT 24.160 100.570 41.895 140.860 ;
+      LAYER Metal1 ;
+        RECT 8.825 100.375 41.820 141.055 ;
+      LAYER Metal2 ;
+        RECT 10.280 82.795 38.470 141.055 ;
+      LAYER Metal3 ;
+        RECT 0.910 107.250 38.470 109.195 ;
+        RECT 0.000 104.840 38.470 107.250 ;
+        RECT 10.570 103.720 38.215 104.840 ;
+        RECT 0.000 100.915 38.470 103.720 ;
+        RECT 11.870 99.815 38.470 100.915 ;
+        RECT 13.170 98.715 38.470 99.815 ;
+        RECT 14.470 97.595 38.470 98.715 ;
+        RECT 0.000 96.655 38.470 97.595 ;
+        RECT 0.000 94.590 38.470 95.535 ;
+        RECT 15.770 93.490 38.470 94.590 ;
+        RECT 17.070 92.390 38.470 93.490 ;
+        RECT 18.370 91.270 38.470 92.390 ;
+        RECT 0.000 88.470 38.470 91.270 ;
+        RECT 19.670 87.350 38.470 88.470 ;
+        RECT 0.000 84.940 38.470 87.350 ;
+        RECT 20.970 83.000 38.470 84.940 ;
+  END
+END input_mirror
+END LIBRARY
+

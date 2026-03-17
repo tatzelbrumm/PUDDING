@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // Adapted from the Tiny Tapeout template
-// minimum design: 128 DAC sources only
+// 64 DAC sources only
 
 `default_nettype none
 
@@ -24,14 +24,16 @@ module heichips25_pudding(
 //(* keep = "yes" *) wire VPWR;
 //(* keep = "yes" *) wire VGND;
    
-    wire[1:0] iref;
-    wire[1:0] bias;
-    wire dacout;
-    wire [1:0]vdda;
+    wire [7:0] iref;
+    wire       dacout;
+    wire       vssa;
     // List all unused inputs to prevent warnings
-    wire _unused = &{ena, uio_in[7:0], ui_in[7:5], vdda[1:0]};
+    wire _unused = &{ena, uio_in[7:0], vssa, iref[7:0]};
 
-    logic[3:0] stateen, stateenp, stateenn;
+    logic[3:0] dacen0, dacenp0, dacenn0;
+    logic[3:0] dacen1, dacenp1, dacenn1;
+    logic[3:0] dacen2, dacenp2, dacenn2;
+    logic[3:0] dacen3, dacenp3, dacenn3;
 
     logic datum, shift, transfer, dir;
 
@@ -43,9 +45,12 @@ module heichips25_pudding(
     assign transfer = ui_in[2];
     assign dir      = ui_in[3];
 
-    assign stateen = {4{ui_in[4]}};
+    assign dacen0 = {4{ui_in[4]}};
+    assign dacen1 = {4{ui_in[5]}};
+    assign dacen2 = {4{ui_in[6]}};
+    assign dacen3 = {4{ui_in[7]}};
 
-    always_ff @(posedge clk) 
+    always_ff @(posedge clk or negedge rst_n) 
     begin
         if (!rst_n) 
         begin
@@ -71,34 +76,49 @@ module heichips25_pudding(
     
 assign uo_out  = daisychain[127:120];
 assign uio_out = state[127:120];
-assign uio_oe  = 8'hFF;
+assign uio_oe  = {8{ena}};
 
-    digital4 digitalen (
-    .in(stateen[3:0]),
-    .outp(stateenp[3:0]),
-    .outn(stateenn[3:0])
+    digital4 digitalen0 (
+    .in(dacen0[3:0]),
+    .outp(dacenp0[3:0]),
+    .outn(dacenn0[3:0])
+    );
+
+    digital4 digitalen1 (
+    .in(dacen1[3:0]),
+    .outp(dacenp1[3:0]),
+    .outn(dacenn1[3:0])
+    );
+
+    digital4 digitalen2 (
+    .in(dacen2[3:0]),
+    .outp(dacenp2[3:0]),
+    .outn(dacenn2[3:0])
+    );
+
+    digital4 digitalen3 (
+    .in(dacen3[3:0]),
+    .outp(dacenp3[3:0]),
+    .outn(dacenn3[3:0])
     );
 
 
-(* keep_hierarchy = "yes", keep = "yes" *) dac128module dac (
-    .Iout(dacout),
-    .VcascP(iref),
-    .VbiasP(bias),
+(* keep_hierarchy = "yes", keep = "yes" *) dac4x32module dac (
+    .Iout(i_out),
+    .VbiasP(iref[7:0]),
     .ON(state[127:0]),
     .ONB(~state[127:0]),
-    .EN(stateenp[3:0]),
-    .ENB(stateenn[3:0]),
+    .EN({dacenp3[3:0],dacenp2[3:0],dacenp1[3:0],dacenp0[3:0]}),
+    .ENB({dacenn3[3:0],dacenn2[3:0],dacenn1[3:0],dacenn0[3:0]}),
     .VDD(VPWR),
     .VSS(VGND)
     );
 
-(* keep_hierarchy = "yes", keep = "yes" *) analog_wires wires (
-    .Iout(dacout),
-    .VcascP(iref),
-    .VbiasP(bias),
+(* keep_hierarchy = "yes", keep = "yes" *) input_mirror wires (
+    .VbiasP(iref),
     .i_out(i_out),
     .i_in(i_in),
-    .VDDA(vdda[1:0])
+    .VSSA(vssa)
     );
 endmodule
 
@@ -107,7 +127,7 @@ module digital4(
     output logic [3:0] outn,
     output logic [3:0] outp
 );
-    // 4 instances, each bit wired to one instance
+    // 16 instances, each bit wired to one instance
   genvar i;
       for (i = 0; i < 4; i++) begin : g
           inverterpair u (
