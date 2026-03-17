@@ -3,18 +3,16 @@
 // Yosys hints: blackbox + keep_hierarchy.
 (* blackbox *)
 module input_mirror (
-    inout       Iout,
     inout [7:0] VbiasP,
-    inout i_in,
-    inout i_out,
-    inout [3:0] VDDA,
+    inout       i_in,
+    inout       i_out,
     inout [1:0] VSSA
 );
 
 //  wire bias;
 //  wire casc;
 //  wire vdda;
-//  wire vssa;
+    wire vssa;
 
 //  assign VbiasP[0] = bias;
 //  assign VbiasP[1] = bias;
@@ -24,6 +22,6 @@ module input_mirror (
 //  assign VDDA[2] = vdda;
 //  assign VDDA[1] = vdda;
 //  assign VDDA[0] = vdda;
-//  assign VSSA[1] = vssa;
-//  assign VSSA[0] = vssa;
+    assign VSSA[1] = vssa;
+    assign VSSA[0] = vssa;
 endmodule

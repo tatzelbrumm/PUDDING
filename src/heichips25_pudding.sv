@@ -26,10 +26,9 @@ module heichips25_pudding(
    
     wire [7:0] iref;
     wire       dacout;
-    wire [3:0] vdda;
     wire [1:0] vssa;
     // List all unused inputs to prevent warnings
-    wire _unused = &{ena, uio_in[7:0], ui_in[7:6], vdda[3:0], vssa[1:0], iref[7:0], dacout};
+    wire _unused = &{ena, uio_in[7:0], vssa[1:0], iref[7:0]};
 
     logic[3:0] dacen0, dacenp0, dacenn0;
     logic[3:0] dacen1, dacenp1, dacenn1;
@@ -105,22 +104,20 @@ assign uio_oe  = 8'hFF;
 
 
 (* keep_hierarchy = "yes", keep = "yes" *) dac4x32module dac (
-    .Iout(dacout),
+    .Iout(i_out),
     .VbiasP(iref[7:0]),
     .ON(state[127:0]),
     .ONB(~state[127:0]),
-    .EN({dacenp0[3:0],dacenp0[3:0],dacenp0[3:0],dacenp0[3:0]}),
+    .EN({dacenp3[3:0],dacenp2[3:0],dacenp1[3:0],dacenp0[3:0]}),
     .ENB({dacenn3[3:0],dacenn2[3:0],dacenn1[3:0],dacenn0[3:0]}),
     .VDD(VPWR),
     .VSS(VGND)
     );
 
 (* keep_hierarchy = "yes", keep = "yes" *) input_mirror wires (
-    .Iout(dacout),
     .VbiasP(iref),
     .i_out(i_out),
     .i_in(i_in),
-    .VDDA(vdda[3:0]),
     .VSSA(vssa[1:0])
     );
 endmodule
