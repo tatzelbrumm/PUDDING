@@ -28,7 +28,7 @@ module heichips25_pudding(
     wire       dacout;
     wire       vssa;
     // List all unused inputs to prevent warnings
-    wire _unused = &{ena, uio_in[7:0], vssa, iref[7:0]};
+    wire _unused = &{uio_in[7:0], vssa, iref[7:0]};
 
     logic[3:0] dacen0, dacenp0, dacenn0;
     logic[3:0] dacen1, dacenp1, dacenn1;
