@@ -1,44 +1,77 @@
 # SG13G2 layer map  (layer  datatype  name)
-# Verified against IHP pmosHV_code.py, sg13g2_tech.json,
-# and reference GDS cells (dacbuffer.gds, pmos_buffer_cap.gds).
+# Source: IHP Open PDK documentation
+# https://ihp-open-pdk-docs.readthedocs.io/en/latest/layout_rules/02_layer_table.html
 #
-# Original file had layer numbers systematically wrong:
-#   old 5=NWell, 8=GatPoly, 10=Metal1, 14=Metal2, 31=TopMetal1, 6=pSD, 44=hvdifftap, 63=Via1
-#   all incorrect — see corrected assignments below.
+# Format: <GDS layer>  <GDS datatype>  <name>
+# Datatype conventions (where applicable):
+#   0  = drawing
+#   2  = pin
+#   25 = text/label (used for LVS)
 
-# FEOL
+# ── FEOL ─────────────────────────────────────────────────────────────────────
 1    0    Activ
 1    2    Activ_pin
+3    0    BiWind
 5    0    GatPoly
 5    2    GatPoly_pin
 5    25   GatPoly_label
 6    0    Cont
+7    0    nSD
+13   0    BasPoly
+13   2    BasPoly_pin
 14   0    pSD
+28   0    SalBlock
 31   0    NWell
-40   0    NoBuLay
+31   2    NWell_pin
+32   0    nBuLay
+32   2    nBuLay_pin
+33   0    EmWind
+35   0    DeepCo
+40   0    Substrate
+40   25   Substrate_label
 44   0    ThickGateOx
-51   0    pmos
+46   0    PWell
+46   2    PWell_pin
+51   0    HeatTrans
+55   0    EmPoly
+99   0    Recog
+99   2    Recog_pin
 
-# Metal interconnect
+# ── Metal interconnect ────────────────────────────────────────────────────────
 8    0    Metal1
 8    2    Metal1_pin
 8    25   Metal1_label
 10   0    Metal2
 10   2    Metal2_pin
 10   25   Metal2_label
-19   0    Metal3
-29   0    Metal4
-30   0    Metal5
-30   2    Metal5_pin
-30   25   Metal5_label
-63   0    TopMetal1
-49   0    TopMetal2
+30   0    Metal3
+30   2    Metal3_pin
+30   25   Metal3_label
+50   0    Metal4
+50   2    Metal4_pin
+50   25   Metal4_label
+67   0    Metal5
+67   2    Metal5_pin
+67   25   Metal5_label
+126  0    TopMetal1
+126  2    TopMetal1_pin
+126  25   TopMetal1_label
+134  0    TopMetal2
+134  2    TopMetal2_pin
+134  25   TopMetal2_label
 
-# Contacts / vias
-# (Cont = 6/0 above; vias not observed in these cells but standard IHP numbering)
-66   0    Via1
-67   0    Via2
-68   0    Via3
+# ── Contacts / vias ───────────────────────────────────────────────────────────
+19   0    Via1
+29   0    Via2
+49   0    Via3
+66   0    Via4
+125  0    TopVia1
+133  0    TopVia2
 
-# Annotation / boundary
-189  4    prBoundary
+# ── Passivation ───────────────────────────────────────────────────────────────
+9    0    Passiv
+9    2    Passiv_pin
+
+# ── Annotation / boundary ────────────────────────────────────────────────────
+63   0    TEXT
+189  0    prBoundary
