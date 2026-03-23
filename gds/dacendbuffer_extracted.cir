@@ -1,0 +1,12 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 23/03/2026 07:17
+
+.SUBCKT dacendbuffer VDD C10 C11 C01 C00
+M$1 VDD C10 VDD VDD sg13_hv_pmos L=4.04u W=14.6u AS=4.964p AD=4.964p PS=29.88u
++ PD=29.88u
+M$2 VDD C11 VDD VDD sg13_hv_pmos L=4.04u W=14.6u AS=4.964p AD=4.964p PS=29.88u
++ PD=29.88u
+M$3 VDD C01 VDD VDD sg13_hv_pmos L=4.04u W=14.6u AS=4.964p AD=4.964p PS=29.88u
++ PD=29.88u
+M$4 VDD C00 VDD VDD sg13_hv_pmos L=4.04u W=14.6u AS=4.964p AD=4.964p PS=29.88u
++ PD=29.88u
+.ENDS dacendbuffer
