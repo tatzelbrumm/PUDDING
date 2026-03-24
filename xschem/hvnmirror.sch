@@ -118,7 +118,7 @@ N 960 -200 980 -200 {lab=Iin}
 N 960 -320 980 -320 {lab=Iin}
 N 960 -380 960 -320 {lab=Iin}
 N 1020 -420 1020 -350 {lab=Iout[6]}
-N 1140 -420 1140 -350 {lab=Iout[7]}
+N 1140 -420 1140 -350 {lab=Iout[0]}
 N 1140 -120 1160 -120 {lab=VSS}
 N 1040 -120 1140 -120 {lab=VSS}
 N 960 -380 1080 -380 {lab=Iin}
@@ -131,6 +131,7 @@ N 680 -120 780 -120 {lab=VSS}
 N 920 -120 1020 -120 {lab=VSS}
 N 420 -120 440 -120 {lab=VSS}
 N 80 -120 120 -120 {lab=VSS}
+N 1200 -420 1200 -360 {lab=Iout[7:0]}
 C {title.sym} 160 0 0 0 {name=l1 author="Christoph Maier"}
 C {sg13g2_pr/sg13_hv_nmos.sym} 160 -200 0 1 {name=M2[7:0]
 l=10u
@@ -182,11 +183,10 @@ spiceprefix=X
 }
 C {iopin.sym} 80 -120 0 1 {name=p1 lab=VSS}
 C {iopin.sym} 140 -420 3 0 {name=p3 lab=Iin}
-C {iopin.sym} 300 -420 3 0 {name=p4 lab=Iout[0]}
-C {iopin.sym} 420 -420 3 0 {name=p5 lab=Iout[1]}
-C {lab_wire.sym} 140 -250 0 1 {name=p6 sig_type=std_logic lab=vd_in[7:0]}
-C {lab_wire.sym} 300 -250 0 0 {name=p7 sig_type=std_logic lab=vd_0}
-C {lab_wire.sym} 420 -250 0 0 {name=p8 sig_type=std_logic lab=vd_1}
+C {iopin.sym} 1200 -420 3 0 {name=p4 lab=Iout[7:0]}
+C {lab_wire.sym} 140 -250 0 1 {name=p6 lab=vd_in[7:0]}
+C {lab_wire.sym} 300 -250 0 0 {name=p7 lab=vd_0}
+C {lab_wire.sym} 420 -250 0 0 {name=p8 lab=vd_1}
 C {sg13g2_pr/sg13_hv_nmos.sym} 520 -200 0 0 {name=M7
 l=10u
 w=2u
@@ -219,10 +219,8 @@ m=1
 model=sg13_hv_nmos
 spiceprefix=X
 }
-C {iopin.sym} 540 -420 3 0 {name=p2 lab=Iout[2]}
-C {iopin.sym} 660 -420 3 0 {name=p9 lab=Iout[3]}
-C {lab_wire.sym} 540 -250 0 0 {name=p10 sig_type=std_logic lab=vd_2}
-C {lab_wire.sym} 660 -250 0 0 {name=p11 sig_type=std_logic lab=vd_3}
+C {lab_wire.sym} 540 -250 0 0 {name=p10 lab=vd_2}
+C {lab_wire.sym} 660 -250 0 0 {name=p11 lab=vd_3}
 C {sg13g2_pr/sg13_hv_nmos.sym} 760 -200 0 0 {name=M11
 l=10u
 w=2u
@@ -255,10 +253,8 @@ m=1
 model=sg13_hv_nmos
 spiceprefix=X
 }
-C {iopin.sym} 780 -420 3 0 {name=p12 lab=Iout[4]}
-C {iopin.sym} 900 -420 3 0 {name=p13 lab=Iout[5]}
-C {lab_wire.sym} 780 -250 0 0 {name=p14 sig_type=std_logic lab=vd_4}
-C {lab_wire.sym} 900 -250 0 0 {name=p15 sig_type=std_logic lab=vd_5}
+C {lab_wire.sym} 780 -250 0 0 {name=p14 lab=vd_4}
+C {lab_wire.sym} 900 -250 0 0 {name=p15 lab=vd_5}
 C {sg13g2_pr/sg13_hv_nmos.sym} 1000 -200 0 0 {name=M15
 l=10u
 w=2u
@@ -291,7 +287,14 @@ m=1
 model=sg13_hv_nmos
 spiceprefix=X
 }
-C {iopin.sym} 1020 -420 3 0 {name=p16 lab=Iout[6]}
-C {iopin.sym} 1140 -420 3 0 {name=p17 lab=Iout[7]}
-C {lab_wire.sym} 1020 -250 0 0 {name=p18 sig_type=std_logic lab=vd_6}
-C {lab_wire.sym} 1140 -250 0 0 {name=p19 sig_type=std_logic lab=vd_7}
+C {lab_wire.sym} 1020 -250 0 0 {name=p18 lab=vd_6}
+C {lab_wire.sym} 1140 -250 0 0 {name=p19 lab=vd_7}
+C {lab_pin.sym} 300 -420 0 0 {name=p2 lab=Iout[0]}
+C {lab_pin.sym} 420 -420 0 0 {name=p5 lab=Iout[1]}
+C {lab_pin.sym} 540 -420 0 0 {name=p9 lab=Iout[2]}
+C {lab_pin.sym} 660 -420 0 0 {name=p13 lab=Iout[3]}
+C {lab_pin.sym} 780 -420 0 0 {name=p16 lab=Iout[4]}
+C {lab_pin.sym} 900 -420 0 0 {name=p17 lab=Iout[5]}
+C {lab_pin.sym} 1020 -420 0 0 {name=p20 lab=Iout[6]}
+C {lab_pin.sym} 1140 -420 0 0 {name=p21 lab=Iout[7]}
+C {lab_wire.sym} 1200 -410 3 0 {name=p22 lab=Iout[7:0]}

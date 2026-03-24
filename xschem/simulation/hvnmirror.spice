@@ -1,6 +1,6 @@
 ** sch_path: /home/cmaier/EDA/PUDDING/xschem/hvnmirror.sch
-.subckt hvnmirror VSS Iin Iout[0] Iout[1] Iout[2] Iout[3] Iout[4] Iout[5] Iout[6] Iout[7]
-*.PININFO VSS:B Iin:B Iout[0]:B Iout[1]:B Iout[2]:B Iout[3]:B Iout[4]:B Iout[5]:B Iout[6]:B Iout[7]:B
+.subckt hvnmirror Iin Iout[7] Iout[6] Iout[5] Iout[4] Iout[3] Iout[2] Iout[1] Iout[0] VSS
+*.PININFO VSS:B Iin:B Iout[7:0]:B
 M2[7] vd_in[7] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
 M2[6] vd_in[6] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
 M2[5] vd_in[5] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
