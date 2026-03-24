@@ -1,0 +1,118 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/test_hvnmirror.sch
+**.subckt test_hvnmirror
+Vprobe GND vss 0
+.save i(vprobe)
+G1 vss Vg CUR=' 10**V(logI) '
+VlogI logI GND {logI}
+.save i(vlogi)
+xDUT Vg Vd[7] Vd[6] Vd[5] Vd[4] Vd[3] Vd[2] Vd[1] Vd[0] GND hvnmirror
+Vd Vd GND {vout}
+.save i(vd)
+E[7] Vd[7] sense[7] Vd GND 1
+E[6] Vd[6] sense[6] Vd GND 1
+E[5] Vd[5] sense[5] Vd GND 1
+E[4] Vd[4] sense[4] Vd GND 1
+E[3] Vd[3] sense[3] Vd GND 1
+E[2] Vd[2] sense[2] Vd GND 1
+E[1] Vd[1] sense[1] Vd GND 1
+E[0] Vd[0] sense[0] Vd GND 1
+Vsense[7] sense[7] GND 0
+Vsense[6] sense[6] GND 0
+Vsense[5] sense[5] GND 0
+Vsense[4] sense[4] GND 0
+Vsense[3] sense[3] GND 0
+Vsense[2] sense[2] GND 0
+Vsense[1] sense[1] GND 0
+Vsense[0] sense[0] GND 0
+.save i(vsense[7:0])
+**** begin user architecture code
+
+
+.include sg13g2_stdcell.spice
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+
+
+* device parameters
+.param l      = 10u
+.param lc     = 5u
+.param w      = 2u
+* instrumentation parameters
+.param logI=-7
+.param vout=0.6
+* simulation parameters
+
+
+
+
+.include test_hvnmirror.save
+.temp=27
+.options gmin=1e-15 abstol=1p method=gear
+.options savecurrents
+.control
+save all
+op
+write test_hvnmirror.raw
+set appendwrite
+foreach l_val 10u
+  foreach lc_val 5u
+    alterparam l = $l_val
+    alterparam lc = $lc_val
+    reset
+    save all
+    dc Vd 0 1.2 10m VlogI -8 -5 0.5
+    write test_hvnmirror.raw
+    plot Vg Vd
+    plot vprobe#branch 0-"vsense[0]#branch"
+    plot 2*(vprobe#branch+8*"vsense[0]#branch")/(vprobe#branch-8*"vsense[0]#branch")
+  end
+end
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  hvnmirror.sym # of pins=3
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/hvnmirror.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/hvnmirror.sch
+.subckt hvnmirror Iin Iout[7] Iout[6] Iout[5] Iout[4] Iout[3] Iout[2] Iout[1] Iout[0] VSS
+*.iopin VSS
+*.iopin Iin
+*.iopin Iout[7],Iout[6],Iout[5],Iout[4],Iout[3],Iout[2],Iout[1],Iout[0]
+XM2[7] vd_in[7] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM2[6] vd_in[6] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM2[5] vd_in[5] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM2[4] vd_in[4] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM2[3] vd_in[3] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM2[2] vd_in[2] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM2[1] vd_in[1] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM2[0] vd_in[0] Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM3 vd_0 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM1[7] Iin Iin vd_in[7] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM1[6] Iin Iin vd_in[6] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM1[5] Iin Iin vd_in[5] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM1[4] Iin Iin vd_in[4] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM1[3] Iin Iin vd_in[3] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM1[2] Iin Iin vd_in[2] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM1[1] Iin Iin vd_in[1] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM1[0] Iin Iin vd_in[0] VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM4 Iout[0] Iin vd_0 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM5 vd_1 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM6 Iout[1] Iin vd_1 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM7 vd_2 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM8 Iout[2] Iin vd_2 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM9 vd_3 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM10 Iout[3] Iin vd_3 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM11 vd_4 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM12 Iout[4] Iin vd_4 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM13 vd_5 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM14 Iout[5] Iin vd_5 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM15 vd_6 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM16 Iout[6] Iin vd_6 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+XM17 vd_7 Iin VSS VSS sg13_hv_nmos w=2u l=10u ng=1 m=1
+XM18 Iout[7] Iin vd_7 VSS sg13_hv_nmos w=2u l=5u ng=1 m=1
+.ends
+
+.GLOBAL GND
+.end
