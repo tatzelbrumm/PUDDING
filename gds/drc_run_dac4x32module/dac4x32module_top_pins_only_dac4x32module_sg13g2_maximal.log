@@ -1,9 +1,0 @@
-# Logfile created on 2026-03-24 21:16:36 +0100 by logger.rb/v1.6.0
-2026-03-24 21:16:36 +0100: Memory Usage (421340K) : Starting running IHP-SG13G2 Klayout DRC maximum runset on /home/cmaier/EDA/PUDDING/gds/dac4x32module_top_pins_only.gds
-2026-03-24 21:16:36 +0100: Memory Usage (421340K) : Ruby Version for klayout: 3.3.10
-2026-03-24 21:16:36 +0100: Memory Usage (422544K) : Loading database to memory is complete.
-2026-03-24 21:16:36 +0100: Memory Usage (422544K) : IHP-SG13G2 Klayout DRC maximum runset output at: /home/cmaier/EDA/PUDDING/gds/drc_run_dac4x32module/dac4x32module_top_pins_only_dac4x32module_sg13g2_maximal.lyrdb
-2026-03-24 21:16:36 +0100: Memory Usage (422544K) : Evaluate switches.
-2026-03-24 21:16:36 +0100: Memory Usage (422544K) : Klayout will use  thread(s)
-2026-03-24 21:16:36 +0100: Memory Usage (422544K) : deep mode is enabled for sg13g2_maximal runset.
-2026-03-24 21:16:55 +0100: Memory Usage (450480K) : KLayout DRC run for maximum ruleSet completed in 19.33 seconds
