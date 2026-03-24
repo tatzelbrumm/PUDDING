@@ -64,9 +64,7 @@ Dependencies: none (pure stdlib) — no gdspy, no numpy required.
 import struct
 import sys
 import os
-import math
 from dataclasses import dataclass, field
-from typing import Optional
 from enum import Enum, auto
 
 
@@ -166,6 +164,8 @@ class State(Enum):
     IN_SREF     = auto()
     IN_AREF     = auto()
     IN_TEXT     = auto()
+    IN_NODE     = auto()   # NODE element — parsed but not translated
+    IN_BOX      = auto()   # BOX element  — parsed but not translated
     DONE        = auto()
 
 # Records accepted in each state.  Anything else triggers FsmError.
@@ -202,6 +202,14 @@ VALID_RECORDS_IN_STATE = {
         "WIDTH", "STRANS", "MAG", "ANGLE",
         "XY", "STRING", "ENDEL",
         "ELFLAGS", "PROPATTR", "PROPVALUE",
+    },
+    State.IN_NODE: {
+        # NODE sub-records: all consumed and discarded; only ENDEL matters
+        "LAYER", "NODETYPE", "XY", "ELFLAGS", "PROPATTR", "PROPVALUE", "ENDEL",
+    },
+    State.IN_BOX: {
+        # BOX sub-records: all consumed and discarded; only ENDEL matters
+        "LAYER", "BOXTYPE", "DATATYPE", "XY", "ELFLAGS", "PROPATTR", "PROPVALUE", "ENDEL",
     },
     State.DONE: set(),
 }
@@ -437,8 +445,8 @@ _IGNORED_RECORDS = frozenset({
     # Element decorations: accepted but not translated to KLayout output
     "ELFLAGS", "BGNEXTN", "ENDEXTN", "PROPATTR", "PROPVALUE",
     "NODETYPE", "BOXTYPE", "TEXTNODE",
-    # Rarely-used element types: accepted, silently skipped
-    "NODE", "BOX",
+    # Rarely-used element types: states entered but content not translated
+    # NODE and BOX are NOT here — they transition the FSM into IN_NODE/IN_BOX
 })
 
 
@@ -493,9 +501,23 @@ class GdsStateMachine:
         if rec_name in _IGNORED_RECORDS:
             return  # grammatically valid, semantically ignored
 
+        # NODE and BOX states: all sub-records except ENDEL are discarded
+        if self.state in (State.IN_NODE, State.IN_BOX):
+            if rec_name == "ENDEL":
+                self._on_endel_for_ignored()
+            # all other sub-records (LAYER, XY, etc.) are silently consumed
+            return
+
         method = getattr(self, f"_on_{rec_name.lower()}", None)
         if method:
             method(items)
+        elif rec_name not in _IGNORED_RECORDS:
+            # A record is in VALID_RECORDS_IN_STATE but has no handler
+            # and is not in _IGNORED_RECORDS — this is a programming error.
+            raise FsmError(
+                f"Record {rec_name!r} is valid in state {self.state.name} "
+                f"but has no handler (programming error)"
+            )
 
     # ---- record handlers ---------------------------------------------------
 
@@ -552,6 +574,12 @@ class GdsStateMachine:
     def _on_text(self, items):
         self._cur_elem = {"_type": "TEXT", "strans": 0, "mag": 1.0, "angle": 0.0}
         self.state = State.IN_TEXT
+
+    def _on_node(self, items):
+        self.state = State.IN_NODE   # enter; sub-records handled by _IGNORED_RECORDS + ENDEL
+
+    def _on_box(self, items):
+        self.state = State.IN_BOX    # enter; sub-records handled by _IGNORED_RECORDS + ENDEL
 
     # shared element fields
     def _on_layer(self, items):
@@ -672,6 +700,10 @@ class GdsStateMachine:
         self._cur_elem = {}
         self.state = State.IN_STRUCT
 
+    def _on_endel_for_ignored(self):
+        """Return to IN_STRUCT after a NODE or BOX element (not translated)."""
+        self.state = State.IN_STRUCT
+
 
 # ---------------------------------------------------------------------------
 # 8.  Public parse entry point
@@ -753,7 +785,7 @@ _ENTRY_RE   = _re.compile(
     r'\s+'
     r'(?P<datatype>\d+)'       # uint: datatype
     r'\s+'
-    r'(?P<name>[A-Za-z_][A-Za-z0-9_]*)'  # name: valid Python identifier
+    r'(?P<name>[A-Za-z_][A-Za-z0-9_]*(?:\.[A-Za-z_][A-Za-z0-9_]*)*)'  # name: dot-separated segments (e.g. Metal1.drawing)
     r'\s*$'
 )
 _UINT_MAX = 4095   # GDS layer/datatype are 12-bit fields per spec §2.5
@@ -805,11 +837,15 @@ def parse_layer_map(path: str) -> dict:
                 f"{path}:{lineno}: datatype {datatype} exceeds maximum {_UINT_MAX}"
             )
 
-        # Defence-in-depth: verify name is a valid Python identifier
-        if not name.isidentifier():
-            raise LayerMapError(
-                f"{path}:{lineno}: name {name!r} is not a valid Python identifier"
-            )
+        # Defence-in-depth: every dot-separated segment must be a valid
+        # Python identifier. _ENTRY_RE already enforces this structurally;
+        # this is a second line of defence against regex edge cases.
+        for seg in name.split('.'):
+            if not seg.isidentifier():
+                raise LayerMapError(
+                    f"{path}:{lineno}: name segment {seg!r} in {name!r} "
+                    f"is not a valid Python identifier"
+                )
 
         key = (layer, datatype)
         if key in layer_map:
@@ -827,7 +863,7 @@ def _layer_varname(layer: int, datatype: int, layer_map: dict) -> str:
     """Return the Python variable name for this (layer, datatype) index."""
     name = layer_map.get((layer, datatype))
     if name:
-        return f"L_{name}"
+        return "L_" + name.replace(".", "_")   # dots in PDK names become underscores
     return f"L_{layer}_{datatype}"
 
 
@@ -862,7 +898,7 @@ def _emit_layer_table(lib, layer_map: dict) -> list:
         name = layer_map.get((layer, datatype))
         if name:
             out.append(
-                f'L_{name} = layout.layer(pya.LayerInfo({layer}, {datatype}, "{name}"))'
+                "L_" + name.replace(".", "_") + f' = layout.layer(pya.LayerInfo({layer}, {datatype}, "{name}"))'
             )
         else:
             out.append(f"L_{layer}_{datatype} = layout.layer({layer}, {datatype})")

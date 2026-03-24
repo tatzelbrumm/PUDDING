@@ -1,44 +1,500 @@
 # SG13G2 layer map  (layer  datatype  name)
-# Verified against IHP pmosHV_code.py, sg13g2_tech.json,
-# and reference GDS cells (dacbuffer.gds, pmos_buffer_cap.gds).
-#
-# Original file had layer numbers systematically wrong:
-#   old 5=NWell, 8=GatPoly, 10=Metal1, 14=Metal2, 31=TopMetal1, 6=pSD, 44=hvdifftap, 63=Via1
-#   all incorrect — see corrected assignments below.
+# Source: sg13g2.lyp — complete, nothing omitted
+# Format: <GDS layer>  <GDS datatype>  <name>
+# 376 entries total
 
-# FEOL
-1    0    Activ
-1    2    Activ_pin
-5    0    GatPoly
-5    2    GatPoly_pin
-5    25   GatPoly_label
-6    0    Cont
-14   0    pSD
-31   0    NWell
-40   0    NoBuLay
-44   0    ThickGateOx
-51   0    pmos
+1    0     Activ.drawing
+1    1     Activ.label
+1    2     Activ.pin
+1    3     Activ.net
+1    4     Activ.boundary
+1    19    Activ.lvs
+1    20    Activ.mask
+1    22    Activ.filler
+1    23    Activ.nofill
+1    26    Activ.OPC
+1    27    Activ.iOPC
+1    28    Activ.noqrc
 
-# Metal interconnect
-8    0    Metal1
-8    2    Metal1_pin
-8    25   Metal1_label
-10   0    Metal2
-10   2    Metal2_pin
-10   25   Metal2_label
-19   0    Metal3
-29   0    Metal4
-30   0    Metal5
-30   2    Metal5_pin
-30   25   Metal5_label
-63   0    TopMetal1
-49   0    TopMetal2
+3    0     BiWind.drawing
+3    26    BiWind.OPC
 
-# Contacts / vias
-# (Cont = 6/0 above; vias not observed in these cells but standard IHP numbering)
-66   0    Via1
-67   0    Via2
-68   0    Via3
+5    0     GatPoly.drawing
+5    1     GatPoly.label
+5    2     GatPoly.pin
+5    3     GatPoly.net
+5    4     GatPoly.boundary
+5    22    GatPoly.filler
+5    23    GatPoly.nofill
+5    26    GatPoly.OPC
+5    27    GatPoly.iOPC
+5    28    GatPoly.noqrc
 
-# Annotation / boundary
-189  4    prBoundary
+6    0     Cont.drawing
+6    3     Cont.net
+6    4     Cont.boundary
+6    26    Cont.OPC
+
+7    0     nSD.drawing
+7    21    nSD.block
+
+8    0     Metal1.drawing
+8    1     Metal1.label
+8    2     Metal1.pin
+8    3     Metal1.net
+8    4     Metal1.boundary
+8    20    Metal1.mask
+8    22    Metal1.filler
+8    23    Metal1.nofill
+8    24    Metal1.slit
+8    25    Metal1.text
+8    26    Metal1.OPC
+8    28    Metal1.noqrc
+8    29    Metal1.res
+8    33    Metal1.iprobe
+8    34    Metal1.diffprb
+
+9    0     Passiv.drawing
+9    1     Passiv.label
+9    2     Passiv.pin
+9    3     Passiv.net
+9    4     Passiv.boundary
+9    35    Passiv.pillar
+9    36    Passiv.sbump
+9    40    Passiv.pdl
+
+10   0     Metal2.drawing
+10   1     Metal2.label
+10   2     Metal2.pin
+10   3     Metal2.net
+10   4     Metal2.boundary
+10   20    Metal2.mask
+10   22    Metal2.filler
+10   23    Metal2.nofill
+10   24    Metal2.slit
+10   25    Metal2.text
+10   26    Metal2.OPC
+10   28    Metal2.noqrc
+10   29    Metal2.res
+10   33    Metal2.iprobe
+10   34    Metal2.diffprb
+
+13   0     BasPoly.drawing
+13   1     BasPoly.label
+13   2     BasPoly.pin
+13   3     BasPoly.net
+13   4     BasPoly.boundary
+
+14   0     pSD.drawing
+
+15   0     NLDB.drawing
+
+16   0     DigiBnd.drawing
+16   10    DigiBnd.drawing0
+
+19   0     Via1.drawing
+19   3     Via1.net
+19   4     Via1.boundary
+
+20   0     BackMetal1.drawing
+20   1     BackMetal1.label
+20   2     BackMetal1.pin
+20   3     BackMetal1.net
+20   4     BackMetal1.boundary
+20   20    BackMetal1.mask
+20   22    BackMetal1.filler
+20   23    BackMetal1.nofill
+20   24    BackMetal1.slit
+20   25    BackMetal1.text
+20   26    BackMetal1.OPC
+20   28    BackMetal1.noqrc
+20   29    BackMetal1.res
+20   33    BackMetal1.iprobe
+20   34    BackMetal1.diffprb
+
+23   0     BackPassiv.drawing
+
+24   0     RES.drawing
+24   1     RES.label
+
+25   0     SRAM.drawing
+25   1     SRAM.label
+25   4     SRAM.boundary
+
+26   0     TRANS.drawing
+
+27   0     IND.drawing
+27   2     IND.pin
+27   4     IND.boundary
+27   25    IND.text
+
+28   0     SalBlock.drawing
+
+29   0     Via2.drawing
+29   3     Via2.net
+29   4     Via2.boundary
+
+30   0     Metal3.drawing
+30   1     Metal3.label
+30   2     Metal3.pin
+30   3     Metal3.net
+30   4     Metal3.boundary
+30   20    Metal3.mask
+30   22    Metal3.filler
+30   23    Metal3.nofill
+30   24    Metal3.slit
+30   25    Metal3.text
+30   26    Metal3.OPC
+30   28    Metal3.noqrc
+30   29    Metal3.res
+30   33    Metal3.iprobe
+30   34    Metal3.diffprb
+
+31   0     NWell.drawing
+31   1     NWell.label
+31   2     NWell.pin
+31   3     NWell.net
+31   4     NWell.boundary
+
+32   0     nBuLay.drawing
+32   1     nBuLay.label
+32   2     nBuLay.pin
+32   3     nBuLay.net
+32   4     nBuLay.boundary
+32   21    nBuLay.block
+
+33   0     EmWind.drawing
+33   26    EmWind.OPC
+
+35   0     DeepCo.drawing
+
+36   0     MIM.drawing
+36   3     MIM.net
+36   4     MIM.boundary
+
+39   0     EdgeSeal.drawing
+39   4     EdgeSeal.boundary
+
+40   0     Substrate.drawing
+40   25    Substrate.text
+
+41   0     dfpad.drawing
+41   35    dfpad.pillar
+41   36    dfpad.sbump
+
+44   0     ThickGateOx.drawing
+
+45   0     PLDB.drawing
+
+46   0     PWell.drawing
+46   1     PWell.label
+46   2     PWell.pin
+46   3     PWell.net
+46   4     PWell.boundary
+46   21    PWell.block
+
+48   0     IC.drawing
+
+49   0     Via3.drawing
+49   3     Via3.net
+49   4     Via3.boundary
+
+50   0     Metal4.drawing
+50   1     Metal4.label
+50   2     Metal4.pin
+50   3     Metal4.net
+50   4     Metal4.boundary
+50   20    Metal4.mask
+50   22    Metal4.filler
+50   23    Metal4.nofill
+50   24    Metal4.slit
+50   25    Metal4.text
+50   26    Metal4.OPC
+50   28    Metal4.noqrc
+50   29    Metal4.res
+50   33    Metal4.iprobe
+50   34    Metal4.diffprb
+
+51   0     HeatTrans.drawing
+
+52   0     HeatRes.drawing
+
+54   0     FBE.drawing
+
+55   0     EmPoly.drawing
+
+60   0     DigiSub.drawing
+
+62   0     NoDRC.drawing
+
+63   0     TEXT.drawing
+
+66   0     Via4.drawing
+66   3     Via4.net
+66   4     Via4.boundary
+
+67   0     Metal5.drawing
+67   1     Metal5.label
+67   2     Metal5.pin
+67   3     Metal5.net
+67   4     Metal5.boundary
+67   20    Metal5.mask
+67   22    Metal5.filler
+67   23    Metal5.nofill
+67   24    Metal5.slit
+67   25    Metal5.text
+67   26    Metal5.OPC
+67   28    Metal5.noqrc
+67   29    Metal5.res
+67   33    Metal5.iprobe
+67   34    Metal5.diffprb
+
+68   0     RadHard.drawing
+
+69   0     MemCap.drawing
+
+70   0     Varicap.drawing
+
+72   0     IntBondVia.drawing
+
+73   0     IntBondMet.drawing
+
+74   0     DevBondVia.drawing
+
+75   0     DevBondMet.drawing
+
+76   0     DevTrench.drawing
+
+77   0     Redist.drawing
+
+78   0     GraphBot.drawing
+
+79   0     GraphTop.drawing
+
+83   0     AntVia1.drawing
+
+84   0     AntMetal2.drawing
+
+85   0     GraphCont.drawing
+
+86   0     SiWG.drawing
+86   22    SiWG.filler
+86   23    SiWG.nofill
+
+87   0     SiGrating.drawing
+
+88   0     SiNGrating.drawing
+
+89   0     GraphPas.drawing
+
+90   0     EmWind3.drawing
+
+91   0     EmWiHV3.drawing
+
+92   0     RedBuLay.drawing
+
+93   0     SMOS.drawing
+
+97   0     GraphPad.drawing
+
+98   0     Polimide.drawing
+98   1     Polimide.label
+98   2     Polimide.pin
+98   3     Polimide.net
+
+99   0     Recog.drawing
+99   2     Recog.pin
+99   30    Recog.esd
+99   31    Recog.diode
+99   32    Recog.tsv
+99   33    Recog.iprobe
+99   34    Recog.diffprb
+99   35    Recog.pillar
+99   36    Recog.sbump
+99   37    Recog.otp
+99   38    Recog.pdiode
+99   39    Recog.mom
+99   100   Recog.pcm
+
+101  0     ColOpen.drawing
+
+109  0     GraphMetal1.drawing
+109  22    GraphMetal1.filler
+109  23    GraphMetal1.nofill
+109  24    GraphMetal1.slit
+109  26    GraphMetal1.OPC
+
+110  0     GraphMet1L.drawing
+110  22    GraphMet1L.filler
+110  23    GraphMet1L.nofill
+110  24    GraphMet1L.slit
+110  26    GraphMet1L.OPC
+
+111  0     EXTBlock.drawing
+
+112  0     NLDD.drawing
+
+113  0     PLDD.drawing
+
+114  0     NExt.drawing
+
+115  0     PExt.drawing
+
+116  0     NExtHV.drawing
+
+117  0     PExtHV.drawing
+
+118  0     GraphGate.drawing
+
+119  0     SiNWG.drawing
+119  22    SiNWG.filler
+119  23    SiNWG.nofill
+
+124  0     MEMPAD.drawing
+
+125  0     TopVia1.drawing
+125  3     TopVia1.net
+125  4     TopVia1.boundary
+
+126  0     TopMetal1.drawing
+126  1     TopMetal1.label
+126  2     TopMetal1.pin
+126  3     TopMetal1.net
+126  4     TopMetal1.boundary
+126  20    TopMetal1.mask
+126  22    TopMetal1.filler
+126  23    TopMetal1.nofill
+126  24    TopMetal1.slit
+126  25    TopMetal1.text
+126  28    TopMetal1.noqrc
+126  29    TopMetal1.res
+126  33    TopMetal1.iprobe
+126  34    TopMetal1.diffprb
+
+127  0     INLDPWL.drawing
+
+128  0     PolyRes.drawing
+128  1     PolyRes.label
+128  2     PolyRes.pin
+128  3     PolyRes.net
+128  4     PolyRes.boundary
+
+129  0     Vmim.drawing
+
+131  0     nBuLayCut.drawing
+
+132  0     AntMetal1.drawing
+
+133  0     TopVia2.drawing
+133  3     TopVia2.net
+133  4     TopVia2.boundary
+
+134  0     TopMetal2.drawing
+134  1     TopMetal2.label
+134  2     TopMetal2.pin
+134  3     TopMetal2.net
+134  4     TopMetal2.boundary
+134  20    TopMetal2.mask
+134  22    TopMetal2.filler
+134  23    TopMetal2.nofill
+134  24    TopMetal2.slit
+134  25    TopMetal2.text
+134  28    TopMetal2.noqrc
+134  29    TopMetal2.res
+134  33    TopMetal2.iprobe
+134  34    TopMetal2.diffprb
+
+135  0     SNSRing.drawing
+
+136  0     Sensor.drawing
+
+137  0     SNSArms.drawing
+
+138  0     SNSCMOSVia.drawing
+
+139  0     ColWind.drawing
+
+142  0     FLM.drawing
+
+143  0     HafniumOx.drawing
+
+145  0     MEMVia.drawing
+
+146  0     ThinFilmRes.drawing
+
+147  0     RFMEM.drawing
+
+148  0     NoRCX.drawing
+148  41    NoRCX.m2m3
+148  42    NoRCX.m2m4
+148  43    NoRCX.m2m5
+148  44    NoRCX.m2tm1
+148  45    NoRCX.m2tm2
+148  46    NoRCX.m3m4
+148  47    NoRCX.m3m5
+148  48    NoRCX.m3tm1
+148  49    NoRCX.m3tm2
+148  50    NoRCX.m4m5
+148  51    NoRCX.m4tm1
+148  52    NoRCX.m4tm2
+148  53    NoRCX.m5tm1
+148  54    NoRCX.m5tm2
+148  55    NoRCX.tm1tm2
+148  123   NoRCX.m1sub
+148  124   NoRCX.m2sub
+148  125   NoRCX.m3sub
+148  126   NoRCX.m4sub
+148  127   NoRCX.m5sub
+148  300   NoRCX.tm1sub
+148  301   NoRCX.tm2sub
+
+149  0     SNSBotVia.drawing
+
+151  0     SNSTopVia.drawing
+
+152  0     DeepVia.drawing
+
+153  0     FGEtch.drawing
+
+154  0     CtrGat.drawing
+
+155  0     FGImp.drawing
+
+156  0     EmWiHV.drawing
+
+157  0     LBE.drawing
+
+159  0     AlCuStop.drawing
+
+160  0     NoMetFiller.drawing
+
+189  0     prBoundary.drawing
+189  1     prBoundary.label
+189  4     prBoundary.boundary
+
+190  0     Exchange0.drawing
+190  1     Exchange0.label
+190  2     Exchange0.pin
+190  25    Exchange0.text
+
+191  0     Exchange1.drawing
+191  1     Exchange1.label
+191  2     Exchange1.pin
+191  25    Exchange1.text
+
+192  0     Exchange2.drawing
+192  1     Exchange2.label
+192  2     Exchange2.pin
+192  25    Exchange2.text
+
+193  0     Exchange3.drawing
+193  1     Exchange3.label
+193  2     Exchange3.pin
+193  25    Exchange3.text
+
+194  0     Exchange4.drawing
+194  1     Exchange4.label
+194  2     Exchange4.pin
+194  25    Exchange4.text
+
+257  0     isoNWell.drawing
