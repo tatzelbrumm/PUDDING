@@ -76,7 +76,7 @@ module heichips25_pudding(
     
 assign uo_out  = daisychain[127:120];
 assign uio_out = state[127:120];
-assign uio_oe  = {8{ena}};
+assign uio_oe  = 8'b11111111;
 
     digital4 digitalen0 (
     .in(dacen0[3:0]),
