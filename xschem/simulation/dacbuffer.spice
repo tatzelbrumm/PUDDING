@@ -1,0 +1,26 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/dacbuffer.sch
+.subckt dacbuffer VDD C00 C01 C10 C11 C20 C21 C30 C31
+*.PININFO VDD:B C00:B C01:B C10:B C11:B C20:B C21:B C30:B C31:B
+x0 VDD C00 C01 C11 C10 dacbuffer_2chan
+x1 VDD C20 C21 C31 C30 dacbuffer_2chan
+.ends
+
+* expanding   symbol:  dacbuffer_2chan.sym # of pins=5
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/dacbuffer_2chan.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/dacbuffer_2chan.sch
+.subckt dacbuffer_2chan VDD C00 C01 C11 C10
+*.PININFO VDD:B C00:B C01:B C10:B C11:B
+x0 VDD C00 C01 dacbuffer_1chan
+x1 VDD C10 C11 dacbuffer_1chan
+.ends
+
+
+* expanding   symbol:  dacbuffer_1chan.sym # of pins=3
+** sym_path: /home/cmaier/EDA/PUDDING/xschem/dacbuffer_1chan.sym
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/dacbuffer_1chan.sch
+.subckt dacbuffer_1chan VDD C0 C1
+*.PININFO VDD:B C0:B C1:B
+M1 VDD C1 VDD VDD sg13_hv_pmos w=14.6u l=4.04u ng=1 m=1
+M0 VDD C0 VDD VDD sg13_hv_pmos w=14.6u l=4.04u ng=1 m=1
+.ends
+

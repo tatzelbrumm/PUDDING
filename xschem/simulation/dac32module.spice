@@ -4,7 +4,7 @@
 + ON[4] ON[3] ON[2] ON[1] ON[0] ONB[31] ONB[30] ONB[29] ONB[28] ONB[27] ONB[26] ONB[25] ONB[24] ONB[23] ONB[22] ONB[21] ONB[20] ONB[19]
 + ONB[18] ONB[17] ONB[16] ONB[15] ONB[14] ONB[13] ONB[12] ONB[11] ONB[10] ONB[9] ONB[8] ONB[7] ONB[6] ONB[5] ONB[4] ONB[3] ONB[2] ONB[1]
 + ONB[0] Iout Vpbias[1] Vpbias[0] Vpcbias[1] Vpcbias[0] VSS
-*.PININFO Iout:O ON[31:0]:I ONB[31:0]:I VSS:B VDD:B Vpcbias[1:0]:B EN[3:0]:I ENB[3:0]:I Vpbias[1:0]:B
+*.PININFO Iout:B ON[31:0]:I ONB[31:0]:I VSS:B VDD:B Vpcbias[1:0]:B EN[3:0]:I ENB[3:0]:I Vpbias[1:0]:B
 Mcbias[0] Vpcbias[0] Vpcbias[0] Vpbias[0] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=2
 xref[1] VDD Vpbias[0] EN[1] ENB[1] Vpbias[0] Vpcbias[0] VSS unitsource2u
 xref[0] VDD Vpbias[0] EN[0] ENB[0] Vpbias[0] Vpcbias[0] VSS unitsource2u
@@ -55,22 +55,6 @@ xsrc1[16] VDD Vpbias[1] ON[16] ONB[16] Iout Vpcbias[1] VSS unitsource2u
 * tap: Vpcbias[1:0] --> Vpcbias[0]
 * tap: Vpbias[1:0] --> Vpbias[1]
 * tap: Vpcbias[1:0] --> Vpcbias[1]
-**** begin user architecture code
-
-* device parameters
-.param l      = 5u
-.param w      = 1.45u
-.param lc     = 0.6u
-.param wc     = 1.2u
-.param lb     = 0.15u
-.param wb     = 5.85u
-.param lplogic= 0.13u
-.param wplogic= 0.5u
-.param lnlogic= 0.13u
-.param wnlogic= 0.15u
-
-
-**** end user architecture code
 .ends
 
 * expanding   symbol:  unitsource2u.sym # of pins=7

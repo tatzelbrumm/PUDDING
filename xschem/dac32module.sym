@@ -23,7 +23,7 @@ B 5 -62.5 -2.5 -57.5 2.5 {name=EN[3:0] sig_type=std_logic dir=in}
 B 5 -62.5 17.5 -57.5 22.5 {name=ENB[3:0] sig_type=std_logic dir=in}
 B 5 -62.5 37.5 -57.5 42.5 {name=ON[31:0] sig_type=std_logic dir=in}
 B 5 -62.5 57.5 -57.5 62.5 {name=ONB[31:0] sig_type=std_logic dir=in}
-B 5 57.5 -2.5 62.5 2.5 {name=Iout dir=out}
+B 5 57.5 -2.5 62.5 2.5 {name=Iout dir=inout}
 B 5 -62.5 -62.5 -57.5 -57.5 {name=Vpbias[1:0] dir=inout}
 B 5 -62.5 -42.5 -57.5 -37.5 {name=Vpcbias[1:0] dir=inout}
 B 5 -2.5 97.5 2.5 102.5 {name=VSS dir=inout}

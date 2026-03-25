@@ -29,7 +29,7 @@
         },
         "uio_oe": {
           "direction": "output",
-          "bits": [ 35, 35, 35, 35, 35, 35, 35, 35 ]
+          "bits": [ "1", "1", "1", "1", "1", "1", "1", "1" ]
         },
         "ena": {
           "direction": "input",
@@ -1390,7 +1390,7 @@
         },
         "uio_oe": {
           "hide_name": 0,
-          "bits": [ 35, 35, 35, 35, 35, 35, 35, 35 ],
+          "bits": [ "1", "1", "1", "1", "1", "1", "1", "1" ],
           "attributes": {
             "hdlname": "uio_oe",
             "src": "../src/heichips25_pudding.sv:14.23"

@@ -1,0 +1,6 @@
+** sch_path: /home/cmaier/EDA/PUDDING/xschem/dacbuffer_1chan.sch
+.subckt dacbuffer_1chan VDD C0 C1
+*.PININFO VDD:B C0:B C1:B
+M1 VDD C1 VDD VDD sg13_hv_pmos w=14.6u l=4.04u ng=1 m=1
+M0 VDD C0 VDD VDD sg13_hv_pmos w=14.6u l=4.04u ng=1 m=1
+.ends

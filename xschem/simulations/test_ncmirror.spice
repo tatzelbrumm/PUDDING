@@ -20,8 +20,8 @@ XMcref Vg Vg Vdref GND sg13_hv_nmos w=w l=lc ng=1 m=1
 
 
 * device parameters
-.param l      = 5u
-.param lc     = 1u
+.param l      = 10u
+.param lc     = 5u
 .param w      = 2u
 * instrumentation parameters
 .param logI=-7
@@ -40,8 +40,8 @@ save all
 op
 write test_ncmirror.raw
 set appendwrite
-foreach l_val 5u 20u
-  foreach lc_val 2u 20u
+foreach l_val 10u
+  foreach lc_val 5u
     alterparam l = $l_val
     alterparam lc = $lc_val
     reset

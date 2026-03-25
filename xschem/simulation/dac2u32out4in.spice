@@ -1,11 +1,11 @@
 ** sch_path: /home/cmaier/EDA/PUDDING/xschem/dac2u32out4in.sch
-.subckt dac2u32out4in Iout ON[15] ON[14] ON[13] ON[12] ON[11] ON[10] ON[9] ON[8] ON[7] ON[6] ON[5] ON[4] ON[3] ON[2] ON[1] ON[0]
-+ ONB[15] ONB[14] ONB[13] ONB[12] ONB[11] ONB[10] ONB[9] ONB[8] ONB[7] ONB[6] ONB[5] ONB[4] ONB[3] ONB[2] ONB[1] ONB[0] VSS VDD Vpcbias[0]
-+ EN[1] EN[0] ENB[1] ENB[0] ON[31] ON[30] ON[29] ON[28] ON[27] ON[26] ON[25] ON[24] ON[23] ON[22] ON[21] ON[20] ON[19] ON[18] ON[17]
-+ ON[16] ONB[31] ONB[30] ONB[29] ONB[28] ONB[27] ONB[26] ONB[25] ONB[24] ONB[23] ONB[22] ONB[21] ONB[20] ONB[19] ONB[18] ONB[17] ONB[16]
-+ EN[3] EN[2] ENB[3] ENB[2] Vpcbias[1]
-*.PININFO Iout:O ON[15:0]:I ONB[15:0]:I VSS:B VDD:B Vpcbias[0]:B EN[1:0]:I ENB[1:0]:I ON[31:16]:I ONB[31:16]:I EN[3:2]:I
-*+ ENB[3:2]:I Vpcbias[1]:B
+.subckt dac2u32out4in VDD EN[1] EN[0] ENB[1] ENB[0] ON[31] ON[30] ON[29] ON[28] ON[27] ON[26] ON[25] ON[24] ON[23] ON[22] ON[21]
++ ON[20] ON[19] ON[18] ON[17] ON[16] ON[15] ON[14] ON[13] ON[12] ON[11] ON[10] ON[9] ON[8] ON[7] ON[6] ON[5] ON[4] ON[3] ON[2] ON[1] ON[0]
++ ONB[15] ONB[14] ONB[13] ONB[12] ONB[11] ONB[10] ONB[9] ONB[8] ONB[7] ONB[6] ONB[5] ONB[4] ONB[3] ONB[2] ONB[1] ONB[0] ENB[3] ENB[2]
++ ONB[31] ONB[30] ONB[29] ONB[28] ONB[27] ONB[26] ONB[25] ONB[24] ONB[23] ONB[22] ONB[21] ONB[20] ONB[19] ONB[18] ONB[17] ONB[16] EN[3]
++ EN[2] Iout Vpcbias[1] Vpcbias[0] Vpbias[1] Vpbias[0] VSS
+*.PININFO Iout:B ON[15:0]:I ONB[15:0]:I VSS:B VDD:B Vpcbias[1:0]:B EN[1:0]:I ENB[1:0]:I ON[31:16]:I ONB[31:16]:I EN[3:2]:I
+*+ ENB[3:2]:I Vpbias[1:0]:B
 Mcbias[0] Vpcbias[0] Vpcbias[0] Vpbias[0] VDD sg13_lv_pmos w=5.85u l=0.15u ng=1 m=2
 xref[1] VDD Vpbias[0] EN[1] ENB[1] Vpbias[0] Vpcbias[0] VSS unitsource2u
 xref[0] VDD Vpbias[0] EN[0] ENB[0] Vpbias[0] Vpcbias[0] VSS unitsource2u
@@ -44,22 +44,6 @@ xsrc[19] VDD Vpbias[1] ON[19] ONB[19] Iout Vpcbias[1] VSS unitsource2u
 xsrc[18] VDD Vpbias[1] ON[18] ONB[18] Iout Vpcbias[1] VSS unitsource2u
 xsrc[17] VDD Vpbias[1] ON[17] ONB[17] Iout Vpcbias[1] VSS unitsource2u
 xsrc[16] VDD Vpbias[1] ON[16] ONB[16] Iout Vpcbias[1] VSS unitsource2u
-**** begin user architecture code
-
-* device parameters
-.param l      = 5u
-.param w      = 1.45u
-.param lc     = 0.6u
-.param wc     = 1.2u
-.param lb     = 0.15u
-.param wb     = 5.85u
-.param lplogic= 0.13u
-.param wplogic= 0.5u
-.param lnlogic= 0.13u
-.param wnlogic= 0.15u
-
-
-**** end user architecture code
 .ends
 
 * expanding   symbol:  unitsource2u.sym # of pins=7

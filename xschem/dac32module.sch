@@ -92,19 +92,7 @@ m=2
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {opin.sym} 1200 -560 1 0 {name=p4 lab=Iout}
-C {devices/code_shown.sym} 60 -730 0 0 {name=params only_toplevel=false value="* device parameters
-.param l      = 5u
-.param w      = 1.45u
-.param lc     = 0.6u
-.param wc     = 1.2u
-.param lb     = 0.15u
-.param wb     = 5.85u
-.param lplogic= 0.13u
-.param wplogic= 0.5u
-.param lnlogic= 0.13u
-.param wnlogic= 0.15u
-"}
+C {iopin.sym} 1200 -560 1 0 {name=p4 lab=Iout}
 C {unitsource2u.sym} 620 -660 0 1 {name=xref[1:0]}
 C {unitsource2u.sym} 1100 -660 0 0 {name=xsrc[15:0]}
 C {ipin.sym} 420 -140 0 0 {name=p7 sig_type=std_logic lab=ON[31:0]}
